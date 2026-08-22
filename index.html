@@ -37,7 +37,7 @@
     </div>
 
     <script>
-        const API_KEY = "AQ.Ab8RN6LjtX2ZiyQpFn-NZ85eSqs-_8ZMPhTm2UW_w1BRaMoUgw";
+        const API_KEY = "AQ.Ab8RN6IpynezFG-YedNvPy047Y9D4b9XUbajf0rqjMzAqn-J-g";
 
         async function sendMessage() {
             const inputField = document.getElementById('userInput');
@@ -68,8 +68,10 @@
                 if (data.candidates && data.candidates.length > 0) {
                     const reply = data.candidates[0].content.parts[0].text;
                     chatMessages.innerHTML += `<div class="message bot">${reply}</div>`;
+                } else if (data.error) {
+                    chatMessages.innerHTML += `<div class="message bot">خطأ: ${data.error.message}</div>`;
                 } else {
-                    chatMessages.innerHTML += `<div class="message bot">عذراً، لم أستطع معالجة الرد، حاول مرة أخرى.</div>`;
+                    chatMessages.innerHTML += `<div class="message bot">عذراً، لم أستطع معالجة الرد.</div>`;
                 }
             } catch(e) {
                 chatMessages.innerHTML += `<div class="message bot">عذراً، حدث خطأ في الاتصال بالخادم.</div>`;
