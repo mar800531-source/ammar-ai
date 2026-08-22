@@ -37,7 +37,6 @@
     </div>
 
     <script>
-        // تم تصحيح الحرف الأول ليصبح gsk بصيغة صغيرة صحيحة
         const API_KEY = "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";
 
         async function sendMessage() {
@@ -58,7 +57,7 @@
                         'Authorization': 'Bearer ' + API_KEY
                     },
                     body: JSON.stringify({
-                        model: 'llama-3.3-70b-versatile',
+                        model: 'llama-3.1-8b-instant', // تم التحديث إلى النموذج المباشر والسريع المتاح للحسابات الجديدة
                         messages: [
                             { role: 'system', content: 'أنت مساعد ذكي متميز مطور من قبل سامي أصلاوي. أجب باحترافية وبشكل مفيد دائماً باللغة العربية.' },
                             { role: 'user', content: messageText }
@@ -91,4 +90,3 @@
     </script>
 </body>
 </html>
-
