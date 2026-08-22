@@ -37,7 +37,8 @@
     </div>
 
     <script>
-        const API_KEY = "Gsk_8KtOsxqpjw1u9FxmpTgjWGdyb3FYLn6PVfD3SZfwB8Kj5O2FDAJK";
+        // تم تصحيح الحرف الأول ليصبح gsk بصيغة صغيرة صحيحة
+        const API_KEY = "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";
 
         async function sendMessage() {
             const inputField = document.getElementById('userInput');
@@ -50,7 +51,6 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
             try {
-                // الاتصال المباشر بنماذج Groq السريعة والمجانية
                 const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                     method: 'POST',
                     headers: {
@@ -91,3 +91,4 @@
     </script>
 </body>
 </html>
+
