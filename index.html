@@ -37,7 +37,7 @@
     </div>
 
     <script>
-        const API_KEY = "AQ.Ab8RN6IpynezFG-YedNvPy047Y9D4b9XUbajf0rqjMzAqn-J-g";
+        const API_KEY = "AQ.Ab8RN6Kxcno0cDlX5N-J5ldxvz4qNBJ-i8...";
 
         async function sendMessage() {
             const inputField = document.getElementById('userInput');
@@ -54,7 +54,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-goog-api-key': API_KEY
+                        'Authorization': 'Bearer ' + API_KEY
                     },
                     body: JSON.stringify({
                         contents: [{
