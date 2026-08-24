@@ -192,4 +192,867 @@ button{
 
     border-radius:30px;
 
-    background
+    background:
+        linear-gradient(
+            145deg,
+            #062c25f5,
+            #031b17f5
+        );
+
+    border:2px solid #237b66;
+
+    box-shadow:
+        0 0 30px #00c99b10,
+        inset 0 0 35px #00c99b08;
+}
+
+.category{
+    text-align:center;
+    color:#58e9a3;
+    font-size:22px;
+    font-weight:900;
+    margin:3px 0 13px;
+}
+
+.question{
+    text-align:center;
+    font-size:clamp(23px,6vw,34px);
+    font-weight:900;
+    line-height:1.5;
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:12px;
+}
+
+/* =========================
+   الإجابات الدائرية
+========================= */
+
+.answers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:6px 10px 12px;
+}
+
+.answer{
+    min-height:105px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:12px;
+
+    color:#fff;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #082b25,
+            #031b17
+        );
+
+    border:2px solid #1d6556;
+
+    font-size:20px;
+    font-weight:900;
+
+    box-shadow:
+        0 5px 12px #0005,
+        inset 0 0 15px #00c99b08;
+
+    transition:
+        transform .15s,
+        border .15s,
+        box-shadow .15s,
+        background .15s;
+}
+
+.answer:active{
+    transform:scale(.94);
+}
+
+.answer.correct{
+    border-color:#8cff76;
+    background:
+        radial-gradient(
+            circle,
+            #176b48,
+            #06382a
+        );
+
+    box-shadow:
+        0 0 28px #65ff7a88,
+        inset 0 0 25px #8cff7655;
+}
+
+.answer.wrong{
+    border-color:#ff606d;
+    background:
+        radial-gradient(
+            circle,
+            #6d2831,
+            #34171c
+        );
+
+    box-shadow:0 0 20px #ff526655;
+}
+
+/* =========================
+   الأدوات الدائرية
+========================= */
+
+.tools{
+    display:grid;
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+    margin-top:6px;
+}
+
+.tool{
+    width:100%;
+    aspect-ratio:1/1;
+
+    border-radius:50%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:6px;
+
+    color:#fff;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #0a382f,
+            #031c18
+        );
+
+    border:2px solid #1f715d;
+
+    box-shadow:
+        inset 0 0 16px #00d99b0b,
+        0 5px 12px #0004;
+
+    font-weight:bold;
+
+    transition:.15s;
+}
+
+.tool:active{
+    transform:scale(.92);
+}
+
+.tool .toolIcon{
+    font-size:28px;
+    line-height:30px;
+}
+
+.tool .toolName{
+    font-size:14px;
+    margin-top:4px;
+}
+
+.tool .toolCount{
+    font-size:13px;
+    color:#ffe04f;
+    margin-top:2px;
+}
+
+.tool:disabled{
+    opacity:.35;
+}
+
+/* =========================
+   الإحصائيات
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:5px;
+
+    margin-top:12px;
+
+    padding:9px;
+
+    border-radius:30px;
+
+    background:#05251f;
+    border:1px solid #1b5e50;
+}
+
+.stat{
+    text-align:center;
+    padding:6px;
+}
+
+.stat b{
+    display:block;
+    color:#ffe04d;
+    font-size:22px;
+    margin-bottom:3px;
+}
+
+.stat span{
+    font-size:14px;
+    color:#d7eee9;
+}
+
+/* =========================
+   النافذة
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+
+    background:#000c;
+
+    z-index:1000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modalBox{
+    width:min(560px,100%);
+    max-height:85vh;
+    overflow:auto;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:#06251f;
+    border:2px solid #267762;
+
+    box-shadow:0 20px 80px #000;
+}
+
+.modalBox h2{
+    margin-top:0;
+    color:#62e9ac;
+}
+
+.close{
+    float:left;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#173e35;
+    color:#fff;
+
+    font-size:20px;
+}
+
+.modalList{
+    display:grid;
+    gap:8px;
+    clear:both;
+}
+
+.modalRow{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    background:#0a342c;
+    border:1px solid #1d584b;
+}
+
+.modalRow.me{
+    border-color:#ffe04d;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.catButton{
+    padding:15px;
+    border-radius:16px;
+
+    background:#0a362e;
+    color:#fff;
+
+    border:1px solid #1c6655;
+
+    font-weight:bold;
+    font-size:16px;
+}
+
+.catButton:active{
+    transform:scale(.97);
+}
+
+.badges{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.badge{
+    padding:14px;
+    border-radius:16px;
+    background:#0b352d;
+    border:1px solid #1c5a4c;
+}
+
+.badge b{
+    display:block;
+    color:#ffe04d;
+    margin-bottom:6px;
+}
+
+.locked{
+    opacity:.35;
+}
+
+/* =========================
+   Toast
+========================= */
+
+#toast{
+    position:fixed;
+    left:50%;
+    bottom:18px;
+
+    transform:
+        translate(-50%,30px);
+
+    opacity:0;
+
+    padding:12px 18px;
+
+    border-radius:20px;
+
+    background:#082b24;
+    border:1px solid #3c8d76;
+
+    font-weight:bold;
+    text-align:center;
+
+    z-index:2000;
+
+    transition:.25s;
+
+    pointer-events:none;
+}
+
+#toast.show{
+    transform:
+        translate(-50%,0);
+
+    opacity:1;
+}
+
+/* =========================
+   كونفيتي
+========================= */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+
+    width:8px;
+    height:15px;
+
+    z-index:1500;
+
+    animation:
+        fall 1.2s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   هاتف صغير
+========================= */
+
+@media(max-width:430px){
+
+    .app{
+        padding:7px 8px 14px;
+    }
+
+    .topCircle,
+    .soundCircle{
+        width:55px;
+        height:55px;
+    }
+
+    .topCircle .icon{
+        font-size:19px;
+    }
+
+    .topCircle .num{
+        font-size:13px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .progressBox{
+        height:52px;
+        padding:7px 10px;
+    }
+
+    .progressText{
+        font-size:13px;
+    }
+
+    .progressBar{
+        height:11px;
+    }
+
+    .gameCard{
+        padding:14px 10px 10px;
+        border-radius:25px;
+    }
+
+    .category{
+        font-size:19px;
+        margin-bottom:8px;
+    }
+
+    .question{
+        font-size:22px;
+        min-height:70px;
+        margin-bottom:7px;
+    }
+
+    .answers{
+        gap:10px;
+        padding:4px 5px 8px;
+    }
+
+    .answer{
+        min-height:90px;
+        font-size:17px;
+    }
+
+    .tools{
+        gap:7px;
+    }
+
+    .tool .toolIcon{
+        font-size:24px;
+    }
+
+    .tool .toolName{
+        font-size:12px;
+    }
+
+    .tool .toolCount{
+        font-size:11px;
+    }
+
+    .stats{
+        margin-top:8px;
+    }
+
+    .stat b{
+        font-size:19px;
+    }
+
+    .stat span{
+        font-size:12px;
+    }
+}
+
+@media(max-width:350px){
+
+    .topCircle,
+    .soundCircle{
+        width:48px;
+        height:48px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .answer{
+        min-height:78px;
+        font-size:15px;
+    }
+
+    .tool .toolIcon{
+        font-size:21px;
+    }
+
+    .tool .toolName{
+        font-size:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- =========================
+     الرأس
+========================= -->
+
+<header class="top">
+
+    <div class="topSide left">
+
+        <div class="topCircle">
+            <div class="icon">🏆</div>
+            <div class="num" id="score">0</div>
+        </div>
+
+        <div class="topCircle">
+            <div class="icon">⭐</div>
+            <div class="num" id="xp">0</div>
+        </div>
+
+    </div>
+
+
+    <div class="logo">
+        👑 عمار الأسطورة
+    </div>
+
+
+    <div class="topSide right">
+
+        <div class="topCircle">
+            <div class="icon">🔥</div>
+            <div class="num" id="topStreak">0</div>
+        </div>
+
+        <button
+            class="soundCircle"
+            id="soundButton"
+            onclick="toggleSound()">
+            🔊
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     التقدم
+========================= -->
+
+<div class="progressBox">
+
+    <div
+        class="progressText"
+        id="stageText">
+        المرحلة 1/100
+    </div>
+
+    <div class="progressCenter">
+
+        <div class="progressBar">
+            <div
+                class="progressFill"
+                id="progressFill">
+            </div>
+        </div>
+
+    </div>
+
+    <div
+        class="progressText"
+        id="questionNumber">
+        السؤال 1/5
+    </div>
+
+</div>
+
+
+<!-- =========================
+     اللعبة
+========================= -->
+
+<section class="gameCard">
+
+    <div
+        class="category"
+        id="category">
+        📚 ثقافة عامة
+    </div>
+
+
+    <div
+        class="question"
+        id="questionText">
+        جاري تحميل السؤال...
+    </div>
+
+
+    <div
+        class="answers"
+        id="answers">
+    </div>
+
+
+    <!-- =====================
+         الأزرار الدائرية
+    ====================== -->
+
+    <div class="tools">
+
+        <button
+            class="tool"
+            id="helpBtn"
+            onclick="help()">
+
+            <span class="toolIcon">💡</span>
+            <span class="toolName">مساعدة</span>
+            <span class="toolCount" id="helpCount">3 ⭐</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            id="skipBtn"
+            onclick="skipQuestion()">
+
+            <span class="toolIcon">⏩</span>
+            <span class="toolName">تخطي</span>
+            <span class="toolCount" id="skipCount">5 ⭐</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="randomQuestion()">
+
+            <span class="toolIcon">🎲</span>
+            <span class="toolName">سؤال جديد</span>
+            <span class="toolCount">-4 ⭐</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            id="revealBtn"
+            onclick="revealAnswer()">
+
+            <span class="toolIcon">👁️</span>
+            <span class="toolName">كشف</span>
+            <span class="toolCount" id="revealCount">8 ⭐</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="openCategories()">
+
+            <span class="toolIcon">🗺️</span>
+            <span class="toolName">الخريطة</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="showStats()">
+
+            <span class="toolIcon">📊</span>
+            <span class="toolName">إحصائيات</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="showLeaderboard()">
+
+            <span class="toolIcon">🏆</span>
+            <span class="toolName">لوحة الصدارة</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="showBadges()">
+
+            <span class="toolIcon">🎁</span>
+            <span class="toolName">مكافآتي</span>
+
+        </button>
+
+
+        <button
+            class="tool"
+            onclick="showSettings()">
+
+            <span class="toolIcon">⚙️</span>
+            <span class="toolName">الإعدادات</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================
+         الإحصائيات السفلية
+    ====================== -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <b id="streak">0</b>
+
+            <span>
+                السلسلة 🔥
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <b id="multiplier">×1</b>
+
+            <span>
+                المضاعف ⭐
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <b id="correct">0</b>
+
+            <span>
+                صحيح ✅
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     Modal
+========================= -->
+
+<div
+    class="modal"
+    id="modal">
+
+    <div class="modalBox">
+
+        <button
+            class="close"
+            onclick="closeModal()">
+            ✕
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+
+<script>
+
+/* =========================================================
+   الأسئلة
+========================================================= */
+
+const QUESTIONS = [
+
+    {
+        category:"general",
+        question:"ما عاصمة اليابان؟",
+        answers:["طوكيو","بكين","سيول","بانكوك"],
+        correct:0
+    },
+
+    {
+        category:"general",
+        question:"كم عدد أيام الأسبوع؟",
+        answers:["5","6","7","8"],
+        correct:2
+    },
+
+    {
+        category:"general",
+        question:"ما أكبر محيط في العالم؟",
+        answers:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],
+        correct:2
+    },
+
+    {
+        category:"general",
+        question:"ما الكوكب المعروف بالكوكب الأحمر؟",
+        answers:["الزهرة","المريخ","المشتري","عطارد"],
+        correct:1
+    },
+
+    {
+        category:"general",
+        question:"كم دقيقة في الساعة؟",
+        answers:["30","45","60","90"],
+        correct:2
+    },
+
+    {
+        category:"general",
+        question:"ما الحيو
