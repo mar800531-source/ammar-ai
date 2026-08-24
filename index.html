@@ -2,727 +2,546 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#031b17">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <title>عمار الأسطورة 👑</title>
 
 <style>
 *{
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
 
 html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
+  margin:0;
+  padding:0;
+  min-height:100%;
 }
 
 body{
-    font-family:Arial,Tahoma,sans-serif;
-    color:#fff;
-    background:
-        radial-gradient(circle at 50% 0%,#064d3d 0%,#03251f 42%,#011411 100%);
-    overflow-x:hidden;
+  font-family:Arial,Tahoma,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,#08765d,#03251f 55%,#011512);
+  color:#fff;
+  overflow-x:hidden;
 }
 
 button{
-    font-family:inherit;
-    border:0;
-    cursor:pointer;
+  font:inherit;
+  border:0;
+  cursor:pointer;
+  color:#fff;
 }
 
 .app{
-    width:100%;
-    max-width:700px;
-    margin:auto;
-    padding:10px 12px 20px;
+  width:min(700px,100%);
+  margin:auto;
+  padding:10px;
 }
 
-/* =========================
-   الرأس
-========================= */
+/* ================= HEADER ================= */
 
-.top{
-    display:grid;
-    grid-template-columns:1fr 1.5fr 1fr;
-    align-items:center;
-    gap:7px;
-    margin-bottom:10px;
-}
-
-.topSide{
-    display:flex;
-    gap:6px;
-    align-items:center;
-}
-
-.topSide.left{
-    justify-content:flex-start;
-}
-
-.topSide.right{
-    justify-content:flex-end;
-}
-
-.topCircle{
-    width:66px;
-    height:66px;
-    border-radius:50%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    background:
-        radial-gradient(circle,#07372e,#031d18);
-
-    border:2px solid #237c66;
-    box-shadow:
-        inset 0 0 15px #00d99b22,
-        0 0 15px #00d99b11;
-
-    font-weight:900;
-}
-
-.topCircle .icon{
-    font-size:23px;
-    line-height:23px;
-}
-
-.topCircle .num{
-    font-size:15px;
-    margin-top:3px;
-    color:#fff;
-}
-
-.soundCircle{
-    width:66px;
-    height:66px;
-    border-radius:50%;
-    background:#062e27;
-    border:2px solid #237c66;
-    color:#fff;
-    font-size:26px;
+.header{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  align-items:center;
+  gap:6px;
+  margin-bottom:10px;
 }
 
 .logo{
-    text-align:center;
-    font-weight:900;
-    font-size:clamp(22px,6vw,36px);
-    line-height:1.1;
+  grid-column:2/5;
+  text-align:center;
+  font-size:clamp(25px,7vw,42px);
+  font-weight:900;
+  line-height:1.05;
 
-    background:linear-gradient(
-        90deg,
-        #56e7a5,
-        #d8ff72,
-        #55e7ed
-    );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+  background:linear-gradient(90deg,#4ff0a5,#70f3df,#b2ff67);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-/* =========================
-   التقدم
-========================= */
-
-.progressBox{
-    height:58px;
-    border-radius:30px;
-
-    display:grid;
-    grid-template-columns:1fr 1.5fr 1fr;
-    align-items:center;
-    gap:8px;
-
-    padding:8px 14px;
-
-    background:#062a23;
-    border:1px solid #286a5b;
+.logo span{
+  display:block;
+  font-size:25px;
 }
 
-.progressText{
-    font-size:16px;
-    font-weight:bold;
-    white-space:nowrap;
+.circleStat{
+  width:68px;
+  height:68px;
+  margin:auto;
+
+  border-radius:50%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:#062b24;
+  border:2px solid #16785f;
+
+  box-shadow:
+    inset 0 0 20px #00c88b14,
+    0 0 12px #00d8a033;
 }
 
-.progressText:last-child{
-    text-align:left;
+.circleStat b{
+  font-size:25px;
+  color:#ffd83d;
 }
 
-.progressCenter{
-    position:relative;
+.circleStat small{
+  font-size:12px;
+  color:#d9eee9;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress{
+  border:2px solid #125b4d;
+  border-radius:30px;
+  padding:10px 14px;
+  background:#062a24;
+  margin-bottom:10px;
+}
+
+.progressTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+  font-size:16px;
 }
 
 .progressBar{
-    height:14px;
-    border-radius:20px;
-    overflow:hidden;
-    background:#123d35;
-    border:1px solid #1d5c4e;
+  height:9px;
+  margin-top:8px;
+  background:#103f37;
+  border-radius:20px;
+  overflow:hidden;
 }
 
-.progressFill{
-    width:1%;
-    height:100%;
-    border-radius:20px;
-
-    background:linear-gradient(
-        90deg,
-        #65e59a,
-        #8cff75,
-        #55e7ed
-    );
-
-    transition:.4s;
+.progressBar span{
+  display:block;
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#55df95,#a1ff65);
+  transition:.4s;
 }
 
-/* =========================
-   بطاقة السؤال
-========================= */
+/* ================= GAME PANEL ================= */
 
-.gameCard{
-    margin-top:12px;
-    padding:18px 15px 14px;
-
-    border-radius:30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #062c25f5,
-            #031b17f5
-        );
-
-    border:2px solid #237b66;
-
-    box-shadow:
-        0 0 30px #00c99b10,
-        inset 0 0 35px #00c99b08;
+.game{
+  border:2px solid #17775f;
+  border-radius:34px;
+  background:
+    linear-gradient(145deg,#052c25e8,#021d19e8);
+  padding:15px;
+  box-shadow:0 0 30px #00c89012;
 }
 
 .category{
-    text-align:center;
-    color:#58e9a3;
-    font-size:22px;
-    font-weight:900;
-    margin:3px 0 13px;
+  text-align:center;
+  color:#55e5a3;
+  font-size:21px;
+  font-weight:900;
+  margin:5px 0 12px;
 }
 
 .question{
-    text-align:center;
-    font-size:clamp(23px,6vw,34px);
-    font-weight:900;
-    line-height:1.5;
-    min-height:78px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:12px;
+  min-height:125px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:12px;
 }
 
-/* =========================
-   الإجابات الدائرية
-========================= */
+.questionText{
+  font-size:clamp(25px,6vw,38px);
+  font-weight:900;
+  line-height:1.45;
+}
+
+/* ================= ANSWERS ================= */
 
 .answers{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    padding:6px 10px 12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:550px;
+  margin:5px auto 12px;
+  padding:5px;
 }
 
 .answer{
-    min-height:105px;
+  min-height:82px;
 
-    border-radius:50%;
+  border-radius:50%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  background:#031f1b;
 
-    text-align:center;
+  border:2px solid #125b4d;
 
-    padding:12px;
+  font-size:18px;
+  font-weight:900;
 
-    color:#fff;
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            #082b25,
-            #031b17
-        );
+  transition:.18s;
 
-    border:2px solid #1d6556;
-
-    font-size:20px;
-    font-weight:900;
-
-    box-shadow:
-        0 5px 12px #0005,
-        inset 0 0 15px #00c99b08;
-
-    transition:
-        transform .15s,
-        border .15s,
-        box-shadow .15s,
-        background .15s;
+  box-shadow:
+    inset 0 0 15px #00c88b0c,
+    0 0 8px #00c88b12;
 }
 
 .answer:active{
-    transform:scale(.94);
+  transform:scale(.94);
+}
+
+.answer.selected{
+  border-color:#a6ff70;
+  box-shadow:
+    0 0 18px #73ff76aa,
+    inset 0 0 15px #64ff6c22;
 }
 
 .answer.correct{
-    border-color:#8cff76;
-    background:
-        radial-gradient(
-            circle,
-            #176b48,
-            #06382a
-        );
-
-    box-shadow:
-        0 0 28px #65ff7a88,
-        inset 0 0 25px #8cff7655;
+  border-color:#78ff75;
+  background:#095a3f;
+  box-shadow:0 0 25px #5dff74aa;
 }
 
 .answer.wrong{
-    border-color:#ff606d;
-    background:
-        radial-gradient(
-            circle,
-            #6d2831,
-            #34171c
-        );
-
-    box-shadow:0 0 20px #ff526655;
+  border-color:#ff5e69;
+  background:#57232b;
+  animation:shake .25s;
 }
 
-/* =========================
-   الأدوات الدائرية
-========================= */
+@keyframes shake{
+  25%{transform:translateX(-5px)}
+  50%{transform:translateX(5px)}
+  75%{transform:translateX(-4px)}
+}
+
+/* ================= TOOLS ================= */
 
 .tools{
-    display:grid;
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:10px;
-    margin-top:6px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+  margin-top:8px;
 }
 
 .tool{
-    width:100%;
-    aspect-ratio:1/1;
+  aspect-ratio:1/1;
+  min-width:0;
 
-    border-radius:50%;
+  border-radius:50%;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+  background:#052c25;
 
-    padding:6px;
+  border:2px solid #126950;
 
-    color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            #0a382f,
-            #031c18
-        );
+  text-align:center;
 
-    border:2px solid #1f715d;
+  font-weight:bold;
 
-    box-shadow:
-        inset 0 0 16px #00d99b0b,
-        0 5px 12px #0004;
+  box-shadow:0 0 12px #00c88b12;
+}
 
-    font-weight:bold;
+.tool .icon{
+  font-size:28px;
+  line-height:1;
+  margin-bottom:5px;
+}
 
-    transition:.15s;
+.tool small{
+  font-size:13px;
+}
+
+.tool b{
+  color:#ffd83d;
+  font-size:14px;
 }
 
 .tool:active{
-    transform:scale(.92);
-}
-
-.tool .toolIcon{
-    font-size:28px;
-    line-height:30px;
-}
-
-.tool .toolName{
-    font-size:14px;
-    margin-top:4px;
-}
-
-.tool .toolCount{
-    font-size:13px;
-    color:#ffe04f;
-    margin-top:2px;
+  transform:scale(.93);
 }
 
 .tool:disabled{
-    opacity:.35;
+  opacity:.35;
 }
 
-/* =========================
-   الإحصائيات
-========================= */
+/* ================= STATS ================= */
 
 .stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:5px;
+  margin-top:12px;
 
-    margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
 
-    padding:9px;
+  border:2px solid #125b4d;
+  border-radius:30px;
 
-    border-radius:30px;
-
-    background:#05251f;
-    border:1px solid #1b5e50;
+  background:#03251f;
+  overflow:hidden;
 }
 
 .stat{
-    text-align:center;
-    padding:6px;
+  text-align:center;
+  padding:10px 5px;
 }
 
 .stat b{
-    display:block;
-    color:#ffe04d;
-    font-size:22px;
-    margin-bottom:3px;
+  display:block;
+  color:#ffd83d;
+  font-size:25px;
+  margin-bottom:3px;
 }
 
-.stat span{
-    font-size:14px;
-    color:#d7eee9;
-}
-
-/* =========================
-   النافذة
-========================= */
+/* ================= MODAL ================= */
 
 .modal{
-    position:fixed;
-    inset:0;
+  position:fixed;
+  inset:0;
 
-    display:none;
-    justify-content:center;
-    align-items:center;
+  display:none;
+  align-items:center;
+  justify-content:center;
 
-    padding:15px;
+  background:#000b;
 
-    background:#000c;
+  padding:15px;
 
-    z-index:1000;
+  z-index:1000;
 }
 
 .modal.show{
-    display:flex;
+  display:flex;
 }
 
 .modalBox{
-    width:min(560px,100%);
-    max-height:85vh;
-    overflow:auto;
+  width:min(500px,100%);
+  max-height:85vh;
+  overflow:auto;
 
-    padding:20px;
+  padding:20px;
 
-    border-radius:25px;
+  border-radius:25px;
 
-    background:#06251f;
-    border:2px solid #267762;
+  background:#052b24;
 
-    box-shadow:0 20px 80px #000;
+  border:2px solid #18765f;
 }
 
 .modalBox h2{
-    margin-top:0;
-    color:#62e9ac;
+  color:#65e9a6;
 }
 
 .close{
-    float:left;
+  float:left;
 
-    width:40px;
-    height:40px;
+  width:40px;
+  height:40px;
 
-    border-radius:50%;
+  border-radius:50%;
 
-    background:#173e35;
-    color:#fff;
-
-    font-size:20px;
+  background:#123c34;
 }
 
-.modalList{
-    display:grid;
-    gap:8px;
-    clear:both;
+/* ================= MODAL ITEMS ================= */
+
+.catGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
-.modalRow{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
+.cat{
+  padding:15px;
+  border-radius:18px;
 
-    padding:12px;
-
-    border-radius:14px;
-
-    background:#0a342c;
-    border:1px solid #1d584b;
+  background:#07352c;
+  border:1px solid #196653;
 }
 
-.modalRow.me{
-    border-color:#ffe04d;
-}
+.row{
+  display:flex;
+  justify-content:space-between;
 
-.categories{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
+  padding:12px;
 
-.catButton{
-    padding:15px;
-    border-radius:16px;
+  margin:7px 0;
 
-    background:#0a362e;
-    color:#fff;
+  border-radius:14px;
 
-    border:1px solid #1c6655;
-
-    font-weight:bold;
-    font-size:16px;
-}
-
-.catButton:active{
-    transform:scale(.97);
+  background:#07352c;
+  border:1px solid #155d4d;
 }
 
 .badges{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
 }
 
 .badge{
-    padding:14px;
-    border-radius:16px;
-    background:#0b352d;
-    border:1px solid #1c5a4c;
+  padding:13px;
+  border-radius:15px;
+  background:#07352c;
 }
 
-.badge b{
-    display:block;
-    color:#ffe04d;
-    margin-bottom:6px;
+.badge.lock{
+  opacity:.3;
 }
 
-.locked{
-    opacity:.35;
-}
-
-/* =========================
-   Toast
-========================= */
+/* ================= TOAST ================= */
 
 #toast{
-    position:fixed;
-    left:50%;
-    bottom:18px;
+  position:fixed;
 
-    transform:
-        translate(-50%,30px);
+  left:50%;
+  bottom:18px;
 
-    opacity:0;
+  transform:translate(-50%,30px);
 
-    padding:12px 18px;
+  opacity:0;
 
-    border-radius:20px;
+  z-index:2000;
 
-    background:#082b24;
-    border:1px solid #3c8d76;
+  background:#062b24;
+  border:2px solid #228366;
 
-    font-weight:bold;
-    text-align:center;
+  padding:12px 18px;
 
-    z-index:2000;
+  border-radius:20px;
 
-    transition:.25s;
+  font-weight:bold;
 
-    pointer-events:none;
+  transition:.25s;
+
+  white-space:nowrap;
 }
 
 #toast.show{
-    transform:
-        translate(-50%,0);
-
-    opacity:1;
+  opacity:1;
+  transform:translate(-50%,0);
 }
 
-/* =========================
-   كونفيتي
-========================= */
+/* ================= CONFETTI ================= */
 
 .confetti{
-    position:fixed;
-    top:-20px;
+  position:fixed;
+  top:-20px;
 
-    width:8px;
-    height:15px;
+  width:8px;
+  height:15px;
 
-    z-index:1500;
+  z-index:1500;
 
-    animation:
-        fall 1.2s linear forwards;
+  animation:fall 1.2s linear forwards;
 }
 
 @keyframes fall{
-    to{
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:0;
-    }
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
 }
 
-/* =========================
-   هاتف صغير
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:430px){
 
-    .app{
-        padding:7px 8px 14px;
-    }
+  .app{
+    padding:7px;
+  }
 
-    .topCircle,
-    .soundCircle{
-        width:55px;
-        height:55px;
-    }
+  .header{
+    gap:3px;
+  }
 
-    .topCircle .icon{
-        font-size:19px;
-    }
+  .circleStat{
+    width:61px;
+    height:61px;
+  }
 
-    .topCircle .num{
-        font-size:13px;
-    }
+  .circleStat b{
+    font-size:20px;
+  }
 
-    .logo{
-        font-size:24px;
-    }
+  .logo{
+    font-size:25px;
+  }
 
-    .progressBox{
-        height:52px;
-        padding:7px 10px;
-    }
+  .logo span{
+    font-size:20px;
+  }
 
-    .progressText{
-        font-size:13px;
-    }
+  .game{
+    padding:10px;
+    border-radius:28px;
+  }
 
-    .progressBar{
-        height:11px;
-    }
+  .question{
+    min-height:115px;
+  }
 
-    .gameCard{
-        padding:14px 10px 10px;
-        border-radius:25px;
-    }
+  .questionText{
+    font-size:23px;
+  }
 
-    .category{
-        font-size:19px;
-        margin-bottom:8px;
-    }
+  .answer{
+    min-height:75px;
+    font-size:17px;
+  }
 
-    .question{
-        font-size:22px;
-        min-height:70px;
-        margin-bottom:7px;
-    }
+  .tools{
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+  }
 
-    .answers{
-        gap:10px;
-        padding:4px 5px 8px;
-    }
+  .tool .icon{
+    font-size:23px;
+  }
 
-    .answer{
-        min-height:90px;
-        font-size:17px;
-    }
-
-    .tools{
-        gap:7px;
-    }
-
-    .tool .toolIcon{
-        font-size:24px;
-    }
-
-    .tool .toolName{
-        font-size:12px;
-    }
-
-    .tool .toolCount{
-        font-size:11px;
-    }
-
-    .stats{
-        margin-top:8px;
-    }
-
-    .stat b{
-        font-size:19px;
-    }
-
-    .stat span{
-        font-size:12px;
-    }
+  .tool small{
+    font-size:11px;
+  }
 }
 
 @media(max-width:350px){
 
-    .topCircle,
-    .soundCircle{
-        width:48px;
-        height:48px;
-    }
+  .circleStat{
+    width:55px;
+    height:55px;
+  }
 
-    .logo{
-        font-size:20px;
-    }
+  .circleStat b{
+    font-size:18px;
+  }
 
-    .answer{
-        min-height:78px;
-        font-size:15px;
-    }
+  .logo{
+    font-size:21px;
+  }
 
-    .tool .toolIcon{
-        font-size:21px;
-    }
+  .answer{
+    min-height:65px;
+    font-size:15px;
+  }
 
-    .tool .toolName{
-        font-size:10px;
-    }
+  .tool .icon{
+    font-size:20px;
+  }
+
+  .tool small{
+    font-size:10px;
+  }
 }
 </style>
 </head>
@@ -731,278 +550,237 @@ button{
 
 <div class="app">
 
-<!-- =========================
-     الرأس
-========================= -->
+<!-- ================= HEADER ================= -->
 
-<header class="top">
+<header class="header">
 
-    <div class="topSide left">
+  <div class="circleStat">
+    🔊
+    <small id="soundStatus">صوت</small>
+  </div>
 
-        <div class="topCircle">
-            <div class="icon">🏆</div>
-            <div class="num" id="score">0</div>
-        </div>
+  <div class="circleStat">
+    🔥
+    <b id="streak">0</b>
+  </div>
 
-        <div class="topCircle">
-            <div class="icon">⭐</div>
-            <div class="num" id="xp">0</div>
-        </div>
+  <div class="logo">
+    👑 عمار
+    <span>الأسطورة</span>
+  </div>
 
-    </div>
+  <div class="circleStat">
+    ⭐
+    <b id="xp">0</b>
+  </div>
 
-
-    <div class="logo">
-        👑 عمار الأسطورة
-    </div>
-
-
-    <div class="topSide right">
-
-        <div class="topCircle">
-            <div class="icon">🔥</div>
-            <div class="num" id="topStreak">0</div>
-        </div>
-
-        <button
-            class="soundCircle"
-            id="soundButton"
-            onclick="toggleSound()">
-            🔊
-        </button>
-
-    </div>
+  <div class="circleStat">
+    🏆
+    <b id="score">0</b>
+  </div>
 
 </header>
 
 
-<!-- =========================
-     التقدم
-========================= -->
+<!-- ================= PROGRESS ================= -->
 
-<div class="progressBox">
+<div class="progress">
 
-    <div
-        class="progressText"
-        id="stageText">
-        المرحلة 1/100
-    </div>
+  <div class="progressTop">
 
-    <div class="progressCenter">
+    <span id="stage">
+      المرحلة 1/100
+    </span>
 
-        <div class="progressBar">
-            <div
-                class="progressFill"
-                id="progressFill">
-            </div>
-        </div>
+    <span id="questionNumber">
+      السؤال 1/5
+    </span>
 
-    </div>
+  </div>
 
-    <div
-        class="progressText"
-        id="questionNumber">
-        السؤال 1/5
-    </div>
+  <div class="progressBar">
+    <span id="progressBar"></span>
+  </div>
 
 </div>
 
 
-<!-- =========================
-     اللعبة
-========================= -->
+<!-- ================= GAME ================= -->
 
-<section class="gameCard">
+<main class="game">
 
-    <div
-        class="category"
-        id="category">
-        📚 ثقافة عامة
-    </div>
+  <div
+    id="category"
+    class="category">
+    📚 ثقافة عامة
+  </div>
 
 
-    <div
-        class="question"
-        id="questionText">
-        جاري تحميل السؤال...
-    </div>
-
+  <div class="question">
 
     <div
-        class="answers"
-        id="answers">
-    </div>
+      id="questionText"
+      class="questionText">
 
-
-    <!-- =====================
-         الأزرار الدائرية
-    ====================== -->
-
-    <div class="tools">
-
-        <button
-            class="tool"
-            id="helpBtn"
-            onclick="help()">
-
-            <span class="toolIcon">💡</span>
-            <span class="toolName">مساعدة</span>
-            <span class="toolCount" id="helpCount">3 ⭐</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            id="skipBtn"
-            onclick="skipQuestion()">
-
-            <span class="toolIcon">⏩</span>
-            <span class="toolName">تخطي</span>
-            <span class="toolCount" id="skipCount">5 ⭐</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="randomQuestion()">
-
-            <span class="toolIcon">🎲</span>
-            <span class="toolName">سؤال جديد</span>
-            <span class="toolCount">-4 ⭐</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            id="revealBtn"
-            onclick="revealAnswer()">
-
-            <span class="toolIcon">👁️</span>
-            <span class="toolName">كشف</span>
-            <span class="toolCount" id="revealCount">8 ⭐</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="openCategories()">
-
-            <span class="toolIcon">🗺️</span>
-            <span class="toolName">الخريطة</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="showStats()">
-
-            <span class="toolIcon">📊</span>
-            <span class="toolName">إحصائيات</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="showLeaderboard()">
-
-            <span class="toolIcon">🏆</span>
-            <span class="toolName">لوحة الصدارة</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="showBadges()">
-
-            <span class="toolIcon">🎁</span>
-            <span class="toolName">مكافآتي</span>
-
-        </button>
-
-
-        <button
-            class="tool"
-            onclick="showSettings()">
-
-            <span class="toolIcon">⚙️</span>
-            <span class="toolName">الإعدادات</span>
-
-        </button>
+      جاري تحميل السؤال...
 
     </div>
 
-
-    <!-- =====================
-         الإحصائيات السفلية
-    ====================== -->
-
-    <div class="stats">
-
-        <div class="stat">
-
-            <b id="streak">0</b>
-
-            <span>
-                السلسلة 🔥
-            </span>
-
-        </div>
+  </div>
 
 
-        <div class="stat">
-
-            <b id="multiplier">×1</b>
-
-            <span>
-                المضاعف ⭐
-            </span>
-
-        </div>
+  <div
+    id="answers"
+    class="answers">
+  </div>
 
 
-        <div class="stat">
+  <!-- ================= TOOLS ================= -->
 
-            <b id="correct">0</b>
+  <div class="tools">
 
-            <span>
-                صحيح ✅
-            </span>
+    <button
+      id="helpBtn"
+      class="tool"
+      onclick="help()">
 
-        </div>
+      <span class="icon">💡</span>
+      <small>مساعدة</small>
+      <b id="helpCount">3 ⭐</b>
 
+    </button>
+
+
+    <button
+      id="skipBtn"
+      class="tool"
+      onclick="skipQuestion()">
+
+      <span class="icon">⏭️</span>
+      <small>تخطي</small>
+      <b id="skipCount">5 ⭐</b>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="randomQuestion()">
+
+      <span class="icon">🎲</span>
+      <small>سؤال جديد</small>
+      <b>4 ⭐</b>
+
+    </button>
+
+
+    <button
+      id="revealBtn"
+      class="tool"
+      onclick="revealAnswer()">
+
+      <span class="icon">👁️</span>
+      <small>كشف</small>
+      <b id="revealCount">8 ⭐</b>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="openCategories()">
+
+      <span class="icon">🗺️</span>
+      <small>الخريطة</small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showStats()">
+
+      <span class="icon">📊</span>
+      <small>إحصائيات</small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showLeaderboard()">
+
+      <span class="icon">🏆</span>
+      <small>لوحة الصدارة</small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showBadges()">
+
+      <span class="icon">🎁</span>
+      <small>مكافآتي</small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="toggleSound()">
+
+      <span class="icon">⚙️</span>
+      <small>الإعدادات</small>
+
+    </button>
+
+  </div>
+
+
+  <!-- ================= STATS ================= -->
+
+  <div class="stats">
+
+    <div class="stat">
+      <b id="correct">0</b>
+      ✅ صحيح
     </div>
 
-</section>
+    <div class="stat">
+      <b id="multiplier">1×</b>
+      ⭐ المضاعف
+    </div>
+
+    <div class="stat">
+      <b id="bestStreak">0</b>
+      🔥 السلسلة
+    </div>
+
+  </div>
+
+</main>
 
 </div>
 
 
-<!-- =========================
-     Modal
-========================= -->
+<!-- ================= MODAL ================= -->
 
 <div
-    class="modal"
-    id="modal">
+  id="modal"
+  class="modal">
 
-    <div class="modalBox">
+  <div class="modalBox">
 
-        <button
-            class="close"
-            onclick="closeModal()">
-            ✕
-        </button>
+    <button
+      class="close"
+      onclick="closeModal()">
+      ✕
+    </button>
 
-        <div id="modalContent"></div>
+    <div id="modalContent"></div>
 
-    </div>
+  </div>
 
 </div>
 
@@ -1018,41 +796,1427 @@ button{
 
 const QUESTIONS = [
 
-    {
-        category:"general",
-        question:"ما عاصمة اليابان؟",
-        answers:["طوكيو","بكين","سيول","بانكوك"],
-        correct:0
-    },
+/* ثقافة عامة */
 
-    {
-        category:"general",
-        question:"كم عدد أيام الأسبوع؟",
-        answers:["5","6","7","8"],
-        correct:2
-    },
+{
+ category:"general",
+ question:"ما عاصمة اليابان؟",
+ answers:["طوكيو","بكين","سيول","بانكوك"],
+ correct:0
+},
 
-    {
-        category:"general",
-        question:"ما أكبر محيط في العالم؟",
-        answers:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],
-        correct:2
-    },
+{
+ category:"general",
+ question:"كم عدد أيام الأسبوع؟",
+ answers:["5","6","7","8"],
+ correct:2
+},
 
-    {
-        category:"general",
-        question:"ما الكوكب المعروف بالكوكب الأحمر؟",
-        answers:["الزهرة","المريخ","المشتري","عطارد"],
-        correct:1
-    },
+{
+ category:"general",
+ question:"ما أكبر محيط في العالم؟",
+ answers:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],
+ correct:2
+},
 
-    {
-        category:"general",
-        question:"كم دقيقة في الساعة؟",
-        answers:["30","45","60","90"],
-        correct:2
-    },
+{
+ category:"general",
+ question:"ما الكوكب المعروف بالكوكب الأحمر؟",
+ answers:["الزهرة","المريخ","المشتري","عطارد"],
+ correct:1
+},
 
-    {
-        category:"general",
-        question:"ما الحيو
+{
+ category:"general",
+ question:"كم دقيقة في الساعة؟",
+ answers:["30","45","60","90"],
+ correct:2
+},
+
+{
+ category:"general",
+ question:"ما الحيوان المعروف بسفينة الصحراء؟",
+ answers:["الحصان","الجمل","الفيل","الغزال"],
+ correct:1
+},
+
+{
+ category:"general",
+ question:"كم عدد قارات العالم؟",
+ answers:["5","6","7","8"],
+ correct:2
+},
+
+{
+ category:"general",
+ question:"ما أسرع حيوان بري؟",
+ answers:["الفهد","الأسد","الحصان","النمر"],
+ correct:0
+},
+
+/* تاريخ */
+
+{
+ category:"history",
+ question:"من بنى الأهرامات في الجيزة؟",
+ answers:["الرومان","المصريون القدماء","الفُرس","الفايكنغ"],
+ correct:1
+},
+
+{
+ category:"history",
+ question:"ما عاصمة الدولة العباسية؟",
+ answers:["دمشق","بغداد","القاهرة","قرطبة"],
+ correct:1
+},
+
+{
+ category:"history",
+ question:"أين تقع مدينة البتراء؟",
+ answers:["الأردن","مصر","العراق","المغرب"],
+ correct:0
+},
+
+{
+ category:"history",
+ question:"من الرحالة المغربي الشهير؟",
+ answers:["ابن بطوطة","ابن سينا","الخوارزمي","الطبري"],
+ correct:0
+},
+
+/* رياضة */
+
+{
+ category:"sports",
+ question:"كم لاعباً في فريق كرة القدم داخل الملعب؟",
+ answers:["9","10","11","12"],
+ correct:2
+},
+
+{
+ category:"sports",
+ question:"كم حلقة في شعار الألعاب الأولمبية؟",
+ answers:["4","5","6","7"],
+ correct:1
+},
+
+{
+ category:"sports",
+ question:"ما الرياضة التي تستخدم المضرب والكرة الصفراء؟",
+ answers:["التنس","الملاكمة","السباحة","الجودو"],
+ correct:0
+},
+
+{
+ category:"sports",
+ question:"كم نقطة للرمية الحرة في كرة السلة؟",
+ answers:["1","2","3","4"],
+ correct:0
+},
+
+/* علوم */
+
+{
+ category:"science",
+ question:"ما الغاز الذي يحتاجه الإنسان للتنفس؟",
+ answers:["الأكسجين","الهيليوم","الهيدروجين","النيتروجين"],
+ correct:0
+},
+
+{
+ category:"science",
+ question:"ما وحدة قياس القوة؟",
+ answers:["واط","نيوتن","فولت","أمبير"],
+ correct:1
+},
+
+{
+ category:"science",
+ question:"ما أقرب نجم إلى الأرض؟",
+ answers:["الشمس","سيريوس","النسر","الشعرى"],
+ correct:0
+},
+
+{
+ category:"science",
+ question:"ما العضو الذي يضخ الدم؟",
+ answers:["الكبد","القلب","الرئة","المعدة"],
+ correct:1
+},
+
+{
+ category:"science",
+ question:"ما أكبر كوكب في المجموعة الشمسية؟",
+ answers:["زحل","الأرض","المشتري","نبتون"],
+ correct:2
+},
+
+/* تكنولوجيا */
+
+{
+ category:"tech",
+ question:"ماذا تعني CPU؟",
+ answers:[
+ "وحدة المعالجة المركزية",
+ "وحدة التخزين",
+ "شبكة الحاسوب",
+ "ذاكرة الرسوم"
+ ],
+ correct:0
+},
+
+{
+ category:"tech",
+ question:"ما اللغة الأساسية لبناء هيكل صفحات الويب؟",
+ answers:["HTML","SQL","Python","C"],
+ correct:0
+},
+
+{
+ category:"tech",
+ question:"ما اللغة المستخدمة لتنسيق صفحات الويب؟",
+ answers:["CSS","SQL","Bash","Python"],
+ correct:0
+},
+
+{
+ category:"tech",
+ question:"ما امتداد JavaScript؟",
+ answers:[".js",".jpg",".mp3",".exe"],
+ correct:0
+},
+
+{
+ category:"tech",
+ question:"ما الذي يحفظ البيانات داخل متصفح المستخدم؟",
+ answers:["localStorage","HDMI","GPS","FTP"],
+ correct:0
+},
+
+/* إسلاميات */
+
+{
+ category:"islamic",
+ question:"كم عدد الصلوات المفروضة؟",
+ answers:["3","4","5","6"],
+ correct:2
+},
+
+{
+ category:"islamic",
+ question:"في أي شهر يصوم المسلمون؟",
+ answers:["شوال","رمضان","محرم","رجب"],
+ correct:1
+},
+
+{
+ category:"islamic",
+ question:"ما أول سورة في المصحف؟",
+ answers:["البقرة","الفاتحة","الإخلاص","الناس"],
+ correct:1
+},
+
+{
+ category:"islamic",
+ question:"كم عدد أركان الإسلام؟",
+ answers:["4","5","6","7"],
+ correct:1
+},
+
+{
+ category:"islamic",
+ question:"إلى أي مدينة كانت الهجرة النبوية؟",
+ answers:["الطائف","المدينة المنورة","القدس","دمشق"],
+ correct:1
+},
+
+{
+ category:"islamic",
+ question:"ما السورة التي تسمى أم الكتاب؟",
+ answers:["الفاتحة","الكهف","يس","الملك"],
+ correct:0
+}
+
+];
+
+
+/* =========================================================
+   أسماء الفئات
+========================================================= */
+
+const CATEGORY_NAMES={
+
+ all:"🌍 جميع الفئات",
+
+ general:"📚 ثقافة عامة",
+
+ history:"🏺 تاريخ",
+
+ sports:"⚽ رياضة",
+
+ science:"🔬 علوم",
+
+ tech:"💻 تكنولوجيا",
+
+ islamic:"🕌 إسلاميات"
+
+};
+
+
+/* =========================================================
+   حالة اللعبة
+========================================================= */
+
+let state =
+JSON.parse(
+localStorage.getItem("ammarLegend")
+) || {
+
+ score:0,
+ xp:0,
+
+ stage:1,
+
+ correct:0,
+ answered:0,
+
+ streak:0,
+ bestStreak:0,
+
+ skips:5,
+ helps:3,
+ reveals:8,
+
+ sound:true,
+
+ category:"all",
+
+ achievements:[]
+
+};
+
+
+let currentQuestion=null;
+
+let locked=false;
+
+
+/* =========================================================
+   حفظ
+========================================================= */
+
+function save(){
+
+ localStorage.setItem(
+  "ammarLegend",
+  JSON.stringify(state)
+ );
+
+}
+
+
+/* =========================================================
+   الأسئلة المتاحة
+========================================================= */
+
+function getQuestions(){
+
+ if(state.category==="all"){
+  return QUESTIONS;
+ }
+
+ return QUESTIONS.filter(
+  q=>q.category===state.category
+ );
+
+}
+
+
+/* =========================================================
+   سؤال جديد
+========================================================= */
+
+function newQuestion(){
+
+ locked=false;
+
+ const list=getQuestions();
+
+ currentQuestion=
+ list[
+  Math.floor(
+   Math.random()*list.length
+  )
+ ];
+
+ renderQuestion();
+
+}
+
+
+/* =========================================================
+   عرض السؤال
+========================================================= */
+
+function renderQuestion(){
+
+ document.getElementById(
+  "questionText"
+ ).textContent=
+ currentQuestion.question;
+
+
+ document.getElementById(
+  "category"
+ ).textContent=
+ CATEGORY_NAMES[
+  currentQuestion.category
+ ];
+
+
+ const answers=
+ document.getElementById("answers");
+
+ answers.innerHTML="";
+
+
+ currentQuestion.answers.forEach(
+ (text,index)=>{
+
+  const button=
+  document.createElement("button");
+
+  button.className="answer";
+
+  button.textContent=text;
+
+  button.onclick=()=>answer(index);
+
+  answers.appendChild(button);
+
+ });
+
+ updateUI();
+
+}
+
+
+/* =========================================================
+   أهم جزء:
+   الإجابة الصحيحة تنتقل تلقائياً
+========================================================= */
+
+function answer(index){
+
+ if(locked)return;
+
+ const buttons=
+ document.querySelectorAll(".answer");
+
+ locked=true;
+
+ buttons.forEach(
+  b=>b.disabled=true
+ );
+
+
+ /* الإجابة صحيحة */
+
+ if(index===currentQuestion.correct){
+
+  buttons[index]
+   .classList.add("correct");
+
+  state.correct++;
+  state.answered++;
+
+  state.streak++;
+
+  state.bestStreak=
+   Math.max(
+    state.bestStreak,
+    state.streak
+   );
+
+
+  const multiplier=
+   Math.min(
+    5,
+    1+
+    Math.floor(
+     state.streak/3
+    )
+   );
+
+
+  const points=
+   100*multiplier;
+
+
+  state.score+=points;
+
+  state.xp+=25;
+
+
+  state.stage=
+   Math.min(
+    100,
+    1+
+    Math.floor(
+     state.correct/5
+    )
+   );
+
+
+  correctSound();
+
+  confetti();
+
+  checkAchievements();
+
+  toast(
+   "✅ صحيح! +"+
+   points+
+   " نقطة"
+  );
+
+
+  save();
+
+  updateUI();
+
+
+  /* الانتقال التلقائي */
+
+  setTimeout(
+   ()=>{
+    newQuestion();
+   },
+   900
+  );
+
+
+ }else{
+
+  /* خطأ */
+
+  buttons[index]
+   .classList.add("wrong");
+
+  buttons[
+   currentQuestion.correct
+  ]
+   .classList.add("correct");
+
+
+  state.answered++;
+
+  state.streak=0;
+
+  state.xp+=5;
+
+
+  wrongSound();
+
+  toast(
+   "❌ إجابة خاطئة"
+  );
+
+
+  save();
+
+  updateUI();
+
+
+  /* السؤال التالي تلقائياً */
+
+  setTimeout(
+   ()=>{
+    newQuestion();
+   },
+   1200
+  );
+
+ }
+
+}
+
+
+/* =========================================================
+   تخطي
+========================================================= */
+
+function skipQuestion(){
+
+ if(locked)return;
+
+ if(state.skips<=0){
+
+  toast("❌ انتهت مرات التخطي");
+
+  return;
+ }
+
+ state.skips--;
+
+ save();
+
+ toast("⏭️ تم تخطي السؤال");
+
+ newQuestion();
+
+}
+
+
+/* =========================================================
+   مساعدة
+========================================================= */
+
+function help(){
+
+ if(locked)return;
+
+ if(state.helps<=0){
+
+  toast("💡 لا توجد مساعدات");
+
+  return;
+ }
+
+ state.helps--;
+
+ const buttons=
+ Array.from(
+  document.querySelectorAll(".answer")
+ );
+
+
+ const wrong=
+ buttons.filter(
+  (_,i)=>
+   i!==currentQuestion.correct
+ );
+
+
+ wrong
+ .sort(
+  ()=>Math.random()-.5
+ )
+ .slice(0,2)
+ .forEach(
+  b=>{
+   b.disabled=true;
+   b.style.opacity=".25";
+  }
+ );
+
+ save();
+
+ updateUI();
+
+ toast(
+  "💡 تم حذف إجابتين"
+ );
+
+}
+
+
+/* =========================================================
+   كشف
+========================================================= */
+
+function revealAnswer(){
+
+ if(locked)return;
+
+ if(state.reveals<=0){
+
+  toast("👁️ انتهت كروت الكشف");
+
+  return;
+ }
+
+ state.reveals--;
+
+ const buttons=
+ document.querySelectorAll(".answer");
+
+ buttons[
+  currentQuestion.correct
+ ]
+ .classList.add("correct");
+
+ save();
+
+ updateUI();
+
+ toast(
+  "👁️ تم كشف الإجابة"
+ );
+
+}
+
+
+/* =========================================================
+   سؤال عشوائي
+========================================================= */
+
+function randomQuestion(){
+
+ if(locked)return;
+
+ newQuestion();
+
+ toast(
+  "🎲 سؤال جديد"
+ );
+
+}
+
+
+/* =========================================================
+   الفئات
+========================================================= */
+
+function openCategories(){
+
+ let html=`
+
+ <h2>🗺️ فئات الأسئلة</h2>
+
+ <div class="catGrid">
+
+ `;
+
+
+ Object.entries(
+  CATEGORY_NAMES
+ ).forEach(
+ ([key,name])=>{
+
+  html+=`
+
+  <button
+   class="cat"
+   onclick="changeCategory('${key}')">
+
+   ${name}
+
+  </button>
+
+  `;
+
+ });
+
+
+ html+=`
+
+ </div>
+
+ `;
+
+ openModal(html);
+
+}
+
+
+function changeCategory(category){
+
+ state.category=category;
+
+ save();
+
+ closeModal();
+
+ newQuestion();
+
+ toast(
+  CATEGORY_NAMES[category]
+ );
+
+}
+
+
+/* =========================================================
+   الإحصائيات
+========================================================= */
+
+function showStats(){
+
+ const accuracy=
+ state.answered
+ ?
+ Math.round(
+  state.correct/
+  state.answered*
+  100
+ )
+ :0;
+
+
+ openModal(`
+
+ <h2>📊 إحصائياتك</h2>
+
+ <div class="row">
+  <b>🏆 النقاط</b>
+  <span>${state.score}</span>
+ </div>
+
+ <div class="row">
+  <b>⭐ XP</b>
+  <span>${state.xp}</span>
+ </div>
+
+ <div class="row">
+  <b>✅ الصحيح</b>
+  <span>${state.correct}</span>
+ </div>
+
+ <div class="row">
+  <b>🎯 الدقة</b>
+  <span>${accuracy}%</span>
+ </div>
+
+ <div class="row">
+  <b>🔥 أفضل سلسلة</b>
+  <span>${state.bestStreak}</span>
+ </div>
+
+ <div class="row">
+  <b>👑 المرحلة</b>
+  <span>${state.stage}/100</span>
+ </div>
+
+ `);
+
+}
+
+
+/* =========================================================
+   الإنجازات
+========================================================= */
+
+function checkAchievements(){
+
+ const list=[
+
+  [
+   "first",
+   "🌟 البداية",
+   "أول إجابة صحيحة",
+   state.correct>=1
+  ],
+
+  [
+   "ten",
+   "🔥 عشرة صحيحة",
+   "10 إجابات صحيحة",
+   state.correct>=10
+  ],
+
+  [
+   "streak",
+   "⚡ سلسلة قوية",
+   "5 إجابات متتالية",
+   state.bestStreak>=5
+  ],
+
+  [
+   "points",
+   "💰 جامع النقاط",
+   "1000 نقطة",
+   state.score>=1000
+  ],
+
+  [
+   "stage",
+   "👑 البطل",
+   "الوصول إلى المرحلة 10",
+   state.stage>=10
+  ]
+
+ ];
+
+
+ list.forEach(
+  a=>{
+
+   if(
+    a[3] &&
+    !state.achievements.includes(a[0])
+   ){
+
+    state.achievements.push(a[0]);
+
+    state.xp+=50;
+
+    toast(
+     "🏅 "+a[1]
+    );
+
+   }
+
+  }
+ );
+
+ save();
+
+}
+
+
+function showBadges(){
+
+ const list=[
+
+  ["first","🌟 البداية","أول إجابة صحيحة"],
+
+  ["ten","🔥 عشرة صحيحة","10 إجابات صحيحة"],
+
+  ["streak","⚡ سلسلة قوية","5 متتالية"],
+
+  ["points","💰 جامع النقاط","1000 نقطة"],
+
+  ["stage","👑 البطل","المرحلة 10"]
+
+ ];
+
+
+ let html=`
+
+ <h2>🎁 مكافآتي</h2>
+
+ <div class="badges">
+
+ `;
+
+
+ list.forEach(
+  a=>{
+
+   const done=
+   state.achievements.includes(a[0]);
+
+
+   html+=`
+
+   <div
+    class="badge ${
+     done?"":"lock"
+    }">
+
+    <b>${a[1]}</b>
+
+    ${a[2]}
+
+    <br>
+
+    ${done?"✅ مكتمل":"🔒 مقفل"}
+
+   </div>
+
+   `;
+
+  }
+ );
+
+
+ html+=`
+
+ </div>
+
+ `;
+
+ openModal(html);
+
+}
+
+
+/* =========================================================
+   لوحة الصدارة
+========================================================= */
+
+function showLeaderboard(){
+
+ let board=
+ JSON.parse(
+  localStorage.getItem(
+   "ammarLeaderboard"
+  )||"[]"
+ );
+
+
+ let name=
+ localStorage.getItem(
+  "ammarPlayer"
+ )||"اللاعب";
+
+
+ board=
+ board.filter(
+  p=>p.name!==name
+ );
+
+
+ board.push({
+
+  name:name,
+
+  score:state.score,
+
+  stage:state.stage
+
+ });
+
+
+ board.sort(
+  (a,b)=>b.score-a.score
+ );
+
+
+ board=
+ board.slice(0,20);
+
+
+ localStorage.setItem(
+  "ammarLeaderboard",
+  JSON.stringify(board)
+ );
+
+
+ let html=`
+
+ <h2>🏆 لوحة الصدارة</h2>
+
+ `;
+
+
+ board.forEach(
+  (p,i)=>{
+
+   html+=`
+
+   <div class="row">
+
+    <b>
+     ${i+1}. ${p.name}
+    </b>
+
+    <span>
+     ${p.score} 🏆
+    </span>
+
+   </div>
+
+   `;
+
+  }
+ );
+
+
+ html+=`
+
+ <button
+  class="cat"
+  style="width:100%;margin-top:10px"
+  onclick="changeName()">
+
+  ✏️ تغيير الاسم
+
+ </button>
+
+ `;
+
+ openModal(html);
+
+}
+
+
+function changeName(){
+
+ const old=
+ localStorage.getItem(
+  "ammarPlayer"
+ )||"اللاعب";
+
+
+ const name=
+ prompt(
+  "اكتب اسم اللاعب",
+  old
+ );
+
+
+ if(name&&name.trim()){
+
+  localStorage.setItem(
+   "ammarPlayer",
+   name.trim()
+  );
+
+  showLeaderboard();
+
+ }
+
+}
+
+
+/* =========================================================
+   الصوت
+========================================================= */
+
+function beep(
+ frequency,
+ duration
+){
+
+ if(!state.sound)return;
+
+ try{
+
+  const AudioContext=
+   window.AudioContext||
+   window.webkitAudioContext;
+
+  if(!AudioContext)return;
+
+  const ctx=
+   window.audioContext||
+   (
+    window.audioContext=
+    new AudioContext()
+   );
+
+
+  const oscillator=
+   ctx.createOscillator();
+
+  const gain=
+   ctx.createGain();
+
+
+  oscillator.connect(gain);
+
+  gain.connect(
+   ctx.destination
+  );
+
+
+  oscillator.frequency.value=
+   frequency;
+
+
+  gain.gain.value=.06;
+
+
+  oscillator.start();
+
+
+  setTimeout(
+   ()=>{
+    oscillator.stop();
+   },
+   duration
+  );
+
+ }catch(e){}
+
+}
+
+
+function correctSound(){
+
+ beep(700,100);
+
+ setTimeout(
+  ()=>beep(900,120),
+  100
+ );
+
+}
+
+
+function wrongSound(){
+
+ beep(180,200);
+
+}
+
+
+function toggleSound(){
+
+ state.sound=
+  !state.sound;
+
+ save();
+
+ document.getElementById(
+  "soundStatus"
+ ).textContent=
+ state.sound
+ ?"صوت"
+ :"صامت";
+
+ toast(
+  state.sound
+  ?"🔊 الصوت يعمل"
+  :"🔇 الصوت مغلق"
+ );
+
+}
+
+
+/* =========================================================
+   مؤثر النجاح
+========================================================= */
+
+function confetti(){
+
+ for(
+  let i=0;
+  i<25;
+  i++
+ ){
+
+  const c=
+   document.createElement("i");
+
+  c.className="confetti";
+
+  c.style.left=
+   Math.random()*100+"vw";
+
+  c.style.background=
+   [
+    "#6cff80",
+    "#ffd83d",
+    "#63e8ff",
+    "#ff6b75"
+   ][
+    Math.floor(
+     Math.random()*4
+    )
+   ];
+
+  c.style.animationDelay=
+   Math.random()*.3+"s";
+
+  document.body.appendChild(c);
+
+  setTimeout(
+   ()=>c.remove(),
+   1500
+  );
+
+ }
+
+}
+
+
+/* =========================================================
+   Modal
+========================================================= */
+
+function openModal(content){
+
+ document.getElementById(
+  "modalContent"
+ ).innerHTML=content;
+
+ document.getElementById(
+  "modal"
+ ).classList.add("show");
+
+}
+
+
+function closeModal(){
+
+ document.getElementById(
+  "modal"
+ ).classList.remove("show");
+
+}
+
+
+document.getElementById(
+ "modal"
+).onclick=e=>{
+
+ if(
+  e.target===
+  document.getElementById("modal")
+ ){
+
+  closeModal();
+
+ }
+
+};
+
+
+/* =========================================================
+   Toast
+========================================================= */
+
+let toastTimer;
+
+function toast(text){
+
+ const t=
+  document.getElementById("toast");
+
+ t.textContent=text;
+
+ t.classList.add("show");
+
+ clearTimeout(toastTimer);
+
+ toastTimer=
+  setTimeout(
+   ()=>{
+    t.classList.remove("show");
+   },
+   1700
+  );
+
+}
+
+
+/* =========================================================
+   تحديث الواجهة
+========================================================= */
+
+function updateUI(){
+
+ document.getElementById(
+  "score"
+ ).textContent=
+ state.score;
+
+
+ document.getElementById(
+  "xp"
+ ).textContent=
+ state.xp;
+
+
+ document.getElementById(
+  "streak"
+ ).textContent=
+ state.streak;
+
+
+ document.getElementById(
+  "bestStreak"
+ ).textContent=
+ state.streak;
+
+
+ document.getElementById(
+  "correct"
+ ).textContent=
+ state.correct;
+
+
+ document.getElementById(
+  "stage"
+ ).textContent=
+ "المرحلة "+
+ state.stage+
+ "/100";
+
+
+ document.getElementById(
+  "questionNumber"
+ ).textContent=
+ "السؤال "+
+ (
+  (state.answered%5)+1
+ )+
+ "/5";
+
+
+ document.getElementById(
+  "multiplier"
+ ).textContent=
+ Math.min(
+  5,
+  1+
+  Math.floor(
+   state.streak/3
+  )
+ )+"×";
+
+
+ document.getElementById(
+  "progressBar"
+ ).style.width=
+ (
+  state.stage/100*100
+ )+"%";
+
+
+ document.getElementById(
+  "skipCount"
+ ).textContent=
+ state.skips+" ⭐";
+
+
+ document.getElementById(
+  "helpCount"
+ ).textContent=
+ state.helps+" ⭐";
+
+
+ document.getElementById(
+  "revealCount"
+ ).textContent=
+ state.reveals+" ⭐";
+
+
+ document.getElementById(
+  "skipBtn"
+ ).disabled=
+ state.skips<=0;
+
+
+ document.getElementById(
+  "helpBtn"
+ ).disabled=
+ state.helps<=0;
+
+
+ document.getElementById(
+  "revealBtn"
+ ).disabled=
+ state.reveals<=0;
+
+}
+
+
+/* =========================================================
+   تشغيل اللعبة
+========================================================= */
+
+window.addEventListener(
+ "load",
+ ()=>{
+
+  /*
+   * هذا هو الإصلاح المهم:
+   * السؤال يتم اختياره مباشرة من QUESTIONS
+   * ولا يوجد تحميل خارجي.
+   */
+
+  newQuestion();
+
+  updateUI();
+
+ }
+);
+
+</script>
+
+</body>
+    </html>
