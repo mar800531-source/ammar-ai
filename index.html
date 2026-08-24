@@ -2,8 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 
+<meta name="theme-color" content="#031c18">
 <title>عمار الأسطورة 👑</title>
 
 <style>
@@ -13,63 +15,92 @@
 }
 
 html,body{
+  width:100%;
+  height:100%;
   margin:0;
-  padding:0;
-  min-height:100%;
+  overflow:hidden;
 }
 
 body{
   font-family:Arial,Tahoma,sans-serif;
+  color:#effffb;
   background:
-    radial-gradient(circle at 50% -10%,#08765d,#03251f 55%,#011512);
-  color:#fff;
-  overflow-x:hidden;
+    radial-gradient(circle at 50% -20%,#08765d,#06352d 42%,#021713 100%);
 }
 
 button{
   font:inherit;
   border:0;
   cursor:pointer;
-  color:#fff;
+  color:white;
 }
 
 .app{
-  width:min(700px,100%);
+  width:100%;
+  max-width:650px;
+  height:100dvh;
   margin:auto;
-  padding:10px;
+  padding:
+    max(6px,env(safe-area-inset-top))
+    8px
+    max(6px,env(safe-area-inset-bottom));
+
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
 }
 
 /* ================= HEADER ================= */
 
-.header{
+.top{
+  flex:0 0 auto;
+  height:64px;
+
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  gap:6px;
-  margin-bottom:10px;
+  gap:5px;
 }
 
 .logo{
-  grid-column:2/5;
   text-align:center;
-  font-size:clamp(25px,7vw,42px);
+  font-size:clamp(21px,6vw,32px);
   font-weight:900;
-  line-height:1.05;
 
-  background:linear-gradient(90deg,#4ff0a5,#70f3df,#b2ff67);
+  background:linear-gradient(
+    90deg,
+    #55e6a5,
+    #68e9ed
+  );
+
   -webkit-background-clip:text;
   color:transparent;
 }
 
-.logo span{
+.logo small{
   display:block;
-  font-size:25px;
+  font-size:15px;
+  color:#ffd94c;
+  -webkit-text-fill-color:#ffd94c;
 }
 
-.circleStat{
-  width:68px;
-  height:68px;
-  margin:auto;
+.headerSide{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+.headerSide.right{
+  justify-content:flex-start;
+}
+
+.headerSide.left{
+  justify-content:flex-end;
+}
+
+.pill{
+  width:55px;
+  height:55px;
 
   border-radius:50%;
 
@@ -78,230 +109,283 @@ button{
   justify-content:center;
   align-items:center;
 
-  background:#062b24;
-  border:2px solid #16785f;
+  background:#062d26;
+  border:1px solid #287c67;
 
   box-shadow:
-    inset 0 0 20px #00c88b14,
-    0 0 12px #00d8a033;
+    inset 0 0 12px #0b4b3c,
+    0 0 8px #00b88922;
+
+  font-size:21px;
 }
 
-.circleStat b{
-  font-size:25px;
-  color:#ffd83d;
-}
-
-.circleStat small{
-  font-size:12px;
-  color:#d9eee9;
+.pill b{
+  font-size:14px;
+  color:white;
 }
 
 /* ================= PROGRESS ================= */
 
 .progress{
-  border:2px solid #125b4d;
-  border-radius:30px;
-  padding:10px 14px;
-  background:#062a24;
-  margin-bottom:10px;
-}
+  flex:0 0 auto;
 
-.progressTop{
-  display:flex;
-  justify-content:space-between;
+  height:57px;
+
+  border-radius:28px;
+
+  background:#062c25;
+  border:1px solid #24705e;
+
+  display:grid;
+  grid-template-columns:auto 1fr auto;
   align-items:center;
-  font-weight:bold;
-  font-size:16px;
+
+  gap:10px;
+
+  padding:8px 14px;
+
+  margin-bottom:7px;
 }
 
-.progressBar{
-  height:9px;
-  margin-top:8px;
-  background:#103f37;
+.progressText{
+  font-size:15px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.bar{
+  height:10px;
   border-radius:20px;
+  background:#174b40;
   overflow:hidden;
 }
 
-.progressBar span{
+.bar span{
   display:block;
-  width:0%;
+  width:0;
   height:100%;
-  background:linear-gradient(90deg,#55df95,#a1ff65);
-  transition:.4s;
+
+  background:linear-gradient(
+    90deg,
+    #54df9d,
+    #66ecef
+  );
+
+  transition:.3s;
 }
 
-/* ================= GAME PANEL ================= */
+/* ================= MAIN ================= */
 
 .game{
-  border:2px solid #17775f;
-  border-radius:34px;
+  flex:1;
+  min-height:0;
+
+  display:flex;
+  flex-direction:column;
+
+  border-radius:28px;
+
   background:
-    linear-gradient(145deg,#052c25e8,#021d19e8);
-  padding:15px;
-  box-shadow:0 0 30px #00c89012;
+    linear-gradient(
+      145deg,
+      #062c25ee,
+      #031d18ee
+    );
+
+  border:1px solid #1d806a;
+
+  padding:10px;
+
+  overflow:hidden;
 }
 
+/* ================= CATEGORY ================= */
+
 .category{
+  flex:0 0 auto;
+
   text-align:center;
-  color:#55e5a3;
-  font-size:21px;
+
+  color:#58e5a5;
+  font-size:18px;
   font-weight:900;
-  margin:5px 0 12px;
+
+  margin:2px 0 3px;
+}
+
+/* ================= QUESTION ================= */
+
+.questionBox{
+  flex:0 0 auto;
+
+  height:105px;
+
+  border-radius:22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:10px;
+
+  background:#031f1a;
+
+  border:1px solid #17614f;
+
+  box-shadow:inset 0 0 25px #00100c55;
 }
 
 .question{
-  min-height:125px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:12px;
-}
-
-.questionText{
-  font-size:clamp(25px,6vw,38px);
+  font-size:clamp(20px,5.2vw,29px);
+  line-height:1.35;
   font-weight:900;
-  line-height:1.45;
 }
 
 /* ================= ANSWERS ================= */
 
 .answers{
+  flex:1;
+  min-height:0;
+
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
-  max-width:550px;
-  margin:5px auto 12px;
-  padding:5px;
+
+  gap:8px;
+
+  margin-top:8px;
 }
 
 .answer{
-  min-height:82px;
+  min-height:0;
 
-  border-radius:50%;
+  border-radius:22px;
 
-  background:#031f1b;
+  background:
+    radial-gradient(
+      circle,
+      #0b382f,
+      #05261f
+    );
 
-  border:2px solid #125b4d;
+  border:1px solid #1b6352;
 
-  font-size:18px;
+  font-size:clamp(17px,4.5vw,22px);
   font-weight:900;
 
-  transition:.18s;
+  padding:8px;
 
-  box-shadow:
-    inset 0 0 15px #00c88b0c,
-    0 0 8px #00c88b12;
+  transition:.15s;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
 }
 
 .answer:active{
-  transform:scale(.94);
+  transform:scale(.96);
 }
 
 .answer.selected{
-  border-color:#a6ff70;
+  border:2px solid #69ef9b;
   box-shadow:
-    0 0 18px #73ff76aa,
-    inset 0 0 15px #64ff6c22;
+    0 0 15px #69ef9b66;
 }
 
 .answer.correct{
-  border-color:#78ff75;
-  background:#095a3f;
-  box-shadow:0 0 25px #5dff74aa;
+  background:#086342;
+  border-color:#62f09b;
+  box-shadow:0 0 20px #49ef9277;
 }
 
 .answer.wrong{
-  border-color:#ff5e69;
-  background:#57232b;
-  animation:shake .25s;
-}
-
-@keyframes shake{
-  25%{transform:translateX(-5px)}
-  50%{transform:translateX(5px)}
-  75%{transform:translateX(-4px)}
+  background:#612b32;
+  border-color:#ff747d;
 }
 
 /* ================= TOOLS ================= */
 
 .tools{
+  flex:0 0 auto;
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:6px;
+
   margin-top:8px;
 }
 
 .tool{
-  aspect-ratio:1/1;
-  min-width:0;
+  height:58px;
 
-  border-radius:50%;
+  border-radius:30px;
 
-  background:#052c25;
+  background:#062c26;
 
-  border:2px solid #126950;
+  border:1px solid #257762;
 
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
-  text-align:center;
-
-  font-weight:bold;
-
-  box-shadow:0 0 12px #00c88b12;
+  font-size:20px;
 }
 
-.tool .icon{
-  font-size:28px;
-  line-height:1;
-  margin-bottom:5px;
-}
-
-.tool small{
-  font-size:13px;
-}
-
-.tool b{
-  color:#ffd83d;
-  font-size:14px;
+.tool span{
+  font-size:12px;
+  margin-top:1px;
 }
 
 .tool:active{
-  transform:scale(.93);
+  transform:scale(.94);
 }
 
 .tool:disabled{
   opacity:.35;
 }
 
-/* ================= STATS ================= */
+/* ================= BOTTOM ================= */
 
-.stats{
-  margin-top:12px;
+.bottom{
+  flex:0 0 auto;
+
+  height:51px;
 
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1fr 1fr 1fr;
 
-  border:2px solid #125b4d;
-  border-radius:30px;
+  margin-top:7px;
 
-  background:#03251f;
-  overflow:hidden;
+  border-radius:25px;
+
+  background:#062d27;
+
+  border:1px solid #1d6958;
 }
 
 .stat{
-  text-align:center;
-  padding:10px 5px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  font-size:12px;
 }
 
 .stat b{
-  display:block;
-  color:#ffd83d;
-  font-size:25px;
-  margin-bottom:3px;
+  color:#ffd84a;
+  font-size:19px;
+}
+
+.stat:not(:last-child){
+  border-left:1px solid #155144;
 }
 
 /* ================= MODAL ================= */
@@ -310,11 +394,11 @@ button{
   position:fixed;
   inset:0;
 
+  background:#000b;
+
   display:none;
   align-items:center;
   justify-content:center;
-
-  background:#000b;
 
   padding:15px;
 
@@ -327,77 +411,116 @@ button{
 
 .modalBox{
   width:min(500px,100%);
-  max-height:85vh;
-  overflow:auto;
+  max-height:85dvh;
 
-  padding:20px;
+  overflow:auto;
 
   border-radius:25px;
 
-  background:#052b24;
+  background:#06271f;
 
-  border:2px solid #18765f;
+  border:1px solid #299071;
+
+  padding:18px;
 }
 
 .modalBox h2{
-  color:#65e9a6;
+  margin-top:0;
+  color:#59e8e7;
+  text-align:center;
 }
 
 .close{
   float:left;
 
-  width:40px;
-  height:40px;
+  width:38px;
+  height:38px;
 
   border-radius:50%;
 
-  background:#123c34;
+  background:#173b34;
 }
 
-/* ================= MODAL ITEMS ================= */
-
-.catGrid{
+.list{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.cat{
-  padding:15px;
-  border-radius:18px;
-
-  background:#07352c;
-  border:1px solid #196653;
+  gap:8px;
 }
 
 .row{
+  padding:11px;
+
+  border-radius:15px;
+
+  background:#0a342b;
+
+  border:1px solid #19584a;
+
   display:flex;
   justify-content:space-between;
+}
 
-  padding:12px;
+.row.me{
+  border-color:#ffd94d;
+}
 
-  margin:7px 0;
+.categories{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
 
-  border-radius:14px;
+.cat{
+  padding:15px 8px;
+  border-radius:17px;
 
-  background:#07352c;
-  border:1px solid #155d4d;
+  background:#0b372e;
+  border:1px solid #216b59;
+
+  font-weight:bold;
+}
+
+.cat.active{
+  background:#086248;
+  border-color:#61ed9d;
 }
 
 .badges{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:9px;
+  gap:8px;
 }
 
 .badge{
-  padding:13px;
+  padding:12px;
   border-radius:15px;
-  background:#07352c;
+
+  background:#0b342c;
+  border:1px solid #1b5a4b;
 }
 
 .badge.lock{
-  opacity:.3;
+  opacity:.35;
+}
+
+.setting{
+  width:100%;
+
+  padding:14px;
+
+  margin:5px 0;
+
+  border-radius:16px;
+
+  background:#0b382f;
+
+  border:1px solid #1c6452;
+
+  text-align:right;
+}
+
+.danger{
+  background:#59272c;
+  border-color:#a34b52;
 }
 
 /* ================= TOAST ================= */
@@ -405,142 +528,122 @@ button{
 #toast{
   position:fixed;
 
+  bottom:15px;
   left:50%;
-  bottom:18px;
 
   transform:translate(-50%,30px);
 
   opacity:0;
 
+  padding:11px 18px;
+
+  border-radius:18px;
+
+  background:#062d26;
+
+  border:1px solid #39a887;
+
   z-index:2000;
 
-  background:#062b24;
-  border:2px solid #228366;
-
-  padding:12px 18px;
-
-  border-radius:20px;
+  transition:.2s;
 
   font-weight:bold;
-
-  transition:.25s;
 
   white-space:nowrap;
 }
 
 #toast.show{
-  opacity:1;
   transform:translate(-50%,0);
+  opacity:1;
 }
 
-/* ================= CONFETTI ================= */
+/* ================= EFFECT ================= */
 
 .confetti{
   position:fixed;
-  top:-20px;
 
-  width:8px;
-  height:15px;
+  top:-15px;
+
+  width:7px;
+  height:13px;
 
   z-index:1500;
 
-  animation:fall 1.2s linear forwards;
+  animation:fall 1s linear forwards;
 }
 
 @keyframes fall{
   to{
-    transform:translateY(110vh) rotate(720deg);
+    transform:translateY(105vh) rotate(720deg);
     opacity:0;
   }
 }
 
-/* ================= MOBILE ================= */
+/* ================= SMALL SCREENS ================= */
 
-@media(max-width:430px){
+@media(max-height:650px){
 
-  .app{
-    padding:7px;
+  .top{
+    height:52px;
   }
 
-  .header{
-    gap:3px;
-  }
-
-  .circleStat{
-    width:61px;
-    height:61px;
-  }
-
-  .circleStat b{
-    font-size:20px;
-  }
-
-  .logo{
-    font-size:25px;
-  }
-
-  .logo span{
-    font-size:20px;
-  }
-
-  .game{
-    padding:10px;
-    border-radius:28px;
-  }
-
-  .question{
-    min-height:115px;
-  }
-
-  .questionText{
-    font-size:23px;
-  }
-
-  .answer{
-    min-height:75px;
+  .pill{
+    width:45px;
+    height:45px;
     font-size:17px;
-  }
-
-  .tools{
-    grid-template-columns:repeat(4,1fr);
-    gap:6px;
-  }
-
-  .tool .icon{
-    font-size:23px;
-  }
-
-  .tool small{
-    font-size:11px;
-  }
-}
-
-@media(max-width:350px){
-
-  .circleStat{
-    width:55px;
-    height:55px;
-  }
-
-  .circleStat b{
-    font-size:18px;
   }
 
   .logo{
     font-size:21px;
   }
 
-  .answer{
-    min-height:65px;
-    font-size:15px;
+  .progress{
+    height:48px;
   }
 
-  .tool .icon{
-    font-size:20px;
+  .questionBox{
+    height:85px;
   }
 
-  .tool small{
+  .tool{
+    height:47px;
+    font-size:17px;
+  }
+
+  .tool span{
     font-size:10px;
+  }
+
+  .bottom{
+    height:43px;
+  }
+
+  .stat b{
+    font-size:16px;
+  }
+}
+
+@media(max-width:380px){
+
+  .app{
+    padding-left:5px;
+    padding-right:5px;
+  }
+
+  .game{
+    padding:7px;
+  }
+
+  .questionBox{
+    height:80px;
+  }
+
+  .answer{
+    font-size:16px;
+  }
+
+  .tool{
+    height:45px;
   }
 }
 </style>
@@ -550,237 +653,245 @@ button{
 
 <div class="app">
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
-<header class="header">
+<header class="top">
 
-  <div class="circleStat">
-    🔊
-    <small id="soundStatus">صوت</small>
-  </div>
+<div class="headerSide right">
 
-  <div class="circleStat">
-    🔥
-    <b id="streak">0</b>
-  </div>
+<div class="pill">
+🏆
+<b id="score">0</b>
+</div>
 
-  <div class="logo">
-    👑 عمار
-    <span>الأسطورة</span>
-  </div>
+<div class="pill">
+⭐
+<b id="xp">0</b>
+</div>
 
-  <div class="circleStat">
-    ⭐
-    <b id="xp">0</b>
-  </div>
+</div>
 
-  <div class="circleStat">
-    🏆
-    <b id="score">0</b>
-  </div>
+<div class="logo">
+👑 عمار الأسطورة
+<small>تحدي المعرفة</small>
+</div>
+
+<div class="headerSide left">
+
+<div class="pill">
+🔥
+<b id="streak">0</b>
+</div>
+
+<button
+class="pill"
+id="soundBtn"
+onclick="toggleSound()">
+
+🔊
+<b id="soundIcon">صوت</b>
+
+</button>
+
+</div>
 
 </header>
 
 
-<!-- ================= PROGRESS ================= -->
+<!-- PROGRESS -->
 
 <div class="progress">
 
-  <div class="progressTop">
+<div
+class="progressText"
+id="stageText">
+المرحلة 1/100
+</div>
 
-    <span id="stage">
-      المرحلة 1/100
-    </span>
+<div class="bar">
+<span id="progressBar"></span>
+</div>
 
-    <span id="questionNumber">
-      السؤال 1/5
-    </span>
-
-  </div>
-
-  <div class="progressBar">
-    <span id="progressBar"></span>
-  </div>
+<div
+class="progressText"
+id="questionTextTop">
+1/3
+</div>
 
 </div>
 
 
-<!-- ================= GAME ================= -->
+<!-- GAME -->
 
 <main class="game">
 
-  <div
-    id="category"
-    class="category">
-    📚 ثقافة عامة
-  </div>
+<div
+class="category"
+id="category">
+📚 ثقافة عامة
+</div>
 
 
-  <div class="question">
+<div class="questionBox">
 
-    <div
-      id="questionText"
-      class="questionText">
+<div
+class="question"
+id="question">
+جاري تحميل السؤال...
+</div>
 
-      جاري تحميل السؤال...
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div
-    id="answers"
-    class="answers">
-  </div>
+<div
+class="answers"
+id="answers">
+</div>
 
 
-  <!-- ================= TOOLS ================= -->
+<!-- TOOLS -->
 
-  <div class="tools">
+<div class="tools">
 
-    <button
-      id="helpBtn"
-      class="tool"
-      onclick="help()">
+<button
+class="tool"
+id="helpBtn"
+onclick="help()">
 
-      <span class="icon">💡</span>
-      <small>مساعدة</small>
-      <b id="helpCount">3 ⭐</b>
+💡
+<span>مساعدة <b id="helpCount">3</b></span>
 
-    </button>
-
-
-    <button
-      id="skipBtn"
-      class="tool"
-      onclick="skipQuestion()">
-
-      <span class="icon">⏭️</span>
-      <small>تخطي</small>
-      <b id="skipCount">5 ⭐</b>
-
-    </button>
+</button>
 
 
-    <button
-      class="tool"
-      onclick="randomQuestion()">
+<button
+class="tool"
+id="skipBtn"
+onclick="skipQuestion()">
 
-      <span class="icon">🎲</span>
-      <small>سؤال جديد</small>
-      <b>4 ⭐</b>
+⏩
+<span>تخطي <b id="skipCount">5</b></span>
 
-    </button>
-
-
-    <button
-      id="revealBtn"
-      class="tool"
-      onclick="revealAnswer()">
-
-      <span class="icon">👁️</span>
-      <small>كشف</small>
-      <b id="revealCount">8 ⭐</b>
-
-    </button>
+</button>
 
 
-    <button
-      class="tool"
-      onclick="openCategories()">
+<button
+class="tool"
+id="newBtn"
+onclick="randomQuestion()">
 
-      <span class="icon">🗺️</span>
-      <small>الخريطة</small>
+🎲
+<span>سؤال جديد</span>
 
-    </button>
-
-
-    <button
-      class="tool"
-      onclick="showStats()">
-
-      <span class="icon">📊</span>
-      <small>إحصائيات</small>
-
-    </button>
+</button>
 
 
-    <button
-      class="tool"
-      onclick="showLeaderboard()">
+<button
+class="tool"
+id="revealBtn"
+onclick="revealAnswer()">
 
-      <span class="icon">🏆</span>
-      <small>لوحة الصدارة</small>
+👁️
+<span>كشف <b id="revealCount">8</b></span>
 
-    </button>
-
-
-    <button
-      class="tool"
-      onclick="showBadges()">
-
-      <span class="icon">🎁</span>
-      <small>مكافآتي</small>
-
-    </button>
+</button>
 
 
-    <button
-      class="tool"
-      onclick="toggleSound()">
+<button
+class="tool"
+onclick="openCategories()">
 
-      <span class="icon">⚙️</span>
-      <small>الإعدادات</small>
+🗺️
+<span>الفئات</span>
 
-    </button>
-
-  </div>
+</button>
 
 
-  <!-- ================= STATS ================= -->
+<button
+class="tool"
+onclick="showStats()">
 
-  <div class="stats">
+📊
+<span>إحصائيات</span>
 
-    <div class="stat">
-      <b id="correct">0</b>
-      ✅ صحيح
-    </div>
+</button>
 
-    <div class="stat">
-      <b id="multiplier">1×</b>
-      ⭐ المضاعف
-    </div>
 
-    <div class="stat">
-      <b id="bestStreak">0</b>
-      🔥 السلسلة
-    </div>
+<button
+class="tool"
+onclick="showBadges()">
 
-  </div>
+🎁
+<span>مكافآتي</span>
+
+</button>
+
+
+<button
+class="tool"
+onclick="showLeaderboard()">
+
+🏆
+<span>الصدارة</span>
+
+</button>
+
+
+<button
+class="tool"
+onclick="showSettings()">
+
+⚙️
+<span>الإعدادات</span>
+
+</button>
+
+</div>
+
+
+<!-- BOTTOM STATS -->
+
+<div class="bottom">
+
+<div class="stat">
+<b id="correct">0</b>
+<span>✅ صحيح</span>
+</div>
+
+<div class="stat">
+<b>+2</b>
+<span>⭐ نقاط السؤال</span>
+</div>
+
+<div class="stat">
+<b id="stageReward">0</b>
+<span>🎁 مكافأة المرحلة</span>
+</div>
+
+</div>
 
 </main>
 
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- MODAL -->
 
 <div
-  id="modal"
-  class="modal">
+id="modal"
+class="modal">
 
-  <div class="modalBox">
+<div class="modalBox">
 
-    <button
-      class="close"
-      onclick="closeModal()">
-      ✕
-    </button>
+<button
+class="close"
+onclick="closeModal()">
+✕
+</button>
 
-    <div id="modalContent"></div>
+<div id="modalContent"></div>
 
-  </div>
+</div>
 
 </div>
 
@@ -791,1432 +902,215 @@ button{
 <script>
 
 /* =========================================================
-   الأسئلة
-========================================================= */
-
-const QUESTIONS = [
-
-/* ثقافة عامة */
-
-{
- category:"general",
- question:"ما عاصمة اليابان؟",
- answers:["طوكيو","بكين","سيول","بانكوك"],
- correct:0
-},
-
-{
- category:"general",
- question:"كم عدد أيام الأسبوع؟",
- answers:["5","6","7","8"],
- correct:2
-},
-
-{
- category:"general",
- question:"ما أكبر محيط في العالم؟",
- answers:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],
- correct:2
-},
-
-{
- category:"general",
- question:"ما الكوكب المعروف بالكوكب الأحمر؟",
- answers:["الزهرة","المريخ","المشتري","عطارد"],
- correct:1
-},
-
-{
- category:"general",
- question:"كم دقيقة في الساعة؟",
- answers:["30","45","60","90"],
- correct:2
-},
-
-{
- category:"general",
- question:"ما الحيوان المعروف بسفينة الصحراء؟",
- answers:["الحصان","الجمل","الفيل","الغزال"],
- correct:1
-},
-
-{
- category:"general",
- question:"كم عدد قارات العالم؟",
- answers:["5","6","7","8"],
- correct:2
-},
-
-{
- category:"general",
- question:"ما أسرع حيوان بري؟",
- answers:["الفهد","الأسد","الحصان","النمر"],
- correct:0
-},
-
-/* تاريخ */
-
-{
- category:"history",
- question:"من بنى الأهرامات في الجيزة؟",
- answers:["الرومان","المصريون القدماء","الفُرس","الفايكنغ"],
- correct:1
-},
-
-{
- category:"history",
- question:"ما عاصمة الدولة العباسية؟",
- answers:["دمشق","بغداد","القاهرة","قرطبة"],
- correct:1
-},
-
-{
- category:"history",
- question:"أين تقع مدينة البتراء؟",
- answers:["الأردن","مصر","العراق","المغرب"],
- correct:0
-},
-
-{
- category:"history",
- question:"من الرحالة المغربي الشهير؟",
- answers:["ابن بطوطة","ابن سينا","الخوارزمي","الطبري"],
- correct:0
-},
-
-/* رياضة */
-
-{
- category:"sports",
- question:"كم لاعباً في فريق كرة القدم داخل الملعب؟",
- answers:["9","10","11","12"],
- correct:2
-},
-
-{
- category:"sports",
- question:"كم حلقة في شعار الألعاب الأولمبية؟",
- answers:["4","5","6","7"],
- correct:1
-},
-
-{
- category:"sports",
- question:"ما الرياضة التي تستخدم المضرب والكرة الصفراء؟",
- answers:["التنس","الملاكمة","السباحة","الجودو"],
- correct:0
-},
-
-{
- category:"sports",
- question:"كم نقطة للرمية الحرة في كرة السلة؟",
- answers:["1","2","3","4"],
- correct:0
-},
-
-/* علوم */
-
-{
- category:"science",
- question:"ما الغاز الذي يحتاجه الإنسان للتنفس؟",
- answers:["الأكسجين","الهيليوم","الهيدروجين","النيتروجين"],
- correct:0
-},
-
-{
- category:"science",
- question:"ما وحدة قياس القوة؟",
- answers:["واط","نيوتن","فولت","أمبير"],
- correct:1
-},
-
-{
- category:"science",
- question:"ما أقرب نجم إلى الأرض؟",
- answers:["الشمس","سيريوس","النسر","الشعرى"],
- correct:0
-},
-
-{
- category:"science",
- question:"ما العضو الذي يضخ الدم؟",
- answers:["الكبد","القلب","الرئة","المعدة"],
- correct:1
-},
-
-{
- category:"science",
- question:"ما أكبر كوكب في المجموعة الشمسية؟",
- answers:["زحل","الأرض","المشتري","نبتون"],
- correct:2
-},
-
-/* تكنولوجيا */
-
-{
- category:"tech",
- question:"ماذا تعني CPU؟",
- answers:[
- "وحدة المعالجة المركزية",
- "وحدة التخزين",
- "شبكة الحاسوب",
- "ذاكرة الرسوم"
- ],
- correct:0
-},
-
-{
- category:"tech",
- question:"ما اللغة الأساسية لبناء هيكل صفحات الويب؟",
- answers:["HTML","SQL","Python","C"],
- correct:0
-},
-
-{
- category:"tech",
- question:"ما اللغة المستخدمة لتنسيق صفحات الويب؟",
- answers:["CSS","SQL","Bash","Python"],
- correct:0
-},
-
-{
- category:"tech",
- question:"ما امتداد JavaScript؟",
- answers:[".js",".jpg",".mp3",".exe"],
- correct:0
-},
-
-{
- category:"tech",
- question:"ما الذي يحفظ البيانات داخل متصفح المستخدم؟",
- answers:["localStorage","HDMI","GPS","FTP"],
- correct:0
-},
-
-/* إسلاميات */
-
-{
- category:"islamic",
- question:"كم عدد الصلوات المفروضة؟",
- answers:["3","4","5","6"],
- correct:2
-},
-
-{
- category:"islamic",
- question:"في أي شهر يصوم المسلمون؟",
- answers:["شوال","رمضان","محرم","رجب"],
- correct:1
-},
-
-{
- category:"islamic",
- question:"ما أول سورة في المصحف؟",
- answers:["البقرة","الفاتحة","الإخلاص","الناس"],
- correct:1
-},
-
-{
- category:"islamic",
- question:"كم عدد أركان الإسلام؟",
- answers:["4","5","6","7"],
- correct:1
-},
-
-{
- category:"islamic",
- question:"إلى أي مدينة كانت الهجرة النبوية؟",
- answers:["الطائف","المدينة المنورة","القدس","دمشق"],
- correct:1
-},
-
-{
- category:"islamic",
- question:"ما السورة التي تسمى أم الكتاب؟",
- answers:["الفاتحة","الكهف","يس","الملك"],
- correct:0
-}
-
-];
+   عمار الأسطورة
+   300 سؤال = 100 مرحلة × 3 أسئلة
+   ========================================================= */
 
 
 /* =========================================================
-   أسماء الفئات
-========================================================= */
-
-const CATEGORY_NAMES={
-
- all:"🌍 جميع الفئات",
-
- general:"📚 ثقافة عامة",
-
- history:"🏺 تاريخ",
-
- sports:"⚽ رياضة",
-
- science:"🔬 علوم",
-
- tech:"💻 تكنولوجيا",
-
- islamic:"🕌 إسلاميات"
-
-};
-
-
-/* =========================================================
-   حالة اللعبة
-========================================================= */
-
-let state =
-JSON.parse(
-localStorage.getItem("ammarLegend")
-) || {
-
- score:0,
- xp:0,
-
- stage:1,
-
- correct:0,
- answered:0,
-
- streak:0,
- bestStreak:0,
-
- skips:5,
- helps:3,
- reveals:8,
-
- sound:true,
-
- category:"all",
-
- achievements:[]
-
-};
-
-
-let currentQuestion=null;
-
-let locked=false;
-
-
-/* =========================================================
-   حفظ
-========================================================= */
-
-function save(){
-
- localStorage.setItem(
-  "ammarLegend",
-  JSON.stringify(state)
- );
-
-}
-
-
-/* =========================================================
-   الأسئلة المتاحة
-========================================================= */
-
-function getQuestions(){
-
- if(state.category==="all"){
-  return QUESTIONS;
- }
-
- return QUESTIONS.filter(
-  q=>q.category===state.category
- );
-
-}
-
-
-/* =========================================================
-   سؤال جديد
-========================================================= */
-
-function newQuestion(){
-
- locked=false;
-
- const list=getQuestions();
-
- currentQuestion=
- list[
-  Math.floor(
-   Math.random()*list.length
-  )
- ];
-
- renderQuestion();
-
-}
-
-
-/* =========================================================
-   عرض السؤال
-========================================================= */
-
-function renderQuestion(){
-
- document.getElementById(
-  "questionText"
- ).textContent=
- currentQuestion.question;
-
-
- document.getElementById(
-  "category"
- ).textContent=
- CATEGORY_NAMES[
-  currentQuestion.category
- ];
-
-
- const answers=
- document.getElementById("answers");
-
- answers.innerHTML="";
-
-
- currentQuestion.answers.forEach(
- (text,index)=>{
-
-  const button=
-  document.createElement("button");
-
-  button.className="answer";
-
-  button.textContent=text;
-
-  button.onclick=()=>answer(index);
-
-  answers.appendChild(button);
-
- });
-
- updateUI();
-
-}
-
-
-/* =========================================================
-   أهم جزء:
-   الإجابة الصحيحة تنتقل تلقائياً
-========================================================= */
-
-function answer(index){
-
- if(locked)return;
-
- const buttons=
- document.querySelectorAll(".answer");
-
- locked=true;
-
- buttons.forEach(
-  b=>b.disabled=true
- );
-
-
- /* الإجابة صحيحة */
-
- if(index===currentQuestion.correct){
-
-  buttons[index]
-   .classList.add("correct");
-
-  state.correct++;
-  state.answered++;
-
-  state.streak++;
-
-  state.bestStreak=
-   Math.max(
-    state.bestStreak,
-    state.streak
-   );
-
-
-  const multiplier=
-   Math.min(
-    5,
-    1+
-    Math.floor(
-     state.streak/3
-    )
-   );
-
-
-  const points=
-   100*multiplier;
-
-
-  state.score+=points;
-
-  state.xp+=25;
-
-
-  state.stage=
-   Math.min(
-    100,
-    1+
-    Math.floor(
-     state.correct/5
-    )
-   );
-
-
-  correctSound();
-
-  confetti();
-
-  checkAchievements();
-
-  toast(
-   "✅ صحيح! +"+
-   points+
-   " نقطة"
-  );
-
-
-  save();
-
-  updateUI();
-
-
-  /* الانتقال التلقائي */
-
-  setTimeout(
-   ()=>{
-    newQuestion();
-   },
-   900
-  );
-
-
- }else{
-
-  /* خطأ */
-
-  buttons[index]
-   .classList.add("wrong");
-
-  buttons[
-   currentQuestion.correct
-  ]
-   .classList.add("correct");
-
-
-  state.answered++;
-
-  state.streak=0;
-
-  state.xp+=5;
-
-
-  wrongSound();
-
-  toast(
-   "❌ إجابة خاطئة"
-  );
-
-
-  save();
-
-  updateUI();
-
-
-  /* السؤال التالي تلقائياً */
-
-  setTimeout(
-   ()=>{
-    newQuestion();
-   },
-   1200
-  );
-
- }
-
-}
-
-
-/* =========================================================
-   تخطي
-========================================================= */
-
-function skipQuestion(){
-
- if(locked)return;
-
- if(state.skips<=0){
-
-  toast("❌ انتهت مرات التخطي");
-
-  return;
- }
-
- state.skips--;
-
- save();
-
- toast("⏭️ تم تخطي السؤال");
-
- newQuestion();
-
-}
-
-
-/* =========================================================
-   مساعدة
-========================================================= */
-
-function help(){
-
- if(locked)return;
-
- if(state.helps<=0){
-
-  toast("💡 لا توجد مساعدات");
-
-  return;
- }
-
- state.helps--;
-
- const buttons=
- Array.from(
-  document.querySelectorAll(".answer")
- );
-
-
- const wrong=
- buttons.filter(
-  (_,i)=>
-   i!==currentQuestion.correct
- );
-
-
- wrong
- .sort(
-  ()=>Math.random()-.5
- )
- .slice(0,2)
- .forEach(
-  b=>{
-   b.disabled=true;
-   b.style.opacity=".25";
-  }
- );
-
- save();
-
- updateUI();
-
- toast(
-  "💡 تم حذف إجابتين"
- );
-
-}
-
-
-/* =========================================================
-   كشف
-========================================================= */
-
-function revealAnswer(){
-
- if(locked)return;
-
- if(state.reveals<=0){
-
-  toast("👁️ انتهت كروت الكشف");
-
-  return;
- }
-
- state.reveals--;
-
- const buttons=
- document.querySelectorAll(".answer");
-
- buttons[
-  currentQuestion.correct
- ]
- .classList.add("correct");
-
- save();
-
- updateUI();
-
- toast(
-  "👁️ تم كشف الإجابة"
- );
-
-}
-
-
-/* =========================================================
-   سؤال عشوائي
-========================================================= */
-
-function randomQuestion(){
-
- if(locked)return;
-
- newQuestion();
-
- toast(
-  "🎲 سؤال جديد"
- );
-
-}
-
-
-/* =========================================================
-   الفئات
-========================================================= */
-
-function openCategories(){
-
- let html=`
-
- <h2>🗺️ فئات الأسئلة</h2>
-
- <div class="catGrid">
-
- `;
-
-
- Object.entries(
-  CATEGORY_NAMES
- ).forEach(
- ([key,name])=>{
-
-  html+=`
-
-  <button
-   class="cat"
-   onclick="changeCategory('${key}')">
-
-   ${name}
-
-  </button>
-
-  `;
-
- });
-
-
- html+=`
-
- </div>
-
- `;
-
- openModal(html);
-
-}
-
-
-function changeCategory(category){
-
- state.category=category;
-
- save();
-
- closeModal();
-
- newQuestion();
-
- toast(
-  CATEGORY_NAMES[category]
- );
-
-}
-
-
-/* =========================================================
-   الإحصائيات
-========================================================= */
-
-function showStats(){
-
- const accuracy=
- state.answered
- ?
- Math.round(
-  state.correct/
-  state.answered*
-  100
- )
- :0;
-
-
- openModal(`
-
- <h2>📊 إحصائياتك</h2>
-
- <div class="row">
-  <b>🏆 النقاط</b>
-  <span>${state.score}</span>
- </div>
-
- <div class="row">
-  <b>⭐ XP</b>
-  <span>${state.xp}</span>
- </div>
-
- <div class="row">
-  <b>✅ الصحيح</b>
-  <span>${state.correct}</span>
- </div>
-
- <div class="row">
-  <b>🎯 الدقة</b>
-  <span>${accuracy}%</span>
- </div>
-
- <div class="row">
-  <b>🔥 أفضل سلسلة</b>
-  <span>${state.bestStreak}</span>
- </div>
-
- <div class="row">
-  <b>👑 المرحلة</b>
-  <span>${state.stage}/100</span>
- </div>
-
- `);
-
-}
-
-
-/* =========================================================
-   الإنجازات
-========================================================= */
-
-function checkAchievements(){
-
- const list=[
-
-  [
-   "first",
-   "🌟 البداية",
-   "أول إجابة صحيحة",
-   state.correct>=1
-  ],
-
-  [
-   "ten",
-   "🔥 عشرة صحيحة",
-   "10 إجابات صحيحة",
-   state.correct>=10
-  ],
-
-  [
-   "streak",
-   "⚡ سلسلة قوية",
-   "5 إجابات متتالية",
-   state.bestStreak>=5
-  ],
-
-  [
-   "points",
-   "💰 جامع النقاط",
-   "1000 نقطة",
-   state.score>=1000
-  ],
-
-  [
-   "stage",
-   "👑 البطل",
-   "الوصول إلى المرحلة 10",
-   state.stage>=10
-  ]
-
- ];
-
-
- list.forEach(
-  a=>{
-
-   if(
-    a[3] &&
-    !state.achievements.includes(a[0])
-   ){
-
-    state.achievements.push(a[0]);
-
-    state.xp+=50;
-
-    toast(
-     "🏅 "+a[1]
-    );
-
-   }
-
-  }
- );
-
- save();
-
-}
-
-
-function showBadges(){
-
- const list=[
-
-  ["first","🌟 البداية","أول إجابة صحيحة"],
-
-  ["ten","🔥 عشرة صحيحة","10 إجابات صحيحة"],
-
-  ["streak","⚡ سلسلة قوية","5 متتالية"],
-
-  ["points","💰 جامع النقاط","1000 نقطة"],
-
-  ["stage","👑 البطل","المرحلة 10"]
-
- ];
-
-
- let html=`
-
- <h2>🎁 مكافآتي</h2>
-
- <div class="badges">
-
- `;
-
-
- list.forEach(
-  a=>{
-
-   const done=
-   state.achievements.includes(a[0]);
-
-
-   html+=`
-
-   <div
-    class="badge ${
-     done?"":"lock"
-    }">
-
-    <b>${a[1]}</b>
-
-    ${a[2]}
-
-    <br>
-
-    ${done?"✅ مكتمل":"🔒 مقفل"}
-
-   </div>
-
-   `;
-
-  }
- );
-
-
- html+=`
-
- </div>
-
- `;
-
- openModal(html);
-
-}
-
-
-/* =========================================================
-   لوحة الصدارة
-========================================================= */
-
-function showLeaderboard(){
-
- let board=
- JSON.parse(
-  localStorage.getItem(
-   "ammarLeaderboard"
-  )||"[]"
- );
-
-
- let name=
- localStorage.getItem(
-  "ammarPlayer"
- )||"اللاعب";
-
-
- board=
- board.filter(
-  p=>p.name!==name
- );
-
-
- board.push({
-
-  name:name,
-
-  score:state.score,
-
-  stage:state.stage
-
- });
-
-
- board.sort(
-  (a,b)=>b.score-a.score
- );
-
-
- board=
- board.slice(0,20);
-
-
- localStorage.setItem(
-  "ammarLeaderboard",
-  JSON.stringify(board)
- );
-
-
- let html=`
-
- <h2>🏆 لوحة الصدارة</h2>
-
- `;
-
-
- board.forEach(
-  (p,i)=>{
-
-   html+=`
-
-   <div class="row">
-
-    <b>
-     ${i+1}. ${p.name}
-    </b>
-
-    <span>
-     ${p.score} 🏆
-    </span>
-
-   </div>
-
-   `;
-
-  }
- );
-
-
- html+=`
-
- <button
-  class="cat"
-  style="width:100%;margin-top:10px"
-  onclick="changeName()">
-
-  ✏️ تغيير الاسم
-
- </button>
-
- `;
-
- openModal(html);
-
-}
-
-
-function changeName(){
-
- const old=
- localStorage.getItem(
-  "ammarPlayer"
- )||"اللاعب";
-
-
- const name=
- prompt(
-  "اكتب اسم اللاعب",
-  old
- );
-
-
- if(name&&name.trim()){
-
-  localStorage.setItem(
-   "ammarPlayer",
-   name.trim()
-  );
-
-  showLeaderboard();
-
- }
-
-}
-
-
-/* =========================================================
-   الصوت
-========================================================= */
-
-function beep(
- frequency,
- duration
-){
-
- if(!state.sound)return;
-
- try{
-
-  const AudioContext=
-   window.AudioContext||
-   window.webkitAudioContext;
-
-  if(!AudioContext)return;
-
-  const ctx=
-   window.audioContext||
-   (
-    window.audioContext=
-    new AudioContext()
-   );
-
-
-  const oscillator=
-   ctx.createOscillator();
-
-  const gain=
-   ctx.createGain();
-
-
-  oscillator.connect(gain);
-
-  gain.connect(
-   ctx.destination
-  );
-
-
-  oscillator.frequency.value=
-   frequency;
-
-
-  gain.gain.value=.06;
-
-
-  oscillator.start();
-
-
-  setTimeout(
-   ()=>{
-    oscillator.stop();
-   },
-   duration
-  );
-
- }catch(e){}
-
-}
-
-
-function correctSound(){
-
- beep(700,100);
-
- setTimeout(
-  ()=>beep(900,120),
-  100
- );
-
-}
-
-
-function wrongSound(){
-
- beep(180,200);
-
-}
-
-
-function toggleSound(){
-
- state.sound=
-  !state.sound;
-
- save();
-
- document.getElementById(
-  "soundStatus"
- ).textContent=
- state.sound
- ?"صوت"
- :"صامت";
-
- toast(
-  state.sound
-  ?"🔊 الصوت يعمل"
-  :"🔇 الصوت مغلق"
- );
-
-}
-
-
-/* =========================================================
-   مؤثر النجاح
-========================================================= */
-
-function confetti(){
-
- for(
-  let i=0;
-  i<25;
-  i++
- ){
-
-  const c=
-   document.createElement("i");
-
-  c.className="confetti";
-
-  c.style.left=
-   Math.random()*100+"vw";
-
-  c.style.background=
-   [
-    "#6cff80",
-    "#ffd83d",
-    "#63e8ff",
-    "#ff6b75"
-   ][
-    Math.floor(
-     Math.random()*4
-    )
-   ];
-
-  c.style.animationDelay=
-   Math.random()*.3+"s";
-
-  document.body.appendChild(c);
-
-  setTimeout(
-   ()=>c.remove(),
-   1500
-  );
-
- }
-
-}
-
-
-/* =========================================================
-   Modal
-========================================================= */
-
-function openModal(content){
-
- document.getElementById(
-  "modalContent"
- ).innerHTML=content;
-
- document.getElementById(
-  "modal"
- ).classList.add("show");
-
-}
-
-
-function closeModal(){
-
- document.getElementById(
-  "modal"
- ).classList.remove("show");
-
-}
-
-
-document.getElementById(
- "modal"
-).onclick=e=>{
-
- if(
-  e.target===
-  document.getElementById("modal")
- ){
-
-  closeModal();
-
- }
-
-};
-
-
-/* =========================================================
-   Toast
-========================================================= */
-
-let toastTimer;
-
-function toast(text){
-
- const t=
-  document.getElementById("toast");
-
- t.textContent=text;
-
- t.classList.add("show");
-
- clearTimeout(toastTimer);
-
- toastTimer=
-  setTimeout(
-   ()=>{
-    t.classList.remove("show");
-   },
-   1700
-  );
-
-}
-
-
-/* =========================================================
-   تحديث الواجهة
-========================================================= */
-
-function updateUI(){
-
- document.getElementById(
-  "score"
- ).textContent=
- state.score;
-
-
- document.getElementById(
-  "xp"
- ).textContent=
- state.xp;
-
-
- document.getElementById(
-  "streak"
- ).textContent=
- state.streak;
-
-
- document.getElementById(
-  "bestStreak"
- ).textContent=
- state.streak;
-
-
- document.getElementById(
-  "correct"
- ).textContent=
- state.correct;
-
-
- document.getElementById(
-  "stage"
- ).textContent=
- "المرحلة "+
- state.stage+
- "/100";
-
-
- document.getElementById(
-  "questionNumber"
- ).textContent=
- "السؤال "+
- (
-  (state.answered%5)+1
- )+
- "/5";
-
-
- document.getElementById(
-  "multiplier"
- ).textContent=
- Math.min(
-  5,
-  1+
-  Math.floor(
-   state.streak/3
-  )
- )+"×";
-
-
- document.getElementById(
-  "progressBar"
- ).style.width=
- (
-  state.stage/100*100
- )+"%";
-
-
- document.getElementById(
-  "skipCount"
- ).textContent=
- state.skips+" ⭐";
-
-
- document.getElementById(
-  "helpCount"
- ).textContent=
- state.helps+" ⭐";
-
-
- document.getElementById(
-  "revealCount"
- ).textContent=
- state.reveals+" ⭐";
-
-
- document.getElementById(
-  "skipBtn"
- ).disabled=
- state.skips<=0;
-
-
- document.getElementById(
-  "helpBtn"
- ).disabled=
- state.helps<=0;
-
-
- document.getElementById(
-  "revealBtn"
- ).disabled=
- state.reveals<=0;
-
-}
-
-
-/* =========================================================
-   تشغيل اللعبة
-========================================================= */
-
-window.addEventListener(
- "load",
- ()=>{
-
-  /*
-   * هذا هو الإصلاح المهم:
-   * السؤال يتم اختياره مباشرة من QUESTIONS
-   * ولا يوجد تحميل خارجي.
-   */
-
-  newQuestion();
-
-  updateUI();
-
- }
-);
-
-</script>
-
-</body>
-  </html>
+   بنك الأسئلة
+   كل سجل:
+   الفئة | السؤال | الإجابة | 3 إجابات خاطئة
+   ========================================================= */
+
+const BANK = [
+
+/* =========================
+   ثقافة عامة
+   ========================= */
+
+["c","ما عاصمة اليابان؟","طوكيو","بكين","سيول","بانكوك"],
+["c","كم عدد أيام الأسبوع؟","7","5","6","8"],
+["c","ما أكبر محيط في العالم؟","الهادئ","الأطلسي","الهندي","المتجمد"],
+["c","ما الكوكب المعروف بالكوكب الأحمر؟","المريخ","الزهرة","المشتري","عطارد"],
+["c","كم دقيقة في الساعة؟","60","30","45","90"],
+["c","ما الحيوان المعروف بسفينة الصحراء؟","الجمل","الحصان","الفيل","الغزال"],
+["c","ما لون الزمرد الشائع؟","الأخضر","الأحمر","الأزرق","الأصفر"],
+["c","ما أكبر قارة؟","آسيا","أفريقيا","أوروبا","أستراليا"],
+["c","ما أصغر قارة؟","أستراليا","آسيا","أفريقيا","أوروبا"],
+["c","ما عاصمة فرنسا؟","باريس","روما","مدريد","لندن"],
+["c","ما عاصمة إيطاليا؟","روما","ميلانو","باريس","أثينا"],
+["c","ما عاصمة إسبانيا؟","مدريد","برشلونة","إشبيلية","لشبونة"],
+["c","ما عاصمة ألمانيا؟","برلين","ميونخ","هامبورغ","فرانكفورت"],
+["c","ما عاصمة بريطانيا؟","لندن","مانشستر","ليفربول","أكسفورد"],
+["c","كم شهرًا في السنة؟","12","10","11","13"],
+["c","كم ساعة في اليوم؟","24","12","18","36"],
+["c","كم ثانية في الدقيقة؟","60","30","90","100"],
+["c","ما اللغة الأكثر انتشارًا كلغة أم؟","الصينية","العربية","الفرنسية","الألمانية"],
+["c","ما أكبر حيوان بري؟","الفيل","الزرافة","وحيد القرن","الأسد"],
+["c","ما أسرع حيوان بري مشهور؟","الفهد","الأسد","الحصان","الذئب"],
+["c","ما الحيوان الذي يلقب بملك الغابة؟","الأسد","النمر","الفهد","الدب"],
+["c","ما الطائر الذي لا يطير ويعيش في القطب الجنوبي؟","البطريق","النسر","الصقر","الغراب"],
+["c","ما المعدن السائل في درجة حرارة الغرفة؟","الزئبق","الحديد","النحاس","الذهب"],
+["c","ما لون الياقوت الأحمر؟","أحمر","أخضر","أزرق","أصفر"],
+["c","ما الأداة المستخدمة لقياس الحرارة؟","الترمومتر","البوصلة","البارومتر","الميزان"],
+["c","ما الجهاز المستخدم لقياس الوزن؟","الميزان","الساعة","المسطرة","البوصلة"],
+["c","ما الشكل ذو ثلاثة أضلاع؟","المثلث","المربع","الدائرة","الخماسي"],
+["c","ما الشكل ذو أربعة أضلاع متساوية؟","المربع","المثلث","الدائرة","المخمس"],
+["c","كم عدد حروف الأبجدية العربية؟","28","26","29","30"],
+["c","ما البحر الذي يفصل بين أوروبا وأفريقيا؟","المتوسط","الأحمر","العربي","الأسود"],
+["c","ما عاصمة الصين؟","بكين","شنغهاي","طوكيو","سيول"],
+["c","ما عاصمة الهند؟","نيودلهي","مومباي","بنغالور","كلكتا"],
+["c","ما عاصمة روسيا؟","موسكو","كييف","مينسك","سانت بطرسبرغ"],
+["c","ما عاصمة تركيا؟","أنقرة","إسطنبول","إزمير","بورصة"],
+["c","ما عاصمة اليونان؟","أثينا","روما","صوفيا","إسطنبول"],
+["c","ما عاصمة كندا؟","أوتاوا","تورنتو","فانكوفر","مونتريال"],
+["c","ما عاصمة أستراليا؟","كانبرا","سيدني","ملبورن","بيرث"],
+["c","ما عاصمة البرازيل؟","برازيليا","ريو","ساو باولو","سالوادور"],
+["c","ما عاصمة المكسيك؟","مكسيكو سيتي","كانكون","غوادالاخارا","مونتيري"],
+["c","ما عاصمة الأرجنتين؟","بوينس آيرس","قرطبة","روزاريو","مندوزا"],
+["c","ما أكبر دولة عربية مساحة؟","الجزائر","السعودية","مصر","السودان"],
+["c","ما العملة الرسمية لليابان؟","الين","الدولار","اليورو","اليوان"],
+["c","ما العملة الرسمية لبريطانيا؟","الجنيه الإسترليني","اليورو","الدولار","الفرنك"],
+["c","ما العملة الرسمية للصين؟","اليوان","الين","الروبل","الوون"],
+["c","كم يومًا في السنة العادية؟","365","360","364","366"],
+["c","كم يومًا في السنة الكبيسة؟","366","365","364","360"],
+["c","ما أكبر عضو في جسم الإنسان؟","الجلد","القلب","الكبد","الرئة"],
+["c","ما العضو المسؤول عن التفكير؟","الدماغ","القلب","الكبد","المعدة"],
+["c","ما الحاسة المرتبطة بالعين؟","البصر","السمع","الشم","اللمس"],
+["c","ما الحاسة المرتبطة بالأذن؟","السمع","البصر","التذوق","الشم"],
+["c","ما الحاسة المرتبطة بالأنف؟","الشم","السمع","البصر","اللمس"],
+["c","ما الحاسة المرتبطة باللسان؟","التذوق","البصر","السمع","اللمس"],
+["c","ما الحاسة المرتبطة بالجلد؟","اللمس","السمع","الشم","البصر"],
+["c","ما اسم صغير الأسد؟","شبل","جرو","مهر","حمل"],
+["c","ما اسم صغير الحصان؟","مهر","شبل","جرو","عجل"],
+["c","ما اسم صغير الكلب؟","جرو","مهر","شبل","حمل"],
+["c","ما اسم صغير البقرة؟","عجل","مهر","جرو","شبل"],
+["c","ما اسم صغير الغنم؟","حمل","عجل","جرو","مهر"],
+["c","كم لاعبًا في فريق كرة القدم؟","11","9","10","12"],
+["c","كم حلقة في شعار الأولمبياد؟","5","4","6","7"],
+["c","كم نقطة للرمية الحرة في السلة؟","1","2","3","4"],
+["c","ما الرياضة التي تستخدم مضربًا وكرة صفراء؟","التنس","الملاكمة","السباحة","الجودو"],
+["c","ما الرياضة التي تستخدم القفازات والحلبة؟","الملاكمة","التنس","السباحة","الرماية"],
+["c","ما الرياضة التي تقام في حوض؟","السباحة","الجودو","التنس","الملاكمة"],
+["c","ما الجهاز المستخدم لمعرفة الوقت؟","الساعة","البوصلة","الميزان","المجهر"],
+["c","ما الأداة التي تحدد الاتجاهات؟","البوصلة","الساعة","الترمومتر","المسطرة"],
+["c","كم درجة في الزاوية القائمة؟","90","45","180","360"],
+["c","كم درجة في الدائرة الكاملة؟","360","90","180","270"],
+["c","ما الغاز الذي يجعل المشروبات الغازية فوارة؟","ثاني أكسيد الكربون","الأكسجين","الهيدروجين","الهيليوم"],
+["c","ما المادة الأساسية في صناعة الزجاج؟","الرمل","الخشب","الحديد","القطن"],
+["c","ما النبات الذي ينتج التمر؟","النخيل","الزيتون","التفاح","القمح"],
+["c","ما النبات الذي ينتج الزيتون؟","الزيتون","النخيل","الكرمة","الأرز"],
+["c","ما الحبوب التي يصنع منها الخبز غالبًا؟","القمح","الأرز","الذرة فقط","الشعير فقط"],
+["c","ما المشروب المصنوع غالبًا من أوراق مجففة؟","الشاي","الحليب","العصير","الماء"],
+["c","ما الحيوان الذي ينتج الصوف؟","الخروف","الحصان","الفيل","الدجاج"],
+["c","ما الحيوان الذي ينتج الحليب؟","البقرة","الأسد","النسر","الذئب"],
+["c","ما القارة التي تقع فيها مصر؟","أفريقيا","أوروبا","أستراليا","أمريكا الجنوبية"],
+["c","ما المحيط الواقع شرق أفريقيا؟","الهندي","الأطلسي","الهادئ","المتجمد"],
+["c","ما أكبر صحراء حارة؟","الصحراء الكبرى","جوبي","كالاهاري","أتاكاما"],
+
+/* =========================
+   علوم
+   ========================= */
+
+["s","ما الغاز الضروري للتنفس؟","الأكسجين","الهيدروجين","الهيليوم","النيون"],
+["s","ما وحدة قياس القوة؟","نيوتن","واط","فولت","أمبير"],
+["s","ما أقرب نجم إلى الأرض؟","الشمس","سيريوس","النسر","النجم القطبي"],
+["s","ما العضو الذي يضخ الدم؟","القلب","الكبد","الرئة","المعدة"],
+["s","ما أكبر كوكب؟","المشتري","زحل","الأرض","نبتون"],
+["s","ما الكوكب الأقرب للشمس؟","عطارد","الزهرة","الأرض","المريخ"],
+["s","ما الكوكب المعروف بحلقاته؟","زحل","المريخ","عطارد","الزهرة"],
+["s","ما القمر الطبيعي للأرض؟","القمر","فوبوس","أوروبا","تيتان"],
+["s","ما مركز النظام الشمسي؟","الشمس","الأرض","المشتري","القمر"],
+["s","ما القوة التي تجذب الأجسام نحو الأرض؟","الجاذبية","المغناطيسية","الاحتكاك","الطفو"],
+["s","ما سرعة الضوء تقريبًا؟","300 ألف كم/ث","30 ألف كم/ث","3 آلاف كم/ث","3 ملايين كم/ث"],
+["s","ما وحدة قياس الطاقة؟","جول","نيوتن","أمبير","فولت"],
+["s","ما وحدة قياس القدرة؟","واط","جول","نيوتن","كولوم"],
+["s","ما وحدة قياس التيار؟","أمبير","فولت","واط","أوم"],
+["s","ما وحدة قياس الجهد؟","فولت","أمبير","واط","جول"],
+["s","ما المادة التي تحمل الصفات الوراثية؟","DNA","الماء","الجلوكوز","الأكسجين"],
+["s","ما أصغر وحدة حية؟","الخلية","النسيج","العضو","الجهاز"],
+["s","ما العضية المسؤولة عن إنتاج الطاقة؟","الميتوكوندريا","النواة","الريبوسوم","الجدار"],
+["s","ما العضية التي تحتوي المادة الوراثية في الخلية؟","النواة","الميتوكوندريا","الفجوة","الغشاء"],
+["s","ما العملية التي يصنع بها النبات غذاءه؟","البناء الضوئي","التنفس","الهضم","التخمر"],
+["s","ما الصبغة الخضراء في النبات؟","الكلوروفيل","الهيموغلوبين","الميلانين","الكيراتين"],
+["s","ما الغاز الذي تمتصه النباتات في البناء الضوئي؟","ثاني أكسيد الكربون","الأكسجين","الهيدروجين","الهيليوم"],
+["s","ما الغاز الذي تطلقه النباتات أثناء البناء الضوئي؟","الأكسجين","النيتروجين","الهيدروجين","الهيليوم"],
+["s","ما درجة تجمد الماء مئوية؟","0","10","-10","100"],
+["s","ما درجة غليان الماء عند الضغط الجوي القياسي؟","100","50","90","120"],
+["s","ما الرمز الكيميائي للماء؟","H2O","CO2","O2","NaCl"],
+["s","ما الرمز الكيميائي للأكسجين؟","O2","H2","CO2","N2"],
+["s","ما الرمز الكيميائي لثاني أكسيد الكربون؟","CO2","O2","H2O","NaCl"],
+["s","ما الرمز الكيميائي لملح الطعام؟","NaCl","H2O","CO2","O2"],
+["s","ما المعدن الضروري للهيموغلوبين؟","الحديد","الذهب","الفضة","النحاس"],
+["s","ما العضو الرئيسي للتنفس؟","الرئتان","الكبد","المعدة","الكلى"],
+["s","ما العضو الذي يرشح الدم؟","الكليتان","الرئتان","القلب","المعدة"],
+["s","ما العضو الذي يهضم الطعام بشكل أساسي؟","المعدة","القلب","الرئة","الدماغ"],
+["s","ما أكبر عظم في جسم الإنسان؟","عظم الفخذ","الجمجمة","الزند","الترقوة"],
+["s","ما أصغر عظم في جسم الإنسان؟","عظم الركاب","الفخذ","القص","العضد"],
+["s","كم عدد حجرات القلب؟","4","2","3","5"],
+["s","ما خلايا الدم التي تدافع عن الجسم؟","كريات الدم البيضاء","الحمراء","الصفائح","البلازما"],
+["s","ما خلايا الدم التي تنقل الأكسجين؟","كريات الدم الحمراء","البيضاء","الصفائح","الخلايا العصبية"],
+["s","ما المادة التي تساعد على تخثر الدم؟","الصفائح الدموية","البلازما فقط","العصبونات","الهرمونات"],
+["s","ما الجهاز المسؤول عن نقل الدم؟","الدوري","الهضمي","التنفسي","العصبي"],
+["s","ما الجهاز المسؤول عن التنفس؟","التنفسي","الهضمي","الدوري","العظمي"],
+["s","ما الجهاز المسؤول عن الهضم؟","الهضمي","العصبي","التنفسي","الدوري"],
+["s","ما الجهاز الذي يرسل الإشارات العصبية؟","العصبي","الهضمي","الدوري","الهيكلي"],
+["s","ما الكوكب الذي يسمى توأم الأرض؟","الزهرة","المريخ","عطارد","نبتون"],
+["s","ما أكبر قمر في المجموعة الشمسية؟","غانيميد","تيتان","القمر","أوروبا"],
+["s","ما الكوكب الذي يستغرق أقل وقت للدوران حول الشمس؟","عطارد","الأرض","المريخ","زحل"],
+["s","ما سبب تعاقب الليل والنهار؟","دوران الأرض حول نفسها","دوران القمر","دوران الشمس","دوران المشتري"],
+["s","ما سبب الفصول الأربعة؟","ميل محور الأرض ودورانها حول الشمس","دوران القمر","حركة السحب","اختلاف القمر"],
+["s","ما الجهاز الذي يقيس الزلازل؟","السيسموغراف","البارومتر","الترمومتر","البوصلة"],
+["s","ما العلم الذي يدرس الزلازل؟","علم الزلازل","الفلك","الأحياء","الكيمياء"],
+["s","ما العلم الذي يدرس النجوم؟","الفلك","الجيولوجيا","الأحياء","الطب"],
+["s","ما العلم الذي يدرس الصخور؟","الجيولوجيا","الفلك","الفيزياء","الطب"],
+["s","ما العلم الذي يدرس الكائنات الحية؟","الأحياء","الفلك","الجيولوجيا","الرياضيات"],
+["s","ما العنصر الأكثر وفرة في الكون؟","الهيدروجين","الأكسجين","الكربون","الحديد"],
+["s","ما العنصر الذي رمزه Fe؟","الحديد","الفلور","الفضة","الذهب"],
+["s","ما العنصر الذي رمزه Au؟","الذهب","الفضة","الحديد","النحاس"],
+["s","ما العنصر الذي رمزه Ag؟","الفضة","الذهب","الألومنيوم","الحديد"],
+["s","ما العنصر الذي رمزه Cu؟","النحاس","الكربون","الكالسيوم","الكوبالت"],
+["s","ما الرقم الهيدروجيني للماء النقي تقريبًا؟","7","1","14","10"],
+["s","ما نوع الدماغ في الإنسان من حيث الجهاز العصبي؟","مركزي","محيطي فقط","هضمي","عضلي"],
+["s","ما نوع الطاقة المخزنة في الغذاء؟","كيميائية","ضوئية","صوتية","نووية"],
+["s","ما نوع الطاقة التي تصلنا من الشمس؟","ضوئية وحرارية","صوتية فقط","حركية فقط","كيميائية فقط"],
+["s","ما الجهاز الذي يحول الصوت إلى إشارات عصبية؟","الأذن","العين","الجلد","الأنف"],
+["s","ما العضو المسؤول عن الرؤية؟","العين","الأذن","الأنف","اللسان"],
+["s","ما الطبقة الخارجية الصلبة للأرض؟","القشرة","اللب الداخلي","اللب الخارجي","الوشاح"],
+["s","ما الطبقة التي تقع أسفل القشرة؟","الوشاح","اللب الداخلي","الغلاف الجوي","القشرة"],
+["s","ما أكثر غاز في الغلاف الجوي؟","النيتروجين","الأكسجين","الهيدروجين","ثاني أكسيد الكربون"],
+["s","ما نسبة الأكسجين في الهواء تقريبًا؟","21%","50%","78%","10%"],
+["s","ما نسبة النيتروجين في الهواء تقريبًا؟","78%","21%","10%","50%"],
+["s","ما الظاهرة الناتجة عن تفريغ كهربائي في الغلاف الجوي؟","البرق","الندى","الضباب","الكسوف"],
+["s","ما الصوت الناتج بعد البرق؟","الرعد","المطر","الريح","الزلزال"],
+["s","ما الظاهرة التي تحجب فيها الأرض ضوء الشمس عن القمر؟","خسوف القمر","كسوف الشمس","المد والجزر","الشفق"],
+["s","ما الظاهرة التي يحجب فيها القمر الشمس؟","كسوف الشمس","خسوف القمر","الشفق","المد"],
+
+/* =========================
+   حضارة
+   ========================= */
+
+["v","أين قامت الحضارة المصرية القديمة؟","وادي النيل","وادي الرافدين","الهند","الصين"],
+["v","أين قامت حضارة بلاد الرافدين؟","بين دجلة والفرات","وادي النيل","اليونان","إيطاليا"],
+["v","ما المدينة المرتبطة بحضارة بابل؟","بابل","روما","أثينا","قرطاج"],
+["v","ما الحضارة التي بنت مدينة ماتشو بيتشو؟","الإنكا","الرومان","الفراعنة","الفينيقيون"],
+["v","أين نشأت الحضارة اليونانية القديمة؟","اليونان","مصر","الصين","المكسيك"],
+["v","أين نشأت الحضارة الرومانية؟","إيطاليا","مصر","الهند","اليابان"],
+["v","ما المدينة التي كانت مركزًا مهمًا للحضارة الرومانية؟","روما","أثينا","بابل","قرطبة"],
+["v","ما الحضارة التي اشتهرت بالكتابة المسمارية؟","السومريون","الرومان","المايا","الإنكا"],
+["v","ما نوع الكتابة المصرية القديمة؟","الهيروغليفية","المسمارية","اللاتينية","السنسكريتية"],
+["v","ما المادة التي استخدمها المصريون للكتابة؟","البردي","الحرير فقط","البلاستيك","الورق الحديث"],
+["v","ما البناء الشهير في الجيزة؟","الأهرامات","الكولوسيوم","البارثينون","سور الصين"],
+["v","ما التمثال الشهير قرب أهرامات الجيزة؟","أبو الهول","تمثال الحرية","المسيح الفادي","داود"],
+["v","ما الحضارة التي بنت الكولوسيوم؟","الرومان","الفراعنة","الإنكا","المايا"],
+["v","ما المدينة التي يقع فيها الكولوسيوم؟","روما","باريس","أثينا","مدريد"],
+["v","ما المبنى الشهير في أثينا؟","البارثينون","الكولوسيوم","الأهرامات","برج بيزا"],
+["v","لمن كان البارثينون مكرسًا؟","أثينا","زيوس","أبولو","أرتميس"],
+["v","ما الحضارة التي بنت سور الصين العظيم؟","الصينية","الرومانية","المصرية","الفينيقية"],
+["v","ما المدينة الصينية التاريخية المعروفة بالمدينة المحرمة؟","بكين","شنغهاي","نانجينغ","شيان"],
+["v","ما الحضارة التي ازدهرت في شبه جزيرة يوكاتان؟","المايا","الإنكا","الرومان","الفراعنة"],
+["v","ما الحضارة التي اتخذت كوزكو مركزًا لها؟","الإنكا","المايا","الرومان","الفينيقيون"],
+["v","ما المدينة القديمة الشهيرة في الأردن؟","البتراء","بابل","روما","قرطاج"],
+["v","ما اللقب الشائع للبتراء؟","المدينة الوردية","المدينة الزرقاء","مدينة الذهب","مدينة الثلج"],
+["v","ما الحضارة المرتبطة بمدينة قرطاج؟","الفينيقية","الرومانية فقط","المصرية","الصينية"],
+["v","أين تقع قرطاج القديمة؟","تونس","مصر","إسبانيا","اليونان"],
+["v","ما الحضارة التي اشتهرت بالملاحة في البحر المتوسط؟","الفينيقيون","الإنكا","المغول","المايا"],
+["v","ما المدينة التي كانت مركزًا للعلم في العصر العباسي؟","بغداد","روما","باريس","لندن"],
+["v","ما اسم المركز العلمي الشهير في بغداد؟","بيت الحكمة","الأكاديمية","دار الفلسفة","بيت الطب"],
+["v","من اشتهر بتطوير علم الجبر؟","الخوارزمي","ابن بطوطة","الجاحظ","الطبري"],
+["v","من اشتهر بكتاب القانون في الطب؟","ابن سينا","الخوارزمي","ابن خلدون","المسعودي"],
+["v","من مؤلف المقدمة الشهيرة في علم الاجتماع والتاريخ؟","ابن خلدون","ابن سينا","الخوارزمي","الجاحظ"],
+["v","من الرحالة الذي جاب مناطق واسعة من العالم؟","ابن بطوطة","الخوارزمي","ابن رشد","الرازي"],
+["v","ما المدينة التي كانت مركزًا علميًا في الأندلس؟","قرطبة","روما","بكين","القاهرة"],
+["v","ما المسجد الشهير في قرطبة؟","جامع قرطبة","الأزهر","الجامع الأموي","الم
