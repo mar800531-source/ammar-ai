@@ -17,6 +17,35 @@ button{font:inherit;border:0;color:inherit;cursor:pointer}.app{height:100dvh;max
 .toast{position:fixed;z-index:100;left:50%;bottom:8px;transform:translate(-50%,20px);opacity:0;background:#062b24;border:1px solid #3c9c81;border-radius:13px;padding:7px 13px;font-weight:900;font-size:12px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
 .modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:10px;z-index:50}.modal.show{display:flex}.box{width:min(560px,100%);max-height:88dvh;overflow:auto;background:#062820;border:1px solid #2a7c67;border-radius:20px;padding:13px}.box h2{margin:0 0 9px;color:#61e9e2;font-size:20px}.close{float:left;background:#173e35;border-radius:9px;padding:3px 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mb{background:#0a382f;border:1px solid #1c6654;border-radius:12px;padding:9px;font-weight:bold}.active{border-color:#67efa8!important;background:#0b4c3c!important}.list{display:grid;gap:5px}.row{display:flex;justify-content:space-between;background:#0a342c;border:1px solid #195a4c;border-radius:11px;padding:8px;font-size:12px}.badges{display:grid;grid-template-columns:1fr 1fr;gap:6px}.badge{padding:9px;border-radius:11px;background:#0a342c;border:1px solid #195a4c;font-size:11px}.badge b{display:block;color:#ffd84f}.confetti{position:fixed;top:-10px;width:7px;height:12px;z-index:80;animation:fall .8s linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(600deg);opacity:0}}
 @media(max-height:600px){.top{height:43px;grid-template-columns:44px 1fr 44px 44px 44px}.scircle{width:42px;height:42px}.progress{height:37px}.question{height:62px}.tools{height:82px}.stats{height:34px}}
+
+body.lightMode{
+  color:#12332e;
+  background:radial-gradient(circle at 50% -10%,#bff8e5 0%,#dff8f2 38%,#f5fffc 100%);
+}
+body.lightMode .progress,
+body.lightMode .panel,
+body.lightMode .pill,
+body.lightMode .tool,
+body.lightMode .stat,
+body.lightMode .notice,
+body.lightMode .answer,
+body.lightMode .question,
+body.lightMode .modalBox,
+body.lightMode .row,
+body.lightMode .badge,
+body.lightMode .cat,
+body.lightMode .settingRow{
+  background:#ffffffdd;
+  color:#12332e;
+  border-color:#9bd4c7;
+}
+body.lightMode .title p,
+body.lightMode .progressLine,
+body.lightMode .tool small,
+body.lightMode .settingInfo small{
+  color:#47766d;
+}
+
 </style></head><body>
 <div class="app"><header class="top">
 <div class="scircle">🏆<b id="score">0</b></div><div class="logo">👑 عمار الأسطورة</div>
@@ -45,7 +74,7 @@ const $=id=>document.getElementById(id);function save(){localStorage.setItem("AM
 function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function rebuild(){let ids=Q.map((_,i)=>i);if(st.cat!="all")ids=Q.map((x,i)=>x.c==st.cat?i:-1).filter(i=>i>=0);st.order=shuffle(ids);st.pos=0;save()}
 function stage(){return Math.min(100,Math.floor(st.answered/3)+1)}function qi(){return st.answered%3+1}
-function load(){if(!st.order.length||st.pos>=st.order.length)rebuild();cur=Q[st.order[st.pos]];locked=false;render()}
+function load(){if(!Array.isArray(Q)||!Q.length)throw new Error("لا توجد أسئلة داخل الملف");if(!Array.isArray(st.order)||!st.order.length||st.pos>=st.order.length)rebuild();let idx=st.order[st.pos];if(typeof idx!=="number"||!Q[idx]){rebuild();idx=st.order[st.pos]}cur=Q[idx]||Q[0];locked=false;render()}
 function render(){$("q").textContent=cur.q;$("cat").textContent=N[cur.c]+" • "+(stage()<=25?"مبتدئ":stage()<=50?"متوسط":stage()<=75?"متقدم":"خبير");$("answers").innerHTML="";cur.a.forEach((x,i)=>{let b=document.createElement("button");b.className="answer";b.textContent=x;b.onclick=()=>answer(i,b);$("answers").appendChild(b)});ui()}
 function answer(i,b){if(locked)return;locked=true;document.querySelectorAll(".answer").forEach(x=>x.disabled=true);st.answered++;if(i==cur.ok){b.classList.add("correct");st.correct++;st.score+=2;st.xp+=10;st.streak++;st.best=Math.max(st.best,st.streak);toast("✅ صحيح +2");beep(750,70);setTimeout(()=>beep(950,90),70);vib(30);fx();ach()}else{b.classList.add("wrong");document.querySelectorAll(".answer")[cur.ok].classList.add("correct");st.streak=0;st.xp+=2;toast("❌ خطأ");beep(180,170);vib(70)}save();ui();timer=setTimeout(()=>{st.pos++;load()},650)}
 function skip(){if(locked||st.skip<1)return toast("⏭️ لا يوجد تخطي");st.skip--;st.pos++;save();load();toast("⏭️ تم التخطي")}
@@ -68,6 +97,6 @@ function vib(x){if(st.vib&&navigator.vibrate)navigator.vibrate(x)}
 function fx(){if(!st.fx)return;for(let i=0;i<16;i++){let e=document.createElement("i");e.className="confetti";e.style.left=Math.random()*100+"vw";e.style.background=["#6cff9b","#ffd84f","#5be8ef","#ff7780"][i%4];document.body.appendChild(e);setTimeout(()=>e.remove(),850)}}
 let tt;function toast(x){$("toast").textContent=x;$("toast").classList.add("show");clearTimeout(tt);tt=setTimeout(()=>$("toast").classList.remove("show"),1200)}
 function open(x){$("mc").innerHTML=x;$("modal").classList.add("show")}function closeM(){$("modal").classList.remove("show")}modal.onclick=e=>{if(e.target==modal)closeM()}
-function ui(){$("score").textContent=st.score;$("xp").textContent=st.xp;$("streak").textContent=st.streak;$("correct").textContent=st.correct;$("stage").textContent=`المرحلة ${stage()}/100`;$("qn").textContent=`السؤال ${qi()}/3`;$("bar").style.width=((st.answered%3)/3*100)+"%";$("hc").textContent=st.help;$("sc").textContent=st.skip;$("rc").textContent=st.reveal;$("acc").textContent=(st.answered?Math.round(st.correct/st.answered*100):0)+"%";$("sound").textContent=st.sound?"🔊":"❌";$("help").disabled=st.help<1;$("skip").disabled=st.skip<1;$("reveal").disabled=st.reveal<1)}
-if(!st.order.length)rebuild();load();ui();
+function ui(){$("score").textContent=st.score;$("xp").textContent=st.xp;$("streak").textContent=st.streak;$("correct").textContent=st.correct;$("stage").textContent=`المرحلة ${stage()}/100`;$("qn").textContent=`السؤال ${qi()}/3`;$("bar").style.width=((st.answered%3)/3*100)+"%";$("hc").textContent=st.help;$("sc").textContent=st.skip;$("rc").textContent=st.reveal;$("acc").textContent=(st.answered?Math.round(st.correct/st.answered*100):0)+"%";$("sound").textContent=st.sound?"🔊":"❌";$("help").disabled=st.help<1;$("skip").disabled=st.skip<1;$("reveal").disabled=st.reveal<1}
+try{if(!Array.isArray(st.order)||!st.order.length)rebuild();load();ui();}catch(e){console.error(e);$('q').textContent='⚠️ تعذر تشغيل السؤال — اضغط لإعادة التشغيل';$('answers').innerHTML='<button class="answer" onclick="location.reload()">🔄 إعادة تشغيل</button>';}
 </script></body></html>
