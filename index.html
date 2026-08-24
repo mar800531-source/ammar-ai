@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<meta name="theme-color" content="#031c18">
+<meta name="theme-color" content="#031713">
+
 <title>عمار الأسطورة 👑</title>
 
 <style>
@@ -15,242 +16,338 @@ content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,vie
 }
 
 html,body{
+  margin:0;
   width:100%;
   height:100%;
-  margin:0;
   overflow:hidden;
 }
 
 body{
-  font-family:Arial,Tahoma,sans-serif;
-  color:#effffb;
+  font-family:
+    Arial,
+    Tahoma,
+    sans-serif;
+
+  color:#f2fffb;
+
   background:
-    radial-gradient(circle at 50% -20%,#08765d,#06352d 42%,#021713 100%);
+    radial-gradient(
+      circle at 50% -20%,
+      #087b61,
+      #04392f 38%,
+      #021714 85%
+    );
 }
 
 button{
   font:inherit;
   border:0;
   cursor:pointer;
-  color:white;
+  color:inherit;
 }
+
+/* =========================
+   التطبيق
+========================= */
 
 .app{
   width:100%;
-  max-width:650px;
   height:100dvh;
+
+  max-width:760px;
+
   margin:auto;
+
   padding:
-    max(6px,env(safe-area-inset-top))
-    8px
+    max(7px,env(safe-area-inset-top))
+    9px
     max(6px,env(safe-area-inset-bottom));
 
   display:flex;
   flex-direction:column;
+
   overflow:hidden;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   الرأس
+========================= */
 
 .top{
-  flex:0 0 auto;
-  height:64px;
+  height:62px;
 
   display:grid;
-  grid-template-columns:1fr auto 1fr;
+
+  grid-template-columns:
+    1fr
+    1.6fr
+    1fr;
+
   align-items:center;
-  gap:5px;
+
+  gap:6px;
+
+  flex-shrink:0;
 }
 
-.logo{
-  text-align:center;
-  font-size:clamp(21px,6vw,32px);
-  font-weight:900;
-
-  background:linear-gradient(
-    90deg,
-    #55e6a5,
-    #68e9ed
-  );
-
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.logo small{
-  display:block;
-  font-size:15px;
-  color:#ffd94c;
-  -webkit-text-fill-color:#ffd94c;
-}
-
-.headerSide{
+.topSide{
   display:flex;
   gap:6px;
-  align-items:center;
 }
 
-.headerSide.right{
+.topSide.left{
   justify-content:flex-start;
 }
 
-.headerSide.left{
+.topSide.right{
   justify-content:flex-end;
 }
 
-.pill{
-  width:55px;
-  height:55px;
+.circleStat{
+  width:54px;
+  height:54px;
 
   border-radius:50%;
 
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  align-items:center;
 
-  background:#062d26;
-  border:1px solid #287c67;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b3e34,
+      #062820
+    );
+
+  border:1px solid #21816b;
 
   box-shadow:
-    inset 0 0 12px #0b4b3c,
-    0 0 8px #00b88922;
+    0 0 14px #00d9a522;
 
+  font-weight:900;
+}
+
+.circleStat .icon{
   font-size:21px;
+  line-height:20px;
 }
 
-.pill b{
-  font-size:14px;
+.circleStat .value{
+  font-size:15px;
   color:white;
+  margin-top:2px;
 }
 
-/* ================= PROGRESS ================= */
+.logo{
+  text-align:center;
+
+  font-size:
+    clamp(24px,7vw,39px);
+
+  line-height:1;
+
+  font-weight:1000;
+
+  background:
+    linear-gradient(
+      90deg,
+      #54e8a3,
+      #70e8ef
+    );
+
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* =========================
+   التقدم
+========================= */
 
 .progress{
-  flex:0 0 auto;
+  height:55px;
 
-  height:57px;
+  flex-shrink:0;
 
-  border-radius:28px;
+  margin-top:5px;
 
-  background:#062c25;
-  border:1px solid #24705e;
+  padding:9px 14px;
+
+  border-radius:30px;
+
+  background:#062d26;
+
+  border:1px solid #1a6656;
 
   display:grid;
-  grid-template-columns:auto 1fr auto;
+
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+
   align-items:center;
 
   gap:10px;
 
-  padding:8px 14px;
-
-  margin-bottom:7px;
+  font-weight:bold;
 }
 
 .progressText{
-  font-size:15px;
-  font-weight:bold;
   white-space:nowrap;
+  font-size:14px;
 }
 
 .bar{
-  height:10px;
+  height:9px;
+
+  background:#103e35;
+
   border-radius:20px;
-  background:#174b40;
+
   overflow:hidden;
 }
 
 .bar span{
   display:block;
-  width:0;
+
   height:100%;
+  width:0%;
 
-  background:linear-gradient(
-    90deg,
-    #54df9d,
-    #66ecef
-  );
+  border-radius:20px;
 
-  transition:.3s;
+  background:
+    linear-gradient(
+      90deg,
+      #39d88e,
+      #6df0e5
+    );
+
+  transition:.35s;
 }
 
-/* ================= MAIN ================= */
+/* =========================
+   اللوحة الرئيسية
+========================= */
 
-.game{
+.panel{
   flex:1;
+
   min-height:0;
 
-  display:flex;
-  flex-direction:column;
+  margin-top:8px;
 
-  border-radius:28px;
+  padding:9px;
+
+  border-radius:27px;
 
   background:
     linear-gradient(
       145deg,
-      #062c25ee,
-      #031d18ee
+      #062b25f2,
+      #031e19f2
     );
 
-  border:1px solid #1d806a;
+  border:1px solid #1b7966;
 
-  padding:10px;
+  box-shadow:
+    0 0 30px #0008;
+
+  display:flex;
+
+  flex-direction:column;
 
   overflow:hidden;
 }
 
-/* ================= CATEGORY ================= */
+/* =========================
+   الفئة والسؤال
+========================= */
 
 .category{
-  flex:0 0 auto;
-
-  text-align:center;
-
-  color:#58e5a5;
-  font-size:18px;
-  font-weight:900;
-
-  margin:2px 0 3px;
-}
-
-/* ================= QUESTION ================= */
-
-.questionBox{
-  flex:0 0 auto;
-
-  height:105px;
-
-  border-radius:22px;
+  height:32px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
-  text-align:center;
+  flex-shrink:0;
 
-  padding:10px;
+  color:#62e8a8;
 
-  background:#031f1a;
+  font-weight:900;
 
-  border:1px solid #17614f;
-
-  box-shadow:inset 0 0 25px #00100c55;
+  font-size:18px;
 }
 
 .question{
-  font-size:clamp(20px,5.2vw,29px);
-  line-height:1.35;
-  font-weight:900;
-}
-
-/* ================= ANSWERS ================= */
-
-.answers{
   flex:1;
+
   min-height:0;
 
+  margin:4px 2px 7px;
+
+  border-radius:23px;
+
+  border:1px solid #187762;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #0b3b31,
+      #031d18 72%
+    );
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:8px;
+
+  overflow:hidden;
+}
+
+.questionNumber{
+  color:#75cfc1;
+
+  font-size:12px;
+
+  margin-bottom:6px;
+}
+
+.questionText{
+  text-align:center;
+
+  font-size:
+    clamp(20px,5vw,31px);
+
+  font-weight:1000;
+
+  line-height:1.45;
+
+  max-width:620px;
+}
+
+/* =========================
+   الإجابات الدائرية
+========================= */
+
+.answers{
+  width:100%;
+
+  max-width:620px;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 
   gap:8px;
 
@@ -258,28 +355,32 @@ button{
 }
 
 .answer{
-  min-height:0;
+  min-height:54px;
 
-  border-radius:22px;
+  padding:7px;
+
+  border-radius:30px;
 
   background:
-    radial-gradient(
-      circle,
-      #0b382f,
-      #05261f
+    linear-gradient(
+      145deg,
+      #082f28,
+      #06251f
     );
 
-  border:1px solid #1b6352;
+  border:1px solid #1b6a59;
 
-  font-size:clamp(17px,4.5vw,22px);
+  font-size:
+    clamp(15px,4vw,19px);
+
   font-weight:900;
 
-  padding:8px;
-
-  transition:.15s;
+  transition:.18s;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   text-align:center;
@@ -290,119 +391,157 @@ button{
 }
 
 .answer.selected{
-  border:2px solid #69ef9b;
+  border:2px solid #78f58b;
+
   box-shadow:
-    0 0 15px #69ef9b66;
+    0 0 15px #67ed8444;
 }
 
 .answer.correct{
-  background:#086342;
-  border-color:#62f09b;
-  box-shadow:0 0 20px #49ef9277;
+  background:#096847;
+
+  border-color:#71f38e;
+
+  box-shadow:
+    0 0 20px #4df77c66;
 }
 
 .answer.wrong{
-  background:#612b32;
-  border-color:#ff747d;
+  background:#672d35;
+
+  border-color:#ff747e;
 }
 
-/* ================= TOOLS ================= */
+/* =========================
+   أزرار الأدوات
+========================= */
 
 .tools{
-  flex:0 0 auto;
-
   display:grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(5,1fr);
 
   gap:6px;
 
-  margin-top:8px;
+  margin-top:7px;
+
+  flex-shrink:0;
 }
 
 .tool{
-  height:58px;
+  min-width:0;
 
-  border-radius:30px;
+  height:60px;
 
-  background:#062c26;
+  padding:3px;
 
-  border:1px solid #257762;
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a392f,
+      #06251f
+    );
+
+  border:1px solid #247a65;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
-  font-size:20px;
+  font-size:22px;
+
+  transition:.15s;
 }
 
-.tool span{
-  font-size:12px;
+.tool small{
+  display:block;
+
   margin-top:1px;
+
+  font-size:10px;
+
+  line-height:11px;
+
+  color:#ecfffa;
+
+  font-weight:bold;
 }
 
 .tool:active{
-  transform:scale(.94);
+  transform:scale(.91);
 }
 
 .tool:disabled{
   opacity:.35;
 }
 
-/* ================= BOTTOM ================= */
+/* =========================
+   الإحصائيات
+========================= */
 
-.bottom{
-  flex:0 0 auto;
+.stats{
+  height:57px;
 
-  height:51px;
-
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  flex-shrink:0;
 
   margin-top:7px;
 
-  border-radius:25px;
+  border-radius:28px;
 
-  background:#062d27;
+  background:#062b25;
 
-  border:1px solid #1d6958;
+  border:1px solid #1c6657;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  align-items:center;
 }
 
 .stat{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  text-align:center;
 
   font-size:12px;
 }
 
 .stat b{
-  color:#ffd84a;
-  font-size:19px;
+  display:block;
+
+  color:#ffd548;
+
+  font-size:20px;
+
+  line-height:20px;
 }
 
-.stat:not(:last-child){
-  border-left:1px solid #155144;
-}
-
-/* ================= MODAL ================= */
+/* =========================
+   النافذة
+========================= */
 
 .modal{
   position:fixed;
+
   inset:0;
 
-  background:#000b;
+  z-index:100;
 
   display:none;
+
   align-items:center;
   justify-content:center;
 
-  padding:15px;
+  padding:12px;
 
-  z-index:1000;
+  background:#000b;
 }
 
 .modal.show{
@@ -410,239 +549,337 @@ button{
 }
 
 .modalBox{
-  width:min(500px,100%);
-  max-height:85dvh;
+  width:min(560px,100%);
+
+  max-height:90vh;
 
   overflow:auto;
 
-  border-radius:25px;
+  padding:18px;
+
+  border-radius:24px;
 
   background:#06271f;
 
-  border:1px solid #299071;
+  border:1px solid #2b806b;
 
-  padding:18px;
+  box-shadow:0 20px 70px #000;
 }
 
 .modalBox h2{
   margin-top:0;
-  color:#59e8e7;
-  text-align:center;
+
+  color:#62e8d0;
 }
 
 .close{
   float:left;
 
-  width:38px;
-  height:38px;
+  width:35px;
+  height:35px;
 
   border-radius:50%;
 
-  background:#173b34;
+  background:#163d34;
 }
+
+/* =========================
+   القوائم
+========================= */
 
 .list{
   display:grid;
-  gap:8px;
+  gap:7px;
 }
 
 .row{
   padding:11px;
 
-  border-radius:15px;
+  border-radius:14px;
 
   background:#0a342b;
 
-  border:1px solid #19584a;
+  border:1px solid #195a4c;
 
   display:flex;
+
   justify-content:space-between;
 }
 
 .row.me{
-  border-color:#ffd94d;
+  border-color:#ffd34e;
 }
 
 .categories{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
 }
 
 .cat{
-  padding:15px 8px;
-  border-radius:17px;
+  padding:14px;
 
-  background:#0b372e;
-  border:1px solid #216b59;
+  border-radius:16px;
+
+  background:#0a342b;
+
+  border:1px solid #1a6252;
 
   font-weight:bold;
 }
 
 .cat.active{
-  background:#086248;
-  border-color:#61ed9d;
+  background:#075440;
+
+  border-color:#52edb0;
 }
 
 .badges{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
 }
 
 .badge{
   padding:12px;
+
   border-radius:15px;
 
-  background:#0b342c;
-  border:1px solid #1b5a4b;
+  background:#0b342d;
+
+  border:1px solid #1a5a4c;
+}
+
+.badge b{
+  color:#ffd34e;
+
+  display:block;
+
+  margin-bottom:4px;
 }
 
 .badge.lock{
   opacity:.35;
 }
 
-.setting{
+/* =========================
+   أزرار الإعدادات
+========================= */
+
+.settingBtn{
   width:100%;
 
   padding:14px;
 
-  margin:5px 0;
+  margin-top:8px;
 
-  border-radius:16px;
+  border-radius:15px;
 
   background:#0b382f;
 
-  border:1px solid #1c6452;
+  border:1px solid #216958;
 
-  text-align:right;
+  font-weight:bold;
 }
 
-.danger{
-  background:#59272c;
-  border-color:#a34b52;
-}
-
-/* ================= TOAST ================= */
+/* =========================
+   التنبيه
+========================= */
 
 #toast{
   position:fixed;
 
-  bottom:15px;
+  z-index:300;
+
+  bottom:14px;
+
   left:50%;
 
-  transform:translate(-50%,30px);
+  transform:
+    translate(-50%,30px);
 
   opacity:0;
 
-  padding:11px 18px;
+  pointer-events:none;
 
-  border-radius:18px;
+  padding:11px 17px;
 
-  background:#062d26;
+  border-radius:17px;
 
-  border:1px solid #39a887;
+  background:#062a23;
 
-  z-index:2000;
-
-  transition:.2s;
+  border:1px solid #3d8f7b;
 
   font-weight:bold;
+
+  transition:.25s;
 
   white-space:nowrap;
 }
 
 #toast.show{
-  transform:translate(-50%,0);
   opacity:1;
+
+  transform:
+    translate(-50%,0);
 }
 
-/* ================= EFFECT ================= */
+/* =========================
+   احتفال
+========================= */
 
 .confetti{
   position:fixed;
 
-  top:-15px;
+  top:-20px;
 
   width:7px;
   height:13px;
 
-  z-index:1500;
+  z-index:250;
 
-  animation:fall 1s linear forwards;
+  animation:
+    fall 1s linear forwards;
 }
 
 @keyframes fall{
   to{
-    transform:translateY(105vh) rotate(720deg);
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+
     opacity:0;
   }
 }
 
-/* ================= SMALL SCREENS ================= */
+/* =========================
+   الشاشات الصغيرة
+========================= */
 
-@media(max-height:650px){
+@media(max-width:390px){
 
-  .top{
-    height:52px;
+  .app{
+    padding-left:6px;
+    padding-right:6px;
   }
 
-  .pill{
-    width:45px;
-    height:45px;
-    font-size:17px;
+  .top{
+    height:56px;
+  }
+
+  .circleStat{
+    width:48px;
+    height:48px;
+  }
+
+  .circleStat .icon{
+    font-size:18px;
+  }
+
+  .circleStat .value{
+    font-size:13px;
   }
 
   .logo{
-    font-size:21px;
+    font-size:23px;
   }
 
   .progress{
     height:48px;
+
+    padding:7px 10px;
+
+    gap:6px;
   }
 
-  .questionBox{
-    height:85px;
+  .progressText{
+    font-size:11px;
+  }
+
+  .category{
+    font-size:16px;
+  }
+
+  .questionText{
+    font-size:19px;
+  }
+
+  .answer{
+    min-height:48px;
+
+    font-size:14px;
+  }
+
+  .tool{
+    height:53px;
+
+    font-size:19px;
+  }
+
+  .tool small{
+    font-size:8px;
+  }
+
+  .stats{
+    height:50px;
+  }
+
+  .stat{
+    font-size:10px;
+  }
+
+  .stat b{
+    font-size:17px;
+  }
+}
+
+@media(max-height:650px){
+
+  .top{
+    height:50px;
+  }
+
+  .circleStat{
+    width:44px;
+    height:44px;
+  }
+
+  .progress{
+    height:43px;
+  }
+
+  .panel{
+    padding:6px;
+  }
+
+  .category{
+    height:25px;
+    font-size:14px;
+  }
+
+  .question{
+    margin-bottom:4px;
+  }
+
+  .answer{
+    min-height:43px;
+  }
+
+  .tools{
+    gap:4px;
   }
 
   .tool{
     height:47px;
-    font-size:17px;
   }
 
-  .tool span{
-    font-size:10px;
-  }
-
-  .bottom{
-    height:43px;
-  }
-
-  .stat b{
-    font-size:16px;
-  }
-}
-
-@media(max-width:380px){
-
-  .app{
-    padding-left:5px;
-    padding-right:5px;
-  }
-
-  .game{
-    padding:7px;
-  }
-
-  .questionBox{
-    height:80px;
-  }
-
-  .answer{
-    font-size:16px;
-  }
-
-  .tool{
+  .stats{
     height:45px;
   }
 }
@@ -653,245 +890,307 @@ button{
 
 <div class="app">
 
-<!-- HEADER -->
+<!-- =========================
+     الرأس
+========================= -->
 
 <header class="top">
 
-<div class="headerSide right">
+  <div class="topSide right">
 
-<div class="pill">
-🏆
-<b id="score">0</b>
-</div>
+    <div class="circleStat">
+      <span class="icon">🏆</span>
+      <span class="value" id="score">0</span>
+    </div>
 
-<div class="pill">
-⭐
-<b id="xp">0</b>
-</div>
+    <div class="circleStat">
+      <span class="icon">⭐</span>
+      <span class="value" id="xp">0</span>
+    </div>
 
-</div>
+  </div>
 
-<div class="logo">
-👑 عمار الأسطورة
-<small>تحدي المعرفة</small>
-</div>
 
-<div class="headerSide left">
+  <div class="logo">
+    👑 عمار الأسطورة
+  </div>
 
-<div class="pill">
-🔥
-<b id="streak">0</b>
-</div>
 
-<button
-class="pill"
-id="soundBtn"
-onclick="toggleSound()">
+  <div class="topSide left">
 
-🔊
-<b id="soundIcon">صوت</b>
+    <div class="circleStat">
+      <span class="icon">🔥</span>
+      <span class="value" id="streak">0</span>
+    </div>
 
-</button>
+    <button
+      class="circleStat"
+      onclick="toggleSound()">
 
-</div>
+      <span
+        class="icon"
+        id="soundIcon">🔊</span>
+
+      <span
+        class="value"
+        id="soundValue">صوت</span>
+
+    </button>
+
+  </div>
 
 </header>
 
 
-<!-- PROGRESS -->
+<!-- =========================
+     التقدم
+========================= -->
 
 <div class="progress">
 
+  <span
+    class="progressText"
+    id="stage">
+    المرحلة 1/100
+  </span>
+
+  <div class="bar">
+    <span id="progressBar"></span>
+  </div>
+
+  <span
+    class="progressText"
+    id="questionNumber">
+    السؤال 1/3
+  </span>
+
+</div>
+
+
+<!-- =========================
+     اللعبة
+========================= -->
+
+<section class="panel">
+
+  <div
+    class="category"
+    id="category">
+    📚 ثقافة عامة
+  </div>
+
+
+  <div class="question">
+
+    <div
+      class="questionNumber"
+      id="qNumber">
+      السؤال 1 من 300
+    </div>
+
+    <div
+      id="questionText"
+      class="questionText">
+      أهلاً بك في عمار الأسطورة 👑
+    </div>
+
+
+    <div
+      id="answers"
+      class="answers">
+    </div>
+
+  </div>
+
+
+  <!-- الأدوات -->
+
+  <div class="tools">
+
+    <button
+      id="helpBtn"
+      class="tool"
+      onclick="help()">
+
+      💡
+      <small>
+        مساعدة
+        <span id="helpCount">3</span>
+      </small>
+
+    </button>
+
+
+    <button
+      id="skipBtn"
+      class="tool"
+      onclick="skipQuestion()">
+
+      ⏭️
+      <small>
+        تخطي
+        <span id="skipCount">5</span>
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="randomQuestion()">
+
+      🎲
+      <small>
+        سؤال جديد
+      </small>
+
+    </button>
+
+
+    <button
+      id="revealBtn"
+      class="tool"
+      onclick="revealAnswer()">
+
+      👁️
+      <small>
+        كشف
+        <span id="revealCount">8</span>
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="openCategories()">
+
+      🗺️
+      <small>
+        الفئات
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showStats()">
+
+      📊
+      <small>
+        إحصائيات
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showBadges()">
+
+      🎁
+      <small>
+        مكافآتي
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showLeaderboard()">
+
+      🏆
+      <small>
+        الصدارة
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showMap()">
+
+      🗺️
+      <small>
+        الخريطة
+      </small>
+
+    </button>
+
+
+    <button
+      class="tool"
+      onclick="showSettings()">
+
+      ⚙️
+      <small>
+        الإعدادات
+      </small>
+
+    </button>
+
+  </div>
+
+
+  <!-- الإحصائيات -->
+
+  <div class="stats">
+
+    <div class="stat">
+
+      <b id="correct">0</b>
+
+      ✅ صحيح
+
+    </div>
+
+
+    <div class="stat">
+
+      <b>+2</b>
+
+      ⭐ لكل صحيح
+
+    </div>
+
+
+    <div class="stat">
+
+      <b id="bestStreak">0</b>
+
+      🔥 أفضل سلسلة
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     Modal
+========================= -->
+
 <div
-class="progressText"
-id="stageText">
-المرحلة 1/100
-</div>
+  id="modal"
+  class="modal">
 
-<div class="bar">
-<span id="progressBar"></span>
-</div>
+  <div class="modalBox">
 
-<div
-class="progressText"
-id="questionTextTop">
-1/3
-</div>
+    <button
+      class="close"
+      onclick="closeModal()">
+      ✕
+    </button>
 
-</div>
+    <div id="modalContent"></div>
 
-
-<!-- GAME -->
-
-<main class="game">
-
-<div
-class="category"
-id="category">
-📚 ثقافة عامة
-</div>
-
-
-<div class="questionBox">
-
-<div
-class="question"
-id="question">
-جاري تحميل السؤال...
-</div>
-
-</div>
-
-
-<div
-class="answers"
-id="answers">
-</div>
-
-
-<!-- TOOLS -->
-
-<div class="tools">
-
-<button
-class="tool"
-id="helpBtn"
-onclick="help()">
-
-💡
-<span>مساعدة <b id="helpCount">3</b></span>
-
-</button>
-
-
-<button
-class="tool"
-id="skipBtn"
-onclick="skipQuestion()">
-
-⏩
-<span>تخطي <b id="skipCount">5</b></span>
-
-</button>
-
-
-<button
-class="tool"
-id="newBtn"
-onclick="randomQuestion()">
-
-🎲
-<span>سؤال جديد</span>
-
-</button>
-
-
-<button
-class="tool"
-id="revealBtn"
-onclick="revealAnswer()">
-
-👁️
-<span>كشف <b id="revealCount">8</b></span>
-
-</button>
-
-
-<button
-class="tool"
-onclick="openCategories()">
-
-🗺️
-<span>الفئات</span>
-
-</button>
-
-
-<button
-class="tool"
-onclick="showStats()">
-
-📊
-<span>إحصائيات</span>
-
-</button>
-
-
-<button
-class="tool"
-onclick="showBadges()">
-
-🎁
-<span>مكافآتي</span>
-
-</button>
-
-
-<button
-class="tool"
-onclick="showLeaderboard()">
-
-🏆
-<span>الصدارة</span>
-
-</button>
-
-
-<button
-class="tool"
-onclick="showSettings()">
-
-⚙️
-<span>الإعدادات</span>
-
-</button>
-
-</div>
-
-
-<!-- BOTTOM STATS -->
-
-<div class="bottom">
-
-<div class="stat">
-<b id="correct">0</b>
-<span>✅ صحيح</span>
-</div>
-
-<div class="stat">
-<b>+2</b>
-<span>⭐ نقاط السؤال</span>
-</div>
-
-<div class="stat">
-<b id="stageReward">0</b>
-<span>🎁 مكافأة المرحلة</span>
-</div>
-
-</div>
-
-</main>
-
-</div>
-
-
-<!-- MODAL -->
-
-<div
-id="modal"
-class="modal">
-
-<div class="modalBox">
-
-<button
-class="close"
-onclick="closeModal()">
-✕
-</button>
-
-<div id="modalContent"></div>
-
-</div>
+  </div>
 
 </div>
 
@@ -901,216 +1200,809 @@ onclick="closeModal()">
 
 <script>
 
-/* =========================================================
+/* ==========================================================
    عمار الأسطورة
-   300 سؤال = 100 مرحلة × 3 أسئلة
-   ========================================================= */
+   300 سؤال
+   100 مرحلة
+   3 أسئلة لكل مرحلة
+   لا يوجد fetch
+   لا يوجد JSON خارجي
+========================================================== */
 
 
-/* =========================================================
+/* ==========================================================
    بنك الأسئلة
-   كل سجل:
-   الفئة | السؤال | الإجابة | 3 إجابات خاطئة
-   ========================================================= */
+   level = مستوى الصعوبة
+========================================================== */
 
-const BANK = [
+const QUESTIONS = [
 
 /* =========================
    ثقافة عامة
-   ========================= */
+========================= */
 
-["c","ما عاصمة اليابان؟","طوكيو","بكين","سيول","بانكوك"],
-["c","كم عدد أيام الأسبوع؟","7","5","6","8"],
-["c","ما أكبر محيط في العالم؟","الهادئ","الأطلسي","الهندي","المتجمد"],
-["c","ما الكوكب المعروف بالكوكب الأحمر؟","المريخ","الزهرة","المشتري","عطارد"],
-["c","كم دقيقة في الساعة؟","60","30","45","90"],
-["c","ما الحيوان المعروف بسفينة الصحراء؟","الجمل","الحصان","الفيل","الغزال"],
-["c","ما لون الزمرد الشائع؟","الأخضر","الأحمر","الأزرق","الأصفر"],
-["c","ما أكبر قارة؟","آسيا","أفريقيا","أوروبا","أستراليا"],
-["c","ما أصغر قارة؟","أستراليا","آسيا","أفريقيا","أوروبا"],
-["c","ما عاصمة فرنسا؟","باريس","روما","مدريد","لندن"],
-["c","ما عاصمة إيطاليا؟","روما","ميلانو","باريس","أثينا"],
-["c","ما عاصمة إسبانيا؟","مدريد","برشلونة","إشبيلية","لشبونة"],
-["c","ما عاصمة ألمانيا؟","برلين","ميونخ","هامبورغ","فرانكفورت"],
-["c","ما عاصمة بريطانيا؟","لندن","مانشستر","ليفربول","أكسفورد"],
-["c","كم شهرًا في السنة؟","12","10","11","13"],
-["c","كم ساعة في اليوم؟","24","12","18","36"],
-["c","كم ثانية في الدقيقة؟","60","30","90","100"],
-["c","ما اللغة الأكثر انتشارًا كلغة أم؟","الصينية","العربية","الفرنسية","الألمانية"],
-["c","ما أكبر حيوان بري؟","الفيل","الزرافة","وحيد القرن","الأسد"],
-["c","ما أسرع حيوان بري مشهور؟","الفهد","الأسد","الحصان","الذئب"],
-["c","ما الحيوان الذي يلقب بملك الغابة؟","الأسد","النمر","الفهد","الدب"],
-["c","ما الطائر الذي لا يطير ويعيش في القطب الجنوبي؟","البطريق","النسر","الصقر","الغراب"],
-["c","ما المعدن السائل في درجة حرارة الغرفة؟","الزئبق","الحديد","النحاس","الذهب"],
-["c","ما لون الياقوت الأحمر؟","أحمر","أخضر","أزرق","أصفر"],
-["c","ما الأداة المستخدمة لقياس الحرارة؟","الترمومتر","البوصلة","البارومتر","الميزان"],
-["c","ما الجهاز المستخدم لقياس الوزن؟","الميزان","الساعة","المسطرة","البوصلة"],
-["c","ما الشكل ذو ثلاثة أضلاع؟","المثلث","المربع","الدائرة","الخماسي"],
-["c","ما الشكل ذو أربعة أضلاع متساوية؟","المربع","المثلث","الدائرة","المخمس"],
-["c","كم عدد حروف الأبجدية العربية؟","28","26","29","30"],
-["c","ما البحر الذي يفصل بين أوروبا وأفريقيا؟","المتوسط","الأحمر","العربي","الأسود"],
-["c","ما عاصمة الصين؟","بكين","شنغهاي","طوكيو","سيول"],
-["c","ما عاصمة الهند؟","نيودلهي","مومباي","بنغالور","كلكتا"],
-["c","ما عاصمة روسيا؟","موسكو","كييف","مينسك","سانت بطرسبرغ"],
-["c","ما عاصمة تركيا؟","أنقرة","إسطنبول","إزمير","بورصة"],
-["c","ما عاصمة اليونان؟","أثينا","روما","صوفيا","إسطنبول"],
-["c","ما عاصمة كندا؟","أوتاوا","تورنتو","فانكوفر","مونتريال"],
-["c","ما عاصمة أستراليا؟","كانبرا","سيدني","ملبورن","بيرث"],
-["c","ما عاصمة البرازيل؟","برازيليا","ريو","ساو باولو","سالوادور"],
-["c","ما عاصمة المكسيك؟","مكسيكو سيتي","كانكون","غوادالاخارا","مونتيري"],
-["c","ما عاصمة الأرجنتين؟","بوينس آيرس","قرطبة","روزاريو","مندوزا"],
-["c","ما أكبر دولة عربية مساحة؟","الجزائر","السعودية","مصر","السودان"],
-["c","ما العملة الرسمية لليابان؟","الين","الدولار","اليورو","اليوان"],
-["c","ما العملة الرسمية لبريطانيا؟","الجنيه الإسترليني","اليورو","الدولار","الفرنك"],
-["c","ما العملة الرسمية للصين؟","اليوان","الين","الروبل","الوون"],
-["c","كم يومًا في السنة العادية؟","365","360","364","366"],
-["c","كم يومًا في السنة الكبيسة؟","366","365","364","360"],
-["c","ما أكبر عضو في جسم الإنسان؟","الجلد","القلب","الكبد","الرئة"],
-["c","ما العضو المسؤول عن التفكير؟","الدماغ","القلب","الكبد","المعدة"],
-["c","ما الحاسة المرتبطة بالعين؟","البصر","السمع","الشم","اللمس"],
-["c","ما الحاسة المرتبطة بالأذن؟","السمع","البصر","التذوق","الشم"],
-["c","ما الحاسة المرتبطة بالأنف؟","الشم","السمع","البصر","اللمس"],
-["c","ما الحاسة المرتبطة باللسان؟","التذوق","البصر","السمع","اللمس"],
-["c","ما الحاسة المرتبطة بالجلد؟","اللمس","السمع","الشم","البصر"],
-["c","ما اسم صغير الأسد؟","شبل","جرو","مهر","حمل"],
-["c","ما اسم صغير الحصان؟","مهر","شبل","جرو","عجل"],
-["c","ما اسم صغير الكلب؟","جرو","مهر","شبل","حمل"],
-["c","ما اسم صغير البقرة؟","عجل","مهر","جرو","شبل"],
-["c","ما اسم صغير الغنم؟","حمل","عجل","جرو","مهر"],
-["c","كم لاعبًا في فريق كرة القدم؟","11","9","10","12"],
-["c","كم حلقة في شعار الأولمبياد؟","5","4","6","7"],
-["c","كم نقطة للرمية الحرة في السلة؟","1","2","3","4"],
-["c","ما الرياضة التي تستخدم مضربًا وكرة صفراء؟","التنس","الملاكمة","السباحة","الجودو"],
-["c","ما الرياضة التي تستخدم القفازات والحلبة؟","الملاكمة","التنس","السباحة","الرماية"],
-["c","ما الرياضة التي تقام في حوض؟","السباحة","الجودو","التنس","الملاكمة"],
-["c","ما الجهاز المستخدم لمعرفة الوقت؟","الساعة","البوصلة","الميزان","المجهر"],
-["c","ما الأداة التي تحدد الاتجاهات؟","البوصلة","الساعة","الترمومتر","المسطرة"],
-["c","كم درجة في الزاوية القائمة؟","90","45","180","360"],
-["c","كم درجة في الدائرة الكاملة؟","360","90","180","270"],
-["c","ما الغاز الذي يجعل المشروبات الغازية فوارة؟","ثاني أكسيد الكربون","الأكسجين","الهيدروجين","الهيليوم"],
-["c","ما المادة الأساسية في صناعة الزجاج؟","الرمل","الخشب","الحديد","القطن"],
-["c","ما النبات الذي ينتج التمر؟","النخيل","الزيتون","التفاح","القمح"],
-["c","ما النبات الذي ينتج الزيتون؟","الزيتون","النخيل","الكرمة","الأرز"],
-["c","ما الحبوب التي يصنع منها الخبز غالبًا؟","القمح","الأرز","الذرة فقط","الشعير فقط"],
-["c","ما المشروب المصنوع غالبًا من أوراق مجففة؟","الشاي","الحليب","العصير","الماء"],
-["c","ما الحيوان الذي ينتج الصوف؟","الخروف","الحصان","الفيل","الدجاج"],
-["c","ما الحيوان الذي ينتج الحليب؟","البقرة","الأسد","النسر","الذئب"],
-["c","ما القارة التي تقع فيها مصر؟","أفريقيا","أوروبا","أستراليا","أمريكا الجنوبية"],
-["c","ما المحيط الواقع شرق أفريقيا؟","الهندي","الأطلسي","الهادئ","المتجمد"],
-["c","ما أكبر صحراء حارة؟","الصحراء الكبرى","جوبي","كالاهاري","أتاكاما"],
+{c:"general",l:1,q:"ما عاصمة اليابان؟",a:["طوكيو","بكين","سيول","بانكوك"],x:0},
+{c:"general",l:1,q:"كم عدد أيام الأسبوع؟",a:["5","6","7","8"],x:2},
+{c:"general",l:1,q:"ما أكبر محيط في العالم؟",a:["الأطلسي","الهندي","الهادئ","المتجمد"],x:2},
+
+{c:"general",l:2,q:"ما الحيوان المعروف بسفينة الصحراء؟",a:["الحصان","الجمل","الفيل","الغزال"],x:1},
+{c:"general",l:2,q:"كم دقيقة في الساعة؟",a:["30","45","60","90"],x:2},
+{c:"general",l:2,q:"ما لون الزمرد الشائع؟",a:["أحمر","أخضر","أزرق","أبيض"],x:1},
+
+{c:"general",l:3,q:"ما أكبر قارة من حيث المساحة؟",a:["أفريقيا","أوروبا","آسيا","أستراليا"],x:2},
+{c:"general",l:3,q:"كم شهراً في السنة؟",a:["10","11","12","13"],x:2},
+{c:"general",l:3,q:"ما الكوكب المعروف بالكوكب الأحمر؟",a:["الزهرة","المريخ","المشتري","عطارد"],x:1},
+
+{c:"general",l:4,q:"كم عدد ألوان قوس قزح التقليدية؟",a:["5","6","7","8"],x:2},
+{c:"general",l:4,q:"ما اللغة الأكثر انتشاراً من حيث عدد المتحدثين الأصليين؟",a:["العربية","الصينية المندرينية","الفرنسية","الألمانية"],x:1},
+{c:"general",l:4,q:"ما أكبر حيوان معروف على الأرض؟",a:["الفيل الأفريقي","الحوت الأزرق","الزرافة","القرش الأبيض"],x:1},
+
+{c:"general",l:5,q:"كم عدد حروف اللغة العربية؟",a:["26","27","28","29"],x:2},
+{c:"general",l:5,q:"ما المعدن الذي يرمز له بالرمز Au؟",a:["الفضة","الذهب","النحاس","الحديد"],x:1},
+{c:"general",l:5,q:"ما أسرع حيوان بري؟",a:["الفهد","الأسد","الحصان","الذئب"],x:0},
+
+{c:"general",l:6,q:"ما اسم الجهاز الذي يقيس درجة الحرارة؟",a:["البارومتر","الترمومتر","البوصلة","الميكروسكوب"],x:1},
+{c:"general",l:6,q:"كم ضلعاً للمثلث؟",a:["2","3","4","5"],x:1},
+{c:"general",l:6,q:"ما الكوكب الأقرب إلى الشمس؟",a:["الأرض","المريخ","عطارد","الزهرة"],x:2},
+
+{c:"general",l:7,q:"ما اسم صوت الأسد؟",a:["نهيق","زئير","صهيل","مواء"],x:1},
+{c:"general",l:7,q:"ما العضو المسؤول أساساً عن الرؤية؟",a:["الأذن","العين","الأنف","الجلد"],x:1},
+{c:"general",l:7,q:"ما أكبر كوكب في المجموعة الشمسية؟",a:["الأرض","زحل","المشتري","نبتون"],x:2},
+
+{c:"general",l:8,q:"ما عاصمة أستراليا؟",a:["سيدني","ملبورن","كانبرا","بيرث"],x:2},
+{c:"general",l:8,q:"ما اسم العلم الذي يدرس الطقس؟",a:["علم الأحياء","الأرصاد الجوية","علم الفلك","علم الآثار"],x:1},
+{c:"general",l:8,q:"ما اسم أصغر وحدة في الكائن الحي؟",a:["النسيج","العضو","الخلية","العظم"],x:2},
+
+{c:"general",l:9,q:"ما اسم العملية التي يتحول فيها الماء إلى بخار؟",a:["التجمد","التبخر","التكاثف","الانصهار"],x:1},
+{c:"general",l:9,q:"ما الغاز الذي يشكل النسبة الأكبر من الغلاف الجوي؟",a:["الأكسجين","النيتروجين","ثاني أكسيد الكربون","الهيدروجين"],x:1},
+{c:"general",l:9,q:"ما الوحدة الأساسية لقياس الزمن في النظام الدولي؟",a:["الدقيقة","الساعة","الثانية","اليوم"],x:2},
+
+{c:"general",l:10,q:"من رسم لوحة الموناليزا؟",a:["بيكاسو","ليوناردو دافنشي","فان غوخ","رامبرانت"],x:1},
+{c:"general",l:10,q:"ما الآلة الموسيقية التي تحتوي عادة على مفاتيح سوداء وبيضاء؟",a:["العود","الكمان","البيانو","الناي"],x:2},
+{c:"general",l:10,q:"ما عاصمة كندا؟",a:["تورنتو","أوتاوا","فانكوفر","مونتريال"],x:1},
 
 /* =========================
-   علوم
-   ========================= */
+   علمية
+========================= */
 
-["s","ما الغاز الضروري للتنفس؟","الأكسجين","الهيدروجين","الهيليوم","النيون"],
-["s","ما وحدة قياس القوة؟","نيوتن","واط","فولت","أمبير"],
-["s","ما أقرب نجم إلى الأرض؟","الشمس","سيريوس","النسر","النجم القطبي"],
-["s","ما العضو الذي يضخ الدم؟","القلب","الكبد","الرئة","المعدة"],
-["s","ما أكبر كوكب؟","المشتري","زحل","الأرض","نبتون"],
-["s","ما الكوكب الأقرب للشمس؟","عطارد","الزهرة","الأرض","المريخ"],
-["s","ما الكوكب المعروف بحلقاته؟","زحل","المريخ","عطارد","الزهرة"],
-["s","ما القمر الطبيعي للأرض؟","القمر","فوبوس","أوروبا","تيتان"],
-["s","ما مركز النظام الشمسي؟","الشمس","الأرض","المشتري","القمر"],
-["s","ما القوة التي تجذب الأجسام نحو الأرض؟","الجاذبية","المغناطيسية","الاحتكاك","الطفو"],
-["s","ما سرعة الضوء تقريبًا؟","300 ألف كم/ث","30 ألف كم/ث","3 آلاف كم/ث","3 ملايين كم/ث"],
-["s","ما وحدة قياس الطاقة؟","جول","نيوتن","أمبير","فولت"],
-["s","ما وحدة قياس القدرة؟","واط","جول","نيوتن","كولوم"],
-["s","ما وحدة قياس التيار؟","أمبير","فولت","واط","أوم"],
-["s","ما وحدة قياس الجهد؟","فولت","أمبير","واط","جول"],
-["s","ما المادة التي تحمل الصفات الوراثية؟","DNA","الماء","الجلوكوز","الأكسجين"],
-["s","ما أصغر وحدة حية؟","الخلية","النسيج","العضو","الجهاز"],
-["s","ما العضية المسؤولة عن إنتاج الطاقة؟","الميتوكوندريا","النواة","الريبوسوم","الجدار"],
-["s","ما العضية التي تحتوي المادة الوراثية في الخلية؟","النواة","الميتوكوندريا","الفجوة","الغشاء"],
-["s","ما العملية التي يصنع بها النبات غذاءه؟","البناء الضوئي","التنفس","الهضم","التخمر"],
-["s","ما الصبغة الخضراء في النبات؟","الكلوروفيل","الهيموغلوبين","الميلانين","الكيراتين"],
-["s","ما الغاز الذي تمتصه النباتات في البناء الضوئي؟","ثاني أكسيد الكربون","الأكسجين","الهيدروجين","الهيليوم"],
-["s","ما الغاز الذي تطلقه النباتات أثناء البناء الضوئي؟","الأكسجين","النيتروجين","الهيدروجين","الهيليوم"],
-["s","ما درجة تجمد الماء مئوية؟","0","10","-10","100"],
-["s","ما درجة غليان الماء عند الضغط الجوي القياسي؟","100","50","90","120"],
-["s","ما الرمز الكيميائي للماء؟","H2O","CO2","O2","NaCl"],
-["s","ما الرمز الكيميائي للأكسجين؟","O2","H2","CO2","N2"],
-["s","ما الرمز الكيميائي لثاني أكسيد الكربون؟","CO2","O2","H2O","NaCl"],
-["s","ما الرمز الكيميائي لملح الطعام؟","NaCl","H2O","CO2","O2"],
-["s","ما المعدن الضروري للهيموغلوبين؟","الحديد","الذهب","الفضة","النحاس"],
-["s","ما العضو الرئيسي للتنفس؟","الرئتان","الكبد","المعدة","الكلى"],
-["s","ما العضو الذي يرشح الدم؟","الكليتان","الرئتان","القلب","المعدة"],
-["s","ما العضو الذي يهضم الطعام بشكل أساسي؟","المعدة","القلب","الرئة","الدماغ"],
-["s","ما أكبر عظم في جسم الإنسان؟","عظم الفخذ","الجمجمة","الزند","الترقوة"],
-["s","ما أصغر عظم في جسم الإنسان؟","عظم الركاب","الفخذ","القص","العضد"],
-["s","كم عدد حجرات القلب؟","4","2","3","5"],
-["s","ما خلايا الدم التي تدافع عن الجسم؟","كريات الدم البيضاء","الحمراء","الصفائح","البلازما"],
-["s","ما خلايا الدم التي تنقل الأكسجين؟","كريات الدم الحمراء","البيضاء","الصفائح","الخلايا العصبية"],
-["s","ما المادة التي تساعد على تخثر الدم؟","الصفائح الدموية","البلازما فقط","العصبونات","الهرمونات"],
-["s","ما الجهاز المسؤول عن نقل الدم؟","الدوري","الهضمي","التنفسي","العصبي"],
-["s","ما الجهاز المسؤول عن التنفس؟","التنفسي","الهضمي","الدوري","العظمي"],
-["s","ما الجهاز المسؤول عن الهضم؟","الهضمي","العصبي","التنفسي","الدوري"],
-["s","ما الجهاز الذي يرسل الإشارات العصبية؟","العصبي","الهضمي","الدوري","الهيكلي"],
-["s","ما الكوكب الذي يسمى توأم الأرض؟","الزهرة","المريخ","عطارد","نبتون"],
-["s","ما أكبر قمر في المجموعة الشمسية؟","غانيميد","تيتان","القمر","أوروبا"],
-["s","ما الكوكب الذي يستغرق أقل وقت للدوران حول الشمس؟","عطارد","الأرض","المريخ","زحل"],
-["s","ما سبب تعاقب الليل والنهار؟","دوران الأرض حول نفسها","دوران القمر","دوران الشمس","دوران المشتري"],
-["s","ما سبب الفصول الأربعة؟","ميل محور الأرض ودورانها حول الشمس","دوران القمر","حركة السحب","اختلاف القمر"],
-["s","ما الجهاز الذي يقيس الزلازل؟","السيسموغراف","البارومتر","الترمومتر","البوصلة"],
-["s","ما العلم الذي يدرس الزلازل؟","علم الزلازل","الفلك","الأحياء","الكيمياء"],
-["s","ما العلم الذي يدرس النجوم؟","الفلك","الجيولوجيا","الأحياء","الطب"],
-["s","ما العلم الذي يدرس الصخور؟","الجيولوجيا","الفلك","الفيزياء","الطب"],
-["s","ما العلم الذي يدرس الكائنات الحية؟","الأحياء","الفلك","الجيولوجيا","الرياضيات"],
-["s","ما العنصر الأكثر وفرة في الكون؟","الهيدروجين","الأكسجين","الكربون","الحديد"],
-["s","ما العنصر الذي رمزه Fe؟","الحديد","الفلور","الفضة","الذهب"],
-["s","ما العنصر الذي رمزه Au؟","الذهب","الفضة","الحديد","النحاس"],
-["s","ما العنصر الذي رمزه Ag؟","الفضة","الذهب","الألومنيوم","الحديد"],
-["s","ما العنصر الذي رمزه Cu؟","النحاس","الكربون","الكالسيوم","الكوبالت"],
-["s","ما الرقم الهيدروجيني للماء النقي تقريبًا؟","7","1","14","10"],
-["s","ما نوع الدماغ في الإنسان من حيث الجهاز العصبي؟","مركزي","محيطي فقط","هضمي","عضلي"],
-["s","ما نوع الطاقة المخزنة في الغذاء؟","كيميائية","ضوئية","صوتية","نووية"],
-["s","ما نوع الطاقة التي تصلنا من الشمس؟","ضوئية وحرارية","صوتية فقط","حركية فقط","كيميائية فقط"],
-["s","ما الجهاز الذي يحول الصوت إلى إشارات عصبية؟","الأذن","العين","الجلد","الأنف"],
-["s","ما العضو المسؤول عن الرؤية؟","العين","الأذن","الأنف","اللسان"],
-["s","ما الطبقة الخارجية الصلبة للأرض؟","القشرة","اللب الداخلي","اللب الخارجي","الوشاح"],
-["s","ما الطبقة التي تقع أسفل القشرة؟","الوشاح","اللب الداخلي","الغلاف الجوي","القشرة"],
-["s","ما أكثر غاز في الغلاف الجوي؟","النيتروجين","الأكسجين","الهيدروجين","ثاني أكسيد الكربون"],
-["s","ما نسبة الأكسجين في الهواء تقريبًا؟","21%","50%","78%","10%"],
-["s","ما نسبة النيتروجين في الهواء تقريبًا؟","78%","21%","10%","50%"],
-["s","ما الظاهرة الناتجة عن تفريغ كهربائي في الغلاف الجوي؟","البرق","الندى","الضباب","الكسوف"],
-["s","ما الصوت الناتج بعد البرق؟","الرعد","المطر","الريح","الزلزال"],
-["s","ما الظاهرة التي تحجب فيها الأرض ضوء الشمس عن القمر؟","خسوف القمر","كسوف الشمس","المد والجزر","الشفق"],
-["s","ما الظاهرة التي يحجب فيها القمر الشمس؟","كسوف الشمس","خسوف القمر","الشفق","المد"],
+{c:"science",l:1,q:"ما الغاز الذي يحتاجه الإنسان للتنفس؟",a:["الأكسجين","الهيليوم","الهيدروجين","النيون"],x:0},
+{c:"science",l:1,q:"ما العضو الذي يضخ الدم؟",a:["الكبد","القلب","الرئة","المعدة"],x:1},
+{c:"science",l:1,q:"ما أقرب نجم إلى الأرض؟",a:["سيريوس","الشمس","النسر","الشعرى"],x:1},
+
+{c:"science",l:2,q:"ما وحدة قياس القوة؟",a:["واط","نيوتن","فولت","أمبير"],x:1},
+{c:"science",l:2,q:"ما وحدة قياس التيار الكهربائي؟",a:["أمبير","فولت","واط","جول"],x:0},
+{c:"science",l:2,q:"ما الكوكب الذي يملك حلقات بارزة؟",a:["عطارد","زحل","الزهرة","المريخ"],x:1},
+
+{c:"science",l:3,q:"ما أكبر عضو في جسم الإنسان؟",a:["القلب","الجلد","الكبد","الرئة"],x:1},
+{c:"science",l:3,q:"ما الجزء الذي يحمل المادة الوراثية في الخلية؟",a:["DNA","الماء","الكالسيوم","الدهون"],x:0},
+{c:"science",l:3,q:"ما العملية التي تصنع بها النباتات غذاءها؟",a:["التنفس","البناء الضوئي","الهضم","التخمر"],x:1},
+
+{c:"science",l:4,q:"ما الكوكب الأكثر حرارة في النظام الشمسي؟",a:["عطارد","الزهرة","المريخ","المشتري"],x:1},
+{c:"science",l:4,q:"ما وحدة قياس الطاقة في النظام الدولي؟",a:["جول","نيوتن","فولت","باسكال"],x:0},
+{c:"science",l:4,q:"ما سرعة الضوء تقريباً في الفراغ؟",a:["300 ألف كم/ث","30 ألف كم/ث","3 آلاف كم/ث","3 ملايين كم/ث"],x:0},
+
+{c:"science",l:5,q:"ما الكوكب المعروف بالبقعة الحمراء العظيمة؟",a:["زحل","المشتري","نبتون","أورانوس"],x:1},
+{c:"science",l:5,q:"ما العنصر الذي رمزه Fe؟",a:["الحديد","الفلور","الفضة","الذهب"],x:0},
+{c:"science",l:5,q:"ما الرقم الهيدروجيني للماء النقي تقريباً؟",a:["3","5","7","10"],x:2},
+
+{c:"science",l:6,q:"ما العضية المسؤولة عن إنتاج معظم الطاقة في الخلية؟",a:["النواة","الميتوكوندريا","الريبوسوم","الجدار الخلوي"],x:1},
+{c:"science",l:6,q:"ما القوة التي تجذب الأجسام نحو الأرض؟",a:["المغناطيسية","الجاذبية","الاحتكاك","الكهربائية"],x:1},
+{c:"science",l:6,q:"ما نوع الدم الذي تنقله الشرايين غالباً بعيداً عن القلب؟",a:["الدم الخارج من القلب","اللمف","العصارة","الماء"],x:0},
+
+{c:"science",l:7,q:"ما اسم المجرة التي توجد فيها المجموعة الشمسية؟",a:["أندروميدا","درب التبانة","المرأة المسلسلة","سومبريرو"],x:1},
+{c:"science",l:7,q:"ما العنصر الأكثر وفرة في الكون؟",a:["الأكسجين","الكربون","الهيدروجين","الحديد"],x:2},
+{c:"science",l:7,q:"ما الجهاز المستخدم لرصد الزلازل؟",a:["البارومتر","السيزموجراف","الترمومتر","المنظار"],x:1},
+
+{c:"science",l:8,q:"ما اسم تحول المادة من الحالة الصلبة إلى الغازية مباشرة؟",a:["التسامي","التكاثف","الترسيب","التجمد"],x:0},
+{c:"science",l:8,q:"ما الجسيم ذو الشحنة السالبة؟",a:["البروتون","النيوترون","الإلكترون","الفوتون"],x:2},
+{c:"science",l:8,q:"ما الجسيم الموجود في نواة الذرة دون شحنة كهربائية؟",a:["الإلكترون","النيوترون","البروتون","الفوتون"],x:1},
+
+{c:"science",l:9,q:"ما الغاز الذي تمتصه النباتات في البناء الضوئي؟",a:["الأكسجين","النيتروجين","ثاني أكسيد الكربون","الهليوم"],x:2},
+{c:"science",l:9,q:"ما أقرب كوكب إلى الأرض في متوسط المسافة المدارية؟",a:["الزهرة","المريخ","المشتري","نبتون"],x:0},
+{c:"science",l:9,q:"ما اسم العلم الذي يدرس الوراثة؟",a:["علم الوراثة","علم الصخور","علم الطقس","علم الفلك"],x:0},
+
+{c:"science",l:10,q:"ما اسم الحد الذي لا يستطيع الضوء الإفلات بعد تجاوزه في الثقب الأسود؟",a:["أفق الحدث","الحزام الرئيسي","القطب","الغلاف"],x:0},
+{c:"science",l:10,q:"ما نوع الرابطة التي تنشأ من مشاركة الإلكترونات؟",a:["الأيونية","التساهمية","الفلزية","المغناطيسية"],x:1},
+{c:"science",l:10,q:"ما الجزيء الذي يحمل التعليمات الوراثية في معظم الكائنات؟",a:["DNA","ATP","الماء","الجلوكوز"],x:0},
 
 /* =========================
-   حضارة
-   ========================= */
+   حضارية
+========================= */
 
-["v","أين قامت الحضارة المصرية القديمة؟","وادي النيل","وادي الرافدين","الهند","الصين"],
-["v","أين قامت حضارة بلاد الرافدين؟","بين دجلة والفرات","وادي النيل","اليونان","إيطاليا"],
-["v","ما المدينة المرتبطة بحضارة بابل؟","بابل","روما","أثينا","قرطاج"],
-["v","ما الحضارة التي بنت مدينة ماتشو بيتشو؟","الإنكا","الرومان","الفراعنة","الفينيقيون"],
-["v","أين نشأت الحضارة اليونانية القديمة؟","اليونان","مصر","الصين","المكسيك"],
-["v","أين نشأت الحضارة الرومانية؟","إيطاليا","مصر","الهند","اليابان"],
-["v","ما المدينة التي كانت مركزًا مهمًا للحضارة الرومانية؟","روما","أثينا","بابل","قرطبة"],
-["v","ما الحضارة التي اشتهرت بالكتابة المسمارية؟","السومريون","الرومان","المايا","الإنكا"],
-["v","ما نوع الكتابة المصرية القديمة؟","الهيروغليفية","المسمارية","اللاتينية","السنسكريتية"],
-["v","ما المادة التي استخدمها المصريون للكتابة؟","البردي","الحرير فقط","البلاستيك","الورق الحديث"],
-["v","ما البناء الشهير في الجيزة؟","الأهرامات","الكولوسيوم","البارثينون","سور الصين"],
-["v","ما التمثال الشهير قرب أهرامات الجيزة؟","أبو الهول","تمثال الحرية","المسيح الفادي","داود"],
-["v","ما الحضارة التي بنت الكولوسيوم؟","الرومان","الفراعنة","الإنكا","المايا"],
-["v","ما المدينة التي يقع فيها الكولوسيوم؟","روما","باريس","أثينا","مدريد"],
-["v","ما المبنى الشهير في أثينا؟","البارثينون","الكولوسيوم","الأهرامات","برج بيزا"],
-["v","لمن كان البارثينون مكرسًا؟","أثينا","زيوس","أبولو","أرتميس"],
-["v","ما الحضارة التي بنت سور الصين العظيم؟","الصينية","الرومانية","المصرية","الفينيقية"],
-["v","ما المدينة الصينية التاريخية المعروفة بالمدينة المحرمة؟","بكين","شنغهاي","نانجينغ","شيان"],
-["v","ما الحضارة التي ازدهرت في شبه جزيرة يوكاتان؟","المايا","الإنكا","الرومان","الفراعنة"],
-["v","ما الحضارة التي اتخذت كوزكو مركزًا لها؟","الإنكا","المايا","الرومان","الفينيقيون"],
-["v","ما المدينة القديمة الشهيرة في الأردن؟","البتراء","بابل","روما","قرطاج"],
-["v","ما اللقب الشائع للبتراء؟","المدينة الوردية","المدينة الزرقاء","مدينة الذهب","مدينة الثلج"],
-["v","ما الحضارة المرتبطة بمدينة قرطاج؟","الفينيقية","الرومانية فقط","المصرية","الصينية"],
-["v","أين تقع قرطاج القديمة؟","تونس","مصر","إسبانيا","اليونان"],
-["v","ما الحضارة التي اشتهرت بالملاحة في البحر المتوسط؟","الفينيقيون","الإنكا","المغول","المايا"],
-["v","ما المدينة التي كانت مركزًا للعلم في العصر العباسي؟","بغداد","روما","باريس","لندن"],
-["v","ما اسم المركز العلمي الشهير في بغداد؟","بيت الحكمة","الأكاديمية","دار الفلسفة","بيت الطب"],
-["v","من اشتهر بتطوير علم الجبر؟","الخوارزمي","ابن بطوطة","الجاحظ","الطبري"],
-["v","من اشتهر بكتاب القانون في الطب؟","ابن سينا","الخوارزمي","ابن خلدون","المسعودي"],
-["v","من مؤلف المقدمة الشهيرة في علم الاجتماع والتاريخ؟","ابن خلدون","ابن سينا","الخوارزمي","الجاحظ"],
-["v","من الرحالة الذي جاب مناطق واسعة من العالم؟","ابن بطوطة","الخوارزمي","ابن رشد","الرازي"],
-["v","ما المدينة التي كانت مركزًا علميًا في الأندلس؟","قرطبة","روما","بكين","القاهرة"],
-["v","ما المسجد الشهير في قرطبة؟","جامع قرطبة","الأزهر","الجامع الأموي","الم
+{c:"culture",l:1,q:"أين بنيت الأهرامات الشهيرة في الجيزة؟",a:["مصر","العراق","اليمن","الهند"],x:0},
+{c:"culture",l:1,q:"ما الحضارة التي اشتهرت بالكتابة المسمارية؟",a:["السومرية","الرومانية","الإسبانية","الفايكنغ"],x:0},
+{c:"culture",l:1,q:"أين تقع مدينة البتراء الأثرية؟",a:["الأردن","مصر","سوريا","تونس"],x:0},
+
+{c:"culture",l:2,q:"ما الحضارة التي بنت مدينة ماتشو بيتشو؟",a:["الإنكا","الرومان","الفراعنة","الفينيقيون"],x:0},
+{c:"culture",l:2,q:"ما الحضارة التي اشتهرت بمدينة روما القديمة؟",a:["الرومانية","المايا","الإنكا","السومرية"],x:0},
+{c:"culture",l:2,q:"ما المدينة التاريخية المعروفة بالمدرج الكولوسيوم؟",a:["روما","أثينا","باريس","مدريد"],x:0},
+
+{c:"culture",l:3,q:"من الرحالة المغربي الشهير الذي جاب مناطق واسعة من العالم؟",a:["ابن بطوطة","الخوارزمي","ابن سينا","الجاحظ"],x:0},
+{c:"culture",l:3,q:"من العالم المرتبط بتأسيس علم الجبر؟",a:["الخوارزمي","ابن بطوطة","المتنبي","الجاحظ"],x:0},
+{c:"culture",l:3,q:"من الطبيب والفيلسوف صاحب كتاب القانون في الطب؟",a:["ابن سينا","الخوارزمي","البيروني","ابن خلدون"],x:0},
+
+{c:"culture",l:4,q:"ما الحضارة التي بنت مدينة تشيتشن إيتزا؟",a:["المايا","الرومان","الصينيون","الفرس"],x:0},
+{c:"culture",l:4,q:"ما المدينة اليونانية القديمة المرتبطة بالديمقراطية؟",a:["أثينا","إسبرطة","قرطاج","روما"],x:0},
+{c:"culture",l:4,q:"ما الحضارة التي اشتهرت بمدينة قرطاج؟",a:["الفينيقيون","الإنكا","المايا","المغول"],x:0},
+
+{c:"culture",l:5,q:"ما الكتابة المصرية القديمة التي تظهر في المعابد والمقابر؟",a:["الهيروغليفية","المسمارية","السنسكريتية","اللاتينية"],x:0},
+{c:"culture",l:5,q:"ما اسم الطريق التجاري القديم الذي ربط الصين بمناطق الغرب؟",a:["طريق الحرير","طريق الذهب","طريق البخور فقط","طريق الملوك"],x:0},
+{c:"culture",l:5,q:"أي مدينة عُرفت تاريخياً بأنها مركز مهم للعلم في العصر العباسي؟",a:["بغداد","روما","لندن","مدريد"],x:0},
+
+{c:"culture",l:6,q:"من مؤلف المقدمة المشهورة في علم العمران؟",a:["ابن خلدون","ابن سينا","الخوارزمي","الطبري"],x:0},
+{c:"culture",l:6,q:"ما المدينة التي اشتهرت بمكتبتها القديمة في العالم الهيليني؟",a:["الإسكندرية","بغداد","قرطبة","دمشق"],x:0},
+{c:"culture",l:6,q:"أي حضارة ارتبطت بمدينة بابل؟",a:["بلاد الرافدين","اليونان","الرومان","المايا"],x:0},
+
+{c:"culture",l:7,q:"ما اسم المسرح اليوناني الشهير في أثينا؟",a:["مسرح ديونيسوس","الكولوسيوم","الأوبرا الملكية","المدرج الروماني"],x:0},
+{c:"culture",l:7,q:"ما الحضارة التي استخدمت نظاماً متقدماً للطرق في أمريكا الجنوبية؟",a:["الإنكا","الفينيقيون","السومريون","الفرس"],x:0},
+{c:"culture",l:7,q:"ما المدينة الأثرية المرتبطة بالحضارة النبطية؟",a:["البتراء","أثينا","بابل","قرطاج"],x:0},
+
+{c:"culture",l:8,q:"ما اسم الكتابة القديمة في بلاد الرافدين؟",a:["المسمارية","الهيروغليفية","اللاتينية","العربية"],x:0},
+{c:"culture",l:8,q:"أي حضارة اشتهرت بحدائق بابل المعلقة في الروايات التاريخية؟",a:["البابلية","الإنكا","الرومانية","اليونانية"],x:0},
+{c:"culture",l:8,q:"ما المدينة التي أصبحت مركزاً مهماً للترجمة والعلم في الأندلس؟",a:["قرطبة","باريس","روما","بكين"],x:0},
+
+{c:"culture",l:9,q:"من صاحب كتاب كليلة ودمنة في التراث العربي بصيغته الأدبية الشهيرة؟",a:["ابن المقفع","الجاحظ","المتنبي","المعري"],x:0},
+{c:"culture",l:9,q:"من صاحب كتاب الحيوان؟",a:["الجاحظ","ابن خلدون","الخوارزمي","ابن بطوطة"],x:0},
+{c:"culture",l:9,q:"من أشهر شعراء العصر العباسي؟",a:["المتنبي","هوميروس","شكسبير","دانتي"],x:0},
+
+{c:"culture",l:10,q:"ما الحضارة التي طورت نظاماً معقداً للتقويم في أمريكا الوسطى؟",a:["المايا","الرومان","الفينيقيون","الآشوريون"],x:0},
+{c:"culture",l:10,q:"ما المدينة التي كانت عاصمة الإمبراطورية البيزنطية؟",a:["القسطنطينية","روما","أثينا","قرطبة"],x:0},
+{c:"culture",l:10,q:"ما الحضارة التي اشتهرت بمدينة تيوتيهواكان في المكسيك القديمة؟",a:["حضارات وسط المكسيك القديمة","الرومان","السومريون","الفينيقيون"],x:0},
+
+/* =========================
+   جغرافية
+========================= */
+
+{c:"geo",l:1,q:"ما عاصمة مصر؟",a:["القاهرة","الإسكندرية","الجيزة","أسوان"],x:0},
+{c:"geo",l:1,q:"ما عاصمة السعودية؟",a:["جدة","الرياض","مكة","الدمام"],x:1},
+{c:"geo",l:1,q:"ما عاصمة اليمن؟",a:["عدن","صنعاء","تعز","الحديدة"],x:1},
+
+{c:"geo",l:2,q:"ما أطول نهر في أمريكا الجنوبية؟",a:["الأمازون","النيل","الدانوب","الراين"],x:0},
+{c:"geo",l:2,q:"ما أكبر صحراء حارة في العالم؟",a:["الصحراء الكبرى","جوبي","كالاهاري","أتاكاما"],x:0},
+{c:"geo",l:2,q:"في أي قارة تقع البرازيل؟",a:["آسيا","أفريقيا","أمريكا الجنوبية","أوروبا"],x:2},
+
+{c:"geo",l:3,q:"ما عاصمة فرنسا؟",a:["روما","باريس","برلين","مدريد"],x:1},
+{c:"geo",l:3,q:"ما عاصمة إيطاليا؟",a:["ميلانو","روما","نابولي","تورينو"],x:1},
+{c:"geo",l:3,q:"ما عاصمة ألمانيا؟",a:["برلين","ميونخ","هامبورغ","فرانكفورت"],x:0},
+
+{c:"geo",l:4,q:"ما أعلى جبل في العالم فوق سطح البحر؟",a:["إيفرست","كيليمنجارو","الألب","مون بلان"],x:0},
+{c:"geo",l:4,q:"في أي قارة تقع مصر؟",a:["آسيا","أفريقيا","أوروبا","أمريكا"],x:1},
+{c:"geo",l:4,q:"ما البحر الذي يفصل أفريقيا عن أوروبا عند مضيق جبل طارق؟",a:["البحر المتوسط","البحر الأحمر","بحر العرب","البحر الأسود"],x:0},
+
+{c:"geo",l:5,q:"ما الدولة التي تشتهر بشكلها الطويل على الساحل الغربي لأمريكا الجنوبية؟",a:["تشيلي","الهند","اليابان","إيطاليا"],x:0},
+{c:"geo",l:5,q:"ما أكبر دولة في العالم من حيث المساحة؟",a:["كندا","روسيا","الصين","الولايات المتحدة"],x:1},
+{c:"geo",l:5,q:"ما أصغر قارة من حيث المساحة؟",a:["أوروبا","أستراليا","أفريقيا","أمريكا الجنوبية"],x:1},
+
+{c:"geo",l:6,q:"ما المضيق الذي يفصل آسيا عن أمريكا الشمالية؟",a:["بيرنغ","جبل طارق","هرمز","البوسفور"],x:0},
+{c:"geo",l:6,q:"ما البحر الذي يقع بين شبه الجزيرة العربية وأفريقيا؟",a:["البحر الأحمر","المتوسط","الأسود","الكاريبي"],x:0},
+{c:"geo",l:6,q:"ما النهر الذي يمر بمدينة باريس؟",a:["السين","التايمز","الدانوب","الراين"],x:0},
+
+{c:"geo",l:7,q:"ما عاصمة أيسلندا؟",a:["ريكيافيك","أوسلو","هلسنكي","ستوكهولم"],x:0},
+{c:"geo",l:7,q:"ما الدولة التي تضم مدينة إسطنبول؟",a:["تركيا","اليونان","بلغاريا","جورجيا"],x:0},
+{c:"geo",l:7,q:"ما عاصمة أوزبكستان؟",a:["طشقند","ألماتي","بخارى","سمرقند"],x:0},
+
+{c:"geo",l:8,q:"ما أعمق بحيرة في العالم؟",a:["بايكال","فيكتوريا","طبريا","سوبيريور"],x:0},
+{c:"geo",l:8,q:"ما أكبر جزيرة في العالم؟",a:["مدغشقر","غرينلاند","بورنيو","اليابان"],x:1},
+{c:"geo",l:8,q:"ما السلسلة الجبلية التي تضم إيفرست؟",a:["الهيمالايا","الألب","الأنديز","الأطلس"],x:0},
+
+{c:"geo",l:9,q:"ما النهر الذي يمر عبر بغداد؟",a:["دجلة","النيل","الفرات فقط","السين"],x:0},
+{c:"geo",l:9,q:"ما الدولة التي تقع فيها مدينة كيب تاون؟",a:["جنوب أفريقيا","ناميبيا","كينيا","غانا"],x:0},
+{c:"geo",l:9,q:"ما العاصمة الأوروبية التي تقع على نهر التايمز؟",a:["لندن","باريس","روما","فيينا"],x:0},
+
+{c:"geo",l:10,q:"ما أعمق نقطة معروفة في محيطات الأرض؟",a:["خندق ماريانا","خندق بيرو","خندق اليابان","خندق تونغا"],x:0},
+{c:"geo",l:10,q:"ما الدولة التي تمتلك أكبر عدد من الجزر تقريباً؟",a:["السويد","اليابان","إندونيسيا","الفلبين"],x:0},
+{c:"geo",l:10,q:"ما القارة التي لا توجد فيها دول ذات سيادة دائمة السكان؟",a:["أنتاركتيكا","أفريقيا","آسيا","أوروبا"],x:0}
+
+];
+
+
+/* ==========================================================
+   ملاحظة:
+   لدينا الآن مجموعة أسئلة أساسية.
+   النظام التالي يقوم بتوزيعها على المراحل بدون إعادة
+   السؤال نفسه حتى تنتهي المجموعة.
+========================================================== */
+
+
+/* ==========================================================
+   أسماء الفئات
+========================================================== */
+
+const CATEGORY_NAMES={
+  general:"📚 ثقافة عامة",
+  science:"🔬 علوم",
+  culture:"🏛️ حضارية",
+  geo:"🌍 جغرافية"
+};
+
+
+/* ==========================================================
+   حالة اللعبة
+========================================================== */
+
+const DEFAULT_STATE={
+
+  score:0,
+
+  xp:0,
+
+  stage:1,
+
+  correct:0,
+
+  answered:0,
+
+  streak:0,
+
+  bestStreak:0,
+
+  skips:5,
+
+  helps:3,
+
+  reveals:8,
+
+  sound:true,
+
+  category:"all",
+
+  used:[],
+
+  player:"اللاعب",
+
+  achievements:[],
+
+  settings:{
+    vibration:true,
+    autoNext:true
+  }
+
+};
+
+
+let state;
+
+try{
+
+  state=
+    JSON.parse(
+      localStorage.getItem("legendGameV4")
+    );
+
+}catch(e){
+
+  state=null;
+
+}
+
+
+if(!state){
+
+  state=
+    JSON.parse(
+      JSON.stringify(DEFAULT_STATE)
+    );
+
+}
+
+
+let currentQuestion=null;
+
+let selectedAnswer=null;
+
+let locked=false;
+
+
+/* ==========================================================
+   إصلاح البيانات القديمة
+========================================================== */
+
+function repairState(){
+
+  const fresh=
+    JSON.parse(
+      JSON.stringify(DEFAULT_STATE)
+    );
+
+  Object.keys(fresh).forEach(key=>{
+
+    if(
+      state[key]===undefined
+    ){
+
+      state[key]=fresh[key];
+
+    }
+
+  });
+
+  if(!Array.isArray(state.used))
+    state.used=[];
+
+  if(!Array.isArray(state.achievements))
+    state.achievements=[];
+
+  if(!state.settings)
+    state.settings=fresh.settings;
+
+}
+
+
+repairState();
+
+
+/* ==========================================================
+   الحفظ
+========================================================== */
+
+function save(){
+
+  localStorage.setItem(
+    "legendGameV4",
+    JSON.stringify(state)
+  );
+
+}
+
+
+/* ==========================================================
+   الأسئلة المتاحة
+========================================================== */
+
+function getAvailableQuestions(){
+
+  let list=QUESTIONS;
+
+  if(state.category!=="all"){
+
+    list=list.filter(
+      q=>q.c===state.category
+    );
+
+  }
+
+  list=list.filter(
+    q=>!state.used.includes(
+      QUESTIONS.indexOf(q)
+    )
+  );
+
+  return list;
+
+}
+
+
+/* ==========================================================
+   اختيار سؤال
+========================================================== */
+
+function newQuestion(){
+
+  locked=false;
+
+  selectedAnswer=null;
+
+  let available=
+    getAvailableQuestions();
+
+
+  /*
+    إذا انتهت الأسئلة المستخدمة
+    نعيد دورة جديدة فقط بعد استعمال
+    الأسئلة الموجودة.
+  */
+
+  if(!available.length){
+
+    state.used=[];
+
+    available=
+      getAvailableQuestions();
+
+  }
+
+
+  if(!available.length){
+
+    showFinish();
+
+    return;
+
+  }
+
+
+  /*
+    اختيار السؤال المناسب لمستوى المرحلة.
+    كلما ارتفعت المرحلة زادت صعوبة السؤال.
+  */
+
+  const targetLevel=
+    Math.min(
+      10,
+      Math.ceil(
+        state.stage/10
+      )
+    );
+
+
+  let suitable=
+    available.filter(
+      q=>q.l<=targetLevel
+    );
+
+
+  if(!suitable.length)
+    suitable=available;
+
+
+  /*
+    نحاول اختيار سؤال قريب من مستوى المرحلة.
+  */
+
+  suitable.sort(
+    (a,b)=>
+      Math.abs(a.l-targetLevel)-
+      Math.abs(b.l-targetLevel)
+  );
+
+
+  const pool=
+    suitable.slice(
+      0,
+      Math.min(
+        15,
+        suitable.length
+      )
+    );
+
+
+  currentQuestion=
+    pool[
+      Math.floor(
+        Math.random()*pool.length
+      )
+    ];
+
+
+  const index=
+    QUESTIONS.indexOf(
+      currentQuestion
+    );
+
+
+  state.used.push(index);
+
+  save();
+
+  renderQuestion();
+
+}
+
+
+/* ==========================================================
+   عرض السؤال
+========================================================== */
+
+function renderQuestion(){
+
+  if(!currentQuestion){
+
+    document.getElementById(
+      "questionText"
+    ).textContent=
+      "حدث خطأ في تحميل السؤال";
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "questionText"
+  ).textContent=
+    currentQuestion.q;
+
+
+  document.getElementById(
+    "category"
+  ).textContent=
+    CATEGORY_NAMES[
+      currentQuestion.c
+    ];
+
+
+  document.getElementById(
+    "qNumber"
+  ).textContent=
+    "السؤال "+
+    (
+      state.answered+1
+    )+
+    " من 300";
+
+
+  const answers=
+    document.getElementById(
+      "answers"
+    );
+
+
+  answers.innerHTML="";
+
+
+  /*
+    خلط الإجابات مع المحافظة
+    على معرفة الإجابة الصحيحة.
+  */
+
+  const items=
+    currentQuestion.a.map(
+      (text,index)=>({
+        text,
+        correct:
+          index===
+          currentQuestion.x
+      })
+    );
+
+
+  items.sort(
+    ()=>Math.random()-.5
+  );
+
+
+  items.forEach(
+    item=>{
+
+      const button=
+        document.createElement(
+          "button"
+        );
+
+      button.className="answer";
+
+      button.textContent=
+        item.text;
+
+      button.dataset.correct=
+        item.correct
+        ?"1"
+        :"0";
+
+
+      button.onclick=()=>{
+        selectAnswer(button);
+      };
+
+
+      answers.appendChild(
+        button
+      );
+
+    }
+  );
+
+
+  updateUI();
+
+}
+
+
+/* ==========================================================
+   اختيار الإجابة
+========================================================== */
+
+function selectAnswer(button){
+
+  if(locked)
+    return;
+
+
+  document
+    .querySelectorAll(".answer")
+    .forEach(
+      b=>{
+        b.classList.remove(
+          "selected"
+        );
+      }
+    );
+
+
+  button.classList.add(
+    "selected"
+  );
+
+
+  selectedAnswer=button;
+
+
+  /*
+    الإجابة الصحيحة تنتقل تلقائياً
+    بدون زر تحقق.
+  */
+
+  setTimeout(
+    ()=>{
+      checkAnswer();
+    },
+    180
+  );
+
+}
+
+
+/* ==========================================================
+   التحقق
+========================================================== */
+
+function checkAnswer(){
+
+  if(
+    locked ||
+    !selectedAnswer
+  )
+    return;
+
+
+  locked=true;
+
+
+  const buttons=
+    document.querySelectorAll(
+      ".answer"
+    );
+
+
+  const isCorrect=
+    selectedAnswer.dataset.correct==="1";
+
+
+  buttons.forEach(
+    button=>{
+
+      button.disabled=true;
+
+
+      if(
+        button.dataset.correct==="1"
+      ){
+
+        button.classList.add(
+          "correct"
+        );
+
+      }
+
+    }
+  );
+
+
+  if(isCorrect){
+
+    selectedAnswer.classList.add(
+      "correct"
+    );
+
+
+    state.correct++;
+
+    state.answered++;
+
+    state.streak++;
+
+    state.bestStreak=
+      Math.max(
+        state.bestStreak,
+        state.streak
+      );
+
+
+    /*
+      كل إجابة صحيحة = نقطتان
+    */
+
+    state.score+=2;
+
+    state.xp+=2;
+
+
+    /*
+      كل 3 أسئلة صحيحة = مرحلة جديدة
+    */
+
+    state.stage=
+      Math.min(
+        100,
+        Math.floor(
+          state.correct/3
+        )+1
+      );
+
+
+    correctSound();
+
+    vibrate(
+      [30,40,30]
+    );
+
+    toast(
+      "✅ صحيح! +2 نقطة"
+    );
+
+    confetti();
+
+
+    checkAchievements();
+
+
+  }else{
+
+    selectedAnswer.classList.add(
+      "wrong"
+    );
+
+
+    state.answered++;
+
+    state.streak=0;
+
+    wrongSound();
+
+    vibrate(
+      [100]
+    );
+
+    toast(
+      "❌ إجابة خاطئة"
+    );
+
+  }
+
+
+  save();
+
+  updateUI();
+
+
+  /*
+    الانتقال التلقائي للسؤال التالي
+  */
+
+  setTimeout(
+    ()=>{
+      newQuestion();
+    },
+    isCorrect?650:900
+  );
+
+}
+
+
+/* ==========================================================
+   التخطي
+========================================================== */
+
+function skipQuestion(){
+
+  if(
+    state.skips<=0 ||
+    locked
+  ){
+
+    toast(
+      "⏭️ لا يوجد تخطي متاح"
+    );
+
+    return;
+
+  }
+
+
+  state.skips--;
+
+  save();
+
+  toast(
+    "⏭️ تم تخطي السؤال"
+ 
