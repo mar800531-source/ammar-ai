@@ -2,490 +2,341 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-<meta name="theme-color" content="#071b16">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#061713">
 <title>تحدي الكلمات الأسطوري</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-
-*{
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
-}
-
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
-    font-family:Cairo,sans-serif;
-}
-
-body{
-    background:
-        radial-gradient(circle at 20% 10%,rgba(16,185,129,.22),transparent 30%),
-        radial-gradient(circle at 90% 90%,rgba(6,182,212,.18),transparent 30%),
-        linear-gradient(135deg,#02140f,#05271e,#011711);
-    color:white;
-    overflow-x:hidden;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#10b981;
-    filter:blur(150px);
-    opacity:.13;
-    border-radius:50%;
-    top:-100px;
-    left:-100px;
-    pointer-events:none;
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    width:300px;
-    height:300px;
-    background:#06b6d4;
-    filter:blur(150px);
-    opacity:.10;
-    right:-100px;
-    bottom:-100px;
-    pointer-events:none;
-}
-
-button{
-    font-family:inherit;
-}
-
-.app{
-    width:min(650px,94%);
-    margin:auto;
-    padding:16px 0 30px;
-    position:relative;
-    z-index:2;
-}
-
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:8px;
-    margin-bottom:12px;
-}
-
-.brand{
-    font-weight:900;
-    font-size:20px;
-    color:#6ee7b7;
-    text-shadow:0 0 18px rgba(16,185,129,.3);
-}
-
-.stats{
-    display:flex;
-    gap:7px;
-}
-
-.stat{
-    padding:7px 10px;
-    border-radius:14px;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.1);
-    font-size:12px;
-    font-weight:800;
-}
-
-.stat span{
-    color:#6ee7b7;
-}
-
-.progress-box{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.1);
-    padding:11px;
-    border-radius:18px;
-    margin-bottom:12px;
-}
-
-.progress-head{
-    display:flex;
-    justify-content:space-between;
-    font-size:12px;
-    color:#cbd5e1;
-    margin-bottom:7px;
-}
-
-.progress{
-    height:8px;
-    background:rgba(255,255,255,.08);
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-    background:linear-gradient(90deg,#10b981,#34d399,#67e8f9);
-    border-radius:20px;
-    transition:.5s;
-    box-shadow:0 0 12px rgba(52,211,153,.5);
-}
-
-.card{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.13);
-    border-radius:30px;
-    padding:18px;
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.42),
-        inset 0 1px 0 rgba(255,255,255,.05);
-    backdrop-filter:blur(18px);
-}
-
-.title{
-    text-align:center;
-    font-size:28px;
-    font-weight:900;
-    background:linear-gradient(135deg,#34d399,#a7f3d0,#67e8f9);
-    -webkit-background-clip:text;
-    color:transparent;
-    margin:0;
-}
-
-.subtitle{
-    text-align:center;
-    color:#94a3b8;
-    font-size:12px;
-    margin-bottom:16px;
-}
-
-.question{
-    background:
-        linear-gradient(135deg,rgba(16,185,129,.10),rgba(0,0,0,.22));
-    border:1px solid rgba(52,211,153,.12);
-    border-right:4px solid #10b981;
-    padding:18px 15px;
-    border-radius:18px;
-    font-size:17px;
-    font-weight:800;
-    line-height:1.8;
-    text-align:center;
-    min-height:88px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.category{
-    text-align:center;
-    color:#67e8f9;
-    font-size:11px;
-    font-weight:800;
-    margin:10px 0;
-}
-
-.answer-slots{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:7px;
-    min-height:55px;
-    margin:16px 0;
-}
-
-.slot{
-    width:42px;
-    height:46px;
-    border-radius:11px;
-    border:2px dashed rgba(255,255,255,.25);
-    background:rgba(255,255,255,.05);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:21px;
-    font-weight:900;
-    color:#6ee7b7;
-    transition:.2s;
-}
-
-.slot.filled{
-    border-style:solid;
-    border-color:#34d399;
-    background:rgba(16,185,129,.15);
-    transform:translateY(-2px);
-}
-
-.letters{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    margin:15px 0;
-}
-
-.letter{
-    width:49px;
-    height:49px;
-    border:0;
-    border-radius:14px;
-    background:linear-gradient(145deg,#059669,#047857);
-    color:#fff;
-    font-size:20px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:0 7px 18px rgba(5,150,105,.27);
-    transition:.15s;
-}
-
-.letter:active{
-    transform:scale(.88);
-}
-
-.letter.used{
-    opacity:.18;
-    transform:scale(.9);
-    pointer-events:none;
-}
-
-.actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-top:12px;
-}
-
-.btn{
-    min-height:48px;
-    border:0;
-    border-radius:15px;
-    font-weight:900;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.btn:active{
-    transform:scale(.96);
-}
-
-.check{
-    background:linear-gradient(135deg,#10b981,#059669);
-    color:white;
-}
-
-.clear{
-    background:rgba(239,68,68,.14);
-    color:#fca5a5;
-    border:1px solid rgba(239,68,68,.25);
-}
-
-.tools{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:7px;
-    margin-top:9px;
-}
-
-.tool{
-    min-height:44px;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:14px;
-    background:rgba(255,255,255,.06);
-    color:#e2e8f0;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.tool.help{
-    color:#fde68a;
-    border-color:rgba(250,204,21,.18);
-}
-
-.tool.skip{
-    color:#fca5a5;
-    border-color:rgba(239,68,68,.18);
-}
-
-.tool.map{
-    color:#67e8f9;
-    border-color:rgba(34,211,238,.18);
-}
-
-.message{
-    min-height:28px;
-    text-align:center;
-    font-weight:900;
-    font-size:14px;
-    margin-top:12px;
-}
-
-.footer{
-    text-align:center;
-    color:#64748b;
-    font-size:10px;
-    margin-top:15px;
-}
-
-.footer b{
-    color:#34d399;
-}
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.72);
-    backdrop-filter:blur(10px);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:20;
-    padding:15px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:min(600px,100%);
-    max-height:88vh;
-    overflow:auto;
-    background:#071b16;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:25px;
-    padding:18px;
-    box-shadow:0 30px 90px rgba(0,0,0,.7);
-}
-
-.modal-title{
-    text-align:center;
-    font-size:22px;
-    font-weight:900;
-    color:#6ee7b7;
-    margin-bottom:14px;
-}
-
-.map-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:8px;
-}
-
-.level-btn{
-    aspect-ratio:1;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:13px;
-    background:rgba(255,255,255,.05);
-    color:#cbd5e1;
-    font-weight:900;
-    cursor:pointer;
-}
-
-.level-btn.open{
-    background:linear-gradient(135deg,#047857,#059669);
-    color:white;
-}
-
-.level-btn.current{
-    outline:3px solid #67e8f9;
-}
-
-.level-btn.done{
-    background:linear-gradient(135deg,#065f46,#10b981);
-    color:#d1fae5;
-}
-
-.level-btn.locked{
-    opacity:.3;
-    cursor:not-allowed;
-}
-
-.close{
-    width:100%;
-    margin-top:14px;
-    min-height:46px;
-    border:0;
-    border-radius:14px;
-    background:#102a23;
-    color:#cbd5e1;
-    font-weight:900;
-}
-
-.win{
-    text-align:center;
-}
-
-.win .trophy{
-    font-size:70px;
-    animation:bounce 1s infinite alternate;
-}
-
-@keyframes bounce{
-    to{transform:translateY(-10px) rotate(3deg)}
-}
-
-.win h2{
-    color:#6ee7b7;
-    font-size:28px;
-}
-
-.win p{
-    color:#cbd5e1;
-}
-
-.shake{
-    animation:shake .35s;
-}
-
-@keyframes shake{
-    20%{transform:translateX(8px)}
-    40%{transform:translateX(-8px)}
-    60%{transform:translateX(6px)}
-    80%{transform:translateX(-6px)}
-}
-
-.pop{
-    animation:pop .3s;
-}
-
-@keyframes pop{
-    50%{transform:scale(1.04)}
-}
-
-@media(max-width:400px){
-    .slot{
-        width:36px;
-        height:41px;
-        font-size:18px;
-    }
-
-    .letter{
-        width:44px;
-        height:44px;
-    }
-
-    .question{
-        font-size:15px;
-    }
-
-    .map-grid{
-        gap:6px;
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap');
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;font-family:Cairo,Arial,sans-serif}
+body{color:#fff;background:radial-gradient(circle at 15% 10%,#0b5b43 0,transparent 30%),radial-gradient(circle at 90% 90%,#075e65 0,transparent 30%),linear-gradient(145deg,#02100c,#04271e 55%,#011813);overflow-x:hidden}
+button{font-family:inherit}
+.app{width:min(650px,94%);margin:auto;padding:18px 0 28px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.brand{font-size:25px;font-weight:900;color:#5ee9b4;text-shadow:0 0 20px #10b98155}
+.stats{display:flex;gap:7px}.pill{padding:7px 11px;border:1px solid #ffffff16;background:#ffffff0d;border-radius:14px;font-weight:800;font-size:12px}.pill b{color:#6ee7b7}
+.progressBox{padding:10px 12px;border-radius:17px;background:#ffffff0b;border:1px solid #ffffff12;margin-bottom:12px}
+.progressHead{display:flex;justify-content:space-between;font-size:11px;color:#cbd5e1;margin-bottom:6px}
+.progress{height:7px;background:#ffffff10;border-radius:20px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,#10b981,#67e8f9);transition:.4s}
+.card{padding:18px;border-radius:28px;background:#ffffff09;border:1px solid #ffffff17;box-shadow:0 25px 70px #0008;backdrop-filter:blur(16px)}
+h1{margin:0;text-align:center;font-size:27px;font-weight:900;background:linear-gradient(135deg,#34d399,#a7f3d0,#67e8f9);-webkit-background-clip:text;color:transparent}
+.sub{text-align:center;color:#94a3b8;font-size:11px;margin:3px 0 14px}
+.category{text-align:center;color:#67e8f9;font-size:11px;font-weight:800;margin-bottom:8px}
+.question{min-height:90px;padding:15px;border-radius:17px;border-right:4px solid #10b981;background:#0004;display:flex;align-items:center;justify-content:center;text-align:center;font-size:17px;font-weight:800;line-height:1.8}
+.slots{min-height:56px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin:15px 0}
+.slot{width:41px;height:45px;border-radius:11px;border:2px dashed #ffffff35;background:#ffffff08;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#6ee7b7}.slot.filled{border-style:solid;border-color:#34d399;background:#10b98122}
+.letters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:13px}
+.letter{width:49px;height:49px;border:0;border-radius:14px;color:#fff;background:linear-gradient(145deg,#059669,#047857);font-size:20px;font-weight:900;box-shadow:0 7px 17px #05966944;transition:.12s}.letter:active{transform:scale(.88)}.letter.used{opacity:.2;pointer-events:none}
+.actions,.tools{display:grid;gap:8px}.actions{grid-template-columns:1fr 1fr}.tools{grid-template-columns:1fr 1fr 1fr;margin-top:8px}
+.btn,.tool{min-height:47px;border-radius:14px;font-weight:900;border:0;cursor:pointer}.check{color:white;background:linear-gradient(135deg,#10b981,#059669)}.clear{color:#fca5a5;background:#ef44441c;border:1px solid #ef444433}.tool{background:#ffffff08;border:1px solid #ffffff12;color:#cbd5e1}.hint{color:#fde68a}.skip{color:#fca5a5}.map{color:#67e8f9}
+.message{min-height:28px;text-align:center;font-size:13px;font-weight:900;margin-top:10px}.footer{text-align:center;color:#64748b;font-size:10px;margin-top:12px}.footer b{color:#34d399}
+.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:15px;z-index:10}.modal.show{display:flex}.box{width:min(600px,100%);max-height:88vh;overflow:auto;padding:18px;border-radius:24px;background:#061914;border:1px solid #ffffff18;box-shadow:0 30px 90px #000c}.modalTitle{text-align:center;color:#6ee7b7;font-size:22px;font-weight:900;margin-bottom:14px}.mapGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.level{aspect-ratio:1;border:1px solid #ffffff12;border-radius:12px;background:#ffffff08;color:#cbd5e1;font-weight:900}.level.open{background:linear-gradient(135deg,#047857,#059669);color:#fff}.level.done{background:linear-gradient(135deg,#065f46,#10b981)}.level.current{outline:3px solid #67e8f9}.level.locked{opacity:.3}.close{width:100%;margin-top:12px;height:46px;border:0;border-radius:13px;background:#102a23;color:#cbd5e1;font-weight:900}
+.win{text-align:center}.trophy{font-size:70px}.win h2{color:#6ee7b7;font-size:27px}.win p{color:#cbd5e1;line-height:1.8}
+@media(max-width:400px){.app{width:94%}.brand{font-size:21px}.card{padding:14px}.question{font-size:15px}.letter{width:44px;height:44px}.slot{width:36px;height:41px;font-size:18px}}
+
+.streak{text-align:center;color:#94a3b8;font-size:11px;margin-top:10px}.streak b{color:#fbbf24}
+.achievement{display:flex;align-items:center;gap:10px;padding:11px;margin:7px 0;border-radius:14px;background:#ffffff08;border:1px solid #ffffff10}
+.achievement .icon{font-size:26px}.achievement.locked{opacity:.35}.achievement b{display:block;color:#6ee7b7;font-size:13px}.achievement small{color:#94a3b8}
+.statCards{display:grid;grid-template-columns:1fr 1fr;gap:8px}.statCard{padding:13px;border-radius:15px;background:#ffffff08;text-align:center}.statCard strong{display:block;color:#67e8f9;font-size:22px}.statCard span{font-size:10px;color:#94a3b8}
+.info{padding:12px;border-radius:14px;background:#10b98110;border:1px solid #10b98122;color:#cbd5e1;font-size:12px;line-height:1.8;margin-top:10px}
 </style>
 </head>
-
 <body>
-
 <div class="app">
+  <div class="top">
+    <div class="brand">⚡ تحدي الكلمات</div>
+    <div class="stats"><div class="pill">⭐ <b id="score">0</b></div><div class="pill">🏆 <b id="best">0</b></div></div>
+  </div>
+  <div class="progressBox">
+    <div class="progressHead"><span id="levelInfo">المرحلة 1 من 100</span><span id="qInfo">السؤال 1/5</span></div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+  </div>
+  <div class="card" id="card">
+    <h1>تحدي الكلمات الأسطوري</h1>
+    <div class="sub">🧠 500 سؤال ثقافي • 100 مرحلة</div>
+    <div class="category" id="category">📚 ثقافة عامة</div>
+    <div class="question" id="question">جاري تحميل السؤال...</div>
+    <div class="slots" id="slots"></div>
+    <div class="letters" id="letters"></div>
+    <div class="actions">
+      <button class="btn clear" id="clearBtn">🔄 حذف الكل</button>
+      <button class="btn check" id="checkBtn">✅ تحقق</button>
+    </div>
+    <div class="tools">
+      <button class="tool hint" id="hintBtn">💡 مساعدة −3</button>
+      <button class="tool skip" id="skipBtn">⏭️ تخطي −5</button>
+      <button class="tool map" id="mapBtn">🗺️ الخريطة</button>
+      <button class="tool" id="statsBtn">📊 إحصائيات</button>
+      <button class="tool" id="soundBtn">🔊 الصوت</button>
+      <button class="tool" id="dailyBtn">🎁 مكافأتي</button>
+    </div>
+    <div class="streak">🔥 سلسلة الإجابات: <b id="streak">0</b> &nbsp; • &nbsp; ⭐ مضاعف: <b id="multiplier">×1</b></div>
+    <div class="message" id="message"></div>
+    <div class="footer">صناعة وتطوير: <b>عمار الأسطورة</b></div>
+  </div>
+</div>
 
-    <div class="topbar">
-        <div class="brand">⚡ تحدي الكلمات</div>
+<div class="modal" id="mapModal">
+  <div class="box"><div class="modalTitle">🗺️ خريطة المراحل</div><div class="mapGrid" id="mapGrid"></div><button class="close" id="closeMap">إغلاق</button></div>
+</div>
 
-        <div class="stats">
-            <div class="stat">⭐ <span id="score">0</span></div>
-            <div class="stat">🏆
+
+<div class="modal" id="statsModal">
+  <div class="box">
+    <div class="modalTitle">📊 إنجازات عمار الأسطورة</div>
+    <div class="statCards">
+      <div class="statCard"><strong id="statScore">0</strong><span>النقاط</span></div>
+      <div class="statCard"><strong id="statCorrect">0</strong><span>إجابات صحيحة</span></div>
+      <div class="statCard"><strong id="statStreak">0</strong><span>أفضل سلسلة</span></div>
+      <div class="statCard"><strong id="statLevels">0</strong><span>مراحل مكتملة</span></div>
+    </div>
+    <div class="info">🏅 اجمع النقاط، حافظ على سلسلة الإجابات، وافتح الإنجازات السرية.</div>
+    <div id="achievements"></div>
+    <button class="close" id="closeStats">إغلاق</button>
+  </div>
+</div>
+
+<div class="modal" id="winModal">
+  <div class="box win">
+    <div class="trophy">🏆</div><h2>عمار الأسطورة 🏆</h2>
+    <p>مبروك! أكملت 100 مرحلة و500 سؤال ثقافي.</p>
+    <h3>نتيجتك: <span id="finalScore">0</span> ⭐</h3>
+    <button class="btn check" id="resetBtn" style="width:100%">🔄 إعادة اللعب</button>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* 100 سؤال أساسي، وكل سؤال يولّد 5 صيغ مختلفة = 500 سؤال */
+const facts=[
+["جغرافيا","عاصمة فرنسا","باريس"],["جغرافيا","عاصمة اليابان","طوكيو"],["جغرافيا","عاصمة مصر","القاهرة"],["جغرافيا","عاصمة السعودية","الرياض"],["جغرافيا","عاصمة اليمن","صنعاء"],["جغرافيا","عاصمة العراق","بغداد"],["جغرافيا","عاصمة الأردن","عمان"],["جغرافيا","عاصمة المغرب","الرباط"],["جغرافيا","عاصمة إيطاليا","روما"],["جغرافيا","عاصمة ألمانيا","برلين"],
+["جغرافيا","أكبر قارة في العالم","آسيا"],["جغرافيا","أصغر قارة مأهولة","أستراليا"],["جغرافيا","أكبر محيط في العالم","الهادئ"],["جغرافيا","أطول نهر في إفريقيا","النيل"],["جغرافيا","أكبر صحراء حارة في العالم","الصحراء الكبرى"],["جغرافيا","أعلى جبل في العالم","إيفرست"],["جغرافيا","أكبر دولة من حيث المساحة","روسيا"],["جغرافيا","أصغر دولة في العالم","الفاتيكان"],["جغرافيا","القارة التي تقع فيها مصر","إفريقيا"],["جغرافيا","القارة التي تقع فيها البرازيل","أمريكا الجنوبية"],
+["علوم","الكوكب الأقرب إلى الشمس","عطارد"],["علوم","أكبر كوكب في المجموعة الشمسية","المشتري"],["علوم","الكوكب المعروف بالكوكب الأحمر","المريخ"],["علوم","الكوكب الذي نعيش عليه","الأرض"],["علوم","الكوكب المعروف بحلقاته","زحل"],["علوم","القمر الطبيعي للأرض","القمر"],["علوم","النجم الذي تدور حوله الأرض","الشمس"],["علوم","القوة التي تجذب الأجسام نحو الأرض","الجاذبية"],["علوم","الغاز الذي يحتاجه الإنسان للتنفس","الأكسجين"],["علوم","الغاز الأكثر وجوداً في الغلاف الجوي","النيتروجين"],
+["علوم","رمز عنصر الأكسجين","O"],["علوم","رمز عنصر الذهب","Au"],["علوم","رمز عنصر الحديد","Fe"],["علوم","رمز عنصر الفضة","Ag"],["علوم","رمز عنصر الكربون","C"],["علوم","عدد كواكب المجموعة الشمسية","ثمانية"],["علوم","درجة غليان الماء عند سطح البحر","مئة"],["علوم","درجة تجمد الماء","صفر"],["علوم","الجهاز المسؤول عن ضخ الدم","القلب"],["علوم","العضو المسؤول عن التفكير","الدماغ"],
+["تاريخ","أول الخلفاء الراشدين","أبو بكر الصديق"],["تاريخ","ثاني الخلفاء الراشدين","عمر بن الخطاب"],["تاريخ","ثالث الخلفاء الراشدين","عثمان بن عفان"],["تاريخ","رابع الخلفاء الراشدين","علي بن أبي طالب"],["تاريخ","المدينة التي هاجر إليها النبي محمد","المدينة المنورة"],["تاريخ","المدينة التي ولد فيها النبي محمد","مكة المكرمة"],["تاريخ","اسم أول مسجد بني في الإسلام","مسجد قباء"],["تاريخ","المعركة التي وقعت في السنة الثانية للهجرة","بدر"],["تاريخ","القائد المسلم في معركة حطين","صلاح الدين الأيوبي"],["تاريخ","الحضارة التي بنت الأهرامات","الحضارة المصرية القديمة"],
+["ثقافة","اللغة الرسمية في اليابان","اليابانية"],["ثقافة","اللغة الرسمية في البرازيل","البرتغالية"],["ثقافة","اللغة الأكثر انتشاراً في الصين","الصينية"],["ثقافة","عدد أيام الأسبوع","سبعة"],["ثقافة","عدد أشهر السنة","اثنا عشر"],["ثقافة","عدد فصول السنة","أربعة"],["ثقافة","اللون الناتج من خلط الأزرق والأصفر","الأخضر"],["ثقافة","اللون الناتج من خلط الأحمر والأبيض","الوردي"],["ثقافة","آلة موسيقية ذات مفاتيح سوداء وبيضاء","البيانو"],["ثقافة","آلة موسيقية تحتوي عادة على ستة أوتار","الغيتار"],
+["رياضة","عدد لاعبي فريق كرة القدم داخل الملعب","أحد عشر"],["رياضة","عدد لاعبي فريق كرة السلة داخل الملعب","خمسة"],["رياضة","رياضة تستخدم مضرباً وكرة صفراء","التنس"],["رياضة","رياضة تستخدم الريشة والمضرب","الريشة الطائرة"],["رياضة","رياضة تمارس في حلبة وتستخدم القفازات","الملاكمة"],["رياضة","رياضة تجمع السباحة والدراجات والجري","الترياتلون"],["رياضة","رياضة تستخدم مرمى وكرة وعصا","الهوكي"],["رياضة","رياضة يلعبها فريقان باستخدام شبكة وكرة","الكرة الطائرة"],["رياضة","رياضة تشتهر بحلبة الفورمولا","سباق السيارات"],["رياضة","رياضة تستخدم حصاناً وقفز الحواجز","الفروسية"],
+["حيوانات","أكبر حيوان على الأرض","الحوت الأزرق"],["حيوانات","أسرع حيوان بري","الفهد"],["حيوانات","أكبر حيوان بري","الفيل الإفريقي"],["حيوانات","الحيوان المعروف بسفينة الصحراء","الجمل"],["حيوانات","الحيوان الذي يلقب بملك الغابة","الأسد"],["حيوانات","الحيوان الذي يستطيع تغيير لونه","الحرباء"],["حيوانات","طائر لا يستطيع الطيران ويشتهر بسرعته","النعامة"],["حيوانات","أكبر طائر حي من حيث الحجم","النعامة"],["حيوانات","الحيوان الذي يعيش في القطب الشمالي","الدب القطبي"],["حيوانات","الحيوان المعروف بإنتاج العسل","النحل"],
+["اختراعات","المخترع المرتبط بتطوير المصباح الكهربائي عملياً","توماس إديسون"],["اختراعات","المخترع المرتبط بتطوير الهاتف","ألكسندر غراهام بيل"],["اختراعات","الأخوان المرتبطان بأول طائرة ناجحة","الأخوان رايت"],["اختراعات","الجهاز المستخدم لقياس درجة الحرارة","مقياس الحرارة"],["اختراعات","الجهاز المستخدم لتحديد الاتجاهات","البوصلة"],["اختراعات","الجهاز المستخدم لرؤية الأجسام البعيدة في السماء","التلسكوب"],["اختراعات","الجهاز المستخدم لتكبير الأجسام الصغيرة جداً","المجهر"],["اختراعات","الجهاز المستخدم لقياس الزمن","الساعة"],["اختراعات","وسيلة النقل التي تسير على القضبان","القطار"],["اختراعات","وسيلة النقل التي تطير في الجو","الطائرة"],
+["أدب","كاتب مسرحية روميو وجولييت","وليام شكسبير"],["أدب","كاتب رواية البؤساء","فيكتور هوغو"],["أدب","صاحب كتاب كليلة ودمنة","ابن المقفع"],["أدب","الشاعر الملقب بشاعر النيل","حافظ إبراهيم"],["أدب","الشاعر الملقب بأمير الشعراء","أحمد شوقي"],["أدب","صاحب كتاب المقدمة","ابن خلدون"],["أدب","العنصر الأساسي الذي تتكون منه القصيدة","الأبيات"],["أدب","النص الذي يروي أحداثاً وشخصيات","القصة"],["أدب","الشخصية الرئيسية في القصة","البطل"],["أدب","النص الذي يعرض الأحداث على خشبة المسرح","المسرحية"]
+];
+
+function makeQuestions(){
+  const out=[];
+  const forms=[
+    x=>"ما "+x+"؟",
+    x=>"اختر الإجابة الصحيحة: "+x+" هو:",
+    x=>"هل تعرف "+x+"؟",
+    x=>"معلومة ثقافية: ما "+x+"؟",
+    x=>"السؤال الثقافي: ما "+x+"؟"
+  ];
+  facts.forEach((f,i)=>forms.forEach(fn=>out.push({category:f[0],question:fn(f[1]),answer:f[2]})));
+  return out;
+}
+const questions=makeQuestions(); // 500
+
+const LEVELS=100, PER_LEVEL=5;
+let level=Number(localStorage.getItem("cw_level")||0);
+let qIndex=Number(localStorage.getItem("cw_q")||0);
+let score=Number(localStorage.getItem("cw_score")||0);
+let best=Number(localStorage.getItem("cw_best")||0);
+let correct=Number(localStorage.getItem("cw_correct")||0);
+let streak=Number(localStorage.getItem("cw_streak")||0);
+let bestStreak=Number(localStorage.getItem("cw_bestStreak")||0);
+let soundOn=localStorage.getItem("cw_sound")!=="0";
+let dailyClaim=localStorage.getItem("cw_daily")||"";
+let selected=[], used=[], hinted=false, letters=[];
+
+const el=id=>document.getElementById(id);
+
+function save(){
+  localStorage.setItem("cw_level",level);
+  localStorage.setItem("cw_q",qIndex);
+  localStorage.setItem("cw_score",score);
+  localStorage.setItem("cw_best",best);
+  localStorage.setItem("cw_correct",correct);
+  localStorage.setItem("cw_streak",streak);
+  localStorage.setItem("cw_bestStreak",bestStreak);
+  localStorage.setItem("cw_sound",soundOn?"1":"0");
+}
+function shuffle(a){
+  a=[...a];
+  for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+  return a;
+}
+function normalize(s){
+  return String(s).replace(/[ًٌٍَُِّْـ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/\s/g,"").toLowerCase();
+}
+function current(){
+  return questions[level*PER_LEVEL+qIndex];
+}
+let audio=null;
+function beep(type){
+  if(!soundOn)return;
+  try{
+    audio=audio||new(window.AudioContext||window.webkitAudioContext)();
+    const o=audio.createOscillator(),g=audio.createGain();
+    o.connect(g);g.connect(audio.destination);
+    o.frequency.value=type==="ok"?720:type==="bad"?180:420;
+    o.type="sine";g.gain.setValueAtTime(.0001,audio.currentTime);
+    g.gain.exponentialRampToValueAtTime(.06,audio.currentTime+.01);
+    g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+(type==="ok"?.18:.1));
+    o.start();o.stop(audio.currentTime+(type==="ok"?.18:.1));
+  }catch(e){}
+}
+function updateStats(){
+  el("score").textContent=score;
+  el("best").textContent=best;
+  el("streak").textContent=streak;
+  const mult=Math.min(3,1+Math.floor(streak/3));
+  el("multiplier").textContent="×"+mult;
+  el("soundBtn").textContent=soundOn?"🔊 الصوت":"🔇 مكتوم";
+}
+function load(){
+  if(level>=LEVELS){showWin();return}
+  const q=current();
+  selected=[];used=[];hinted=false;
+  letters=shuffle([...q.answer]);
+  el("levelInfo").textContent=`المرحلة ${level+1} من ${LEVELS}`;
+  el("qInfo").textContent=`السؤال ${qIndex+1}/${PER_LEVEL}`;
+  el("category").textContent="📚 "+q.category;
+  el("question").textContent=q.question;
+  el("message").textContent="";
+  el("bar").style.width=((level*PER_LEVEL+qIndex)/questions.length*100)+"%";
+  renderSlots();renderLetters();updateStats();save();
+}
+function renderSlots(){
+  const box=el("slots");box.innerHTML="";
+  [...current().answer].forEach((_,i)=>{
+    const s=document.createElement("div");s.className="slot"+(selected[i]?" filled":"");s.textContent=selected[i]||"";box.appendChild(s);
+  });
+}
+function renderLetters(){
+  const box=el("letters");box.innerHTML="";
+  letters.forEach((ch,i)=>{
+    const b=document.createElement("button");b.className="letter"+(used.includes(i)?" used":"");b.textContent=ch;
+    b.onclick=()=>choose(i);box.appendChild(b);
+  });
+}
+function choose(i){
+  if(used.includes(i)||selected.length>=current().answer.length)return;
+  used.push(i);selected.push(letters[i]);beep("click");renderSlots();renderLetters();
+}
+function clearAnswer(){selected=[];used=[];el("message").textContent="";renderSlots();renderLetters()}
+function next(){
+  qIndex++;
+  if(qIndex>=PER_LEVEL){qIndex=0;level++;score+=20}
+  save();
+  if(score>best){best=score;save()}
+  load();
+}
+function check(){
+  if(selected.length!==current().answer.length){
+    el("message").style.color="#fbbf24";el("message").textContent="⚠️ أكمل جميع الحروف أولاً";return;
+  }
+  if(normalize(selected.join(""))===normalize(current().answer)){
+    streak++; correct++;
+    if(streak>bestStreak)bestStreak=streak;
+    const mult=Math.min(3,1+Math.floor(streak/3));
+    const gain=10*mult;
+    score+=gain;
+    if(score>best)best=score;
+    updateStats();save();beep("ok");
+    el("message").style.color="#34d399";
+    el("message").textContent=`🎉 إجابة صحيحة! +${gain} نقطة ${mult>1?"🔥 مضاعف السلسلة ×"+mult:""}`;
+    setTimeout(next,850);
+  }else{
+    streak=0;save();updateStats();beep("bad");
+    el("message").style.color="#f87171";el("message").textContent="❌ الإجابة غير صحيحة، حاول مرة أخرى";
+  }
+}
+function hint(){
+  if(hinted){el("message").textContent="💡 استخدمت المساعدة في هذا السؤال";return}
+  if(score<3){el("message").style.color="#f87171";el("message").textContent="⭐ تحتاج إلى 3 نقاط";return}
+  const answer=current().answer;
+  const pos=selected.length;
+  const target=answer[pos];
+  const idx=letters.findIndex((c,i)=>c===target&&!used.includes(i));
+  if(idx<0)return;
+  score-=3;hinted=true;used.push(idx);selected.push(target);
+  el("message").style.color="#fde68a";el("message").textContent="💡 تمت إضافة حرف صحيح −3";
+  updateStats();save();renderSlots();renderLetters();beep("click");
+}
+function skip(){
+  if(score<5){el("message").style.color="#f87171";el("message").textContent="⭐ تحتاج إلى 5 نقاط للتخطي";return}
+  score-=5;updateStats();save();el("message").style.color="#fbbf24";el("message").textContent="⏭️ تم تخطي السؤال −5";setTimeout(next,450);
+}
+function openMap(){buildMap();el("mapModal").classList.add("show")}
+function closeMap(){el("mapModal").classList.remove("show")}
+function buildMap(){
+  const grid=el("mapGrid");grid.innerHTML="";
+  for(let i=0;i<LEVELS;i++){
+    const b=document.createElement("button");b.className="level";
+    if(i<=level)b.classList.add("open");else b.classList.add("locked");
+    if(i<level)b.classList.add("done");if(i===level)b.classList.add("current");
+    b.textContent=i<level?"✓ "+(i+1):"🔒 "+(i+1);
+    if(i<=level)b.onclick=()=>{level=i;qIndex=0;closeMap();load()};
+    grid.appendChild(b);
+  }
+}
+
+function todayKey(){
+  const d=new Date();
+  return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+}
+function claimDaily(){
+  if(dailyClaim===todayKey()){
+    el("message").style.color="#fbbf24";el("message").textContent="🎁 أخذت مكافأتك اليومية بالفعل";
+    return;
+  }
+  dailyClaim=todayKey();score+=10;
+  if(score>best)best=score;
+  save();updateStats();beep("ok");
+  el("message").style.color="#6ee7b7";el("message").textContent="🎁 مكافأة اليوم: +10 نقاط! عد غداً لمكافأة جديدة";
+}
+function toggleSound(){
+  soundOn=!soundOn;localStorage.setItem("cw_sound",soundOn?"1":"0");updateStats();if(soundOn)beep("click");
+}
+function openStats(){
+  el("statScore").textContent=score;
+  el("statCorrect").textContent=correct;
+  el("statStreak").textContent=bestStreak;
+  el("statLevels").textContent=Math.min(level,LEVELS);
+  const a=[
+    ["🌱","البداية","أجب عن أول سؤال",correct>=1],
+    ["🔥","نار المعرفة","حقق سلسلة 3 إجابات",bestStreak>=3],
+    ["⚡","الأسطورة","حقق سلسلة 10 إجابات",bestStreak>=10],
+    ["⭐","جامع النجوم","اجمع 100 نقطة",score>=100],
+    ["🏆","سيد المراحل","أكمل 25 مرحلة",level>=25],
+    ["👑","عمار الأسطورة","أكمل جميع المراحل",level>=100]
+  ];
+  el("achievements").innerHTML=a.map(x=>`<div class="achievement ${x[3]?"":"locked"}"><div class="icon">${x[0]}</div><div><b>${x[1]} ${x[3]?"✓":"🔒"}</b><small>${x[2]}</small></div></div>`).join("");
+  el("statsModal").classList.add("show");
+}
+function closeStats(){el("statsModal").classList.remove("show")}
+function showWin(){
+  el("finalScore").textContent=score;el("winModal").classList.add("show");el("bar").style.width="100%";
+}
+function reset(){
+  ["cw_level","cw_q","cw_score","cw_best","cw_correct","cw_streak","cw_bestStreak"].forEach(k=>localStorage.removeItem(k));
+  level=0;qIndex=0;score=0;best=0;correct=0;streak=0;bestStreak=0;
+  el("winModal").classList.remove("show");load();
+}
+el("clearBtn").onclick=clearAnswer;
+el("checkBtn").onclick=check;
+el("hintBtn").onclick=hint;
+el("skipBtn").onclick=skip;
+el("mapBtn").onclick=openMap;
+el("closeMap").onclick=closeMap;
+el("resetBtn").onclick=reset;
+el("statsBtn").onclick=openStats;
+el("closeStats").onclick=closeStats;
+el("soundBtn").onclick=toggleSound;
+el("dailyBtn").onclick=claimDaily;
+el("mapModal").onclick=e=>{if(e.target===el("mapModal"))closeMap()};
+el("statsModal").onclick=e=>{if(e.target===el("statsModal"))closeStats()};
+updateStats();load();
+</script>
+</body>
+</html>
