@@ -2,37 +2,2517 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#031711">
-<title>عمار الأسطورة — تحدي الكلمات</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap');
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;min-height:100vh;font-family:Cairo,Arial,sans-serif;color:#fff;background:radial-gradient(circle at 10% 10%,#08734f,transparent 32%),radial-gradient(circle at 90% 85%,#075e66,transparent 32%),linear-gradient(145deg,#01100b,#04271e 55%,#011712);overflow-x:hidden}button{font:inherit}.app{width:min(680px,94%);margin:auto;padding:16px 0 30px}.top{display:flex;align-items:center;justify-content:space-between;gap:8px}.brand{font-size:24px;font-weight:900;color:#6ee7b7;text-shadow:0 0 20px #10b98166}.stats{display:flex;gap:6px}.pill{padding:7px 10px;border:1px solid #ffffff18;background:#ffffff0c;border-radius:14px;font-size:11px;font-weight:800}.pill b{color:#6ee7b7}.progressBox{margin:10px 0;padding:10px 12px;border-radius:17px;background:#ffffff0b;border:1px solid #ffffff12}.progressHead{display:flex;justify-content:space-between;color:#cbd5e1;font-size:11px;margin-bottom:6px}.progress{height:7px;border-radius:20px;background:#ffffff10;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,#10b981,#67e8f9);transition:.4s}.card{padding:18px;border-radius:28px;background:#ffffff09;border:1px solid #ffffff18;box-shadow:0 25px 80px #0009;backdrop-filter:blur(16px)}h1{text-align:center;margin:0;font-size:27px;background:linear-gradient(135deg,#34d399,#a7f3d0,#67e8f9);-webkit-background-clip:text;color:transparent}.sub{text-align:center;color:#94a3b8;font-size:11px;margin:3px 0 12px}.category{text-align:center;color:#67e8f9;font-size:11px;font-weight:900;margin-bottom:8px}.question{min-height:96px;padding:15px;border-radius:17px;border-right:4px solid #10b981;background:#0004;display:flex;align-items:center;justify-content:center;text-align:center;font-size:17px;font-weight:800;line-height:1.8}.slots{min-height:56px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin:14px 0}.slot{width:42px;height:45px;border:2px dashed #ffffff35;border-radius:11px;background:#ffffff08;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#6ee7b7}.slot.filled{border-style:solid;border-color:#34d399;background:#10b98122}.letters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:12px}.letter{width:49px;height:49px;border:0;border-radius:14px;color:#fff;background:linear-gradient(145deg,#059669,#047857);font-size:20px;font-weight:900;box-shadow:0 7px 18px #05966944;transition:.12s}.letter:active{transform:scale(.88)}.letter.used{opacity:.18;pointer-events:none}.shake{animation:phoneShake .45s linear 1}@keyframes phoneShake{0%,100%{transform:translate(0)}20%{transform:translate(9px,0)}40%{transform:translate(-9px,0)}60%{transform:translate(6px,0)}80%{transform:translate(-6px,0)}}.danger{color:#ff4d4d!important;border-color:#ff4d4d!important;background:#ff000010!important}.stopShake{display:none!important}.stopShake.show{display:block!important;background:#7f1d1d;color:#fff;border:1px solid #ef4444;grid-column:1/-1}.actions,.tools{display:grid;gap:8px}.actions{grid-template-columns:1fr 1fr}.tools{grid-template-columns:repeat(3,1fr);margin-top:8px}.btn,.tool{min-height:47px;border-radius:14px;font-weight:900;border:0;cursor:pointer}.check{color:#fff;background:linear-gradient(135deg,#10b981,#059669)}.clear{color:#fca5a5;background:#ef44441c;border:1px solid #ef444433}.tool{background:#ffffff08;border:1px solid #ffffff12;color:#cbd5e1}.hint{color:#fde68a}.skip{color:#fca5a5}.map{color:#67e8f9}.message{min-height:27px;text-align:center;font-size:13px;font-weight:900;margin-top:9px}.streak{text-align:center;color:#94a3b8;font-size:11px;margin-top:9px}.streak b{color:#fbbf24}.footer{text-align:center;color:#64748b;font-size:10px;margin-top:12px}.footer b{color:#34d399}.modal{position:fixed;inset:0;background:#000c;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:14px;z-index:20}.modal.show{display:flex}.box{width:min(620px,100%);max-height:90vh;overflow:auto;padding:18px;border-radius:24px;background:#061914;border:1px solid #ffffff18;box-shadow:0 30px 90px #000c}.modalTitle{text-align:center;color:#6ee7b7;font-size:22px;font-weight:900;margin-bottom:14px}.mapGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.level{aspect-ratio:1;border:1px solid #ffffff12;border-radius:12px;background:#ffffff08;color:#cbd5e1;font-weight:900}.level.open{background:linear-gradient(135deg,#047857,#059669);color:#fff}.level.done{background:linear-gradient(135deg,#065f46,#10b981)}.level.current{outline:3px solid #67e8f9}.level.locked{opacity:.28}.close{width:100%;margin-top:12px;height:46px;border:0;border-radius:13px;background:#102a23;color:#cbd5e1;font-weight:900}.statCards{display:grid;grid-template-columns:1fr 1fr;gap:8px}.statCard{padding:13px;border-radius:15px;background:#ffffff08;text-align:center}.statCard strong{display:block;color:#67e8f9;font-size:22px}.statCard span{font-size:10px;color:#94a3b8}.achievement{display:flex;align-items:center;gap:10px;padding:10px;margin:7px 0;border-radius:14px;background:#ffffff08;border:1px solid #ffffff10}.achievement .icon{font-size:26px}.achievement.locked{opacity:.35}.achievement b{display:block;color:#6ee7b7;font-size:13px}.achievement small{color:#94a3b8}.info{padding:11px;border-radius:14px;background:#10b98110;border:1px solid #10b98122;color:#cbd5e1;font-size:12px;line-height:1.8;margin-top:9px}.win{text-align:center}.trophy{font-size:70px}.win h2{color:#6ee7b7;font-size:27px}@media(max-width:410px){.app{width:94%}.brand{font-size:20px}.card{padding:14px}.question{font-size:15px}.letter{width:44px;height:44px}.slot{width:36px;height:41px}}
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#061b18">
 
-.error-shake{animation:errorShake .42s ease-in-out}
-@keyframes errorShake{
-0%,100%{transform:translateX(0)}
-20%{transform:translateX(-10px)}
-40%{transform:translateX(9px)}
-60%{transform:translateX(-7px)}
-80%{transform:translateX(5px)}
+<title>عمار الأسطورة 👑</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
-.red-error{border-color:#ef4444!important;box-shadow:0 0 0 2px #ef444433,0 12px 35px #ef444422!important}
-.stopShake{display:none;width:100%;margin-top:8px;height:42px;border:1px solid #ef444455;border-radius:13px;background:#7f1d1d;color:#fff;font-weight:900}
-.stopShake.show{display:block}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:
+    Arial,
+    Tahoma,
+    sans-serif;
+
+  color:#effffb;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #08735a 0%,
+      #08372e 35%,
+      #041815 100%
+    );
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+  border:0;
+}
+
+.app{
+  width:min(720px,100%);
+  margin:auto;
+  padding:15px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.logo{
+  font-size:clamp(28px,7vw,45px);
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #54e5a6,
+      #5be8ed
+    );
+
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.pills{
+  display:flex;
+  gap:7px;
+}
+
+.pill{
+  padding:9px 13px;
+  border-radius:22px;
+
+  background:#0b382f;
+  border:1px solid #1a5d4e;
+
+  font-weight:bold;
+}
+
+.progress{
+  padding:16px;
+
+  border-radius:22px;
+
+  background:#082a24;
+  border:1px solid #165045;
+
+  margin-bottom:17px;
+}
+
+.progressLine{
+  display:flex;
+  justify-content:space-between;
+  color:#d8eee9;
+}
+
+.bar{
+  height:10px;
+  background:#17473d;
+
+  border-radius:20px;
+
+  margin-top:12px;
+
+  overflow:hidden;
+}
+
+.bar span{
+  display:block;
+  width:1%;
+  height:100%;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #09c58d,
+      #5ce8ed
+    );
+
+  transition:.4s;
+}
+
+.panel{
+  padding:20px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #092d27ee,
+      #061e1add
+    );
+
+  border:1px solid #185247;
+
+  box-shadow:
+    0 20px 60px #0006;
+}
+
+.title{
+  text-align:center;
+}
+
+.title h1{
+  margin:5px 0;
+
+  font-size:
+    clamp(30px,8vw,52px);
+
+  background:
+    linear-gradient(
+      90deg,
+      #55e7a8,
+      #61e8ee
+    );
+
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.title p{
+  color:#94bbb4;
+}
+
+.category{
+  color:#59e6ea;
+  font-weight:bold;
+}
+
+.question{
+  margin-top:20px;
+
+  min-height:160px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:20px;
+
+  border-radius:25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #06251f,
+      #061a17
+    );
+
+  border-right:
+    5px solid #09c58d;
+}
+
+.questionText{
+  font-size:
+    clamp(23px,5.8vw,35px);
+
+  font-weight:900;
+  line-height:1.5;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+  margin-top:15px;
+}
+
+.answer{
+  padding:15px;
+
+  text-align:right;
+
+  border-radius:17px;
+
+  background:#0c342e;
+
+  color:white;
+
+  border:1px solid #19584c;
+
+  font-size:17px;
+  font-weight:bold;
+
+  transition:.2s;
+}
+
+.answer:active{
+  transform:scale(.98);
+}
+
+.answer.selected{
+  outline:3px solid #54e6d0;
+}
+
+.answer.correct{
+  background:#096548;
+  border-color:#26e5aa;
+}
+
+.answer.wrong{
+  background:#682d34;
+  border-color:#ff7d84;
+}
+
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+
+  margin-top:15px;
+}
+
+.btn{
+  padding:16px;
+
+  border-radius:18px;
+
+  font-size:18px;
+  font-weight:900;
+}
+
+.check{
+  background:
+    linear-gradient(
+      135deg,
+      #08c48b,
+      #08a77e
+    );
+
+  color:white;
+}
+
+.clear{
+  background:#292b27;
+  color:#ffb4b9;
+  border:1px solid #51463c;
+}
+
+.tools{
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:9px;
+
+  margin-top:12px;
+}
+
+.tool{
+  min-height:68px;
+
+  padding:10px;
+
+  border-radius:17px;
+
+  color:white;
+
+  background:#0b302b;
+
+  border:1px solid #174c43;
+
+  font-weight:bold;
+}
+
+.tool small{
+  display:block;
+  margin-top:4px;
+  color:#c9e7e1;
+}
+
+.tool:disabled{
+  opacity:.35;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:8px;
+
+  margin-top:13px;
+}
+
+.stat{
+  text-align:center;
+
+  padding:10px;
+
+  border-radius:17px;
+
+  background:#0b312b;
+
+  border:1px solid #174b42;
+}
+
+.stat b{
+  display:block;
+
+  color:#ffd34e;
+
+  font-size:21px;
+}
+
+.notice{
+  margin-top:14px;
+
+  padding:13px;
+
+  text-align:center;
+
+  border-radius:18px;
+
+  background:#0a302a;
+
+  border:1px solid #14584c;
+}
+
+.modal{
+  position:fixed;
+
+  inset:0;
+
+  background:#000b;
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  padding:15px;
+
+  z-index:100;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modalBox{
+  width:min(560px,100%);
+  max-height:90vh;
+
+  overflow:auto;
+
+  padding:22px;
+
+  border-radius:25px;
+
+  background:#08251f;
+
+  border:1px solid #24685a;
+
+  box-shadow:0 25px 80px #000;
+}
+
+.modalBox h2{
+  color:#5de8e9;
+}
+
+.close{
+  float:left;
+
+  padding:7px 12px;
+
+  border-radius:12px;
+
+  background:#183b35;
+
+  color:white;
+}
+
+.list{
+  display:grid;
+  gap:8px;
+}
+
+.row{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  padding:12px;
+
+  border-radius:14px;
+
+  background:#0d342e;
+
+  border:1px solid #1b5046;
+}
+
+.row.me{
+  border-color:#ffd34e;
+}
+
+.categories{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px;
+}
+
+.cat{
+  padding:16px;
+
+  border-radius:17px;
+
+  background:#0c342e;
+
+  color:white;
+
+  border:1px solid #1a574b;
+
+  font-weight:bold;
+}
+
+.cat.active{
+  background:#0b4b3d;
+
+  border-color:#22dba9;
+}
+
+.badges{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px;
+}
+
+.badge{
+  padding:14px;
+
+  border-radius:16px;
+
+  background:#0d342e;
+
+  border:1px solid #1b5046;
+}
+
+.badge b{
+  display:block;
+
+  color:#ffd34e;
+
+  margin-bottom:5px;
+}
+
+.badge.lock{
+  opacity:.35;
+}
+
+#toast{
+  position:fixed;
+
+  bottom:20px;
+  left:50%;
+
+  transform:
+    translate(-50%,30px);
+
+  opacity:0;
+
+  padding:13px 18px;
+
+  border-radius:16px;
+
+  background:#082a24;
+
+  border:1px solid #2d7868;
+
+  font-weight:bold;
+
+  z-index:200;
+
+  transition:.25s;
+
+  text-align:center;
+}
+
+#toast.show{
+  transform:
+    translate(-50%,0);
+
+  opacity:1;
+}
+
+.confetti{
+  position:fixed;
+
+  top:-20px;
+
+  width:9px;
+  height:15px;
+
+  z-index:150;
+
+  animation:
+    fall 1.2s linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+
+    opacity:0;
+  }
+}
+
+@media(max-width:470px){
+
+  .app{
+    padding:10px;
+  }
+
+  .panel{
+    padding:15px;
+  }
+
+  .tools{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .questionText{
+    font-size:22px;
+  }
+
+  .logo{
+    font-size:29px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="app">
-<div class="top"><div class="brand">👑 عمار الأسطورة</div><div class="stats"><div class="pill">⭐ <b id="score">0</b></div><div class="pill">🏆 <b id="best">0</b></div></div></div>
-<div class="progressBox"><div class="progressHead"><span id="levelInfo">المرحلة 1 من 100</span><span id="qInfo">السؤال 1/5</span></div><div class="progress"><div class="bar" id="bar"></div></div></div>
-<div class="card" id="card"><h1>⚡ تحدي الكلمات الأسطوري</h1><div class="sub">500 سؤال ثقافي مختلف • 100 مرحلة</div><div class="category" id="category">📚 ثقافة عامة</div><div class="question" id="question">جاري تحميل السؤال...</div><div class="slots" id="slots"></div><div class="letters" id="letters"></div>
-<div class="actions"><button class="btn clear" id="clearBtn">🔄 حذف الكل</button><button class="btn check" id="checkBtn">✅ تحقق</button></div>
-<div class="tools"><button class="tool hint" id="hintBtn">💡 مساعدة −3</button><button class="tool skip" id="skipBtn">⏭️ تخطي −5</button><button class="tool map" id="mapBtn">🗺️ الخريطة</button><button class="tool" id="statsBtn">📊 إحصائيات</button><button class="tool" id="soundBtn">🔊 الصوت</button><button class="tool" id="dailyBtn">🎁 مكافأتي</button><button class="tool stopShake" id="stopShakeBtn">🛑 إيقاف الاهتزاز</button><button class="tool answerBtn" id="answerBtn">👁️ كشف −8</button><button class="tool" id="randomBtn">🎲 سؤال −4</button></div>
-<div class="info" id="challenge">🎯 التحدي: أجب دون أخطاء لتحصل على مضاعف النقاط!</div><div class="streak">🔥 السلسلة: <b id="streak">0</b> &nbsp;•&nbsp; ⭐ المضاعف: <b id="multiplier">×1</b></div><div class="message" id="message"></div><button class="stopShake" id="stopShake">🛑 إيقاف الاهتزاز</button><div class="footer">صناعة وتطوير: <b>عمار الأسطورة</b></div></div></div>
-<div class="modal" id="mapModal"><div class="box"><div class="modalTitle">🗺️ خريطة 100 مرحلة</div><div class="mapGrid" id="mapGrid"></div><button class="close" id="closeMap">إغلاق</button></div></div>
-<div class="modal" id="statsModal"><div class="box"><div class="modalTitle">📊 إنجازات عمار الأسطورة</div><div class="statCards"><div class="statCard"><strong id="statScore">0</strong><span>النقاط</span></div><div class="statCard"><strong id="statCorrect">0</strong><span>إجابات صحيحة</span></div><div class="statCard"><strong id="statStreak">0</strong><span>أفضل سلسلة</span></div><div class="statCard"><strong id="statLevels">0</strong><span>مراحل مكتملة</span></div></div><div class="info">🏅 اجمع النقاط وحافظ على سلسلة الإجابات وافتح الإنجازات.</div><div id="achievements"></div><button class="close" id="closeStats">إغلاق</button></div></div>
-<div class="modal" id="winModal"><div class="box win"><div class="trophy">🏆</div><h2>عمار الأسطورة!</h2><p>أكملت 100 مرحلة و500 سؤال مختلف.</p><h3>نتيجتك: <span id="finalScore">0</span> ⭐</h3><button class="btn check" id="resetBtn" style="width:100%">🔄 إعادة اللعب</button></div></div>
+
+<header class="top">
+
+<div class="logo">
+👑 عمار الأسطورة
+</div>
+
+<div class="pills">
+
+<div class="pill">
+🏆 <span id="score">0</span>
+</div>
+
+<div class="pill">
+⭐ <span id="xp">0</span>
+</div>
+
+</div>
+
+</header>
+
+
+<div class="progress">
+
+<div class="progressLine">
+
+<span id="questionNumber">
+السؤال 1/5
+</span>
+
+<span id="stage">
+المرحلة 1 من 100
+</span>
+
+</div>
+
+<div class="bar">
+<span id="progressBar"></span>
+</div>
+
+</div>
+
+
+<section class="panel">
+
+
+<div class="title">
+
+<h1>
+⚡ تحدي الكلمات الأسطوري
+</h1>
+
+<p>
+أسئلة متنوعة • 100 مرحلة • إنجازات ومكافآت
+</p>
+
+<div class="category" id="category">
+📚 ثقافة عامة
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div
+id="questionText"
+class="questionText">
+
+جاري تحميل السؤال...
+
+</div>
+
+</div>
+
+
+<div
+id="answers"
+class="answers">
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn check"
+onclick="checkAnswer()">
+
+✅ تحقق
+
+</button>
+
+<button
+class="btn clear"
+onclick="clearAnswer()">
+
+↩️ حذف الحل
+
+</button>
+
+</div>
+
+
+<div class="tools">
+
+<button
+class="tool"
+onclick="openCategories()">
+
+🗺️
+<small>الفئات</small>
+
+</button>
+
+
+<button
+id="skipBtn"
+class="tool"
+onclick="skipQuestion()">
+
+⏭️ تخطي
+<small>
+<span id="skipCount">5</span>
+</small>
+
+</button>
+
+
+<button
+id="helpBtn"
+class="tool"
+onclick="help()">
+
+💡 مساعدة
+<small>
+<span id="helpCount">3</span>
+</small>
+
+</button>
+
+
+<button
+class="tool"
+onclick="showStats()">
+
+📊
+<small>إحصائيات</small>
+
+</button>
+
+
+<button
+class="tool"
+onclick="toggleSound()">
+
+🔊
+<small id="soundText">الصوت</small>
+
+</button>
+
+
+<button
+class="tool"
+onclick="randomQuestion()">
+
+🎲
+<small>سؤال جديد</small>
+
+</button>
+
+
+<button
+class="tool"
+onclick="showBadges()">
+
+🎁
+<small>مكافآتي</small>
+
+</button>
+
+
+<button
+class="tool"
+onclick="showLeaderboard()">
+
+🏆
+<small>الصدارة</small>
+
+</button>
+
+
+<button
+id="revealBtn"
+class="tool"
+onclick="revealAnswer()">
+
+👁️
+<small>
+كشف <span id="revealCount">8</span>
+</small>
+
+</button>
+
+</div>
+
+
+<div class="notice">
+
+🎯 التحدي:
+أجب دون أخطاء لتحصل على مضاعف النقاط!
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<b id="streak">
+0
+</b>
+
+🔥 السلسلة
+
+</div>
+
+
+<div class="stat">
+
+<b id="multiplier">
+1×
+</b>
+
+⭐ المضاعف
+
+</div>
+
+
+<div class="stat">
+
+<b id="correct">
+0
+</b>
+
+✅ صحيح
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<div
+id="modal"
+class="modal">
+
+<div class="modalBox">
+
+<button
+class="close"
+onclick="closeModal()">
+
+✕
+
+</button>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
+
+<div id="toast"></div>
+
+
 <script>
-"use strict";
-const questions=[{"category":"جغرافيا","question":"ما أكبر قارة في العالم؟","answer":"آسيا"},{"category":"جغرافيا","question":"ما أصغر قارة مأهولة؟","answer":"أستراليا"},{"category":"جغرافيا","question":"ما أكبر محيط في العالم؟","answer":"المحيط الهادئ"},{"category":"جغرافيا","question":"ما أعلى جبل في العالم؟","answer":"إيفرست"},{"category":"جغرافيا","question":"ما أكبر دولة في العالم مساحةً؟","answer":"روسيا"},{"category":"جغرافيا","question":"ما أصغر دولة في العالم؟","answer":"الفاتيكان"},{"category":"جغرافيا","question":"ما أكبر جزيرة في العالم؟","answer":"غرينلاند"},{"category":"جغرافيا","question":"ما أكبر صحراء حارة؟","answer":"الصحراء الكبرى"},{"category":"جغرافيا","question":"في أي قارة تقع مصر؟","answer":"إفريقيا"},{"category":"جغرافيا","question":"في أي قارة تقع البرازيل؟","answer":"أمريكا الجنوبية"},{"category":"جغرافيا","question":"ما البحر الذي يفصل أوروبا عن إفريقيا؟","answer":"البحر المتوسط"},{"category":"جغرافيا","question":"ما المضيق الذي يفصل آسيا عن أمريكا الشمالية؟","answer":"بيرينغ"},{"category":"جغرافيا","question":"ما النهر الذي يمر في مصر؟","answer":"النيل"},{"category":"جغرافيا","question":"ما النهر الذي يمر في لندن؟","answer":"التايمز"},{"category":"جغرافيا","question":"ما النهر الذي يمر في باريس؟","answer":"السين"},{"category":"جغرافيا","question":"ما النهر الذي يمر في بغداد؟","answer":"دجلة"},{"category":"جغرافيا","question":"ما المدينة المعروفة بمدينة الضباب؟","answer":"لندن"},{"category":"جغرافيا","question":"ما الدولة المشهورة ببرج إيفل؟","answer":"فرنسا"},{"category":"علوم","question":"ما أقرب كوكب إلى الشمس؟","answer":"عطارد"},{"category":"علوم","question":"ما أكبر كوكب في المجموعة الشمسية؟","answer":"المشتري"},{"category":"علوم","question":"ما الكوكب الأحمر؟","answer":"المريخ"},{"category":"علوم","question":"ما الكوكب المعروف بحلقاته؟","answer":"زحل"},{"category":"علوم","question":"ما الكوكب الذي نعيش عليه؟","answer":"الأرض"},{"category":"علوم","question":"ما نجم المجموعة الشمسية؟","answer":"الشمس"},{"category":"علوم","question":"ما القمر الطبيعي للأرض؟","answer":"القمر"},{"category":"علوم","question":"ما القوة التي تجذب الأجسام؟","answer":"الجاذبية"},{"category":"علوم","question":"ما الغاز الضروري للتنفس؟","answer":"الأكسجين"},{"category":"علوم","question":"ما الغاز الأكثر وفرة في الغلاف الجوي؟","answer":"النيتروجين"},{"category":"علوم","question":"ما رمز الأكسجين؟","answer":"O"},{"category":"علوم","question":"ما رمز الذهب؟","answer":"Au"},{"category":"علوم","question":"ما رمز الحديد؟","answer":"Fe"},{"category":"علوم","question":"ما رمز الفضة؟","answer":"Ag"},{"category":"علوم","question":"ما رمز الكربون؟","answer":"C"},{"category":"علوم","question":"كم عدد كواكب المجموعة الشمسية؟","answer":"ثمانية"},{"category":"علوم","question":"كم درجة غليان الماء مئوية عند مستوى سطح البحر؟","answer":"100"},{"category":"علوم","question":"كم درجة تجمد الماء مئوية؟","answer":"0"},{"category":"علوم","question":"ما العضو الذي يضخ الدم؟","answer":"القلب"},{"category":"علوم","question":"ما العضو المسؤول عن التفكير؟","answer":"الدماغ"},{"category":"علوم","question":"ما أكبر عضو في جسم الإنسان؟","answer":"الجلد"},{"category":"علوم","question":"ما العضو الذي ينقي الدم؟","answer":"الكليتان"},{"category":"علوم","question":"ما السائل الذي ينقل الأكسجين في الدم؟","answer":"الهيموغلوبين"},{"category":"علوم","question":"ما الوحدة الأساسية للحياة؟","answer":"الخلية"},{"category":"علوم","question":"ما المادة الوراثية؟","answer":"DNA"},{"category":"علوم","question":"ما العلم الذي يدرس النباتات؟","answer":"علم النبات"},{"category":"علوم","question":"ما العلم الذي يدرس الحيوانات؟","answer":"علم الحيوان"},{"category":"علوم","question":"ما العلم الذي يدرس الصخور؟","answer":"علم الجيولوجيا"},{"category":"علوم","question":"ما العلم الذي يدرس الطقس؟","answer":"علم الأرصاد"},{"category":"علوم","question":"ما سرعة الضوء تقريبًا؟","answer":"300 ألف كم/ثانية"},{"category":"علوم","question":"ما أقسى مادة طبيعية معروفة؟","answer":"الألماس"},{"category":"علوم","question":"ما المعدن السائل في درجة حرارة الغرفة؟","answer":"الزئبق"},{"category":"علوم","question":"ما الجهاز الذي يقيس الضغط الجوي؟","answer":"البارومتر"},{"category":"علوم","question":"ما الجهاز الذي يقيس الزلازل؟","answer":"مقياس الزلازل"},{"category":"علوم","question":"ما الجهاز الذي يقيس الحرارة؟","answer":"مقياس الحرارة"},{"category":"علوم","question":"ما العملية التي تصنع بها النباتات غذاءها؟","answer":"البناء الضوئي"},{"category":"علوم","question":"ما الغاز الذي تمتصه النباتات في البناء الضوئي؟","answer":"ثاني أكسيد الكربون"},{"category":"علوم","question":"ما لون الدم داخل الأوعية؟","answer":"أحمر"},{"category":"علوم","question":"ما الفيتامين الذي يرتبط بالتعرض للشمس؟","answer":"فيتامين د"},{"category":"علوم","question":"ما الكوكب الأبعد عن الشمس؟","answer":"نبتون"},{"category":"علوم","question":"ما الكوكب الذي يدور حوله أكبر عدد من الأقمار المعروفة تاريخيًا؟","answer":"زحل"},{"category":"علوم","question":"ما وحدة قياس القوة؟","answer":"النيوتن"},{"category":"علوم","question":"ما وحدة قياس الطاقة؟","answer":"الجول"},{"category":"علوم","question":"ما وحدة قياس التيار الكهربائي؟","answer":"الأمبير"},{"category":"علوم","question":"ما وحدة قياس المقاومة الكهربائية؟","answer":"الأوم"},{"category":"علوم","question":"ما وحدة قياس التردد؟","answer":"الهرتز"},{"category":"علوم","question":"ما الجزء الذي يحمل الصفات الوراثية داخل الخلية؟","answer":"الكروموسوم"},{"category":"علوم","question":"ما عملية تحول السائل إلى غاز؟","answer":"التبخر"},{"category":"تاريخ وحضارات","question":"من أول الخلفاء الراشدين؟","answer":"أبو بكر الصديق"},{"category":"تاريخ وحضارات","question":"من ثاني الخلفاء الراشدين؟","answer":"عمر بن الخطاب"},{"category":"تاريخ وحضارات","question":"من ثالث الخلفاء الراشدين؟","answer":"عثمان بن عفان"},{"category":"تاريخ وحضارات","question":"من رابع الخلفاء الراشدين؟","answer":"علي بن أبي طالب"},{"category":"تاريخ وحضارات","question":"إلى أي مدينة هاجر النبي محمد؟","answer":"المدينة المنورة"},{"category":"تاريخ وحضارات","question":"في أي مدينة ولد النبي محمد؟","answer":"مكة المكرمة"},{"category":"تاريخ وحضارات","question":"ما أول مسجد بني في الإسلام؟","answer":"مسجد قباء"},{"category":"تاريخ وحضارات","question":"ما المعركة التي وقعت في السنة الثانية للهجرة؟","answer":"بدر"},{"category":"تاريخ وحضارات","question":"من قائد المسلمين في حطين؟","answer":"صلاح الدين الأيوبي"},{"category":"تاريخ وحضارات","question":"من بنى الأهرامات؟","answer":"المصريون القدماء"},{"category":"تاريخ وحضارات","question":"أين قامت الحضارة السومرية؟","answer":"بلاد الرافدين"},{"category":"تاريخ وحضارات","question":"أين قامت الحضارة الفرعونية؟","answer":"مصر"},{"category":"تاريخ وحضارات","question":"أين قامت الحضارة اليونانية القديمة؟","answer":"اليونان"},{"category":"تاريخ وحضارات","question":"أين قامت الحضارة الرومانية؟","answer":"روما"},{"category":"تاريخ وحضارات","question":"ما الحضارة التي اشتهرت بالكتابة المسمارية؟","answer":"السومرية"},{"category":"تاريخ وحضارات","question":"ما المادة التي كتب عليها المصريون القدماء كثيرًا؟","answer":"البردي"},{"category":"تاريخ وحضارات","question":"ما اسم الكتابة المصرية القديمة؟","answer":"الهيروغليفية"},{"category":"تاريخ وحضارات","question":"ما اسم القائد المقدوني الشهير؟","answer":"الإسكندر الأكبر"},{"category":"تاريخ وحضارات","question":"من بنى تاج محل؟","answer":"شاه جهان"},{"category":"تاريخ وحضارات","question":"في أي بلد يقع تاج محل؟","answer":"الهند"},{"category":"تاريخ وحضارات","question":"من أول رئيس للولايات المتحدة؟","answer":"جورج واشنطن"},{"category":"تاريخ وحضارات","question":"ما الثورة التي بدأت عام 1789؟","answer":"الثورة الفرنسية"},{"category":"تاريخ وحضارات","question":"ما السور الشهير في الصين؟","answer":"سور الصين العظيم"},{"category":"تاريخ وحضارات","question":"ما المدينة الإيطالية التي دفنتها ثورة بركانية؟","answer":"بومبي"},{"category":"تاريخ وحضارات","question":"ما البركان الذي دفن بومبي؟","answer":"فيزوف"},{"category":"تاريخ وحضارات","question":"ما الحضارة التي بنت ماتشو بيتشو؟","answer":"الإنكا"},{"category":"تاريخ وحضارات","question":"أين توجد مدينة ماتشو بيتشو؟","answer":"بيرو"},{"category":"تاريخ وحضارات","question":"ما الحضارة التي بنت تشيتشن إيتزا؟","answer":"المايا"},{"category":"تاريخ وحضارات","question":"أين توجد الأهرامات الأشهر؟","answer":"الجيزة"},{"category":"تاريخ وحضارات","question":"ما اسم السفينة التي ارتبطت برحلة كولومبوس؟","answer":"سانتا ماريا"},{"category":"تاريخ وحضارات","question":"من اكتشف أمريكا في الرواية التاريخية الشائعة؟","answer":"كريستوفر كولومبوس"},{"category":"تاريخ وحضارات","question":"من الرحالة المغربي الشهير؟","answer":"ابن بطوطة"},{"category":"تاريخ وحضارات","question":"ما اسم كتاب ابن خلدون الشهير؟","answer":"المقدمة"},{"category":"تاريخ وحضارات","question":"من مؤسس علم الاجتماع عند كثير من الدارسين؟","answer":"ابن خلدون"},{"category":"تاريخ وحضارات","question":"ما المدينة التي كانت مركزًا علميًا عباسيًا شهيرًا؟","answer":"بغداد"},{"category":"تاريخ وحضارات","question":"ما اسم مركز الترجمة العباسي الشهير؟","answer":"بيت الحكمة"},{"category":"تاريخ وحضارات","question":"ما الإمبراطورية التي كانت عاصمتها القسطنطينية؟","answer":"البيزنطية"},{"category":"تاريخ وحضارات","question":"ما الاسم القديم لإسطنبول؟","answer":"القسطنطينية"},{"category":"تاريخ وحضارات","question":"من القائد القرطاجي الذي عبر جبال الألب؟","answer":"هانيبال"},{"category":"تاريخ وحضارات","question":"ما المدينة التي كانت مركز قرطاج؟","answer":"قرطاج"},{"category":"تاريخ وحضارات","question":"من القائد الذي وحّد المغول؟","answer":"جنكيز خان"},{"category":"تاريخ وحضارات","question":"ما الإمبراطورية التي أسسها جنكيز خان؟","answer":"الإمبراطورية المغولية"},{"category":"تاريخ وحضارات","question":"ما الحضارة التي طورت الألعاب الأولمبية القديمة؟","answer":"اليونان"},{"category":"تاريخ وحضارات","question":"ما المدينة التي ارتبطت بالألعاب الأولمبية القديمة؟","answer":"أولمبيا"},{"category":"تاريخ وحضارات","question":"من أول إنسان دار حول الأرض في الفضاء؟","answer":"يوري غاغارين"},{"category":"تاريخ وحضارات","question":"ما أول دولة أطلقت قمرًا صناعيًا؟","answer":"الاتحاد السوفيتي"},{"category":"أدب ولغة","question":"من كتب روميو وجولييت؟","answer":"وليام شكسبير"},{"category":"أدب ولغة","question":"من كتب البؤساء؟","answer":"فيكتور هوغو"},{"category":"أدب ولغة","question":"من صاحب كليلة ودمنة بالعربية؟","answer":"ابن المقفع"},{"category":"أدب ولغة","question":"من شاعر النيل؟","answer":"حافظ إبراهيم"},{"category":"أدب ولغة","question":"من أمير الشعراء؟","answer":"أحمد شوقي"},{"category":"أدب ولغة","question":"من صاحب كتاب المقدمة؟","answer":"ابن خلدون"},{"category":"أدب ولغة","question":"ما جمع كلمة كتاب؟","answer":"كتب"},{"category":"أدب ولغة","question":"ما مفرد كلمة أقلام؟","answer":"قلم"},{"category":"أدب ولغة","question":"ما ضد كلمة شجاع؟","answer":"جبان"},{"category":"أدب ولغة","question":"ما ضد كلمة سريع؟","answer":"بطيء"},{"category":"أدب ولغة","question":"ما مرادف كلمة سعيد؟","answer":"فرح"},{"category":"أدب ولغة","question":"ما مرادف كلمة كبير؟","answer":"ضخم"},{"category":"أدب ولغة","question":"ما نوع كلمة مدرسة؟","answer":"اسم"},{"category":"أدب ولغة","question":"ما نوع كلمة يكتب؟","answer":"فعل"},{"category":"أدب ولغة","question":"ما نوع كلمة في؟","answer":"حرف"},{"category":"أدب ولغة","question":"كم عدد حروف اللغة العربية؟","answer":"28"},{"category":"أدب ولغة","question":"ما اللغة التي كتب بها شكسبير أعماله؟","answer":"الإنجليزية"},{"category":"أدب ولغة","question":"من مؤلف دون كيشوت؟","answer":"ميغيل دي ثيربانتس"},{"category":"أدب ولغة","question":"من مؤلف الأمير الصغير؟","answer":"أنطوان دو سانت إكزوبيري"},{"category":"أدب ولغة","question":"من مؤلف ألف ليلة وليلة؟","answer":"تراث شعبي"},{"category":"أدب ولغة","question":"ما الفن الذي يعتمد على الوزن والقافية؟","answer":"الشعر"},{"category":"أدب ولغة","question":"ما النص الذي يعرض أحداثًا على المسرح؟","answer":"المسرحية"},{"category":"أدب ولغة","question":"ما النص الذي يروي أحداثًا وشخصيات؟","answer":"القصة"},{"category":"أدب ولغة","question":"من الشخصية الرئيسية في العمل السردي؟","answer":"البطل"},{"category":"أدب ولغة","question":"ما اسم علم دراسة اللغة؟","answer":"اللسانيات"},{"category":"أدب ولغة","question":"ما العلم الذي يدرس معاني الكلمات؟","answer":"علم الدلالة"},{"category":"أدب ولغة","question":"ما العلم الذي يدرس الأصوات؟","answer":"علم الأصوات"},{"category":"أدب ولغة","question":"ما العلامة التي تنهي الجملة الخبرية غالبًا؟","answer":"النقطة"},{"category":"أدب ولغة","question":"ما العلامة التي تدل على السؤال؟","answer":"علامة الاستفهام"},{"category":"أدب ولغة","question":"ما العلامة التي تفصل بين الجمل القصيرة؟","answer":"الفاصلة"},{"category":"أدب ولغة","question":"ما الاسم الذي يدل على أكثر من اثنين؟","answer":"الجمع"},{"category":"أدب ولغة","question":"ما الاسم الذي يدل على اثنين؟","answer":"المثنى"},{"category":"أدب ولغة","question":"ما زمن الفعل كتب؟","answer":"الماضي"},{"category":"أدب ولغة","question":"ما زمن الفعل يكتب؟","answer":"المضارع"},{"category":"أدب ولغة","question":"ما زمن الفعل اكتب؟","answer":"الأمر"},{"category":"أدب ولغة","question":"ما أول حرف في الأبجدية العربية؟","answer":"الألف"},{"category":"أدب ولغة","question":"ما آخر حرف في الأبجدية العربية؟","answer":"الياء"},{"category":"أدب ولغة","question":"ما اللغة الأكثر تحدثًا كلغة أم من حيث عدد المتحدثين؟","answer":"الصينية"},{"category":"أدب ولغة","question":"ما الكتاب المقدس عند المسلمين؟","answer":"القرآن الكريم"},{"category":"أدب ولغة","question":"ما السورة التي تبدأ بـالحمد لله رب العالمين؟","answer":"الفاتحة"},{"category":"أدب ولغة","question":"ما أطول سورة في القرآن؟","answer":"البقرة"},{"category":"أدب ولغة","question":"ما أقصر سورة في القرآن؟","answer":"الكوثر"},{"category":"أدب ولغة","question":"ما الشهر الذي يصومه المسلمون؟","answer":"رمضان"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في إسبانيا؟","answer":"الإسبانية"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في البرازيل؟","answer":"البرتغالية"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في إيران؟","answer":"الفارسية"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في تركيا؟","answer":"التركية"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في روسيا؟","answer":"الروسية"},{"category":"أدب ولغة","question":"ما اللغة الرسمية في الصين؟","answer":"الصينية"},{"category":"رياضة","question":"كم لاعبًا في فريق كرة القدم داخل الملعب؟","answer":"11"},{"category":"رياضة","question":"كم لاعبًا في فريق كرة السلة داخل الملعب؟","answer":"5"},{"category":"رياضة","question":"ما الرياضة التي تستخدم مضربًا وكرة صفراء؟","answer":"التنس"},{"category":"رياضة","question":"ما الرياضة التي تستخدم الريشة والمضرب؟","answer":"الريشة الطائرة"},{"category":"رياضة","question":"ما الرياضة التي تستخدم القفازات في الحلبة؟","answer":"الملاكمة"},{"category":"رياضة","question":"ما الرياضة التي تجمع السباحة والدراجات والجري؟","answer":"الترياتلون"},{"category":"رياضة","question":"ما الرياضة التي تستخدم شبكة وكرة ويشارك فيها فريقان؟","answer":"الكرة الطائرة"},{"category":"رياضة","question":"ما الرياضة التي تستخدم مرمى وعصا؟","answer":"الهوكي"},{"category":"رياضة","question":"ما الرياضة التي تشتهر بحلبة الفورمولا؟","answer":"سباق السيارات"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على القفز فوق الحواجز بالحصان؟","answer":"الفروسية"},{"category":"رياضة","question":"كم شوطًا في مباراة كرة القدم؟","answer":"شوطان"},{"category":"رياضة","question":"كم دقيقة زمن المباراة الرسمية لكرة القدم؟","answer":"90"},{"category":"رياضة","question":"ما لون البطاقة التي تعني الطرد في كرة القدم؟","answer":"الحمراء"},{"category":"رياضة","question":"ما لون البطاقة التي تعني الإنذار؟","answer":"الصفراء"},{"category":"رياضة","question":"ما اسم البطولة العالمية لكرة القدم للمنتخبات؟","answer":"كأس العالم"},{"category":"رياضة","question":"كم سنة تفصل عادة بين نسخ كأس العالم؟","answer":"أربع سنوات"},{"category":"رياضة","question":"ما الرياضة التي تشتهر بحلبة وركوب الدراجات؟","answer":"سباق الدراجات"},{"category":"رياضة","question":"ما الرياضة التي تستخدم طاولة وشبكة ومضربًا صغيرًا؟","answer":"تنس الطاولة"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على الجليد والعصي والقرص؟","answer":"هوكي الجليد"},{"category":"رياضة","question":"ما الرياضة التي تستخدم قوسًا وسهامًا؟","answer":"الرماية"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على السباحة فقط في سباقات المسابح؟","answer":"السباحة"},{"category":"رياضة","question":"ما اسم الملعب في كرة القدم؟","answer":"الملعب"},{"category":"رياضة","question":"ما اللاعب الذي يحمي مرمى كرة القدم؟","answer":"حارس المرمى"},{"category":"رياضة","question":"ما اسم ضربة البداية في كرة القدم؟","answer":"ركلة البداية"},{"category":"رياضة","question":"ما الرياضة التي تستخدم حصانًا وقفزًا فوق الحواجز؟","answer":"قفز الحواجز"},{"category":"رياضة","question":"ما اللعبة التي فيها ملك ووزير وفيل وحصان؟","answer":"الشطرنج"},{"category":"رياضة","question":"كم مربعًا في رقعة الشطرنج؟","answer":"64"},{"category":"رياضة","question":"كم قطعة لكل لاعب في بداية الشطرنج؟","answer":"16"},{"category":"رياضة","question":"ما القطعة التي تتحرك في جميع الاتجاهات بالشطرنج؟","answer":"الوزير"},{"category":"رياضة","question":"ما القطعة التي لا تتحرك إلا بشكل قطري؟","answer":"الفيل"},{"category":"رياضة","question":"ما القطعة التي تتحرك على شكل حرف L؟","answer":"الحصان"},{"category":"رياضة","question":"ما القطعة التي هدفها الأساسي حماية الملك؟","answer":"الملك"},{"category":"رياضة","question":"ما الرياضة التي تستخدم بساطًا وحركات جمبازية؟","answer":"الجمباز"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على رفع الأوزان؟","answer":"رفع الأثقال"},{"category":"رياضة","question":"ما الرياضة التي تستخدم كرة بيضاء وعصيًا على طاولة؟","answer":"البلياردو"},{"category":"رياضة","question":"ما الرياضة التي تلعب على مضمار وميدان؟","answer":"ألعاب القوى"},{"category":"رياضة","question":"ما سباق المسافات الطويلة الشهير الذي يبلغ نحو 42.195 كم؟","answer":"الماراثون"},{"category":"رياضة","question":"ما الرياضة التي تستخدم الزلاجات على الثلج؟","answer":"التزلج"},{"category":"رياضة","question":"ما الرياضة التي تستخدم لوحًا وركوب الأمواج؟","answer":"ركوب الأمواج"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على رمي القرص؟","answer":"رمي القرص"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على رمي الرمح؟","answer":"رمي الرمح"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على القفز فوق عارضة؟","answer":"القفز العالي"},{"category":"رياضة","question":"ما الرياضة التي تعتمد على القفز من مسافة أفقية؟","answer":"الوثب الطويل"},{"category":"رياضة","question":"ما الرياضة التي تجمع الجري والقفز والرمي في عدة مسابقات؟","answer":"العشاري"},{"category":"رياضة","question":"ما اللعبة التي تسمى لعبة الملوك؟","answer":"الشطرنج"},{"category":"رياضة","question":"ما الكرة المستخدمة في كرة السلة؟","answer":"كرة سلة"},{"category":"رياضة","question":"ما عدد الحلقات في شعار الألعاب الأولمبية؟","answer":"خمس"},{"category":"رياضة","question":"ما الرياضة التي تُلعب فوق طاولة خضراء غالبًا؟","answer":"البلياردو"},{"category":"رياضة","question":"ما اسم الضربة التي تبدأ بها نقطة في التنس؟","answer":"الإرسال"},{"category":"حيوانات وطبيعة","question":"ما أكبر حيوان على الأرض؟","answer":"الحوت الأزرق"},{"category":"حيوانات وطبيعة","question":"ما أسرع حيوان بري؟","answer":"الفهد"},{"category":"حيوانات وطبيعة","question":"ما أكبر حيوان بري؟","answer":"الفيل الإفريقي"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الملقب بسفينة الصحراء؟","answer":"الجمل"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يلقب بملك الغابة؟","answer":"الأسد"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يستطيع تغيير لونه؟","answer":"الحرباء"},{"category":"حيوانات وطبيعة","question":"ما أكبر طائر حي؟","answer":"النعامة"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يعيش في القطب الشمالي؟","answer":"الدب القطبي"},{"category":"حيوانات وطبيعة","question":"ما الحشرة التي تنتج العسل؟","answer":"النحل"},{"category":"حيوانات وطبيعة","question":"ما الحيوان المعروف بخطوطه البيضاء والسوداء؟","answer":"الحمار الوحشي"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يحمل صغيره في جراب؟","answer":"الكنغر"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي ينام معلقًا أحيانًا؟","answer":"الخفاش"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك خرطومًا؟","answer":"الفيل"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك رقبة طويلة جدًا؟","answer":"الزرافة"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يعيش في الماء وله ثمانية أذرع؟","answer":"الأخطبوط"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يتنفس بالخياشيم؟","answer":"السمك"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يطلق الحبر للدفاع؟","answer":"الحبار"},{"category":"حيوانات وطبيعة","question":"ما الحيوان المعروف ببطئه الشديد؟","answer":"الكسلان"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يصنع السدود؟","answer":"القندس"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يسمى ملك النهر في بعض الثقافات؟","answer":"فرس النهر"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك صدفة؟","answer":"السلحفاة"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك شوكًا على ظهره؟","answer":"القنفذ"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يستطيع تجديد بعض أطرافه؟","answer":"نجم البحر"},{"category":"حيوانات وطبيعة","question":"ما الحيوان البحري الذي له أذرع كثيرة؟","answer":"نجم البحر"},{"category":"حيوانات وطبيعة","question":"ما الطائر الذي يقلد أصوات البشر؟","answer":"الببغاء"},{"category":"حيوانات وطبيعة","question":"ما الطائر الذي يرمز للحكمة؟","answer":"البومة"},{"category":"حيوانات وطبيعة","question":"ما الطائر الذي يستطيع الطيران للخلف؟","answer":"الطنان"},{"category":"حيوانات وطبيعة","question":"ما الطائر الذي لا يطير ويعيش في القطب الجنوبي؟","answer":"البطريق"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يتغذى أساسًا على الخيزران؟","answer":"الباندا"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك قرنًا واحدًا على الأنف؟","answer":"وحيد القرن"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك قرنين متشعبين؟","answer":"الغزال"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يغير جلده؟","answer":"الثعبان"},{"category":"حيوانات وطبيعة","question":"ما الزاحف الذي يملك درعًا على ظهره؟","answer":"السلحفاة"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يملك مخالب قوية ويحب العسل في القصص؟","answer":"الدب"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يعيش في القطيع ويعوي؟","answer":"الذئب"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يعيش في مجموعات ويشتهر بذكائه؟","answer":"الدلافين"},{"category":"حيوانات وطبيعة","question":"ما الثديي البحري المعروف بأنه ذكي جدًا؟","answer":"الدلفين"},{"category":"حيوانات وطبيعة","question":"ما أكبر سمكة معروفة؟","answer":"قرش الحوت"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي يمتلك أسنانًا لا تتوقف عن النمو؟","answer":"القندس"},{"category":"حيوانات وطبيعة","question":"ما الحيوان الذي ينام خلال الشتاء؟","answer":"الدب"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الأسد؟","answer":"شبل"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الحصان؟","answer":"مهر"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الكلب؟","answer":"جرو"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير القط؟","answer":"هرّ"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الماعز؟","answer":"جدي"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير البقرة؟","answer":"عجل"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الغنم؟","answer":"حمل"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الجمل؟","answer":"حوار"},{"category":"حيوانات وطبيعة","question":"ما اسم صغير الفيل؟","answer":"دغفل"},{"category":"اختراعات وتقنية","question":"من ارتبط بتطوير المصباح الكهربائي عمليًا؟","answer":"توماس إديسون"},{"category":"اختراعات وتقنية","question":"من ارتبط باختراع الهاتف؟","answer":"ألكسندر غراهام بيل"},{"category":"اختراعات وتقنية","question":"من الأخوان المرتبطان بأول طائرة ناجحة؟","answer":"الأخوان رايت"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يقيس درجة الحرارة؟","answer":"مقياس الحرارة"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يحدد الاتجاهات؟","answer":"البوصلة"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يرى الأجرام البعيدة؟","answer":"التلسكوب"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يكبر الأجسام الصغيرة؟","answer":"المجهر"},{"category":"اختراعات وتقنية","question":"ما الأداة التي تقيس الزمن؟","answer":"الساعة"},{"category":"اختراعات وتقنية","question":"ما وسيلة النقل التي تسير على القضبان؟","answer":"القطار"},{"category":"اختراعات وتقنية","question":"ما وسيلة النقل التي تطير في الجو؟","answer":"الطائرة"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يحول الصوت إلى إشارة في الهاتف؟","answer":"الميكروفون"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يعرض الصور على شاشة؟","answer":"الشاشة"},{"category":"اختراعات وتقنية","question":"ما وحدة التخزين الشائعة للملفات؟","answer":"القرص الصلب"},{"category":"اختراعات وتقنية","question":"ما الجزء الذي ينفذ التعليمات في الحاسوب؟","answer":"المعالج"},{"category":"اختراعات وتقنية","question":"ما الذاكرة المؤقتة السريعة في الحاسوب؟","answer":"ذاكرة الوصول العشوائي"},{"category":"اختراعات وتقنية","question":"ما الشبكة العالمية التي تربط الحواسيب؟","answer":"الإنترنت"},{"category":"اختراعات وتقنية","question":"ما البرنامج الذي يستخدم لفتح مواقع الويب؟","answer":"متصفح الإنترنت"},{"category":"اختراعات وتقنية","question":"ما نظام التشغيل الشهير للهواتف من جوجل؟","answer":"أندرويد"},{"category":"اختراعات وتقنية","question":"ما نظام التشغيل الشهير لأجهزة آيفون؟","answer":"iOS"},{"category":"اختراعات وتقنية","question":"ما الشركة التي طورت نظام ويندوز؟","answer":"مايكروسوفت"},{"category":"اختراعات وتقنية","question":"ما الشركة التي تطور آيفون؟","answer":"آبل"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يطبع المستندات؟","answer":"الطابعة"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يحول الورق إلى ملف رقمي؟","answer":"الماسح الضوئي"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يلتقط الصور الرقمية؟","answer":"الكاميرا"},{"category":"اختراعات وتقنية","question":"ما التقنية التي تستخدم موجات قصيرة للاتصال قريب المدى؟","answer":"البلوتوث"},{"category":"اختراعات وتقنية","question":"ما التقنية المستخدمة للاتصال اللاسلكي بالشبكات؟","answer":"واي فاي"},{"category":"اختراعات وتقنية","question":"ما الرمز الذي يمثل عنوان موقع الإنترنت؟","answer":"URL"},{"category":"اختراعات وتقنية","question":"ما لغة بناء صفحات الويب الأساسية؟","answer":"HTML"},{"category":"اختراعات وتقنية","question":"ما لغة تنسيق صفحات الويب؟","answer":"CSS"},{"category":"اختراعات وتقنية","question":"ما لغة البرمجة الشائعة للويب داخل المتصفح؟","answer":"JavaScript"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يخزن الطاقة الكهربائية؟","answer":"البطارية"},{"category":"اختراعات وتقنية","question":"ما الطاقة الناتجة من حركة الهواء؟","answer":"طاقة الرياح"},{"category":"اختراعات وتقنية","question":"ما الطاقة الناتجة من ضوء الشمس؟","answer":"الطاقة الشمسية"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يحول الطاقة الشمسية إلى كهرباء؟","answer":"اللوح الشمسي"},{"category":"اختراعات وتقنية","question":"ما الآلة التي تستخدم لإنتاج الكهرباء من الحركة؟","answer":"المولد"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يقيس الزمن بدقة عالية جدًا باستخدام اهتزازات الذرة؟","answer":"الساعة الذرية"},{"category":"اختراعات وتقنية","question":"ما التقنية التي تسمح بالدفع بلمسة قريبة؟","answer":"NFC"},{"category":"اختراعات وتقنية","question":"ما التقنية التي تحدد الموقع عبر الأقمار الصناعية؟","answer":"GPS"},{"category":"اختراعات وتقنية","question":"ما الروبوت الذي يعمل دون تدخل بشري مستمر؟","answer":"الروبوت الذاتي"},{"category":"اختراعات وتقنية","question":"ما الذكاء الذي يحاكي بعض قدرات الإنسان؟","answer":"الذكاء الاصطناعي"},{"category":"اختراعات وتقنية","question":"ما التقنية التي تسجل معاملات رقمية في سلسلة مترابطة؟","answer":"سلسلة الكتل"},{"category":"اختراعات وتقنية","question":"ما الاسم الشائع للواقع الافتراضي؟","answer":"VR"},{"category":"اختراعات وتقنية","question":"ما الاسم الشائع للواقع المعزز؟","answer":"AR"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يلتقط الفيديو؟","answer":"كاميرا الفيديو"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يرسل الصوت لاسلكيًا للسماعات؟","answer":"بلوتوث"},{"category":"اختراعات وتقنية","question":"ما الوحدة التي تقيس سرعة المعالج غالبًا؟","answer":"هرتز"},{"category":"اختراعات وتقنية","question":"ما الأداة المستخدمة للكتابة على شاشة لمس؟","answer":"القلم الإلكتروني"},{"category":"اختراعات وتقنية","question":"ما الجهاز الذي يلتقط النص من الورق ويحوّله رقميًا؟","answer":"ماسح ضوئي"},{"category":"اختراعات وتقنية","question":"ما الشبكة التي تربط الأجهزة داخل منزل؟","answer":"الشبكة المحلية"},{"category":"فنون وثقافة","question":"ما الآلة الموسيقية ذات المفاتيح السوداء والبيضاء؟","answer":"البيانو"},{"category":"فنون وثقافة","question":"ما الآلة التي تحتوي عادة على ستة أوتار؟","answer":"الغيتار"},{"category":"فنون وثقافة","question":"ما الفن الذي يستخدم الألوان على سطح؟","answer":"الرسم"},{"category":"فنون وثقافة","question":"ما الفن الذي يصنع أشكالًا من الطين؟","answer":"النحت"},{"category":"فنون وثقافة","question":"ما الفن الذي يعتمد على التقاط الصور؟","answer":"التصوير الفوتوغرافي"},{"category":"فنون وثقافة","question":"ما الفن الذي يعرض الحركة أمام الكاميرا؟","answer":"السينما"},{"category":"فنون وثقافة","question":"ما الفن الذي يعتمد على الحركة والإيقاع؟","answer":"الرقص"},{"category":"فنون وثقافة","question":"ما الفن الذي يعتمد على الصوت والكلمات والنغم؟","answer":"الغناء"},{"category":"فنون وثقافة","question":"ما اسم المسرح الذي تعرض عليه الأعمال الدرامية؟","answer":"خشبة المسرح"},{"category":"فنون وثقافة","question":"ما الشخص الذي يخرج الفيلم؟","answer":"المخرج"},{"category":"فنون وثقافة","question":"ما الشخص الذي يمثل في الفيلم؟","answer":"الممثل"},{"category":"فنون وثقافة","question":"ما الشخص الذي يكتب السيناريو؟","answer":"كاتب السيناريو"},{"category":"فنون وثقافة","question":"ما اللون الناتج من الأزرق والأصفر؟","answer":"الأخضر"},{"category":"فنون وثقافة","question":"ما اللون الناتج من الأحمر والأبيض؟","answer":"الوردي"},{"category":"فنون وثقافة","question":"ما اللون الناتج من الأحمر والأصفر؟","answer":"البرتقالي"},{"category":"فنون وثقافة","question":"ما اللون الذي يمتص معظم الضوء المرئي؟","answer":"الأسود"},{"category":"فنون وثقافة","question":"ما اللون الذي يعكس معظم الضوء المرئي؟","answer":"الأبيض"},{"category":"فنون وثقافة","question":"كم لونًا أساسيًا في نموذج الألوان التقليدي للرسم؟","answer":"ثلاثة"},{"category":"فنون وثقافة","question":"ما الأداة التي تستخدم لخلط الألوان في الرسم؟","answer":"لوحة الألوان"},{"category":"فنون وثقافة","question":"ما المادة التي تصنع منها أقلام الرصاص؟","answer":"الجرافيت"},{"category":"فنون وثقافة","question":"ما الخامة الشائعة للرسم على القماش؟","answer":"الزيت"},{"category":"فنون وثقافة","question":"ما الفن الياباني لطي الورق؟","answer":"الأوريغامي"},{"category":"فنون وثقافة","question":"ما الخط العربي الذي يتميز بالوضوح والاستقامة؟","answer":"خط النسخ"},{"category":"فنون وثقافة","question":"ما الخط العربي الذي يستخدم كثيرًا في العناوين والزخرفة؟","answer":"خط الثلث"},{"category":"فنون وثقافة","question":"ما المدينة الإيطالية المشهورة بفن عصر النهضة؟","answer":"فلورنسا"},{"category":"فنون وثقافة","question":"ما اللوحة الشهيرة التي رسمها ليوناردو دافنشي؟","answer":"الموناليزا"},{"category":"فنون وثقافة","question":"من رسم سقف كنيسة سيستينا؟","answer":"ميكيلانجلو"},{"category":"فنون وثقافة","question":"ما الآلة الموسيقية التي لها أوتار وقوس؟","answer":"الكمان"},{"category":"فنون وثقافة","question":"ما الآلة النحاسية ذات الصمامات؟","answer":"البوق"},{"category":"فنون وثقافة","question":"ما الآلة الإيقاعية التي تضرب باليد؟","answer":"الطبل"},{"category":"فنون وثقافة","question":"ما نوع الفن الذي يجمع الكلام واللحن والإيقاع؟","answer":"الأغنية"},{"category":"فنون وثقافة","question":"ما نوع العمل الذي يجمع الغناء والتمثيل والموسيقى؟","answer":"الأوبرا"},{"category":"فنون وثقافة","question":"ما المبنى الذي تعرض فيه اللوحات والآثار؟","answer":"المتحف"},{"category":"فنون وثقافة","question":"ما المكان المخصص للعروض المسرحية؟","answer":"المسرح"},{"category":"فنون وثقافة","question":"ما المكان المخصص لعرض الأفلام؟","answer":"السينما"},{"category":"فنون وثقافة","question":"ما الكتاب الذي يجمع وصفات الطعام؟","answer":"كتاب الطبخ"},{"category":"فنون وثقافة","question":"ما الفن الذي يركز على تصميم المباني؟","answer":"العمارة"},{"category":"فنون وثقافة","question":"ما الفن الذي يركز على تصميم الملابس؟","answer":"الأزياء"},{"category":"فنون وثقافة","question":"ما الفن الذي يصنع صورًا من قطع صغيرة؟","answer":"الفسيفساء"},{"category":"فنون وثقافة","question":"ما الفن الذي يستخدم الخشب لصنع أشكال زخرفية؟","answer":"النحت الخشبي"},{"category":"فنون وثقافة","question":"ما القارة التي نشأت فيها رقصة السامبا؟","answer":"أمريكا الجنوبية"},{"category":"فنون وثقافة","question":"ما البلد المرتبط برقصة الفلامنكو؟","answer":"إسبانيا"},{"category":"فنون وثقافة","question":"ما البلد المرتبط بفن الكابوكي؟","answer":"اليابان"},{"category":"فنون وثقافة","question":"ما البلد المرتبط برقصة التانغو؟","answer":"الأرجنتين"},{"category":"فنون وثقافة","question":"ما الآلة الشعبية العربية ذات الأوتار؟","answer":"العود"},{"category":"فنون وثقافة","question":"ما آلة النفخ العربية الشائعة؟","answer":"الناي"},{"category":"فنون وثقافة","question":"ما الفن الذي يصنع أشكالًا من الزجاج؟","answer":"فن الزجاج"},{"category":"فنون وثقافة","question":"ما الفن الذي يصنع صورًا بالضوء والظل؟","answer":"التصوير"},{"category":"فنون وثقافة","question":"ما اسم عرض الملابس على منصة؟","answer":"عرض الأزياء"},{"category":"فضاء ومعلومات عامة","question":"ما اسم المجرة التي توجد فيها المجموعة الشمسية؟","answer":"درب التبانة"},{"category":"فضاء ومعلومات عامة","question":"ما أقرب نجم إلى الأرض بعد الشمس؟","answer":"بروكسيما سنتوري"},{"category":"فضاء ومعلومات عامة","question":"ما اسم أول إنسان مشى على القمر؟","answer":"نيل أرمسترونغ"},{"category":"فضاء ومعلومات عامة","question":"في أي عقد هبط الإنسان على القمر لأول مرة؟","answer":"الستينيات"},{"category":"فضاء ومعلومات عامة","question":"ما اسم أول قمر صناعي؟","answer":"سبوتنيك 1"},{"category":"فضاء ومعلومات عامة","question":"ما اسم المركبة التي هبطت على القمر عام 1969؟","answer":"أبولو 11"},{"category":"فضاء ومعلومات عامة","question":"ما اسم الوكالة الفضائية الأمريكية؟","answer":"ناسا"},{"category":"فضاء ومعلومات عامة","question":"ما اسم الوكالة الفضائية الأوروبية؟","answer":"وكالة الفضاء الأوروبية"},{"category":"فضاء ومعلومات عامة","question":"ما الجسم الذي يدور حول الكوكب؟","answer":"قمر"},{"category":"فضاء ومعلومات عامة","question":"ما الجسم الذي يدور حول النجم؟","answer":"كوكب"},{"category":"فضاء ومعلومات عامة","question":"ما اسم المسار الذي يسلكه جسم حول جسم آخر؟","answer":"مدار"},{"category":"فضاء ومعلومات عامة","question":"ما الوحدة الفلكية التي تقيس المسافات بين النجوم؟","answer":"السنة الضوئية"},{"category":"فضاء ومعلومات عامة","question":"ما الظاهرة التي يحدث فيها اختفاء القمر في ظل الأرض؟","answer":"خسوف القمر"},{"category":"فضاء ومعلومات عامة","question":"ما الظاهرة التي يحجب فيها القمر ضوء الشمس؟","answer":"كسوف الشمس"},{"category":"فضاء ومعلومات عامة","question":"ما اسم الصخور القادمة من الفضاء إلى سطح الأرض؟","answer":"النيازك"},{"category":"فضاء ومعلومات عامة","question":"ما الجسم الجليدي الذي يقترب من الشمس ويكوّن ذيلًا؟","answer":"المذنب"},{"category":"فضاء ومعلومات عامة","question":"ما الكوكب الذي يملك يومًا أطول من سنته تقريبًا؟","answer":"الزهرة"},{"category":"فضاء ومعلومات عامة","question":"ما الكوكب الذي يدور في الاتجاه المعاكس لمعظم الكواكب؟","answer":"الزهرة"},{"category":"فضاء ومعلومات عامة","question":"ما اسم الحزام الذي يقع بين المريخ والمشتري؟","answer":"حزام الكويكبات"},{"category":"فضاء ومعلومات عامة","question":"ما الكوكب المعروف بلونه الأزرق؟","answer":"نبتون"},{"category":"فضاء ومعلومات عامة","question":"كم عدد أيام السنة الكبيسة؟","answer":"366"},{"category":"فضاء ومعلومات عامة","question":"كم ساعة في اليوم؟","answer":"24"},{"category":"فضاء ومعلومات عامة","question":"كم دقيقة في الساعة؟","answer":"60"},{"category":"فضاء ومعلومات عامة","question":"كم ثانية في الدقيقة؟","answer":"60"},{"category":"فضاء ومعلومات عامة","question":"كم شهرًا في السنة الميلادية؟","answer":"12"},{"category":"فضاء ومعلومات عامة","question":"كم يومًا تقريبًا في السنة؟","answer":"365"},{"category":"فضاء ومعلومات عامة","question":"ما الشكل ذو ثلاثة أضلاع؟","answer":"المثلث"},{"category":"فضاء ومعلومات عامة","question":"ما الشكل ذو أربعة أضلاع متساوية؟","answer":"المربع"},{"category":"فضاء ومعلومات عامة","question":"ما الشكل الذي لا زوايا له؟","answer":"الدائرة"},{"category":"فضاء ومعلومات عامة","question":"كم درجة في الزاوية القائمة؟","answer":"90"},{"category":"فضاء ومعلومات عامة","question":"كم درجة في الدائرة الكاملة؟","answer":"360"},{"category":"فضاء ومعلومات عامة","question":"ما العدد الذي يلي 99؟","answer":"100"},{"category":"فضاء ومعلومات عامة","question":"ما نصف 100؟","answer":"50"},{"category":"فضاء ومعلومات عامة","question":"ما ضعف 25؟","answer":"50"},{"category":"فضاء ومعلومات عامة","question":"ما الجذر التربيعي لـ64؟","answer":"8"},{"category":"فضاء ومعلومات عامة","question":"كم يساوي 10 × 10؟","answer":"100"},{"category":"فضاء ومعلومات عامة","question":"ما أكبر عدد أولي مكوّن من رقم واحد؟","answer":"7"},{"category":"فضاء ومعلومات عامة","question":"ما أصغر عدد أولي؟","answer":"2"},{"category":"فضاء ومعلومات عامة","question":"كم ضلعًا للمسدس؟","answer":"6"},{"category":"فضاء ومعلومات عامة","question":"كم ضلعًا للمثمن؟","answer":"8"},{"category":"فضاء ومعلومات عامة","question":"ما الحيوان الوطني لأستراليا الشهير؟","answer":"الكنغر"},{"category":"فضاء ومعلومات عامة","question":"ما العملة الرسمية لليابان؟","answer":"الين"},{"category":"فضاء ومعلومات عامة","question":"ما العملة الرسمية للمملكة المتحدة؟","answer":"الجنيه الإسترليني"},{"category":"فضاء ومعلومات عامة","question":"ما العملة الرسمية للولايات المتحدة؟","answer":"الدولار"},{"category":"فضاء ومعلومات عامة","question":"ما العملة الرسمية لمنطقة اليورو؟","answer":"اليورو"},{"category":"فضاء ومعلومات عامة","question":"ما القارة التي لا توجد فيها دولة دائمة السكان؟","answer":"أنتاركتيكا"},{"category":"فضاء ومعلومات عامة","question":"ما أكبر محيط من حيث المساحة؟","answer":"الهادئ"},{"category":"فضاء ومعلومات عامة","question":"ما أصغر محيط؟","answer":"المحيط المتجمد الشمالي"},{"category":"فضاء ومعلومات عامة","question":"ما الجهاز الذي يعرض الوقت على الحائط؟","answer":"الساعة"},{"category":"فضاء ومعلومات عامة","question":"ما الأداة التي تستخدم لقياس الأطوال؟","answer":"المسطرة"},{"category":"فضاء ومعلومات عامة","question":"ما الأداة التي تستخدم لمعرفة الوزن؟","answer":"الميزان"},{"category":"جغرافيا","question":"ما الدولة التي تُعرف بأرض الشمس المشرقة؟","answer":"اليابان"},{"category":"جغرافيا","question":"ما الدولة التي تشتهر ببرج بيزا المائل؟","answer":"إيطاليا"},{"category":"جغرافيا","question":"ما الدولة التي تقع فيها مدينة إسطنبول؟","answer":"تركيا"},{"category":"جغرافيا","question":"ما الدولة التي تقع فيها مدينة مراكش؟","answer":"المغرب"},{"category":"جغرافيا","question":"ما الدولة التي تقع فيها مدينة دبي؟","answer":"الإمارات"},{"category":"جغرافيا","question":"ما الدولة التي تقع فيها مدينة كيب تاون؟","answer":"جنوب إفريقيا"},{"category":"علوم","question":"ما أصغر وحدة من عنصر كيميائي تحتفظ بخواصه؟","answer":"الذرة"},{"category":"علوم","question":"ما الجسيم ذو الشحنة السالبة في الذرة؟","answer":"الإلكترون"},{"category":"علوم","question":"ما الجسيم ذو الشحنة الموجبة في النواة؟","answer":"البروتون"},{"category":"علوم","question":"ما الجسيم المتعادل في النواة؟","answer":"النيوترون"},{"category":"علوم","question":"ما تحول المادة من الصلب إلى السائل؟","answer":"الانصهار"},{"category":"علوم","question":"ما تحول المادة من الغاز إلى السائل؟","answer":"التكاثف"},{"category":"علوم","question":"ما تحول المادة من السائل إلى الصلب؟","answer":"التجمد"},{"category":"علوم","question":"ما تحول المادة من الصلب إلى الغاز مباشرة؟","answer":"التسامي"},{"category":"تاريخ وحضارات","question":"ما القصر الأندلسي الشهير في غرناطة؟","answer":"قصر الحمراء"},{"category":"تاريخ وحضارات","question":"ما الحضارة التي اشتهرت بمدينة البتراء؟","answer":"الأنباط"},{"category":"تاريخ وحضارات","question":"في أي دولة تقع مدينة البتراء؟","answer":"الأردن"},{"category":"تاريخ وحضارات","question":"ما اسم المعركة التي أنهت حكم نابليون في المئة يوم؟","answer":"واترلو"},{"category":"تاريخ وحضارات","question":"من كان أول إمبراطور روماني؟","answer":"أوغسطس"},{"category":"أدب ولغة","question":"ما مفرد كلمة مدارس؟","answer":"مدرسة"},{"category":"أدب ولغة","question":"ما جمع كلمة مدينة؟","answer":"مدن"},{"category":"أدب ولغة","question":"ما ضد كلمة قريب؟","answer":"بعيد"},{"category":"أدب ولغة","question":"ما ضد كلمة ليل؟","answer":"نهار"},{"category":"أدب ولغة","question":"ما مرادف كلمة جميل؟","answer":"حسن"},{"category":"أدب ولغة","question":"ما مرادف كلمة طريق؟","answer":"سبيل"},{"category":"رياضة","question":"كم لاعبًا في فريق كرة اليد داخل الملعب؟","answer":"7"},{"category":"رياضة","quest
+
+/*
+================================================
+الإصلاح الأساسي
+================================================
+
+لا يوجد:
+
+fetch()
+JSON خارجي
+API خارجي
+ملف أسئلة خارجي
+
+لذلك GitHub Pages لن يعلق
+على "جاري تحميل السؤال".
+*/
+
+
+const QUESTIONS = [
+
+/* ثقافة عامة */
+
+{
+category:"general",
+question:"ما عاصمة اليابان؟",
+answers:["طوكيو","بكين","سيول","بانكوك"],
+correct:0
+},
+
+{
+category:"general",
+question:"كم عدد أيام الأسبوع؟",
+answers:["5","6","7","8"],
+correct:2
+},
+
+{
+category:"general",
+question:"ما أكبر محيط في العالم؟",
+answers:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],
+correct:2
+},
+
+{
+category:"general",
+question:"ما الكوكب المعروف بالكوكب الأحمر؟",
+answers:["الزهرة","المريخ","المشتري","عطارد"],
+correct:1
+},
+
+{
+category:"general",
+question:"كم دقيقة في الساعة؟",
+answers:["30","45","60","90"],
+correct:2
+},
+
+{
+category:"general",
+question:"ما الحيوان المعروف بسفينة الصحراء؟",
+answers:["الحصان","الجمل","الفيل","الغزال"],
+correct:1
+},
+
+
+/* تاريخ */
+
+{
+category:"history",
+question:"من بنى الأهرامات في الجيزة؟",
+answers:[
+"الرومان",
+"المصريون القدماء",
+"الفُرس",
+"الفايكنغ"
+],
+correct:1
+},
+
+{
+category:"history",
+question:"ما عاصمة الدولة العباسية؟",
+answers:[
+"دمشق",
+"بغداد",
+"القاهرة",
+"قرطبة"
+],
+correct:1
+},
+
+{
+category:"history",
+question:"أين تقع مدينة البتراء؟",
+answers:[
+"الأردن",
+"مصر",
+"العراق",
+"المغرب"
+],
+correct:0
+},
+
+{
+category:"history",
+question:"من الرحالة المغربي الشهير؟",
+answers:[
+"ابن بطوطة",
+"ابن سينا",
+"الخوارزمي",
+"الطبري"
+],
+correct:0
+},
+
+
+/* رياضة */
+
+{
+category:"sports",
+question:"كم لاعباً في فريق كرة القدم داخل الملعب؟",
+answers:["9","10","11","12"],
+correct:2
+},
+
+{
+category:"sports",
+question:"كم حلقة في شعار الألعاب الأولمبية؟",
+answers:["4","5","6","7"],
+correct:1
+},
+
+{
+category:"sports",
+question:"ما الرياضة التي تستخدم المضرب والكرة الصفراء؟",
+answers:[
+"التنس",
+"الملاكمة",
+"السباحة",
+"الجودو"
+],
+correct:0
+},
+
+{
+category:"sports",
+question:"كم نقطة للرمية الحرة في كرة السلة؟",
+answers:["1","2","3","4"],
+correct:0
+},
+
+
+/* علوم */
+
+{
+category:"science",
+question:"ما الغاز الذي يحتاجه الإنسان للتنفس؟",
+answers:[
+"الأكسجين",
+"الهيليوم",
+"الهيدروجين",
+"النيتروجين فقط"
+],
+correct:0
+},
+
+{
+category:"science",
+question:"ما وحدة قياس القوة؟",
+answers:[
+"واط",
+"نيوتن",
+"فولت",
+"أمبير"
+],
+correct:1
+},
+
+{
+category:"science",
+question:"ما أقرب نجم إلى الأرض؟",
+answers:[
+"الشمس",
+"سيريوس",
+"النسر",
+"الشعرى"
+],
+correct:0
+},
+
+{
+category:"science",
+question:"ما العضو الذي يضخ الدم؟",
+answers:[
+"الكبد",
+"القلب",
+"الرئة",
+"المعدة"
+],
+correct:1
+},
+
+{
+category:"science",
+question:"ما أكبر كوكب في المجموعة الشمسية؟",
+answers:[
+"زحل",
+"الأرض",
+"المشتري",
+"نبتون"
+],
+correct:2
+},
+
+
+/* تكنولوجيا */
+
+{
+category:"tech",
+question:"ماذا تعني CPU؟",
+answers:[
+"وحدة المعالجة المركزية",
+"وحدة التخزين",
+"شبكة الحاسوب",
+"ذاكرة الرسوم"
+],
+correct:0
+},
+
+{
+category:"tech",
+question:"ما اللغة الأساسية لبناء هيكل صفحات الويب؟",
+answers:[
+"HTML",
+"SQL",
+"Python",
+"C"
+],
+correct:0
+},
+
+{
+category:"tech",
+question:"ما اللغة المستخدمة لتنسيق صفحات الويب؟",
+answers:[
+"CSS",
+"SQL",
+"Bash",
+"Python"
+],
+correct:0
+},
+
+{
+category:"tech",
+question:"ما امتداد JavaScript؟",
+answers:[
+".js",
+".jpg",
+".mp3",
+".exe"
+],
+correct:0
+},
+
+{
+category:"tech",
+question:"ما الذي يحفظ البيانات داخل متصفح المستخدم؟",
+answers:[
+"localStorage",
+"HDMI",
+"GPS",
+"FTP"
+],
+correct:0
+},
+
+
+/* إسلاميات */
+
+{
+category:"islamic",
+question:"كم عدد الصلوات المفروضة؟",
+answers:["3","4","5","6"],
+correct:2
+},
+
+{
+category:"islamic",
+question:"في أي شهر يصوم المسلمون؟",
+answers:[
+"شوال",
+"رمضان",
+"محرم",
+"رجب"
+],
+correct:1
+},
+
+{
+category:"islamic",
+question:"ما أول سورة في المصحف؟",
+answers:[
+"البقرة",
+"الفاتحة",
+"الإخلاص",
+"الناس"
+],
+correct:1
+},
+
+{
+category:"islamic",
+question:"كم عدد أركان الإسلام؟",
+answers:["4","5","6","7"],
+correct:1
+},
+
+{
+category:"islamic",
+question:"إلى أي مدينة كانت الهجرة النبوية؟",
+answers:[
+"الطائف",
+"المدينة المنورة",
+"القدس",
+"دمشق"
+],
+correct:1
+},
+
+{
+category:"islamic",
+question:"ما السورة التي تسمى أم الكتاب؟",
+answers:[
+"الفاتحة",
+"الكهف",
+"يس",
+"الملك"
+],
+correct:0
+}
+
+];
+
+
+const CATEGORY_NAMES = {
+
+general:"📚 ثقافة عامة",
+
+history:"🏺 تاريخ",
+
+sports:"⚽ رياضة",
+
+science:"🔬 علوم",
+
+tech:"💻 تكنولوجيا",
+
+islamic:"🕌 إسلاميات"
+
+};
+
+
+let state =
+JSON.parse(
+localStorage.getItem("legendGame")
+) || {
+
+score:0,
+
+xp:0,
+
+stage:1,
+
+correct:0,
+
+answered:0,
+
+streak:0,
+
+bestStreak:0,
+
+skips:5,
+
+helps:3,
+
+reveals:8,
+
+sound:true,
+
+category:"all",
+
+achievements:[]
+
+};
+
+
+let currentQuestion=null;
+
+let selectedAnswer=null;
+
+let locked=false;
+
+
+/* =========================
+حفظ
+========================= */
+
+function save(){
+
+localStorage.setItem(
+"legendGame",
+JSON.stringify(state)
+);
+
+}
+
+
+/* =========================
+اختيار سؤال
+========================= */
+
+function getQuestions(){
+
+if(state.category==="all"){
+
+return QUESTIONS;
+
+}
+
+return QUESTIONS.filter(
+q=>q.category===state.category
+);
+
+}
+
+
+function newQuestion(){
+
+locked=false;
+
+selectedAnswer=null;
+
+const list=getQuestions();
+
+currentQuestion =
+list[
+Math.floor(
+Math.random()*list.length
+)
+];
+
+renderQuestion();
+
+}
+
+
+/* =========================
+عرض السؤال
+========================= */
+
+function renderQuestion(){
+
+document.getElementById(
+"questionText"
+).textContent =
+currentQuestion.question;
+
+
+document.getElementById(
+"category"
+).textContent =
+CATEGORY_NAMES[
+currentQuestion.category
+];
+
+
+const answers =
+document.getElementById(
+"answers"
+);
+
+answers.innerHTML="";
+
+
+currentQuestion.answers
+.forEach((answer,index)=>{
+
+const button =
+document.createElement("button");
+
+button.className="answer";
+
+button.textContent=answer;
+
+button.onclick=()=>{
+
+if(locked)return;
+
+selectedAnswer=index;
+
+document
+.querySelectorAll(".answer")
+.forEach(
+b=>b.classList.remove("selected")
+);
+
+button.classList.add("selected");
+
+};
+
+answers.appendChild(button);
+
+});
+
+
+updateUI();
+
+}
+
+
+/* =========================
+تحقق
+========================= */
+
+function checkAnswer(){
+
+if(locked)return;
+
+if(selectedAnswer===null){
+
+toast("⚠️ اختر إجابة أولاً");
+
+return;
+
+}
+
+locked=true;
+
+const buttons =
+document.querySelectorAll(
+".answer"
+);
+
+
+buttons.forEach(
+(button,index)=>{
+
+button.disabled=true;
+
+if(
+index===
+currentQuestion.correct
+){
+
+button.classList.add(
+"correct"
+);
+
+}
+
+if(
+index===
+selectedAnswer &&
+index!==
+currentQuestion.correct
+){
+
+button.classList.add(
+"wrong"
+);
+
+}
+
+});
+
+
+state.answered++;
+
+
+if(
+selectedAnswer===
+currentQuestion.correct
+){
+
+state.correct++;
+
+state.streak++;
+
+state.bestStreak =
+Math.max(
+state.bestStreak,
+state.streak
+);
+
+
+const multiplier =
+Math.min(
+5,
+1+
+Math.floor(
+state.streak/3
+)
+);
+
+
+const points =
+100*multiplier;
+
+
+state.score+=points;
+
+state.xp+=25;
+
+
+/* كل 5 إجابات صحيحة = مرحلة */
+
+state.stage =
+Math.min(
+100,
+1+
+Math.floor(
+state.correct/5
+)
+);
+
+
+toast(
+"🎉 إجابة صحيحة +"+
+points+
+" نقطة"
+);
+
+
+correctSound();
+
+confetti();
+
+checkAchievements();
+
+}else{
+
+state.streak=0;
+
+state.xp+=5;
+
+toast(
+"❌ إجابة خاطئة"
+);
+
+wrongSound();
+
+}
+
+
+save();
+
+updateUI();
+
+
+setTimeout(
+newQuestion,
+1200
+);
+
+}
+
+
+/* =========================
+حذف الاختيار
+========================= */
+
+function clearAnswer(){
+
+if(locked)return;
+
+selectedAnswer=null;
+
+document
+.querySelectorAll(".answer")
+.forEach(
+b=>b.classList.remove("selected")
+);
+
+}
+
+
+/* =========================
+تخطي
+========================= */
+
+function skipQuestion(){
+
+if(
+state.skips<=0 ||
+locked
+){
+
+toast(
+"لا يوجد تخطي متاح"
+);
+
+return;
+
+}
+
+state.skips--;
+
+save();
+
+toast("⏭️ تم تخطي السؤال");
+
+newQuestion();
+
+}
+
+
+/* =========================
+مساعدة
+========================= */
+
+function help(){
+
+if(
+state.helps<=0 ||
+locked
+){
+
+toast(
+"💡 انتهت المساعدات"
+);
+
+return;
+
+}
+
+state.helps--;
+
+
+const wrong =
+Array.from(
+document.querySelectorAll(".answer")
+)
+.filter(
+(b,i)=>
+i!==currentQuestion.correct
+);
+
+
+wrong
+.sort(()=>Math.random()-.5)
+.slice(0,2)
+.forEach(
+b=>{
+b.disabled=true;
+b.style.opacity=".25";
+}
+);
+
+
+save();
+
+updateUI();
+
+toast(
+"💡 تم حذف إجابتين خاطئتين"
+);
+
+}
+
+
+/* =========================
+كشف الإجابة
+========================= */
+
+function revealAnswer(){
+
+if(
+state.reveals<=0 ||
+locked
+){
+
+toast(
+"👁️ انتهت كروت الكشف"
+);
+
+return;
+
+}
+
+state.reveals--;
+
+document
+.querySelectorAll(".answer")
+.forEach(
+(b,i)=>{
+
+if(
+i===currentQuestion.correct
+){
+
+b.classList.add(
+"correct"
+);
+
+}
+
+});
+
+
+save();
+
+updateUI();
+
+toast(
+"👁️ تم كشف الإجابة"
+);
+
+}
+
+
+/* =========================
+سؤال جديد
+========================= */
+
+function randomQuestion(){
+
+if(locked)return;
+
+newQuestion();
+
+toast(
+"🎲 تم اختيار سؤال جديد"
+);
+
+}
+
+
+/* =========================
+الفئات
+========================= */
+
+function openCategories(){
+
+let html=`
+
+<h2>📚 فئات الأسئلة</h2>
+
+<div class="categories">
+
+<button
+class="cat"
+onclick="changeCategory('all')">
+🌍 الكل
+</button>
+
+`;
+
+
+Object.entries(
+CATEGORY_NAMES
+).forEach(
+([key,name])=>{
+
+html+=`
+
+<button
+class="cat"
+onclick="changeCategory('${key}')">
+
+${name}
+
+</button>
+
+`;
+
+});
+
+
+html+=`
+
+</div>
+
+`;
+
+openModal(html);
+
+}
+
+
+function changeCategory(category){
+
+state.category=category;
+
+save();
+
+closeModal();
+
+newQuestion();
+
+toast(
+"تم تغيير فئة الأسئلة"
+);
+
+}
+
+
+/* =========================
+الإحصائيات
+========================= */
+
+function showStats(){
+
+const accuracy =
+state.answered
+?
+Math.round(
+state.correct/
+state.answered*
+100
+)
+:
+0;
+
+
+openModal(`
+
+<h2>📊 إحصائياتك</h2>
+
+<div class="list">
+
+<div class="row">
+<b>🏆 النقاط</b>
+<span>${state.score}</span>
+</div>
+
+<div class="row">
+<b>⭐ XP</b>
+<span>${state.xp}</span>
+</div>
+
+<div class="row">
+<b>✅ الصحيحة</b>
+<span>${state.correct}</span>
+</div>
+
+<div class="row">
+<b>🎯 الدقة</b>
+<span>${accuracy}%</span>
+</div>
+
+<div class="row">
+<b>🔥 أفضل سلسلة</b>
+<span>${state.bestStreak}</span>
+</div>
+
+<div class="row">
+<b>👑 المرحلة</b>
+<span>${state.stage}/100</span>
+</div>
+
+</div>
+
+`);
+
+}
+
+
+/* =========================
+الإنجازات
+========================= */
+
+function checkAchievements(){
+
+const achievements=[
+
+[
+"first",
+"🌟 البداية",
+"أول إجابة صحيحة",
+state.correct>=1
+],
+
+[
+"ten",
+"🔥 عشرة صحيحة",
+"10 إجابات صحيحة",
+state.correct>=10
+],
+
+[
+"streak",
+"⚡ سلسلة قوية",
+"سلسلة من 5",
+state.bestStreak>=5
+],
+
+[
+"points",
+"💰 جامع النقاط",
+"1000 نقطة",
+state.score>=1000
+],
+
+[
+"stage",
+"👑 البطل",
+"الوصول للمرحلة 10",
+state.stage>=10
+]
+
+];
+
+
+achievements.forEach(
+item=>{
+
+if(
+item[3] &&
+!state.achievements.includes(
+item[0]
+)
+){
+
+state.achievements.push(
+item[0]
+);
+
+state.xp+=50;
+
+toast(
+"🏅 إنجاز جديد: "+
+item[1]
+);
+
+}
+
+});
+
+save();
+
+}
+
+
+function showBadges(){
+
+const list=[
+
+[
+"first",
+"🌟 البداية",
+"أول إجابة صحيحة"
+],
+
+[
+"ten",
+"🔥 عشرة صحيحة",
+"10 إجابات صحيحة"
+],
+
+[
+"streak",
+"⚡ سلسلة قوية",
+"سلسلة 5"
+],
+
+[
+"points",
+"💰 جامع النقاط",
+"1000 نقطة"
+],
+
+[
+"stage",
+"👑 البطل",
+"الوصول للمرحلة 10"
+]
+
+];
+
+
+let html=`
+
+<h2>🎁 الإنجازات والمكافآت</h2>
+
+<div class="badges">
+
+`;
+
+
+list.forEach(
+item=>{
+
+const done =
+state.achievements
+.includes(item[0]);
+
+
+html+=`
+
+<div
+class="badge ${
+done?"":"lock"
+}">
+
+<b>
+${item[1]}
+</b>
+
+${item[2]}
+
+<br>
+
+${done?"✅ مكتمل":"🔒 مقفل"}
+
+</div>
+
+`;
+
+});
+
+
+html+=`
+
+</div>
+
+`;
+
+openModal(html);
+
+}
+
+
+/* =========================
+لوحة الصدارة
+========================= */
+
+function showLeaderboard(){
+
+let board =
+JSON.parse(
+localStorage.getItem(
+"legendLeaderboard"
+)
+||"[]"
+);
+
+
+let name =
+localStorage.getItem(
+"legendPlayer"
+)
+||"اللاعب";
+
+
+const me={
+name:name,
+score:state.score,
+stage:state.stage
+};
+
+
+board =
+board.filter(
+p=>p.name!==name
+);
+
+
+board.push(me);
+
+
+board.sort(
+(a,b)=>b.score-a.score
+);
+
+
+board=board.slice(0,20);
+
+
+localStorage.setItem(
+"legendLeaderboard",
+JSON.stringify(board)
+);
+
+
+let html=`
+
+<h2>🏆 لوحة الصدارة</h2>
+
+<p>
+هذه النسخة تعمل بدون خادم خارجي،
+لذلك لوحة الصدارة محلية على الجهاز.
+</p>
+
+<button
+class="btn check"
+style="width:100%;margin-bottom:12px"
+onclick="changePlayerName()">
+
+✏️ تغيير اسم اللاعب
+
+</button>
+
+<div class="list">
+
+`;
+
+
+board.forEach(
+(player,index)=>{
+
+html+=`
+
+<div
+class="row ${
+player.name===name
+?"me":""
+}">
+
+<b>
+${index+1}.
+${player.name}
+</b>
+
+<span>
+${player.score} 🏆
+</span>
+
+</div>
+
+`;
+
+});
+
+
+html+=`
+
+</div>
+
+`;
+
+openModal(html);
+
+}
+
+
+function changePlayerName(){
+
+const old =
+localStorage.getItem(
+"legendPlayer"
+)
+||"اللاعب";
+
+
+const name =
+prompt(
+"اكتب اسمك",
+old
+);
+
+
+if(
+name &&
+name.trim()
+){
+
+localStorage.setItem(
+"legendPlayer",
+name.trim()
+);
+
+showLeaderboard();
+
+}
+
+}
+
+
+/* =========================
+الصوت
+========================= */
+
+function audioBeep(
+frequency,
+duration
+){
+
+if(!state.sound)return;
+
+try{
+
+const Audio =
+window.AudioContext ||
+window.webkitAudioContext;
+
+if(!Audio)return;
+
+const context =
+window.gameAudio ||
+(
+window.gameAudio =
+new Audio()
+);
+
+if(
+context.state===
+"suspended"
+){
+
+context.resume();
+
+}
+
+const oscillator =
+context.createOscillator();
+
+const gain =
+context.createGain();
+
+oscillator.connect(gain);
+
+gain.connect(
+context.destination
+);
+
+oscillator.frequency.value=
+frequency;
+
+gain.gain.value=.08;
+
+oscillator.start();
+
+setTimeout(
+()=>{
+oscillator.stop();
+},
+duration
+);
+
+}catch(e){}
+
+}
+
+
+function correctSound(){
+
+audioBeep(700,120);
+
+setTimeout(
+()=>audioBeep(900,140),
+100
+);
+
+}
+
+
+function wrongSound(){
+
+audioBeep(220,220);
+
+}
+
+
+function toggleSound(){
+
+state.sound=!state.sound;
+
+save();
+
+document.getElementById(
+"soundText"
+).textContent=
+state.sound
+?"الصوت":"مغلق";
+
+toast(
+state.sound
+?"🔊 تم تشغيل الصوت"
+:"🔇 تم إيقاف الصوت"
+);
+
+}
+
+
+/* =========================
+المؤثرات
+========================= */
+
+function confetti(){
+
+for(
+let i=0;
+i<35;
+i++
+){
+
+const element =
+document.createElement("i");
+
+element.className=
+"confetti";
+
+element.style.left=
+Math.random()*100+
+"vw";
+
+element.style.background=
+[
+"#00d9a0",
+"#ffe066",
+"#55e8ef",
+"#ff777f"
+][
+Math.floor(
+Math.random()*4
+)
+];
+
+element.style.animationDelay=
+Math.random()*.3+
+"s";
+
+document.body.appendChild(
+element
+);
+
+setTimeout(
+()=>element.remove(),
+1500
+);
+
+}
+
+}
+
+
+/* =========================
+Modal
+========================= */
+
+function openModal(content){
+
+document.getElementById(
+"modalContent"
+).innerHTML=content;
+
+document.getElementById(
+"modal"
+).classList.add("show");
+
+}
+
+
+function closeModal(){
+
+document.getElementById(
+"modal"
+).classList.remove("show");
+
+}
+
+
+/* =========================
+Toast
+========================= */
+
+let toastTimer;
+
+
+function toast(text){
+
+const t=
+document.getElementById(
+"toast"
+);
+
+t.textContent=text;
+
+t.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=
+setTimeout(
+()=>{
+t.classList.remove("show");
+},
+1800
+);
+
+}
+
+
+/* =========================
+تحديث الواجهة
+========================= */
+
+function updateUI(){
+
+document.getElementById(
+"score"
+).textContent=
+state.score;
+
+
+document.getElementById(
+"xp"
+).textContent=
+state.xp;
+
+
+document.getElementById(
+"correct"
+).textContent=
+state.correct;
+
+
+document.getElementById(
+"streak"
+).textContent=
+state.streak;
+
+
+document.getElementById(
+"multiplier"
+).textContent=
+Math.min(
+5,
+1+
+Math.floor(
+state.streak/3
+)
+)+"×";
+
+
+document.getElementById(
+"stage"
+).textContent=
+"المرحلة "+
+state.stage+
+" من 100";
+
+
+document.getElementById(
+"questionNumber"
+).textContent=
+"السؤال "+
+(
+(state.answered%5)+1
+)+
+"/5";
+
+
+document.getElementById(
+"progressBar"
+).style.width=
+(
+state.stage/100*100
+)+
+"%";
+
+
+document.getElementById(
+"skipCount"
+).textContent=
+state.skips;
+
+
+document.getElementById(
+"helpCount"
+).textContent=
+state.helps;
+
+
+document.getElementById(
+"revealCount"
+).textContent=
+state.reveals;
+
+
+document.getElementById(
+"skipBtn"
+).disabled=
+state.skips<=0;
+
+
+document.getElementById(
+"helpBtn"
+).disabled=
+state.helps<=0;
+
+
+document.getElementById(
+"revealBtn"
+).disabled=
+state.reveals<=0;
+
+}
+
+
+/* =========================
+إغلاق النافذة عند الضغط خارجها
+========================= */
+
+document.getElementById(
+"modal"
+).onclick=function(e){
+
+if(
+e.target===
+document.getElementById("modal")
+){
+
+closeModal();
+
+}
+
+};
+
+
+/* =========================
+تشغيل اللعبة
+========================= */
+
+/*
+المهم هنا:
+
+لا fetch
+لا انتظار
+لا JSON
+
+السؤال يظهر مباشرة.
+*/
+
+newQuestion();
+
+updateUI();
+
+</script>
+
+</body>
+  </html>
