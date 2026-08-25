@@ -5,965 +5,1590 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#031512">
 <title>عمار الأسطورة 👑</title>
+
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;width:100%;height:100%;overflow:hidden}
-body{font-family:Tahoma,Arial,sans-serif;color:#f4fffc;background:radial-gradient(circle at 50% -10%,#08775e,#06372d 38%,#02120f)}
-button{font:inherit;border:0;color:inherit;cursor:pointer}
-.app{height:100dvh;max-width:760px;margin:auto;padding:5px 7px;display:flex;flex-direction:column;gap:5px;overflow:hidden}
-.top{height:52px;display:grid;grid-template-columns:52px 1fr 52px 52px 52px;gap:5px;align-items:center;flex:none}
-.logo{text-align:center;font-size:clamp(19px,5vw,30px);font-weight:900;background:linear-gradient(90deg,#58e9a9,#68edf0);-webkit-background-clip:text;color:transparent;white-space:nowrap}
-.scircle{width:50px;height:50px;border-radius:50%;background:#07372f;border:2px solid #1b7662;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px}
-.scircle b{color:#ffd84f;font-size:16px}.sound{font-size:21px;background:#07372f}
-.progress{height:43px;flex:none;border:1px solid #1c6555;border-radius:25px;background:#062b24;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;padding:5px 11px;gap:7px;font-size:12px;font-weight:900}
-.barbox{height:9px;background:#12483e;border-radius:20px;overflow:hidden}
-#bar{height:100%;width:0;background:linear-gradient(90deg,#5fe2a0,#5be8ef);transition:.25s}
-.main{min-height:0;flex:1;border:2px solid #15745e;border-radius:25px;background:#041f1af5;padding:7px;display:flex;flex-direction:column;gap:5px;overflow:hidden}
-.cat{height:20px;text-align:center;color:#55e6ac;font-weight:900;font-size:13px}
-.question{height:76px;flex:none;border:1px solid #1a6353;border-radius:18px;background:#031b17;display:flex;align-items:center;justify-content:center;text-align:center;padding:5px}
-#q{font-size:clamp(17px,4.5vw,25px);font-weight:900;line-height:1.3}
-.answers{min-height:0;flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:5px}
-.answer{min-height:0;border-radius:17px;background:#062c25;border:1.5px solid #176252;font-size:clamp(13px,3.7vw,19px);font-weight:900;padding:3px}
-.answer.correct{background:#075b42;border-color:#69ff9a;box-shadow:0 0 16px #4cff8a55}
-.answer.wrong{background:#632c35;border-color:#ff777f}
-.tools{height:103px;flex:none;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:4px}
-.tool{border-radius:50%;background:#062d26;border:1.5px solid #176a58;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:19px}
-.tool small{font-size:9px;font-weight:900;white-space:nowrap}.tool:disabled{opacity:.32}
-.stats{height:40px;flex:none;border:1px solid #1b6354;border-radius:22px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;background:#052820}
-.stats div{text-align:center;font-size:10px}.stats b{display:block;color:#ffd84f;font-size:15px;line-height:15px}
-.toast{position:fixed;z-index:100;left:50%;bottom:8px;transform:translate(-50%,20px);opacity:0;background:#062b24;border:1px solid #3c9c81;border-radius:13px;padding:7px 13px;font-weight:900;font-size:12px;transition:.2s}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:10px;z-index:50}
-.modal.show{display:flex}.box{width:min(560px,100%);max-height:88dvh;overflow:auto;background:#062820;border:1px solid #2a7c67;border-radius:20px;padding:13px}
-.box h2{margin:0 0 9px;color:#61e9e2;font-size:20px}.close{float:left;background:#173e35;border-radius:9px;padding:3px 8px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mb{background:#0a382f;border:1px solid #1c6654;border-radius:12px;padding:9px;font-weight:bold}
-.active{border-color:#67efa8!important;background:#0b4c3c!important}.list{display:grid;gap:5px}
-.row{display:flex;justify-content:space-between;background:#0a342c;border:1px solid #195a4c;border-radius:11px;padding:8px;font-size:12px}
-.badges{display:grid;grid-template-columns:1fr 1fr;gap:6px}.badge{padding:9px;border-radius:11px;background:#0a342c;border:1px solid #195a4c;font-size:11px}
-.badge b{display:block;color:#ffd84f}.confetti{position:fixed;top:-10px;width:7px;height:12px;z-index:80;animation:fall .8s linear forwards}
-@keyframes fall{to{transform:translateY(105vh) rotate(600deg);opacity:0}}
-@media(max-height:600px){.top{height:43px;grid-template-columns:44px 1fr 44px 44px 44px}.scircle{width:42px;height:42px}.progress{height:37px}.question{height:62px}.tools{height:82px}.stats{height:34px}}
+*{
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent
+}
+
+html,body{
+margin:0;
+width:100%;
+height:100%;
+overflow:hidden
+}
+
+body{
+font-family:Tahoma,Arial,sans-serif;
+color:#f4fffc;
+background:radial-gradient(circle at 50% -10%,#08775e,#06372d 38%,#02120f)
+}
+
+button{
+font-family:inherit;
+cursor:pointer
+}
+
+.app{
+height:100dvh;
+max-width:760px;
+margin:auto;
+padding:5px 7px;
+display:flex;
+flex-direction:column;
+gap:5px;
+overflow:hidden
+}
+
+.top{
+height:52px;
+display:grid;
+grid-template-columns:52px 1fr 52px 52px 52px;
+gap:5px;
+align-items:center;
+flex:none
+}
+
+.logo{
+text-align:center;
+font-size:clamp(19px,5vw,30px);
+font-weight:900;
+background:linear-gradient(90deg,#58e9a9,#68edf0);
+-webkit-background-clip:text;
+color:transparent;
+white-space:nowrap
+}
+
+.scircle{
+width:50px;
+height:50px;
+border-radius:50%;
+background:#07372f;
+border:2px solid #1b7662;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:10px
+}
+
+.scircle b{
+color:#ffd84f;
+font-size:16px
+}
+
+.sound{
+font-size:21px;
+background:#07372f;
+color:#fff
+}
+
+.progress{
+height:43px;
+flex:none;
+border:1px solid #1c6555;
+border-radius:25px;
+background:#062b24;
+display:grid;
+grid-template-columns:1fr 1.5fr 1fr;
+align-items:center;
+padding:5px 11px;
+gap:7px;
+font-size:12px;
+font-weight:900
+}
+
+.barbox{
+height:9px;
+background:#12483e;
+border-radius:20px;
+overflow:hidden
+}
+
+#bar{
+height:100%;
+width:0;
+background:linear-gradient(90deg,#5fe2a0,#5be8ef);
+transition:.25s
+}
+
+.main{
+min-height:0;
+flex:1;
+border:2px solid #15745e;
+border-radius:25px;
+background:#041f1af5;
+padding:7px;
+display:flex;
+flex-direction:column;
+gap:5px;
+overflow:hidden
+}
+
+.cat{
+height:20px;
+text-align:center;
+color:#55e6ac;
+font-weight:900;
+font-size:13px
+}
+
+.question{
+height:76px;
+flex:none;
+border:1px solid #1a6353;
+border-radius:18px;
+background:#031b17;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:5px
+}
+
+#q{
+font-size:clamp(17px,4.5vw,25px);
+font-weight:900;
+line-height:1.3
+}
+
+.answers{
+min-height:0;
+flex:1;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+gap:6px
+}
+
+.answer{
+min-height:0;
+border-radius:17px;
+background:#062c25;
+border:1.5px solid #176252;
+color:#fff;
+font-size:clamp(13px,3.7vw,19px);
+font-weight:900;
+padding:5px;
+transition:.15s;
+overflow:hidden
+}
+
+.answer:active{
+transform:scale(.97)
+}
+
+.answer:hover{
+border-color:#49cda8;
+background:#083b31
+}
+
+.answer.correct{
+background:#075b42;
+border-color:#69ff9a;
+box-shadow:0 0 16px #4cff8a55
+}
+
+.answer.wrong{
+background:#632c35;
+border-color:#ff777f
+}
+
+.answer:disabled{
+cursor:default
+}
+
+.option-number{
+width:32px;
+height:32px;
+min-width:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#0b493d;
+border:1px solid #2b806b;
+color:#ffd84f;
+font-size:15px;
+font-weight:900
+}
+
+.option-text{
+flex:1;
+text-align:center;
+line-height:1.25;
+overflow-wrap:anywhere
+}
+
+.option-inner{
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:7px
+}
+
+.tools{
+height:103px;
+flex:none;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+grid-template-rows:1fr 1fr;
+gap:4px
+}
+
+.tool{
+border-radius:50%;
+background:#062d26;
+border:1.5px solid #176a58;
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:19px
+}
+
+.tool small{
+font-size:9px;
+font-weight:900;
+white-space:nowrap
+}
+
+.tool:disabled{
+opacity:.32
+}
+
+.stats{
+height:40px;
+flex:none;
+border:1px solid #1b6354;
+border-radius:22px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+align-items:center;
+background:#052820
+}
+
+.stats div{
+text-align:center;
+font-size:10px
+}
+
+.stats b{
+display:block;
+color:#ffd84f;
+font-size:15px;
+line-height:15px
+}
+
+.toast{
+position:fixed;
+z-index:100;
+left:50%;
+bottom:8px;
+transform:translate(-50%,20px);
+opacity:0;
+background:#062b24;
+border:1px solid #3c9c81;
+border-radius:13px;
+padding:7px 13px;
+font-weight:900;
+font-size:12px;
+transition:.2s
+}
+
+.toast.show{
+opacity:1;
+transform:translate(-50%,0)
+}
+
+.modal{
+position:fixed;
+inset:0;
+background:#000b;
+display:none;
+align-items:center;
+justify-content:center;
+padding:10px;
+z-index:50
+}
+
+.modal.show{
+display:flex
+}
+
+.box{
+width:min(560px,100%);
+max-height:88dvh;
+overflow:auto;
+background:#062820;
+border:1px solid #2a7c67;
+border-radius:20px;
+padding:13px
+}
+
+.box h2{
+margin:0 0 9px;
+color:#61e9e2;
+font-size:20px
+}
+
+.close{
+float:left;
+background:#173e35;
+border:0;
+color:#fff;
+border-radius:9px;
+padding:3px 8px
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:6px
+}
+
+.mb{
+background:#0a382f;
+color:#fff;
+border:1px solid #1c6654;
+border-radius:12px;
+padding:9px;
+font-weight:bold
+}
+
+.active{
+border-color:#67efa8!important;
+background:#0b4c3c!important
+}
+
+.list{
+display:grid;
+gap:5px
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+background:#0a342c;
+border:1px solid #195a4c;
+border-radius:11px;
+padding:8px;
+font-size:12px
+}
+
+.badges{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:6px
+}
+
+.badge{
+padding:9px;
+border-radius:11px;
+background:#0a342c;
+border:1px solid #195a4c;
+font-size:11px
+}
+
+.badge b{
+display:block;
+color:#ffd84f
+}
+
+.confetti{
+position:fixed;
+top:-10px;
+width:7px;
+height:12px;
+z-index:80;
+animation:fall .8s linear forwards
+}
+
+@keyframes fall{
+to{
+transform:translateY(105vh) rotate(600deg);
+opacity:0
+}
+}
+
+@media(max-height:600px){
+
+.top{
+height:43px;
+grid-template-columns:44px 1fr 44px 44px 44px
+}
+
+.scircle{
+width:42px;
+height:42px
+}
+
+.progress{
+height:37px
+}
+
+.question{
+height:62px
+}
+
+.tools{
+height:82px
+}
+
+.stats{
+height:34px
+}
+
+.option-number{
+width:27px;
+height:27px;
+min-width:27px;
+font-size:13px
+}
+
+}
 </style>
 </head>
+
 <body>
+
 <div class="app">
+
 <header class="top">
-<div class="scircle">🏆<b id="score">0</b></div>
-<div class="logo">👑 عمار الأسطورة</div>
-<div class="scircle">🔥<b id="streak">0</b></div>
-<div class="scircle">⭐<b id="xp">0</b></div>
-<button class="scircle sound" id="sound" onclick="toggleSound()">🔊</button>
+
+<div class="scircle">
+🏆
+<b id="score">0</b>
+</div>
+
+<div class="logo">
+👑 عمار الأسطورة
+</div>
+
+<div class="scircle">
+🔥
+<b id="streak">0</b>
+</div>
+
+<div class="scircle">
+⭐
+<b id="xp">0</b>
+</div>
+
+<button class="scircle sound" id="sound" onclick="toggleSound()">
+🔊
+</button>
+
 </header>
 
 <div class="progress">
-<span id="stage">المرحلة 1/100</span>
-<div class="barbox"><div id="bar"></div></div>
-<span id="qn">السؤال 1/3</span>
+
+<span id="stage">
+المرحلة 1/100
+</span>
+
+<div class="barbox">
+<div id="bar"></div>
+</div>
+
+<span id="qn">
+السؤال 1/3
+</span>
+
 </div>
 
 <main class="main">
-<div class="cat" id="cat">📚 ثقافة عامة</div>
-<div class="question"><div id="q">جاري تحميل السؤال...</div></div>
+
+<div class="cat" id="cat">
+📚 ثقافة عامة
+</div>
+
+<div class="question">
+<div id="q">
+اضغط للبدء
+</div>
+</div>
+
 <div class="answers" id="answers"></div>
 
 <div class="tools">
-<button class="tool" id="help" onclick="help()">💡<small>مساعدة <span id="hc">3</span>⭐</small></button>
-<button class="tool" id="skip" onclick="skip()">⏭️<small>تخطي <span id="sc">5</span>⭐</small></button>
-<button class="tool" onclick="randomQ()">🎲<small>سؤال جديد</small></button>
-<button class="tool" id="reveal" onclick="reveal()">👁️<small>كشف <span id="rc">8</span>⭐</small></button>
-<button class="tool" onclick="categories()">🗂️<small>الفئات</small></button>
-<button class="tool" onclick="stats()">📊<small>إحصائيات</small></button>
-<button class="tool" onclick="badges()">🎁<small>مكافآتي</small></button>
-<button class="tool" onclick="leaderboard()">🏆<small>الصدارة</small></button>
-<button class="tool" onclick="map()">🗺️<small>الخريطة</small></button>
-<button class="tool" onclick="settings()">⚙️<small>الإعدادات</small></button>
+
+<button class="tool" id="help" onclick="help()">
+💡
+<small>مساعدة <span id="hc">3</span>⭐</small>
+</button>
+
+<button class="tool" id="skip" onclick="skip()">
+⏭️
+<small>تخطي <span id="sc">5</span>⭐</small>
+</button>
+
+<button class="tool" onclick="randomQ()">
+🎲
+<small>سؤال جديد</small>
+</button>
+
+<button class="tool" id="reveal" onclick="reveal()">
+👁️
+<small>كشف <span id="rc">8</span>⭐</small>
+</button>
+
+<button class="tool" onclick="categories()">
+🗂️
+<small>الفئات</small>
+</button>
+
+<button class="tool" onclick="stats()">
+📊
+<small>إحصائيات</small>
+</button>
+
+<button class="tool" onclick="badges()">
+🎁
+<small>مكافآتي</small>
+</button>
+
+<button class="tool" onclick="leaderboard()">
+🏆
+<small>الصدارة</small>
+</button>
+
+<button class="tool" onclick="mapGame()">
+🗺️
+<small>الخريطة</small>
+</button>
+
+<button class="tool" onclick="settings()">
+⚙️
+<small>الإعدادات</small>
+</button>
+
 </div>
 
 <div class="stats">
-<div><b id="correct">0</b>✅ صحيح</div>
-<div><b id="acc">0%</b>🎯 دقة</div>
-<div><b>+2</b>🏆 الصحيح</div>
+
+<div>
+<b id="correct">0</b>
+✅ صحيح
 </div>
+
+<div>
+<b id="acc">0%</b>
+🎯 دقة
+</div>
+
+<div>
+<b>+2</b>
+🏆 الصحيح
+</div>
+
+</div>
+
 </main>
 </div>
 
 <div class="toast" id="toast"></div>
-<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeM()">✕</button><div id="mc"></div></div></div>
+
+<div class="modal" id="modal">
+
+<div class="box">
+
+<button class="close" onclick="closeM()">✕</button>
+
+<div id="mc"></div>
+
+</div>
+</div>
 
 <script>
-/*
-  لعبة عمار الأسطورة
-  - الأسئلة محلية داخل الملف.
-  - لا يوجد fetch ولا API.
-  - الإجابة الصحيحة تتحرك إلى مكان مختلف عند كل ظهور للسؤال.
-*/
+"use strict";
 
-/* بنك الأسئلة الأساسي */
-const Q = [
-  {"c":"general","q":"عاصمة اليابان؟","a":["طوكيو","بكين","سيول","بانكوك"],"ok":0},
-  {"c":"general","q":"أكبر محيط في العالم؟","a":["الهادئ","الأطلسي","الهندي","المتجمد الشمالي"],"ok":0},
-  {"c":"general","q":"الكوكب الأحمر؟","a":["المريخ","الزهرة","المشتري","عطارد"],"ok":0},
-  {"c":"general","q":"عدد أيام الأسبوع؟","a":["7","5","6","8"],"ok":0},
-  {"c":"general","q":"عدد أشهر السنة؟","a":["12","10","11","13"],"ok":0},
-  {"c":"general","q":"أكبر قارة؟","a":["آسيا","أفريقيا","أوروبا","أستراليا"],"ok":0},
-  {"c":"general","q":"عاصمة فرنسا؟","a":["باريس","روما","برلين","مدريد"],"ok":0},
-  {"c":"general","q":"أكبر حيوان معروف؟","a":["الحوت الأزرق","الفيل","الزرافة","الدب"],"ok":0},
-  {"c":"general","q":"أسرع حيوان بري؟","a":["الفهد","الأسد","الحصان","الذئب"],"ok":0},
-  {"c":"general","q":"عاصمة مصر؟","a":["القاهرة","الإسكندرية","الجيزة","الأقصر"],"ok":0},
-  {"c":"general","q":"عاصمة ألمانيا؟","a":["برلين","ميونخ","هامبورغ","فرانكفورت"],"ok":0},
-  {"c":"general","q":"عاصمة إيطاليا؟","a":["روما","ميلانو","نابولي","تورينو"],"ok":0},
-  {"c":"general","q":"عاصمة إسبانيا؟","a":["مدريد","برشلونة","إشبيلية","فالنسيا"],"ok":0},
-  {"c":"general","q":"عاصمة الصين؟","a":["بكين","شنغهاي","نانجينغ","هونغ كونغ"],"ok":0},
-  {"c":"general","q":"عاصمة الهند؟","a":["نيودلهي","مومباي","كلكتا","بنغالور"],"ok":0},
-  {"c":"general","q":"عاصمة روسيا؟","a":["موسكو","كييف","مينسك","وارسو"],"ok":0},
-  {"c":"general","q":"عاصمة كندا؟","a":["أوتاوا","تورنتو","فانكوفر","مونتريال"],"ok":0},
-  {"c":"general","q":"عاصمة أستراليا؟","a":["كانبرا","سيدني","ملبورن","بيرث"],"ok":0},
-  {"c":"general","q":"عاصمة تركيا؟","a":["أنقرة","إسطنبول","إزمير","بورصة"],"ok":0},
-  {"c":"general","q":"عاصمة اليونان؟","a":["أثينا","روما","صوفيا","لشبونة"],"ok":0},
-  {"c":"general","q":"عاصمة البرتغال؟","a":["لشبونة","مدريد","بورتو","براغ"],"ok":0},
-  {"c":"general","q":"عاصمة النمسا؟","a":["فيينا","برلين","براغ","وارسو"],"ok":0},
-  {"c":"general","q":"عاصمة السويد؟","a":["ستوكهولم","أوسلو","هلسنكي","كوبنهاغن"],"ok":0},
-  {"c":"general","q":"عاصمة النرويج؟","a":["أوسلو","ستوكهولم","هلسنكي","ريكيافيك"],"ok":0},
-  {"c":"general","q":"عاصمة سويسرا؟","a":["برن","زيورخ","جنيف","لوزان"],"ok":0},
-  {"c":"general","q":"عاصمة هولندا؟","a":["أمستردام","روتردام","لاهاي","أوترخت"],"ok":0},
-  {"c":"general","q":"عاصمة كوريا الجنوبية؟","a":["سيول","بوسان","طوكيو","بكين"],"ok":0},
-  {"c":"general","q":"عاصمة المكسيك؟","a":["مكسيكو سيتي","مونتيري","غوادالاخارا","كانكون"],"ok":0},
-  {"c":"general","q":"عدد القارات؟","a":["7","5","6","8"],"ok":0},
-  {"c":"general","q":"عدد دقائق الساعة؟","a":["60","30","45","90"],"ok":0},
-  {"c":"general","q":"عدد ثواني الدقيقة؟","a":["60","30","45","90"],"ok":0},
-  {"c":"general","q":"الشكل ذو ثلاثة أضلاع؟","a":["المثلث","المربع","الدائرة","المستطيل"],"ok":0},
-  {"c":"general","q":"الشكل ذو أربعة أضلاع متساوية؟","a":["المربع","المثلث","الدائرة","المخمس"],"ok":0},
-  {"c":"general","q":"لون مزج الأزرق والأصفر؟","a":["أخضر","بنفسجي","برتقالي","بني"],"ok":0},
-  {"c":"general","q":"لون مزج الأحمر والأصفر؟","a":["برتقالي","أخضر","بنفسجي","أزرق"],"ok":0},
-  {"c":"general","q":"أداة قياس الحرارة؟","a":["الترمومتر","البارومتر","البوصلة","الميزان"],"ok":0},
-  {"c":"general","q":"أداة تحديد الاتجاهات؟","a":["البوصلة","الساعة","المسطرة","الميزان"],"ok":0},
-  {"c":"general","q":"حيوان سفينة الصحراء؟","a":["الجمل","الحصان","الفيل","الغزال"],"ok":0},
-  {"c":"general","q":"حيوان ملك الغابة؟","a":["الأسد","النمر","الفهد","الدب"],"ok":0},
-  {"c":"general","q":"حيوان طويل الرقبة؟","a":["الزرافة","الفيل","وحيد القرن","الحصان"],"ok":0},
-  {"c":"general","q":"حيوان يغير لونه؟","a":["الحرباء","الجمل","الحوت","الكنغر"],"ok":0},
-  {"c":"general","q":"حيوان يحمل صغيره في كيس؟","a":["الكنغر","الحصان","الأسد","الفيل"],"ok":0},
-  {"c":"general","q":"طائر لا يطير ويعيش في الجنوب؟","a":["البطريق","النسر","الصقر","الغراب"],"ok":0},
-  {"c":"general","q":"حيوان يملك خرطوماً؟","a":["الفيل","الأسد","الدب","الزرافة"],"ok":0},
-  {"c":"general","q":"أكبر عضو في جسم الإنسان؟","a":["الجلد","القلب","الكبد","الرئة"],"ok":0},
-  {"c":"general","q":"العضو الذي يضخ الدم؟","a":["القلب","الكبد","الرئة","المعدة"],"ok":0},
-  {"c":"general","q":"عدد ساعات اليوم؟","a":["24","12","18","36"],"ok":0},
-  {"c":"general","q":"عدد أصابع اليد الواحدة؟","a":["5","4","6","7"],"ok":0},
-  {"c":"general","q":"المادة الأساسية لصناعة الزجاج؟","a":["الرمل","الخشب","الحديد","القطن"],"ok":0},
-  {"c":"general","q":"الغاز الموجود بنسبة كبيرة في الهواء؟","a":["النيتروجين","الأكسجين","الهيليوم","الهيدروجين"],"ok":0},
-  {"c":"general","q":"العملية التي يتحول فيها الماء إلى بخار؟","a":["التبخر","التجمد","التكاثف","الانصهار"],"ok":0},
-  {"c":"general","q":"القمر الطبيعي للأرض؟","a":["القمر","فوبوس","تيتان","أوروبا"],"ok":0},
-  {"c":"general","q":"الكوكب الذي نعيش عليه؟","a":["الأرض","المريخ","الزهرة","زحل"],"ok":0},
-  {"c":"general","q":"أكبر كوكب في المجموعة الشمسية؟","a":["المشتري","زحل","الأرض","نبتون"],"ok":0},
-  {"c":"general","q":"أقرب نجم إلى الأرض؟","a":["الشمس","سيريوس","النسر","الشعرى"],"ok":0},
-  {"c":"general","q":"الرياضة التي تستخدم السلة؟","a":["كرة السلة","التنس","الغولف","الملاكمة"],"ok":0},
-  {"c":"general","q":"اللغة الأساسية لصفحات الويب؟","a":["HTML","CSS","SQL","Python"],"ok":0},
-  {"c":"general","q":"لغة تنسيق صفحات الويب؟","a":["CSS","HTML","SQL","C"],"ok":0},
-  {"c":"general","q":"امتداد JavaScript؟","a":[".js",".jpg",".mp3",".exe"],"ok":0},
-  {"c":"general","q":"ما الذي يخزن البيانات في المتصفح؟","a":["localStorage","GPS","HDMI","FTP"],"ok":0},
-  {"c":"general","q":"عاصمة اليمن؟","a":["صنعاء","عدن","تعز","الحديدة"],"ok":0},
-  {"c":"general","q":"أكبر دولة مساحة؟","a":["روسيا","كندا","الصين","البرازيل"],"ok":0},
-  {"c":"general","q":"أصغر دولة مساحة؟","a":["الفاتيكان","موناكو","مالطا","سنغافورة"],"ok":0},
-  {"c":"general","q":"أكبر جزيرة؟","a":["غرينلاند","مدغشقر","بورنيو","اليابان"],"ok":0},
-  {"c":"general","q":"أعلى جبل؟","a":["إيفرست","كليمنجارو","إلبروس","الألب"],"ok":0},
-  {"c":"general","q":"أطول نهر في أفريقيا؟","a":["النيل","الكونغو","النيجر","السنغال"],"ok":0},
-  {"c":"general","q":"البحر بين أوروبا وأفريقيا؟","a":["المتوسط","الأسود","قزوين","العرب"],"ok":0},
-  {"c":"general","q":"البحر بين الجزيرة العربية وأفريقيا؟","a":["الأحمر","الأسود","العرب","قزوين"],"ok":0},
-  {"c":"general","q":"المضيق بين آسيا وأمريكا الشمالية؟","a":["بيرنغ","هرمز","جبل طارق","باب المندب"],"ok":0},
-  {"c":"general","q":"المضيق بين الأحمر وخليج عدن؟","a":["باب المندب","هرمز","الدردنيل","جبل طارق"],"ok":0},
-  {"c":"general","q":"المضيق بين الخليج العربي وخليج عمان؟","a":["هرمز","باب المندب","البوسفور","جبل طارق"],"ok":0},
-  {"c":"general","q":"أكبر بحر مغلق؟","a":["قزوين","الأحمر","المتوسط","العرب"],"ok":0},
-  {"c":"general","q":"القارة التي فيها الصحراء الكبرى؟","a":["أفريقيا","آسيا","أوروبا","أستراليا"],"ok":0},
-  {"c":"general","q":"القارة التي فيها إيفرست؟","a":["آسيا","أوروبا","أفريقيا","أمريكا"],"ok":0},
-  {"c":"general","q":"المحيط بين أفريقيا وأستراليا؟","a":["الهندي","الأطلسي","الهادئ","المتجمد"],"ok":0},
+/* =====================================================
+   بنك الأسئلة المحلي
+   لا يحتاج إلى الإنترنت
+===================================================== */
 
-  {"c":"science","q":"الغاز اللازم للتنفس؟","a":["الأكسجين","الهيليوم","الهيدروجين","النيتروجين فقط"],"ok":0},
-  {"c":"science","q":"وحدة قياس القوة؟","a":["نيوتن","واط","فولت","أمبير"],"ok":0},
-  {"c":"science","q":"رمز الماء الكيميائي؟","a":["H2O","CO2","O2","NaCl"],"ok":0},
-  {"c":"science","q":"مركز الذرة؟","a":["النواة","الإلكترون","الفوتون","المجال"],"ok":0},
-  {"c":"science","q":"الجسيم ذو الشحنة السالبة؟","a":["الإلكترون","البروتون","النيوترون","النواة"],"ok":0},
-  {"c":"science","q":"الجسيم ذو الشحنة الموجبة؟","a":["البروتون","الإلكترون","النيوترون","الفوتون"],"ok":0},
-  {"c":"science","q":"الجسيم المتعادل؟","a":["النيوترون","البروتون","الإلكترون","الأيون"],"ok":0},
-  {"c":"science","q":"أقرب كوكب إلى الشمس؟","a":["عطارد","الزهرة","الأرض","المريخ"],"ok":0},
-  {"c":"science","q":"الكوكب ذو الحلقات الأشهر؟","a":["زحل","عطارد","المريخ","الزهرة"],"ok":0},
-  {"c":"science","q":"القوة التي تجذب الأشياء للأرض؟","a":["الجاذبية","الاحتكاك","الطفو","المغناطيسية"],"ok":0},
-  {"c":"science","q":"وحدة التيار الكهربائي؟","a":["أمبير","فولت","واط","أوم"],"ok":0},
-  {"c":"science","q":"وحدة الجهد الكهربائي؟","a":["فولت","أمبير","جول","نيوتن"],"ok":0},
-  {"c":"science","q":"وحدة القدرة الكهربائية؟","a":["واط","أوم","فولت","متر"],"ok":0},
-  {"c":"science","q":"وحدة التردد؟","a":["هرتز","نيوتن","جول","واط"],"ok":0},
-  {"c":"science","q":"وحدة الطاقة؟","a":["جول","نيوتن","هرتز","باسكال"],"ok":0},
-  {"c":"science","q":"المادة الوراثية؟","a":["DNA","ATP","الماء","الكالسيوم"],"ok":0},
-  {"c":"science","q":"عضية إنتاج معظم الطاقة؟","a":["الميتوكوندريا","الريبوسوم","النواة","الجدار"],"ok":0},
-  {"c":"science","q":"عملية صنع النبات غذاءه بالضوء؟","a":["البناء الضوئي","التنفس","الهضم","التخمر"],"ok":0},
-  {"c":"science","q":"الصبغة الخضراء للنبات؟","a":["الكلوروفيل","الهيموغلوبين","الميلانين","الكيراتين"],"ok":0},
-  {"c":"science","q":"الغاز الناتج من البناء الضوئي؟","a":["الأكسجين","النيتروجين","الهيليوم","الهيدروجين"],"ok":0},
-  {"c":"science","q":"أقسى مادة طبيعية معروفة؟","a":["الماس","الذهب","الحديد","النحاس"],"ok":0},
-  {"c":"science","q":"المعدن الموجود في الهيموغلوبين؟","a":["الحديد","الذهب","الفضة","الزنك"],"ok":0},
-  {"c":"science","q":"عدد حجرات قلب الإنسان؟","a":["4","2","3","5"],"ok":0},
-  {"c":"science","q":"العضو الداخلي الأكبر؟","a":["الكبد","القلب","الرئة","المعدة"],"ok":0},
-  {"c":"science","q":"الأعضاء التي تنقي الدم؟","a":["الكليتان","الرئتان","العينان","الأذنان"],"ok":0},
-  {"c":"science","q":"العظم الذي يحمي الدماغ؟","a":["الجمجمة","القص","الحوض","الركبة"],"ok":0},
-  {"c":"science","q":"الحمض الموجود في المعدة؟","a":["الهيدروكلوريك","الكبريتيك","النيتريك","الكربونيك"],"ok":0},
-  {"c":"science","q":"فيتامين مرتبط بامتصاص الكالسيوم؟","a":["D","C","B12","K"],"ok":0},
-  {"c":"science","q":"معدن مهم للعظام والأسنان؟","a":["الكالسيوم","الصوديوم","الذهب","الزئبق"],"ok":0},
-  {"c":"science","q":"الموجات التي تنتقل في الفراغ؟","a":["الكهرومغناطيسية","الصوتية","المائية","الميكانيكية"],"ok":0},
-  {"c":"science","q":"أسرع: الضوء أم الصوت؟","a":["الضوء","الصوت","متساويان","حسب اللون"],"ok":0},
-  {"c":"science","q":"تحول الصلب إلى سائل؟","a":["الانصهار","التجمد","التكاثف","التبخر"],"ok":0},
-  {"c":"science","q":"تحول السائل إلى صلب؟","a":["التجمد","التبخر","التسامي","التكاثف"],"ok":0},
-  {"c":"science","q":"تحول السائل إلى غاز؟","a":["التبخر","التجمد","الانصهار","الترسب"],"ok":0},
-  {"c":"science","q":"تحول الغاز إلى سائل؟","a":["التكاثف","التبخر","التسامي","الانصهار"],"ok":0},
-  {"c":"science","q":"تحول الصلب مباشرة إلى غاز؟","a":["التسامي","التجمد","الانصهار","التكاثف"],"ok":0},
-  {"c":"science","q":"أبعد كوكب عن الشمس؟","a":["نبتون","زحل","المشتري","أورانوس"],"ok":0},
-  {"c":"science","q":"المجرة التي تضم النظام الشمسي؟","a":["درب التبانة","أندروميدا","مثلث","ماجلان"],"ok":0},
-  {"c":"science","q":"وحدة الكتلة الأساسية؟","a":["الكيلوغرام","المتر","الثانية","الفولت"],"ok":0},
-  {"c":"science","q":"وحدة الطول الأساسية؟","a":["المتر","الكيلوغرام","الجول","الأمبير"],"ok":0},
-  {"c":"science","q":"وحدة حجم السوائل الشائعة؟","a":["اللتر","النيوتن","الهرتز","الواط"],"ok":0},
-  {"c":"science","q":"جهاز تكبير الأجسام الصغيرة؟","a":["المجهر","التلسكوب","الرادار","البارومتر"],"ok":0},
-  {"c":"science","q":"جهاز رصد الأجرام البعيدة؟","a":["التلسكوب","المجهر","الترمومتر","الميزان"],"ok":0},
-  {"c":"science","q":"صيغة ثاني أكسيد الكربون؟","a":["CO2","O2","H2O","CH4"],"ok":0},
-  {"c":"science","q":"صيغة الأكسجين الجزيئي؟","a":["O2","O3","CO2","H2"],"ok":0},
-  {"c":"science","q":"رمز الذهب؟","a":["Au","Ag","Fe","Cu"],"ok":0},
-  {"c":"science","q":"رمز الحديد؟","a":["Fe","F","Ir","I"],"ok":0},
-  {"c":"science","q":"رمز الفضة؟","a":["Ag","Au","Al","Ar"],"ok":0},
-  {"c":"science","q":"pH الماء النقي تقريباً؟","a":["7","2","5","12"],"ok":0},
-  {"c":"science","q":"pH أقل من 7 يعني مادة؟","a":["حمضية","قاعدية","متعادلـة","معدنية"],"ok":0},
-  {"c":"science","q":"pH أكبر من 7 يعني مادة؟","a":["قاعدية","حمضية","متعادلـة","غازية"],"ok":0},
-  {"c":"science","q":"تغير السرعة مع الزمن؟","a":["التسارع","الكتلة","الطاقة","الكثافة"],"ok":0},
-  {"c":"science","q":"القوة التي تعارض الحركة بين سطحين؟","a":["الاحتكاك","الجاذبية","الطفو","الدفع"],"ok":0},
-  {"c":"science","q":"طاقة الجسم بسبب حركته؟","a":["حركية","وضع","حرارية فقط","نووية فقط"],"ok":0},
-  {"c":"science","q":"طاقة الجسم بسبب موضعه؟","a":["وضع","حركية","صوتية","ضوئية"],"ok":0},
-  {"c":"science","q":"طبقة الغازات المحيطة بالأرض؟","a":["الغلاف الجوي","الصخري","المائي","الوشاح"],"ok":0},
-  {"c":"science","q":"الطبقة التي نعيش فيها؟","a":["التروبوسفير","الميزوسفير","الثرموسفير","الإكسوسفير"],"ok":0},
-  {"c":"science","q":"جهاز قياس ضغط الهواء؟","a":["البارومتر","الترمومتر","الفولتميتر","المسطرة"],"ok":0},
-  {"c":"science","q":"جهاز قياس الزلازل؟","a":["السيزموجراف","البارومتر","الترمومتر","البوصلة"],"ok":0},
-  {"c":"science","q":"مصدر الطاقة الرئيسي للأرض؟","a":["الشمس","القمر","المحيطات","الرياح"],"ok":0},
-  {"c":"science","q":"عدد عظام الإنسان البالغ تقريباً؟","a":["206","106","306","406"],"ok":0},
-  {"c":"science","q":"أكبر كوكب في النظام الشمسي؟","a":["المشتري","زحل","الأرض","نبتون"],"ok":0},
-  {"c":"science","q":"الكوكب الأقرب حجماً للأرض؟","a":["الزهرة","المريخ","عطارد","نبتون"],"ok":0},
-  {"c":"science","q":"اسم مجرتنا بالعربية؟","a":["درب التبانة","الطريق الأزرق","المجرة الكبرى","السحابة"],"ok":0},
-  {"c":"science","q":"المجال الذي يدرس المادة والطاقة؟","a":["الفيزياء","الجغرافيا","التاريخ","اللغات"],"ok":0},
-  {"c":"science","q":"العلم الذي يدرس الكائنات الحية؟","a":["الأحياء","الفلك","الجيولوجيا","الفلكيات"],"ok":0},
-  {"c":"science","q":"العلم الذي يدرس المواد وتفاعلاتها؟","a":["الكيمياء","الجغرافيا","التاريخ","الفلسفة"],"ok":0},
-  {"c":"science","q":"العلم الذي يدرس الأرض والصخور؟","a":["الجيولوجيا","الأحياء","الكيمياء","الرياضيات"],"ok":0},
-  {"c":"science","q":"العلم الذي يدرس الأجرام والكون؟","a":["الفلك","الأحياء","الطب","الزراعة"],"ok":0},
-  {"c":"science","q":"الوحدة التي تقيس المقاومة الكهربائية؟","a":["أوم","واط","فولت","أمبير"],"ok":0},
-  {"c":"science","q":"ما الذي يحمل الشحنة في السلك المعدني؟","a":["الإلكترونات","النيوترونات","البروتونات","الفوتونات"],"ok":0},
-  {"c":"science","q":"ما الظاهرة التي تفسر سقوط المطر من السحب؟","a":["الهطول","التبخر فقط","الاحتراق","الانصهار"],"ok":0},
-  {"c":"science","q":"ما تحول بخار الماء إلى قطرات؟","a":["التكاثف","التجمد","التسامي","الغليان"],"ok":0},
-  {"c":"science","q":"ما القوة التي تمنع الجسم من الاختراق؟","a":["المرونة","الجاذبية","الضوء","الصوت"],"ok":0},
-  {"c":"science","q":"ما اسم انتقال الحرارة في السوائل والغازات؟","a":["الحمل الحراري","التوصيل فقط","الانعكاس","الانكسار"],"ok":0},
+const Q=[
 
-  {"c":"civilization","q":"أين تقع أهرامات الجيزة؟","a":["مصر","العراق","اليونان","المكسيك"],"ok":0},
-  {"c":"civilization","q":"عاصمة الدولة العباسية؟","a":["بغداد","دمشق","القاهرة","قرطبة"],"ok":0},
-  {"c":"civilization","q":"أين تقع البتراء؟","a":["الأردن","مصر","العراق","تونس"],"ok":0},
-  {"c":"civilization","q":"الرحالة المغربي الشهير؟","a":["ابن بطوطة","الخوارزمي","ابن سينا","الطبري"],"ok":0},
-  {"c":"civilization","q":"أين تقع آثار بابل؟","a":["العراق","اليمن","المغرب","إسبانيا"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي اشتهرت بالكتابة المسمارية؟","a":["بلاد الرافدين","الرومان","الفايكنغ","المايا"],"ok":0},
-  {"c":"civilization","q":"الكتابة المصرية القديمة الشهيرة؟","a":["الهيروغليفية","المسمارية","اللاتينية","السنسكريتية"],"ok":0},
-  {"c":"civilization","q":"أين نشأت الحضارة الفرعونية؟","a":["وادي النيل","الألب","وادي السند","الأنديز"],"ok":0},
-  {"c":"civilization","q":"موقع مايا شهير في المكسيك؟","a":["تشيتشن إيتزا","روما","بغداد","قرطاج"],"ok":0},
-  {"c":"civilization","q":"أين تقع قرطاج القديمة؟","a":["تونس","مصر","اليمن","العراق"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي بنت الكولوسيوم؟","a":["الرومان","الفرس","المايا","الصينيون"],"ok":0},
-  {"c":"civilization","q":"المبنى الروماني الشهير للمصارعات؟","a":["الكولوسيوم","البارثينون","الأكروبوليس","الزقورة"],"ok":0},
-  {"c":"civilization","q":"أين يوجد الأكروبوليس؟","a":["أثينا","روما","بغداد","القاهرة"],"ok":0},
-  {"c":"civilization","q":"الحضارة المرتبطة بماتشو بيتشو؟","a":["الإنكا","الرومان","المصريون","الفينيقيون"],"ok":0},
-  {"c":"civilization","q":"أين تقع ماتشو بيتشو؟","a":["بيرو","مصر","إيطاليا","الهند"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي ازدهرت في وادي السند؟","a":["وادي السند","الرومان","الإنكا","الإغريق"],"ok":0},
-  {"c":"civilization","q":"المدينة المرتبطة بالمكتبة الشهيرة القديمة؟","a":["الإسكندرية","أنقرة","أوسلو","طوكيو"],"ok":0},
-  {"c":"civilization","q":"أين تقع مكتبة الإسكندرية الحديثة؟","a":["مصر","اليونان","إيطاليا","تركيا"],"ok":0},
-  {"c":"civilization","q":"المدينة المشهورة بجامعة القرويين؟","a":["فاس","صنعاء","بغداد","دمشق"],"ok":0},
-  {"c":"civilization","q":"أين تقع فاس؟","a":["المغرب","الجزائر","تونس","مصر"],"ok":0},
-  {"c":"civilization","q":"الشعب المرتبط بالكتابة المسمارية المبكرة؟","a":["السومريون","الرومان","الإنكا","الفايكنغ"],"ok":0},
-  {"c":"civilization","q":"عاصمة الأنباط التاريخية؟","a":["البتراء","قرطاج","روما","بابل"],"ok":0},
-  {"c":"civilization","q":"أين تقع تدمر؟","a":["سوريا","اليمن","إيطاليا","الهند"],"ok":0},
-  {"c":"civilization","q":"الملكة المرتبطة بتدمر؟","a":["زنوبيا","كليوباترا","بلقيس","سميراميس"],"ok":0},
-  {"c":"civilization","q":"المدينة اليمنية ذات الأبراج الطينية؟","a":["شبام","روما","أثينا","قرطاج"],"ok":0},
-  {"c":"civilization","q":"بماذا تشتهر شبام؟","a":["ناطحات السحاب الطينية","الأهرامات","الكولوسيوم","المعابد اليونانية"],"ok":0},
-  {"c":"civilization","q":"أين تقع صنعاء القديمة؟","a":["اليمن","عُمان","العراق","المغرب"],"ok":0},
-  {"c":"civilization","q":"الموقع اليمني المرتبط بمملكة سبأ؟","a":["مأرب","الإسكندرية","قرطاج","أثينا"],"ok":0},
-  {"c":"civilization","q":"السد التاريخي الشهير في اليمن؟","a":["سد مأرب","سد أسوان","سد الموصل","سد هوفر"],"ok":0},
-  {"c":"civilization","q":"الحضارة ذات المدرجات الزراعية في الأنديز؟","a":["الإنكا","الرومان","الفراعنة","الفينيقيون"],"ok":0},
-  {"c":"civilization","q":"الشعب الذي أسس قرطاج؟","a":["الفينيقيون","الرومان","المغول","الإنكا"],"ok":0},
-  {"c":"civilization","q":"موطن الفينيقيين التاريخي؟","a":["ساحل شرق المتوسط","أمريكا الجنوبية","أستراليا","شمال أوروبا"],"ok":0},
-  {"c":"civilization","q":"مدينة فينيقية تجارية شهيرة؟","a":["صور","موسكو","بكين","مدريد"],"ok":0},
-  {"c":"civilization","q":"أين تقع صور التاريخية؟","a":["لبنان","اليمن","مصر","الهند"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي اشتهرت بالبارثينون؟","a":["اليونانية","الرومانية","المصرية","المايا"],"ok":0},
-  {"c":"civilization","q":"المدينة المرتبطة بالديمقراطية المبكرة؟","a":["أثينا","روما","بابل","مأرب"],"ok":0},
-  {"c":"civilization","q":"الطريق التجاري القديم بين الصين ومناطق العالم؟","a":["طريق الحرير","طريق الذهب","طريق القهوة","طريق الأطلس"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي طورت صناعة الورق مبكراً؟","a":["الصينية","الرومانية","الإنكا","الفينيقية"],"ok":0},
-  {"c":"civilization","q":"اختراع صيني ساعد الملاحة؟","a":["البوصلة","المحرك البخاري","المطبعة الحديثة","التلسكوب"],"ok":0},
-  {"c":"civilization","q":"حضارة طورت حسابات متقدمة في أمريكا الوسطى؟","a":["المايا","الرومان","الفرس","الفينيقيون"],"ok":0},
-  {"c":"civilization","q":"أين ازدهرت حضارة المايا؟","a":["أمريكا الوسطى","شمال أوروبا","وادي النيل","بلاد الرافدين"],"ok":0},
-  {"c":"civilization","q":"مدينة أندلسية مهمة؟","a":["قرطبة","موسكو","بكين","أوسلو"],"ok":0},
-  {"c":"civilization","q":"أين تقع قرطبة؟","a":["إسبانيا","مصر","العراق","الهند"],"ok":0},
-  {"c":"civilization","q":"المعلم الأندلسي الشهير في غرناطة؟","a":["قصر الحمراء","الكولوسيوم","البارثينون","ماتشو بيتشو"],"ok":0},
-  {"c":"civilization","q":"أين يقع قصر الحمراء؟","a":["غرناطة","روما","القاهرة","بغداد"],"ok":0},
-  {"c":"civilization","q":"المدينة التي تضم جامع قرطبة؟","a":["قرطبة","فاس","دمشق","بغداد"],"ok":0},
-  {"c":"civilization","q":"المدينة التي تضم الجامع الأموي الشهير؟","a":["دمشق","القاهرة","روما","طهران"],"ok":0},
-  {"c":"civilization","q":"عاصمة الدولة الأموية؟","a":["دمشق","بغداد","القاهرة","قرطبة"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي بنت شبكة طرق ضخمة في الأنديز؟","a":["الإنكا","الرومان","المايا","الفينيقيون"],"ok":0},
-  {"c":"civilization","q":"المعلم الهندي الشهير الذي بني كضريح؟","a":["تاج محل","الكولوسيوم","البارثينون","الأهرامات"],"ok":0},
-  {"c":"civilization","q":"أين يقع تاج محل؟","a":["الهند","باكستان","إيران","تركيا"],"ok":0},
-  {"c":"civilization","q":"الشعب المرتبط بتماثيل جزيرة القيامة؟","a":["رابا نوي","الرومان","الفراعنة","الصينيون"],"ok":0},
-  {"c":"civilization","q":"أين تقع جزيرة القيامة؟","a":["تشيلي","اليابان","مصر","إيطاليا"],"ok":0},
-  {"c":"civilization","q":"المعلم الدفاعي الصيني الأشهر؟","a":["سور الصين العظيم","تاج محل","الكولوسيوم","البتراء"],"ok":0},
-  {"c":"civilization","q":"الحضارة المشهورة بالأقنية المائية؟","a":["الرومان","الإنكا","المايا","الفينيقيون"],"ok":0},
-  {"c":"civilization","q":"أين تقع جرش الأثرية؟","a":["الأردن","مصر","العراق","المغرب"],"ok":0},
-  {"c":"civilization","q":"المدينة المرتبطة بطريق البخور؟","a":["البتراء","باريس","موسكو","سيدني"],"ok":0},
-  {"c":"civilization","q":"السلع المرتبطة بطريق البخور؟","a":["اللبان والمر","الثلج","الفحم","القمح"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي عرفت بالزقورات؟","a":["بلاد الرافدين","الرومان","الإنكا","الصينيون"],"ok":0},
-  {"c":"civilization","q":"الزقورة الشهيرة المرتبطة بأور؟","a":["زقورة أور","زقورة روما","زقورة أثينا","زقورة فاس"],"ok":0},
-  {"c":"civilization","q":"أين تقع أور القديمة؟","a":["العراق","مصر","سوريا","الهند"],"ok":0},
-  {"c":"civilization","q":"المدينة المرتبطة بأسطورة طروادة؟","a":["طروادة","بابل","مأرب","فاس"],"ok":0},
-  {"c":"civilization","q":"عاصمة الإمبراطورية البيزنطية؟","a":["القسطنطينية","روما","بغداد","قرطبة"],"ok":0},
-  {"c":"civilization","q":"الاسم الحديث للقسطنطينية؟","a":["إسطنبول","أنقرة","أثينا","إزمير"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي شيدت أبو سمبل؟","a":["المصرية القديمة","الرومانية","الإنكا","المايا"],"ok":0},
-  {"c":"civilization","q":"أين يقع أبو سمبل؟","a":["مصر","السودان","الأردن","اليمن"],"ok":0},
-  {"c":"civilization","q":"المدينة المصرية المرتبطة بوادي الملوك؟","a":["الأقصر","الإسكندرية","بورسعيد","السويس"],"ok":0},
-  {"c":"civilization","q":"المنطقة التي تضم مقابر فراعنة؟","a":["وادي الملوك","وادي السند","وادي الرافدين","وادي الموت"],"ok":0},
-  {"c":"civilization","q":"الموقع المصري الشهير بأبو الهول؟","a":["الجيزة","أسوان","الإسكندرية","سيناء"],"ok":0},
-  {"c":"civilization","q":"الحضارة التي شيدت المعابد الضخمة في الكرنك؟","a":["المصرية القديمة","الرومانية","المايا","الإنكا"],"ok":0},
-  {"c":"civilization","q":"أين يقع معبد الكرنك؟","a":["الأقصر","القاهرة","الإسكندرية","أسوان"],"ok":0},
-  {"c":"civilization","q":"المدينة التي عرفت تاريخياً بمدينة الألف مئذنة؟","a":["القاهرة","روما","أثينا","باريس"],"ok":0},
-  {"c":"civilization","q":"أين يقع جامع الزيتونة؟","a":["تونس","فاس","القاهرة","دمشق"],"ok":0},
-  {"c":"civilization","q":"المدينة المرتبطة بجامع الزيتونة؟","a":["تونس","بغداد","مكة","صنعاء"],"ok":0},
-  {"c":"civilization","q":"المدينة المصرية التي تضم تمثال أبي الهول؟","a":["الجيزة","أسوان","الأقصر","بورسعيد"],"ok":0},
+{
+c:"general",
+q:"عاصمة اليابان؟",
+a:["طوكيو","بكين","سيول","بانكوك"],
+ok:0
+},
 
-  {"c":"geo","q":"أعلى جبل فوق سطح البحر؟","a":["إيفرست","كليمنجارو","إلبروس","الألب"],"ok":0},
-  {"c":"geo","q":"أطول نهر في أفريقيا؟","a":["النيل","الكونغو","النيجر","السنغال"],"ok":0},
-  {"c":"geo","q":"أكبر دولة مساحة؟","a":["روسيا","كندا","الصين","الولايات المتحدة"],"ok":0},
-  {"c":"geo","q":"أصغر دولة مساحة؟","a":["الفاتيكان","موناكو","مالطا","سنغافورة"],"ok":0},
-  {"c":"geo","q":"أكبر جزيرة؟","a":["غرينلاند","مدغشقر","بورنيو","اليابان"],"ok":0},
-  {"c":"geo","q":"أكبر قارة؟","a":["آسيا","أفريقيا","أوروبا","أستراليا"],"ok":0},
-  {"c":"geo","q":"أكبر محيط؟","a":["الهادئ","الأطلسي","الهندي","المتجمد الشمالي"],"ok":0},
-  {"c":"geo","q":"البحر بين أوروبا وأفريقيا؟","a":["المتوسط","الأسود","قزوين","العرب"],"ok":0},
-  {"c":"geo","q":"البحر بين الجزيرة العربية وأفريقيا؟","a":["الأحمر","الأسود","العرب","قزوين"],"ok":0},
-  {"c":"geo","q":"مضيق آسيا وأمريكا الشمالية؟","a":["بيرنغ","هرمز","جبل طارق","باب المندب"],"ok":0},
-  {"c":"geo","q":"مضيق الأحمر وخليج عدن؟","a":["باب المندب","هرمز","الدردنيل","جبل طارق"],"ok":0},
-  {"c":"geo","q":"مضيق الخليج العربي وخليج عمان؟","a":["هرمز","باب المندب","البوسفور","جبل طارق"],"ok":0},
-  {"c":"geo","q":"أكبر بحر مغلق؟","a":["قزوين","الأحمر","المتوسط","العرب"],"ok":0},
-  {"c":"geo","q":"عاصمة اليمن؟","a":["صنعاء","عدن","تعز","الحديدة"],"ok":0},
-  {"c":"geo","q":"القارة التي يقع فيها إيفرست؟","a":["آسيا","أوروبا","أفريقيا","أمريكا"],"ok":0},
-  {"c":"geo","q":"القارة التي فيها الصحراء الكبرى؟","a":["أفريقيا","آسيا","أوروبا","أستراليا"],"ok":0},
-  {"c":"geo","q":"المحيط بين أفريقيا وأستراليا؟","a":["الهندي","الأطلسي","الهادئ","المتجمد"],"ok":0},
-  {"c":"geo","q":"المحيط شرق الأمريكتين؟","a":["الأطلسي","الهندي","الهادئ","المتجمد"],"ok":0},
-  {"c":"geo","q":"المحيط غرب الأمريكتين؟","a":["الهادئ","الأطلسي","الهندي","المتجمد"],"ok":0},
-  {"c":"geo","q":"الدولة الطويلة غرب أمريكا الجنوبية؟","a":["تشيلي","البرازيل","بيرو","الأرجنتين"],"ok":0},
-  {"c":"geo","q":"أكبر دولة في أمريكا الجنوبية؟","a":["البرازيل","الأرجنتين","بيرو","كولومبيا"],"ok":0},
-  {"c":"geo","q":"عاصمة البرازيل؟","a":["برازيليا","ريو","ساو باولو","سلفادور"],"ok":0},
-  {"c":"geo","q":"عاصمة الأرجنتين؟","a":["بوينس آيرس","ليما","سانتياغو","مونتيفيديو"],"ok":0},
-  {"c":"geo","q":"عاصمة بيرو؟","a":["ليما","كيتو","لاباز","أسونسيون"],"ok":0},
-  {"c":"geo","q":"عاصمة تشيلي؟","a":["سانتياغو","ليما","بوغوتا","كيتو"],"ok":0},
-  {"c":"geo","q":"عاصمة كولومبيا؟","a":["بوغوتا","كاراكاس","كيتو","ليما"],"ok":0},
-  {"c":"geo","q":"عاصمة الإكوادور؟","a":["كيتو","ليما","بوغوتا","أسونسيون"],"ok":0},
-  {"c":"geo","q":"عاصمة أوروغواي؟","a":["مونتيفيديو","بوينس آيرس","أسونسيون","سانتياغو"],"ok":0},
-  {"c":"geo","q":"عاصمة باراغواي؟","a":["أسونسيون","مونتيفيديو","ليما","لاباز"],"ok":0},
-  {"c":"geo","q":"العاصمة الدستورية لبوليفيا؟","a":["سوكري","لاباز","ليما","كيتو"],"ok":0},
-  {"c":"geo","q":"الدولة العابرة لقارتي آسيا وأوروبا؟","a":["تركيا","اليونان","جورجيا","بلغاريا"],"ok":0},
-  {"c":"geo","q":"السلسلة التي تفصل تقليدياً أوروبا وآسيا؟","a":["الأورال","الألب","الهيمالايا","الأنديز"],"ok":0},
-  {"c":"geo","q":"أطول سلسلة جبلية على اليابسة؟","a":["الأنديز","الهيمالايا","الألب","الروكي"],"ok":0},
-  {"c":"geo","q":"السلسلة التي تضم إيفرست؟","a":["الهيمالايا","الأنديز","الألب","الروكي"],"ok":0},
-  {"c":"geo","q":"النهر الذي يمر بالقاهرة؟","a":["النيل","الفرات","دجلة","الكونغو"],"ok":0},
-  {"c":"geo","q":"النهران المرتبطان بالعراق؟","a":["دجلة والفرات","النيل والكونغو","الدانوب والراين","الأمازون والأورينوكو"],"ok":0},
-  {"c":"geo","q":"البحر شمال تركيا؟","a":["البحر الأسود","الأحمر","العرب","البلطيق"],"ok":0},
-  {"c":"geo","q":"البحر الذي يحد السعودية غرباً؟","a":["البحر الأحمر","المتوسط","الأسود","قزوين"],"ok":0},
-  {"c":"geo","q":"عاصمة إثيوبيا؟","a":["أديس أبابا","نيروبي","أسمرة","الخرطوم"],"ok":0},
-  {"c":"geo","q":"عاصمة كينيا؟","a":["نيروبي","كمبالا","أديس أبابا","دار السلام"],"ok":0},
-  {"c":"geo","q":"عاصمة السودان؟","a":["الخرطوم","جوبا","القاهرة","نواكشوط"],"ok":0},
-  {"c":"geo","q":"عاصمة المغرب؟","a":["الرباط","الدار البيضاء","فاس","مراكش"],"ok":0},
-  {"c":"geo","q":"عاصمة الجزائر؟","a":["الجزائر","وهران","قسنطينة","عنابة"],"ok":0},
-  {"c":"geo","q":"عاصمة تونس؟","a":["تونس","صفاقس","سوسة","بنزرت"],"ok":0},
-  {"c":"geo","q":"عاصمة ليبيا؟","a":["طرابلس","بنغازي","مصراتة","سبها"],"ok":0},
-  {"c":"geo","q":"عاصمة موريتانيا؟","a":["نواكشوط","نواذيبو","روصو","أطار"],"ok":0},
-  {"c":"geo","q":"عاصمة السعودية؟","a":["الرياض","جدة","مكة","الدمام"],"ok":0},
-  {"c":"geo","q":"عاصمة عُمان؟","a":["مسقط","صلالة","نزوى","صحار"],"ok":0},
-  {"c":"geo","q":"عاصمة الإمارات؟","a":["أبوظبي","دبي","الشارقة","العين"],"ok":0},
-  {"c":"geo","q":"عاصمة قطر؟","a":["الدوحة","الريان","الخور","الوكرة"],"ok":0},
-  {"c":"geo","q":"عاصمة الكويت؟","a":["الكويت","حولي","الفروانية","الجهراء"],"ok":0},
-  {"c":"geo","q":"عاصمة البحرين؟","a":["المنامة","المحرق","الرفاع","حمد"],"ok":0},
-  {"c":"geo","q":"عاصمة الأردن؟","a":["عمّان","الزرقاء","إربد","العقبة"],"ok":0},
-  {"c":"geo","q":"عاصمة لبنان؟","a":["بيروت","طرابلس","صيدا","صور"],"ok":0},
-  {"c":"geo","q":"عاصمة سوريا؟","a":["دمشق","حلب","حمص","اللاذقية"],"ok":0},
-  {"c":"geo","q":"عاصمة العراق؟","a":["بغداد","البصرة","الموصل","أربيل"],"ok":0},
-  {"c":"geo","q":"عاصمة إيران؟","a":["طهران","أصفهان","شيراز","تبريز"],"ok":0},
-  {"c":"geo","q":"عاصمة باكستان؟","a":["إسلام آباد","كراتشي","لاهور","بيشاور"],"ok":0},
-  {"c":"geo","q":"عاصمة أفغانستان؟","a":["كابول","قندهار","هرات","مزار شريف"],"ok":0},
-  {"c":"geo","q":"عاصمة أذربيجان؟","a":["باكو","تبليسي","يريفان","طشقند"],"ok":0},
-  {"c":"geo","q":"عاصمة جورجيا؟","a":["تبليسي","باتومي","باكو","يريفان"],"ok":0},
-  {"c":"geo","q":"عاصمة أرمينيا؟","a":["يريفان","تبليسي","باكو","أنقرة"],"ok":0},
-  {"c":"geo","q":"عاصمة كازاخستان؟","a":["أستانا","ألماتي","طشقند","بيشكيك"],"ok":0},
-  {"c":"geo","q":"عاصمة أوزبكستان؟","a":["طشقند","سمرقند","أستانا","دوشنبه"],"ok":0},
-  {"c":"geo","q":"عاصمة نيبال؟","a":["كاتماندو","دلهي","دكا","بوتان"],"ok":0},
-  {"c":"geo","q":"عاصمة بنغلاديش؟","a":["دكا","كاتماندو","كولومبو","نيودلهي"],"ok":0},
-  {"c":"geo","q":"عاصمة تايلاند؟","a":["بانكوك","هانوي","مانيلا","كوالالمبور"],"ok":0},
-  {"c":"geo","q":"عاصمة فيتنام؟","a":["هانوي","هو تشي منه","بانكوك","مانيلا"],"ok":0},
-  {"c":"geo","q":"عاصمة الفلبين؟","a":["مانيلا","جاكرتا","بانكوك","هانوي"],"ok":0},
-  {"c":"geo","q":"عاصمة إندونيسيا؟","a":["جاكرتا","بالي","سورابايا","باندونغ"],"ok":0},
-  {"c":"geo","q":"عاصمة ماليزيا؟","a":["كوالالمبور","سنغافورة","جاكرتا","بندر سري بكاوان"],"ok":0},
-  {"c":"geo","q":"عاصمة الهند؟","a":["نيودلهي","مومباي","كولكاتا","بنغالور"],"ok":0},
-  {"c":"geo","q":"عاصمة الصين؟","a":["بكين","شنغهاي","نانجينغ","غوانزو"],"ok":0},
-  {"c":"geo","q":"عاصمة اليابان؟","a":["طوكيو","أوساكا","كيوتو","هيروشيما"],"ok":0},
-  {"c":"geo","q":"عاصمة كوريا الجنوبية؟","a":["سيول","بوسان","دايغو","إنشيون"],"ok":0}
-];
+{
+c:"general",
+q:"أكبر محيط في العالم؟",
+a:["الهادئ","الأطلسي","الهندي","المتجمد الشمالي"],
+ok:0
+},
 
-const N={
-  all:"🌍 الكل",
-  general:"📚 ثقافة عامة",
-  science:"🔬 علمية",
-  civilization:"🏛️ حضارية",
-  geo:"🌍 جغرافية"
-};
+{
+c:"general",
+q:"الكوكب الأحمر؟",
+a:["المريخ","الزهرة","المشتري","عطارد"],
+ok:0
+},
 
-const DEFAULT_STATE={
-  score:0,xp:0,correct:0,answered:0,streak:0,best:0,
-  skip:5,help:3,reveal:8,sound:true,vib:true,fx:true,
-  cat:"all",name:"اللاعب",pos:0,order:[],ach:[]
-};
+{
+c:"general",
+q:"عدد أيام الأسبوع؟",
+a:["7","5","6","8"],
+ok:0
+},
 
-let st=null;
-let cur=null;
-let locked=false;
-let timer=0;
-let tt=null;
+{
+c:"general",
+q:"عدد أشهر السنة؟",
+a:["12","10","11","13"],
+ok:0
+},
 
-/* قراءة آمنة للحفظ */
-function getState(){
-  try{
-    const raw=localStorage.getItem("AMMAR300");
-    if(!raw) return {...DEFAULT_STATE};
-    const saved=JSON.parse(raw);
-    if(!saved || typeof saved!=="object") return {...DEFAULT_STATE};
-    return {...DEFAULT_STATE,...saved};
-  }catch(e){
-    console.warn("تعذر قراءة الحفظ:",e);
-    return {...DEFAULT_STATE};
-  }
+{
+c:"general",
+q:"أكبر قارة؟",
+a:["آسيا","أفريقيا","أوروبا","أستراليا"],
+ok:0
+},
+
+{
+c:"general",
+q:"عاصمة فرنسا؟",
+a:["باريس","روما","برلين","مدريد"],
+ok:0
+},
+
+{
+c:"general",
+q:"أكبر حيوان معروف؟",
+a:["الحوت الأزرق","الفيل","الزرافة","الدب"],
+ok:0
+},
+
+{
+c:"general",
+q:"أسرع حيوان بري؟",
+a:["الفهد","الأسد","الحصان","الذئب"],
+ok:0
+},
+
+{
+c:"general",
+q:"عاصمة مصر؟",
+a:["القاهرة","الإسكندرية","الجيزة","الأقصر"],
+ok:0
+},
+
+{
+c:"science",
+q:"رمز الماء الكيميائي؟",
+a:["H2O","CO2","O2","NaCl"],
+ok:0
+},
+
+{
+c:"science",
+q:"الجسيم ذو الشحنة السالبة؟",
+a:["الإلكترون","البروتون","النيوترون","النواة"],
+ok:0
+},
+
+{
+c:"science",
+q:"وحدة قياس القوة؟",
+a:["نيوتن","واط","فولت","أمبير"],
+ok:0
+},
+
+{
+c:"science",
+q:"أقرب كوكب إلى الشمس؟",
+a:["عطارد","الزهرة","الأرض","المريخ"],
+ok:0
+},
+
+{
+c:"science",
+q:"المادة الوراثية؟",
+a:["DNA","ATP","الماء","الكالسيوم"],
+ok:0
+},
+
+{
+c:"civilization",
+q:"أين تقع أهرامات الجيزة؟",
+a:["مصر","العراق","اليونان","المكسيك"],
+ok:0
+},
+
+{
+c:"civilization",
+q:"عاصمة الدولة العباسية؟",
+a:["بغداد","دمشق","القاهرة","قرطبة"],
+ok:0
+},
+
+{
+c:"civilization",
+q:"أين تقع البتراء؟",
+a:["الأردن","مصر","العراق","تونس"],
+ok:0
+},
+
+{
+c:"civilization",
+q:"الموقع اليمني المرتبط بمملكة سبأ؟",
+a:["مأرب","الإسكندرية","قرطاج","أثينا"],
+ok:0
+},
+
+{
+c:"civilization",
+q:"السد التاريخي الشهير في اليمن؟",
+a:["سد مأرب","سد أسوان","سد الموصل","سد هوفر"],
+ok:0
+},
+
+{
+c:"geo",
+q:"أعلى جبل فوق سطح البحر؟",
+a:["إيفرست","كليمنجارو","إلبروس","الألب"],
+ok:0
+},
+
+{
+c:"geo",
+q:"أطول نهر في أفريقيا؟",
+a:["النيل","الكونغو","النيجر","السنغال"],
+ok:0
+},
+
+{
+c:"geo",
+q:"أكبر دولة مساحة؟",
+a:["روسيا","كندا","الصين","الولايات المتحدة"],
+ok:0
+},
+
+{
+c:"geo",
+q:"عاصمة اليمن؟",
+a:["صنعاء","عدن","تعز","الحديدة"],
+ok:0
+},
+
+{
+c:"geo",
+q:"البحر بين الجزيرة العربية وأفريقيا؟",
+a:["الأحمر","الأسود","العرب","قزوين"],
+ok:0
 }
 
-st=getState();
+];
+
+/* =====================================================
+   الفئات
+===================================================== */
+
+const N={
+all:"🌍 الكل",
+general:"📚 ثقافة عامة",
+science:"🔬 علمية",
+civilization:"🏛️ حضارية",
+geo:"🌍 جغرافية"
+};
+
+/* =====================================================
+   الحالة الافتراضية
+===================================================== */
+
+const DEFAULT_STATE={
+score:0,
+xp:0,
+correct:0,
+answered:0,
+streak:0,
+best:0,
+skip:5,
+help:3,
+reveal:8,
+sound:true,
+vib:true,
+fx:true,
+cat:"all",
+name:"اللاعب",
+pos:0,
+order:[],
+ach:[]
+};
+
+let st=getState();
+let cur=null;
+let locked=false;
+let timer=null;
+let toastTimer=null;
+
+/* =====================================================
+   اختصار العناصر
+===================================================== */
 
 const $=id=>document.getElementById(id);
 
-function save(){
-  try{
-    localStorage.setItem("AMMAR300",JSON.stringify(st));
-  }catch(e){
-    console.warn("تعذر حفظ التقدم:",e);
-  }
+/* =====================================================
+   قراءة الحفظ
+===================================================== */
+
+function getState(){
+
+try{
+
+const raw=localStorage.getItem("AMMAR300");
+
+if(!raw)
+return {...DEFAULT_STATE};
+
+const saved=JSON.parse(raw);
+
+if(!saved || typeof saved!=="object")
+return {...DEFAULT_STATE};
+
+const s={
+...DEFAULT_STATE,
+...saved
+};
+
+if(!Array.isArray(s.order))
+s.order=[];
+
+if(!Array.isArray(s.ach))
+s.ach=[];
+
+if(!N[s.cat])
+s.cat="all";
+
+if(!Number.isInteger(s.pos)||s.pos<0)
+s.pos=0;
+
+return s;
+
+}catch(e){
+
+try{
+localStorage.removeItem("AMMAR300");
+}catch(_){}
+
+return {...DEFAULT_STATE};
+
 }
+
+}
+
+/* =====================================================
+   حفظ
+===================================================== */
+
+function save(){
+
+try{
+
+localStorage.setItem(
+"AMMAR300",
+JSON.stringify(st)
+);
+
+}catch(e){}
+
+}
+
+/* =====================================================
+   خلط
+===================================================== */
 
 function shuffle(a){
-  for(let i=a.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [a[i],a[j]]=[a[j],a[i]];
-  }
-  return a;
+
+for(let i=a.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[a[i],a[j]]=[
+a[j],a[i]
+];
+
 }
 
-/*
-  هذه أهم دالة:
-  تنقل الإجابة الصحيحة عشوائياً بين المربعات الأربعة،
-  وتحدّث رقمها cur.ok حتى يبقى التحقق صحيحاً.
-*/
+return a;
+
+}
+
+/* =====================================================
+   تجهيز السؤال
+   تغيير مكان الإجابة الصحيحة
+===================================================== */
+
 function prepareQuestion(q){
-  const answers=q.a.map((text,index)=>({
-    text:text,
-    correct:index===q.ok
-  }));
 
-  shuffle(answers);
-
-  return {
-    c:q.c,
-    q:q.q,
-    a:answers.map(x=>x.text),
-    ok:answers.findIndex(x=>x.correct)
-  };
+if(
+!q ||
+typeof q.q!=="string" ||
+!Array.isArray(q.a) ||
+q.a.length!==4 ||
+!Number.isInteger(q.ok) ||
+q.ok<0 ||
+q.ok>3
+){
+return null;
 }
+
+const arr=q.a.map(
+(text,index)=>({
+text:String(text),
+correct:index===q.ok
+})
+);
+
+shuffle(arr);
+
+const newCorrect=
+arr.findIndex(x=>x.correct);
+
+if(newCorrect<0)
+return null;
+
+return{
+
+c:N[q.c]?q.c:"general",
+
+q:q.q,
+
+a:arr.map(x=>x.text),
+
+ok:newCorrect
+
+};
+
+}
+
+/* =====================================================
+   بناء ترتيب الأسئلة
+===================================================== */
 
 function rebuild(){
-  let ids=Q.map((_,i)=>i);
 
-  if(st.cat!=="all"){
-    ids=Q
-      .map((x,i)=>x.c===st.cat?i:-1)
-      .filter(i=>i>=0);
-  }
+let ids=[];
 
-  st.order=shuffle(ids);
-  st.pos=0;
-  save();
+for(let i=0;i<Q.length;i++){
+
+if(
+st.cat==="all" ||
+Q[i].c===st.cat
+){
+
+ids.push(i);
+
 }
 
+}
+
+if(ids.length===0){
+
+st.cat="all";
+
+for(let i=0;i<Q.length;i++)
+ids.push(i);
+
+}
+
+shuffle(ids);
+
+st.order=ids;
+st.pos=0;
+
+save();
+
+}
+
+/* =====================================================
+   حساب المرحلة
+===================================================== */
+
 function stage(){
-  return Math.min(100,Math.floor(st.answered/3)+1);
+
+return Math.min(
+100,
+Math.floor(st.answered/3)+1
+);
+
 }
 
 function qi(){
-  return (st.answered%3)+1;
+
+return(st.answered%3)+1;
+
 }
 
-/* تحميل السؤال محلياً بدون fetch أو API */
+/* =====================================================
+   تحميل سؤال محلي
+   لا يوجد fetch
+   لا يوجد انتظار إنترنت
+===================================================== */
+
 function load(){
-  clearTimeout(timer);
 
-  if(!Array.isArray(st.order) || !st.order.length){
-    rebuild();
-  }
+if(timer)
+clearTimeout(timer);
 
-  if(st.pos>=st.order.length){
-    rebuild();
-  }
+if(
+!Array.isArray(st.order) ||
+st.order.length===0
+){
 
-  const index=st.order[st.pos];
-  const original=Q[index];
+rebuild();
 
-  if(!original){
-    rebuild();
-    const retryIndex=st.order[st.pos];
-    if(!Q[retryIndex]){
-      showLoadError();
-      return;
-    }
-    cur=prepareQuestion(Q[retryIndex]);
-  }else{
-    cur=prepareQuestion(original);
-  }
-
-  locked=false;
-  render();
 }
 
-function showLoadError(){
-  locked=true;
-  $("q").textContent="تعذر تحميل السؤال";
-  $("cat").textContent="⚠️ خطأ";
-  $("answers").innerHTML=`
-    <button class="answer" style="grid-column:1/3" onclick="location.reload()">
-      🔄 اضغط لإعادة المحاولة
-    </button>`;
+if(
+st.pos>=st.order.length
+){
+
+rebuild();
+
 }
+
+const index=st.order[st.pos];
+
+if(
+!Number.isInteger(index) ||
+!Q[index]
+){
+
+rebuild();
+
+}
+
+const original=
+Q[st.order[st.pos]];
+
+const prepared=
+prepareQuestion(original);
+
+if(!prepared){
+
+rebuild();
+
+return load();
+
+}
+
+cur=prepared;
+
+locked=false;
+
+render();
+
+return true;
+
+}
+
+/* =====================================================
+   رسم السؤال
+===================================================== */
 
 function render(){
-  if(!cur || !Array.isArray(cur.a) || cur.a.length!==4){
-    showLoadError();
-    return;
-  }
 
-  $("q").textContent=cur.q;
-  $("cat").textContent=
-    N[cur.c]+" • "+
-    (stage()<=25?"مبتدئ":stage()<=50?"متوسط":stage()<=75?"متقدم":"خبير");
+if(!cur)
+return;
 
-  $("answers").innerHTML="";
+$("q").textContent=
+cur.q;
 
-  cur.a.forEach((x,i)=>{
-    const b=document.createElement("button");
-    b.className="answer";
-    b.textContent=x;
-    b.onclick=()=>answer(i,b);
-    $("answers").appendChild(b);
-  });
+$("cat").textContent=
+(N[cur.c]||N.general)
++
+" • "
++
+(
+stage()<=25
+?"مبتدئ"
+:
+stage()<=50
+?"متوسط"
+:
+stage()<=75
+?"متقدم"
+:
+"خبير"
+);
 
-  ui();
+$("answers").innerHTML="";
+
+const labels=[
+"①",
+"②",
+"③",
+"④"
+];
+
+cur.a.forEach((text,i)=>{
+
+const button=
+document.createElement("button");
+
+button.type="button";
+
+button.className="answer";
+
+button.innerHTML=`
+
+<div class="option-inner">
+
+<span class="option-number">
+${labels[i]}
+</span>
+
+<span class="option-text">
+${escapeHTML(text)}
+</span>
+
+</div>
+
+`;
+
+button.onclick=()=>{
+answer(i,button);
+};
+
+$("answers")
+.appendChild(button);
+
+});
+
+ui();
+
 }
 
-function answer(i,b){
-  if(locked)return;
+/* =====================================================
+   حماية النص
+===================================================== */
 
-  locked=true;
+function escapeHTML(text){
 
-  document.querySelectorAll(".answer").forEach(x=>x.disabled=true);
+return String(text)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
-  st.answered++;
-
-  if(i===cur.ok){
-    b.classList.add("correct");
-    st.correct++;
-    st.score+=2;
-    st.xp+=10;
-    st.streak++;
-    st.best=Math.max(st.best,st.streak);
-
-    toast("✅ صحيح +2");
-    beep(750,70);
-    setTimeout(()=>beep(950,90),70);
-    vib(30);
-    fx();
-    ach();
-  }else{
-    b.classList.add("wrong");
-
-    const buttons=document.querySelectorAll(".answer");
-    if(buttons[cur.ok]){
-      buttons[cur.ok].classList.add("correct");
-    }
-
-    st.streak=0;
-    st.xp+=2;
-
-    toast("❌ خطأ");
-    beep(180,170);
-    vib(70);
-  }
-
-  save();
-  ui();
-
-  timer=setTimeout(()=>{
-    st.pos++;
-    load();
-  },650);
 }
+
+/* =====================================================
+   اختيار الإجابة
+===================================================== */
+
+function answer(i,button){
+
+if(locked||!cur)
+return;
+
+locked=true;
+
+document
+.querySelectorAll(".answer")
+.forEach(x=>{
+x.disabled=true;
+});
+
+st.answered++;
+
+if(i===cur.ok){
+
+button.classList.add("correct");
+
+st.correct++;
+st.score+=2;
+st.xp+=10;
+st.streak++;
+
+st.best=
+Math.max(
+st.best,
+st.streak
+);
+
+toast("✅ صحيح +2");
+
+beep(750,70);
+
+vib(30);
+
+fx();
+
+ach();
+
+}else{
+
+button.classList.add("wrong");
+
+const buttons=
+document.querySelectorAll(".answer");
+
+if(buttons[cur.ok])
+buttons[cur.ok]
+.classList.add("correct");
+
+st.streak=0;
+st.xp+=2;
+
+toast("❌ خطأ");
+
+beep(180,170);
+
+vib(70);
+
+}
+
+save();
+ui();
+
+timer=setTimeout(()=>{
+
+st.pos++;
+
+if(
+st.pos>=st.order.length
+){
+
+rebuild();
+
+}
+
+save();
+
+load();
+
+},650);
+
+}
+
+/* =====================================================
+   تخطي
+===================================================== */
 
 function skip(){
-  if(locked)return;
-  if(st.skip<1)return toast("⏭️ لا يوجد تخطي");
 
-  st.skip--;
-  st.pos++;
-  save();
-  load();
-  toast("⏭️ تم التخطي");
+if(locked)
+return;
+
+if(st.skip<1){
+
+toast("⏭️ لا يوجد تخطي");
+
+return;
+
 }
+
+st.skip--;
+
+st.pos++;
+
+if(
+st.pos>=st.order.length
+){
+
+rebuild();
+
+}
+
+save();
+
+load();
+
+toast("⏭️ تم التخطي");
+
+}
+
+/* =====================================================
+   مساعدة
+===================================================== */
 
 function help(){
-  if(locked)return;
-  if(st.help<1)return toast("💡 انتهت المساعدة");
 
-  st.help--;
+if(locked)
+return;
 
-  const arr=[...document.querySelectorAll(".answer")]
-    .map((b,i)=>({b,i}))
-    .filter(x=>x.i!==cur.ok);
+if(st.help<1){
 
-  shuffle(arr).slice(0,2).forEach(x=>x.b.disabled=true);
+toast("💡 انتهت المساعدة");
 
-  save();
-  ui();
-  toast("💡 حذفت إجابتين");
+return;
+
 }
+
+st.help--;
+
+const wrong=[
+...document.querySelectorAll(".answer")
+]
+.map((button,index)=>({
+button,
+index
+}))
+.filter(
+x=>x.index!==cur.ok
+);
+
+shuffle(wrong)
+.slice(0,2)
+.forEach(x=>{
+
+x.button.disabled=true;
+x.button.style.opacity=".35";
+
+});
+
+save();
+ui();
+
+toast("💡 حذفت إجابتين");
+
+}
+
+/* =====================================================
+   كشف
+===================================================== */
 
 function reveal(){
-  if(locked)return;
-  if(st.reveal<1)return toast("👁️ انتهى الكشف");
 
-  st.reveal--;
+if(locked)
+return;
 
-  const buttons=document.querySelectorAll(".answer");
-  if(buttons[cur.ok])buttons[cur.ok].classList.add("correct");
+if(st.reveal<1){
 
-  save();
-  ui();
-  toast("👁️ تم كشف الصحيح");
+toast("👁️ انتهى الكشف");
+
+return;
+
 }
+
+st.reveal--;
+
+const buttons=
+document.querySelectorAll(".answer");
+
+if(buttons[cur.ok])
+buttons[cur.ok]
+.classList.add("correct");
+
+save();
+ui();
+
+toast("👁️ تم كشف الصحيح");
+
+}
+
+/* =====================================================
+   سؤال عشوائي
+===================================================== */
 
 function randomQ(){
-  if(locked)return;
-  st.pos++;
-  save();
-  load();
-  toast("🎲 سؤال جديد");
+
+if(locked)
+return;
+
+st.pos++;
+
+if(
+st.pos>=st.order.length
+){
+
+rebuild();
+
 }
 
+save();
+
+load();
+
+toast("🎲 سؤال جديد");
+
+}
+
+/* =====================================================
+   الفئات
+===================================================== */
+
 function categories(){
-  open(`
-    <h2>🗂️ الفئات</h2>
-    <div class="grid">
-      ${Object.entries(N).map(([k,v])=>
-        `<button class="mb ${st.cat===k?"active":""}" onclick="setCat('${k}')">${v}</button>`
-      ).join("")}
-    </div>
-    <p style="font-size:11px;color:#9bc">
-      الأسئلة موجودة داخل هذا الملف ولا تحتاج إلى الإنترنت.
-    </p>
-  `);
+
+open(`
+
+<h2>🗂️ الفئات</h2>
+
+<div class="grid">
+
+${
+Object.entries(N)
+.map(([key,name])=>`
+
+<button
+class="mb ${st.cat===key?"active":""}"
+onclick="setCat('${key}')"
+>
+${name}
+</button>
+
+`)
+.join("")
+}
+
+</div>
+
+<p style="font-size:11px;color:#9bc">
+الأسئلة موجودة داخل التطبيق ولا تحتاج إلى الإنترنت.
+</p>
+
+`);
+
 }
 
 function setCat(c){
-  st.cat=c;
-  rebuild();
-  closeM();
-  load();
+
+st.cat=c;
+
+rebuild();
+
+closeM();
+
+load();
+
 }
+
+/* =====================================================
+   الإحصائيات
+===================================================== */
 
 function stats(){
-  const a=st.answered?
-    Math.round(st.correct/st.answered*100):0;
 
-  open(`
-    <h2>📊 إحصائيات</h2>
-    <div class="list">
-      <div class="row"><b>🏆 النقاط</b><span>${st.score}</span></div>
-      <div class="row"><b>⭐ XP</b><span>${st.xp}</span></div>
-      <div class="row"><b>✅ الصحيحة</b><span>${st.correct}</span></div>
-      <div class="row"><b>🎯 الدقة</b><span>${a}%</span></div>
-      <div class="row"><b>🔥 أفضل سلسلة</b><span>${st.best}</span></div>
-      <div class="row"><b>👑 المرحلة</b><span>${stage()}/100</span></div>
-    </div>
-  `);
+const accuracy=
+st.answered
+?
+Math.round(
+st.correct/
+st.answered*
+100
+)
+:
+0;
+
+open(`
+
+<h2>📊 إحصائيات</h2>
+
+<div class="list">
+
+<div class="row">
+<b>🏆 النقاط</b>
+<span>${st.score}</span>
+</div>
+
+<div class="row">
+<b>⭐ XP</b>
+<span>${st.xp}</span>
+</div>
+
+<div class="row">
+<b>✅ الصحيحة</b>
+<span>${st.correct}</span>
+</div>
+
+<div class="row">
+<b>🎯 الدقة</b>
+<span>${accuracy}%</span>
+</div>
+
+<div class="row">
+<b>🔥 أفضل سلسلة</b>
+<span>${st.best}</span>
+</div>
+
+<div class="row">
+<b>👑 المرحلة</b>
+<span>${stage()}/100</span>
+</div>
+
+</div>
+
+`);
+
 }
+
+/* =====================================================
+   الإنجازات
+===================================================== */
 
 function ach(){
-  const a=[
-    ["1","🌟 البداية",st.correct>=1],
-    ["10","🔥 عشرة",st.correct>=10],
-    ["5s","⚡ سلسلة",st.best>=5],
-    ["100p","🏆 جامع النقاط",st.score>=100],
-    ["10st","👑 بطل",stage()>=10],
-    ["50st","💎 أسطورة",stage()>=50],
-    ["100st","🌟 ملك الأسئلة",stage()>=100]
-  ];
 
-  a.forEach(x=>{
-    if(x[2]&&!st.ach.includes(x[0])){
-      st.ach.push(x[0]);
-      st.xp+=25;
-      toast("🏅 "+x[1]);
-    }
-  });
+const list=[
 
-  save();
+["1","🌟 البداية",st.correct>=1],
+
+["10","🔥 عشرة",st.correct>=10],
+
+["5s","⚡ سلسلة",st.best>=5],
+
+["100p","🏆 جامع النقاط",st.score>=100],
+
+["10st","👑 بطل",stage()>=10],
+
+["50st","💎 أسطورة",stage()>=50],
+
+["100st","🌟 ملك الأسئلة",stage()>=100]
+
+];
+
+list.forEach(x=>{
+
+if(
+x[2] &&
+!st.ach.includes(x[0])
+){
+
+st.ach.push(x[0]);
+
+st.xp+=25;
+
+toast("🏅 "+x[1]);
+
 }
+
+});
+
+save();
+
+}
+
+/* =====================================================
+   المكافآت
+===================================================== */
 
 function badges(){
-  const a=[
-    ["1","🌟 البداية","أول صحيح"],
-    ["10","🔥 عشرة","10 صحيحة"],
-    ["5s","⚡ سلسلة","5 متتالية"],
-    ["100p","🏆 جامع النقاط","100 نقطة"],
-    ["10st","👑 بطل","المرحلة 10"],
-    ["50st","💎 أسطورة","المرحلة 50"],
-    ["100st","🌟 ملك الأسئلة","100 مرحلة"]
-  ];
 
-  open(`
-    <h2>🎁 مكافآتي</h2>
-    <div class="badges">
-      ${a.map(x=>`
-        <div class="badge">
-          <b>${x[1]}</b>${x[2]}<br>
-          ${st.ach.includes(x[0])?"✅ مكتمل":"🔒 مقفل"}
-        </div>
-      `).join("")}
-    </div>
-  `);
-}
+const list=[
 
-function leaderboard(){
-  let b=[];
+["1","🌟 البداية","أول صحيح"],
 
-  try{
-    b=JSON.parse(localStorage.getItem("AMMARBOARD")||"[]");
-    if(!Array.isArray(b))b=[];
-  }catch(e){
-    b=[];
-  }
+["10","🔥 عشرة","10 صحيحة"],
 
-  b=b.filter(x=>x.name!==st.name);
-  b.push({name:st.name,score:st.score,stage:stage()});
-  b.sort((a,b)=>b.score-a.score);
-  b=b.slice(0,20);
+["5s","⚡ سلسلة","5 متتالية"],
 
-  try{
-    localStorage.setItem("AMMARBOARD",JSON.stringify(b));
-  }catch(e){}
+["100p","🏆 جامع النقاط","100 نقطة"],
 
-  open(`
-    <h2>🏆 لوحة الصدارة</h2>
-    <button class="mb" style="width:100%;margin-bottom:7px" onclick="nameChange()">
-      ✏️ تغيير الاسم
-    </button>
-    <div class="list">
-      ${b.map((x,i)=>`
-        <div class="row">
-          <b>${i+1}. ${x.name}</b>
-          <span>${x.score} 🏆 • ${x.stage}/100</span>
-        </div>
-      `).join("")}
-    </div>
-    <p style="font-size:11px;color:#9bc">الصدارة محلية على هذا الجهاز.</p>
-  `);
-}
+["10st","👑 بطل","المرحلة 10"],
 
-function nameChange(){
-  const n=prompt("اسم اللاعب:",st.name);
-  if(n&&n.trim()){
-    st.name=n.trim();
-    save();
-    leaderboard();
-  }
-}
-
-function map(){
-  const s=stage();
-
-  open(`
-    <h2>🗺️ خريطة 100 مرحلة</h2>
-    <div class="grid">
-      ${Array.from({length:100},(_,i)=>`
-        <button class="mb ${i+1===s?"active":""}">
-          ${i+1<s?"✅":i+1===s?"👑":"🔒"} المرحلة ${i+1}
-        </button>
-      `).join("")}
-    </div>
-  `);
-}
-
-function settings(){
-  open(`
-    <h2>⚙️ الإعدادات</h2>
-    <div class="list">
-      <button class="mb" onclick="toggleSound();settings()">
-        ${st.sound?"🔊 الصوت: مفتوح":"❌ الصوت: مغلق"}
-      </button>
-
-      <button class="mb" onclick="st.vib=!st.vib;save();settings()">
-        📳 الاهتزاز: ${st.vib?"مفتوح":"مغلق"}
-      </button>
-
-      <button class="mb" onclick="st.fx=!st.fx;save();settings()">
-        ✨ المؤثرات: ${st.fx?"مفتوحة":"مغلقة"}
-      </button>
-
-      <button class="mb" onclick="resetGame()">
-        🗑️ إعادة ضبط
-      </button>
-    </div>
-
-    <p style="font-size:11px;color:#9bc">
-      جميع الأسئلة محلية داخل HTML. لا يوجد fetch أو API أو ملف خارجي،
-      لذلك لا تعتمد اللعبة على الإنترنت لعرض الأسئلة.
-    </p>
-  `);
-}
-
-function resetGame(){
-  if(confirm("حذف التقدم؟")){
-    try{
-      localStorage.removeItem("AMMAR300");
-    }catch(e){}
-    location.reload();
-  }
-}
-
-function toggleSound(){
-  st.sound=!st.sound;
-  save();
-  ui();
-  toast(st.sound?"🔊 الصوت يعمل":"❌ الصوت متوقف");
-}
-
-function beep(f,d){
-  if(!st.sound)return;
-
-  try{
-    const c=window.ac||(window.ac=new AudioContext());
-
-    if(c.state==="suspended")c.resume();
-
-    const o=c.createOscillator();
-    const g=c.createGain();
-
-    o.connect(g);
-    g.connect(c.destination);
-
-    o.frequency.value=f;
-    g.gain.value=.04;
-
-    o.start();
-    o.stop(c.currentTime+d/1000);
-  }catch(e){}
-}
-
-function vib(x){
-  if(st.vib&&navigator.vibrate)navigator.vibrate(x);
-}
-
-function fx(){
-  if(!st.fx)return;
-
-  for(let i=0;i<16;i++){
-    const e=document.createElement("i");
-    e.className="confetti";
-    e.style.left=Math.random()*100+"vw";
-    e.style.background=
-      ["#6cff9b","#ffd84f","#5be8ef","#ff7780"][i%4];
-
-    document.body.appendChild(e);
-    setTimeout(()=>e.remove(),850);
-  }
-}
-
-function toast(x){
-  $("toast").textContent=x;
-  $("toast").classList.add("show");
-
-  clearTimeout(tt);
-
-  tt=setTimeout(()=>{
-    $("toast").classList.remove("show");
-  },1200);
-}
-
-function open(x){
-  $("mc").innerHTML=x;
-  $("modal").classList.add("show");
-}
-
-function closeM(){
-  $("modal").classList.remove("show");
-}
-
-$("modal").onclick=e=>{
-  if(e.target===$("modal"))closeM();
-};
-
-function ui(){
-  $("score").textContent=st.score;
-  $("xp").textContent=st.xp;
-  $("streak").textContent=st.streak;
-  $("correct").textContent=st.correct;
-
-  $("stage").textContent=`المرحلة ${stage()}/100`;
-  $("qn").textContent=`السؤال ${qi()}/3`;
-
-  $("bar").style.width=((st.answered%3)/3*100)+"%";
-
-  $("hc").textContent=st.help;
-  $("sc").textContent=st.skip;
-  $("rc").textContent=st.reveal;
-
-  $("acc").textContent=
-    (st.answered?
-      Math.round(st.correct/st.answered*100):0)+"%";
-
-  $("sound").textContent=st.sound?"🔊":"❌";
-
-  $("help").disabled=st.help<1;
-  $("skip").disabled=st.skip<1;
-  $("reveal").disabled=st.reveal<1;
-}
-
-/* تشغيل آمن عند فتح الملف */
-function startGame(){
-  try{
-    if(!Array.isArray(st.order) || !st.order.length){
-      rebuild();
-    }
-
-    load();
-
-    if(cur){
-      ui();
-    }
-  }catch(e){
-    console.error("GAME START ERROR:",e);
-    showLoadError();
-  }
-}
-
-startGame();
-</script>
-</body>
-</html>
-
+["50st","💎 أسطورة","المرحلة 50
