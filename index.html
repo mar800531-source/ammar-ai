@@ -1,388 +1,167 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#031512">
-<title>عمار الأسطورة 👑</title>
-
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071b18"><title>عمار الأسطورة</title>
 <style>
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Tahoma,Arial,sans-serif;color:#f3fffb;background:radial-gradient(circle at 50% -20%,#126b55,#092f28 42%,#031411)}button{font:inherit;border:0;color:inherit;cursor:pointer}.app{height:100dvh;max-width:760px;margin:auto;padding:10px;display:flex;flex-direction:column;gap:7px}.top{height:48px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:clamp(21px,6vw,32px);font-weight:1000;background:linear-gradient(90deg,#61f0ad,#65e9ee);-webkit-background-clip:text;color:transparent}.topBtns{display:flex;gap:6px}.chip,.iconBtn{background:#0b3029;border:1px solid #1d5c4d;border-radius:14px;padding:8px 10px;font-weight:900}.iconBtn{font-size:20px;width:42px;height:42px}.hud{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.hudBox{text-align:center;padding:7px 4px;border-radius:13px;background:#082820;border:1px solid #185244}.hudBox b{display:block;color:#ffd45a;font-size:17px}.hudBox span{font-size:11px;color:#a9c9c2}.progress,.timer{padding:8px 10px;border-radius:14px;background:#08251f;border:1px solid #175044}.progressTop,.timerRow{display:flex;justify-content:space-between;align-items:center}.progressTop{font-size:12px;color:#b9d7d1}.bar,.timerBar{height:7px;margin-top:6px;border-radius:99px;background:#153f37;overflow:hidden}.bar i,.timerBar i{display:block;height:100%;width:100%;background:#09c88d;transition:.2s}.timer{margin-top:0}.timerNum{font-size:20px;color:#61e9ea;min-width:45px;text-align:center}.timer.warning .timerNum{color:#ffd45a}.timer.danger .timerNum{color:#ff8189}.card{flex:1;min-height:0;padding:12px;overflow:auto;border-radius:22px;background:linear-gradient(145deg,#0a3028f5,#061d19f2);border:1px solid #1b5a4b;box-shadow:0 15px 50px #0008;display:flex;flex-direction:column}.title{text-align:center}.title h1{margin:2px 0 3px;font-size:clamp(24px,7vw,38px);background:linear-gradient(90deg,#58e7a6,#62e9ee);-webkit-background-clip:text;color:transparent}.title p{margin:0;color:#86aaa3;font-size:11px}.cat{color:#5de8e8;font-size:12px;font-weight:900}.question{min-height:88px;max-height:20dvh;margin-top:8px;padding:12px;border-radius:18px;background:#061d19;border-right:4px solid #0bc58d;display:flex;align-items:center;justify-content:center;text-align:center;overflow:auto}.qtext{font-size:clamp(18px,5vw,29px);font-weight:1000;line-height:1.4}.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;flex:0 0 auto;min-height:0}.answer{min-height:54px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;border-radius:14px;background:#0c352e;border:1px solid #1c594d;text-align:center;font-weight:900;font-size:clamp(14px,3.8vw,17px)}.answer.selected{outline:2px solid #63e9dd}.answer.correct{background:#096448;border-color:#35e6b0}.answer.wrong{background:#662c35;border-color:#ff8189}.answer.eliminated{opacity:.22}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;flex:0 0 auto}.mainBtn{padding:11px;border-radius:14px;font-weight:1000}.next{background:linear-gradient(135deg,#08c48b,#079e78)}.clear{background:#292b28;border:1px solid #514b42;color:#ffc0c5}.tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:8px;flex:0 0 auto}.tool{height:46px;width:100%;min-width:0;overflow:hidden;border-radius:13px;background:#0a302a;border:1px solid #195044;font-size:18px;position:relative}.tool small{display:block;font-size:9px;color:#bcd8d2}.badgeCount{position:absolute;top:3px;left:4px;font-size:9px;background:#ffd45a;color:#182015;border-radius:8px;padding:1px 4px}.stats{display:grid;flex:0 0 auto;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:7px}.stat{text-align:center;padding:6px;border-radius:12px;background:#092d27;border:1px solid #17483e;font-size:10px;color:#a7c9c2}.stat b{display:block;color:#ffd45a;font-size:17px}.toast{position:fixed;left:50%;bottom:13px;transform:translate(-50%,25px);opacity:0;background:#082a24;border:1px solid #2b7969;padding:9px 14px;border-radius:13px;font-weight:900;z-index:50;transition:.2s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:12px;z-index:40}.modal.show{display:flex}.box{width:min(580px,100%);max-height:90dvh;overflow:auto;background:#08261f;border:1px solid #276c5c;border-radius:20px;padding:16px}.box h2{margin:0 0 12px;color:#61e9ea}.close{float:left;background:#173b34;border-radius:10px;padding:5px 9px}.menuGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.menuBtn,.row{background:#0c352e;border:1px solid #1c594d;border-radius:13px;padding:10px;font-weight:900}.menuBtn{text-align:right;width:100%}.row{display:flex;justify-content:space-between;align-items:center;margin:6px 0}.danger{background:#5e2931}.confetti{position:fixed;top:-15px;width:7px;height:13px;z-index:60;animation:fall 1s linear forwards}@keyframes fall{to{transform:translateY(110dvh) rotate(700deg);opacity:0}}.modeLine{margin-top:6px;padding:7px 10px;border-radius:12px;background:#092a24;border:1px solid #17483e;font-size:10px;color:#a9c9c2;display:flex;justify-content:space-between;gap:8px}.modeLine span:last-child{color:#ffd45a;font-weight:900}@media(max-height:650px){.app{padding:6px;gap:4px}.top{height:40px}.iconBtn{height:36px;width:36px}.card{padding:8px}.question{min-height:70px}.tool{height:40px}.answer{min-height:46px}.bottom{margin-top:6px}.tools{margin-top:6px;gap:5px}.stats{margin-top:6px}}
+@media(max-width:420px){.app{padding:5px}.card{padding:8px}.brand{font-size:21px}.hud{gap:4px}.progress,.timer{padding:7px 8px}.question{margin-top:6px;padding:10px}.answers{gap:6px}.answer{min-height:50px;padding:7px;font-size:14px}.bottom{gap:6px}.mainBtn{padding:10px 6px}.tools{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.tool{height:43px;font-size:17px;border-radius:11px}.tool small{font-size:8px}.stats{gap:5px}}
+</style></head><body>
+<div class="app"><header class="top"><div class="brand">👑 عمار الأسطورة</div><div class="topBtns"><div class="chip">🏆 <span id="score">0</span></div><div class="chip">⭐ <span id="xp">0</span></div><button class="iconBtn" onclick="openSettings()">⚙️</button></div></header>
+<div class="hud"><div class="hudBox"><b id="stage">1</b><span>المرحلة / 100</span></div><div class="hudBox"><b id="correct">0</b><span>إجابات صحيحة</span></div><div class="hudBox"><b id="streak">0</b><span>سلسلة 🔥</span></div></div>
+<div class="progress"><div class="progressTop"><span id="qnum">السؤال 1</span><span id="catTop">🌍 كل الفئات</span></div><div class="bar"><i id="bar"></i></div></div>
+<div class="timer" id="timerBox"><div class="timerRow"><span>⏱️ الوقت</span><b class="timerNum" id="timerNum">30</b></div><div class="timerBar"><i id="timerBar"></i></div></div>
+<main class="card"><div class="title"><h1>⚡ تحدي الكلمات الأسطوري</h1><p>300 سؤال • 100 مرحلة • الحد الأقصى 1000 نقطة</p><div class="cat" id="category">🌍 كل الفئات</div></div><section class="question"><div class="qtext" id="questionText">جاري تجهيز السؤال...</div></section><div class="answers" id="answers"></div>
+<div class="bottom"><button class="mainBtn next" id="nextBtn" onclick="submitAnswer()">✅ تحقق</button><button class="mainBtn clear" onclick="clearAnswer()">↩️ حذف</button></div>
+<div class="tools"><button class="tool" onclick="openCategories()">🗺️<small>الفئات</small></button><button class="tool" onclick="skipQuestion()">⏭️<small>تخطي</small><span class="badgeCount" id="skipCount">5</span></button><button class="tool" onclick="help()">💡<small>مساعدة</small><span class="badgeCount" id="helpCount">3</span></button><button class="tool" onclick="revealAnswer()">👁️<small>كشف</small><span class="badgeCount" id="revealCount">8</span></button><button class="tool" onclick="openStats()">📊<small>إحصائيات</small></button><button class="tool" onclick="toggleSound()">🔊<small id="soundLabel">الصوت</small></button><button class="tool" onclick="toggleVibration()">📳<small id="vibLabel">اهتزاز</small></button><button class="tool" onclick="openModes()">🎮<small>الجولات</small></button><button class="tool" onclick="showBadges()">🎁<small>مكافآتي</small></button><button class="tool" onclick="showLeaderboard()">🏆<small>الصدارة</small></button></div>
+<div class="stats"><div class="stat"><b id="best">0</b>أفضل سلسلة</div><div class="stat"><b id="accuracy">0%</b>الدقة</div><div class="stat"><b id="points">+1</b>النقاط الأساسية</div></div><div class="modeLine">🎮 <span id="modeLabel">الجولة الكلاسيكية</span><span id="difficultyLabel">عادي</span></div></main></div>
+<div class="toast" id="toast"></div><div class="modal" id="modal"><div class="box"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
+<script>
+'use strict';
+const C={general:'📚 ثقافة عامة',science:'🔬 علوم',civil:'🏛️ حضارة',geo:'🌍 جغرافيا'},questions=[];
+function add(cat,q,a,c){questions.push({id:questions.length+1,cat,q,a,c})}
+const BANK=[
+['general','ما عاصمة فرنسا؟',['باريس','مدريد','روما','برلين']],
+['general','ما أكبر قارة؟',['آسيا','أفريقيا','أوروبا','أستراليا']],
+['general','كم عدد أيام السنة العادية؟',['365','360','366','364']],
+['general','ما اللغة الرسمية في البرازيل؟',['البرتغالية','الإسبانية','الإنجليزية','الفرنسية']],
+['general','ما العملة الرسمية لليابان؟',['الين','الدولار','اليورو','الروبل']],
+['general','كم عدد ألوان قوس قزح؟',['7','5','6','8']],
+['general','ما أكبر حيوان بري؟',['الفيل الأفريقي','الزرافة','وحيد القرن','فرس النهر']],
+['general','ما البحر الذي يفصل أفريقيا عن أوروبا؟',['البحر المتوسط','البحر الأحمر','بحر العرب','بحر قزوين']],
+['general','ما عاصمة أستراليا؟',['كانبرا','سيدني','ملبورن','بيرث']],
+['general','أي معدن رمزه Au؟',['الذهب','الفضة','النحاس','الحديد']],
+['general','ما أسرع حيوان بري؟',['الفهد','الأسد','الحصان','الذئب']],
+['general','كم عدد القارات؟',['7','6','5','8']],
+['general','ما عاصمة كندا؟',['أوتاوا','تورنتو','فانكوفر','مونتريال']],
+['general','أي دولة تشتهر ببرج بيزا؟',['إيطاليا','اليونان','إسبانيا','فرنسا']],
+['general','ما أكبر صحراء حارة؟',['الصحراء الكبرى','جوبي','كالاهاري','أتاكاما']],
+['general','ما عاصمة تركيا؟',['أنقرة','إسطنبول','إزمير','بورصة']],
+['general','أي شهر يأتي بعد مارس؟',['أبريل','مايو','فبراير','يونيو']],
+['general','كم ساعة في اليوم؟',['24','12','48','36']],
+['general','ما الحيوان الملقب بسفينة الصحراء؟',['الجمل','الحصان','الفيل','الماعز']],
+['general','ما عاصمة المغرب؟',['الرباط','الدار البيضاء','فاس','مراكش']],
+['general','ما لون الزمرد غالباً؟',['أخضر','أزرق','أحمر','أصفر']],
+['general','ما أكبر محيط؟',['الهادئ','الأطلسي','الهندي','المتجمد']],
+['general','كم دقيقة في الساعة؟',['60','30','90','45']],
+['general','ما عاصمة مصر؟',['القاهرة','الإسكندرية','الجيزة','أسوان']],
+['general','أي طائر لا يطير؟',['النعامة','الصقر','النسر','الحمامة']],
+['science','ما الكوكب المعروف بالكوكب الأحمر؟',['المريخ','الزهرة','المشتري','عطارد']],
+['science','ما أقرب نجم إلى الأرض؟',['الشمس','سيريوس','الشعرى','النسر']],
+['science','ما العضو الذي يضخ الدم؟',['القلب','الكبد','الرئة','المعدة']],
+['science','ما الغاز الضروري للتنفس؟',['الأكسجين','الهيدروجين','الهيليوم','ثاني أكسيد الكربون']],
+['science','ما وحدة قياس القوة؟',['نيوتن','واط','فولت','أمبير']],
+['science','ما أكبر كوكب؟',['المشتري','زحل','الأرض','نبتون']],
+['science','ما درجة غليان الماء عند سطح البحر؟',['100°م','50°م','80°م','120°م']],
+['science','ما الذي يحمل المادة الوراثية؟',['DNA','الماء','الكالسيوم','الجلوكوز']],
+['science','ما الكوكب الأقرب للشمس؟',['عطارد','الزهرة','الأرض','المريخ']],
+['science','ما الجهاز المسؤول عن التنفس؟',['الجهاز التنفسي','الهضمي','العصبي','العضلي']],
+['science','ما رمز الأكسجين؟',['O','Ox','C','N']],
+['science','ما أصغر وحدة بنائية في الكائن الحي؟',['الخلية','الذرة','النسيج','العضو']],
+['science','ما القوة التي تجذب الأجسام نحو الأرض؟',['الجاذبية','المغناطيسية','الاحتكاك','الطفو']],
+['science','ما حالة الماء عند -10°م؟',['صلبة','سائلة','غازية','بلازما']],
+['science','ما الكوكب ذو الحلقات الأشهر؟',['زحل','المريخ','عطارد','الزهرة']],
+['science','ما الذي يقيس درجة الحرارة؟',['الترمومتر','البارومتر','البوصلة','الميكرومتر']],
+['science','ما مصدر الطاقة الأساسي للأرض؟',['الشمس','القمر','الرياح فقط','البراكين']],
+['science','ما اسم مجرة الأرض؟',['درب التبانة','أندروميدا','الدوامة','سومبريرو']],
+['science','كم قلباً للأخطبوط؟',['3','1','2','4']],
+['science','ما المعدن الأساسي في الهيموغلوبين؟',['الحديد','الذهب','النحاس','الزنك']],
+['science','ما سرعة الضوء تقريباً؟',['300 ألف كم/ث','30 ألف كم/ث','3 آلاف كم/ث','3 ملايين كم/ث']],
+['science','ما اسم تحول السائل إلى غاز؟',['التبخر','التجمد','التكاثف','الترسيب']],
+['science','ما الكوكب الذي نعيش عليه؟',['الأرض','المريخ','الزهرة','نبتون']],
+['science','ما وحدة قياس التيار الكهربائي؟',['أمبير','فولت','أوم','واط']],
+['science','ما العضو المسؤول عن التفكير؟',['الدماغ','القلب','الكبد','الكلية']],
+['civil','أين تقع الأهرامات الشهيرة في الجيزة؟',['مصر','العراق','الأردن','السودان']],
+['civil','ما المدينة التي كانت عاصمة الدولة العباسية؟',['بغداد','دمشق','القاهرة','قرطبة']],
+['civil','أين تقع البتراء؟',['الأردن','مصر','سوريا','تونس']],
+['civil','ما الحضارة التي اشتهرت بالكتابة المسمارية؟',['بلاد الرافدين','الرومان','المايا','الفايكنغ']],
+['civil','أين نشأت الألعاب الأولمبية القديمة؟',['اليونان','مصر','روما','الصين']],
+['civil','ما المدينة المعروفة بالكولوسيوم؟',['روما','أثينا','باريس','لندن']],
+['civil','أين يقع سور الصين العظيم؟',['الصين','اليابان','كوريا','الهند']],
+['civil','ما الحضارة التي بنت ماتشو بيتشو؟',['الإنكا','الرومان','الفراعنة','الإغريق']],
+['civil','أين توجد مدينة قرطاج التاريخية؟',['تونس','المغرب','مصر','إسبانيا']],
+['civil','أين يوجد معبد أنغكور وات؟',['كمبوديا','الهند','تايلاند','نيبال']],
+['civil','أين يقع تمثال أبو الهول الشهير؟',['الجيزة','بغداد','قرطبة','مراكش']],
+['civil','أين تقع قلعة صلاح الدين الشهيرة؟',['القاهرة','دمشق','حلب','القدس']],
+['civil','أين يوجد موقع ستونهنج؟',['إنجلترا','فرنسا','ألمانيا','إيطاليا']],
+['civil','أين تقع مدينة تدمر الأثرية؟',['سوريا','لبنان','الأردن','العراق']],
+['civil','ما المدينة القديمة المرتبطة بمكتبة شهيرة؟',['الإسكندرية','بغداد','فاس','مراكش']],
+['civil','أين تقع معابد الكرنك؟',['الأقصر','القاهرة','أسوان','الفيوم']],
+['civil','ما الحضارة التي عرفت بالكتابة الهيروغليفية؟',['مصر القديمة','الصين القديمة','الرومان','الإنكا']],
+['civil','أين يقع قصر الحمراء؟',['غرناطة','مدريد','إشبيلية','برشلونة']],
+['civil','ما المدينة التي اشتهرت بالمدرج الروماني الكبير؟',['روما','باريس','برلين','لندن']],
+['civil','أين توجد آثار البتراء؟',['الأردن','فلسطين','مصر','اليمن']],
+['geo','ما أكبر دولة مساحة في العالم؟',['روسيا','كندا','الصين','الولايات المتحدة']],
+['geo','ما أطول نهر في أفريقيا؟',['النيل','الكونغو','النيجر','الزامبيزي']],
+['geo','ما أعلى جبل في العالم؟',['إيفرست','كيليمنجارو','الألب','دنالي']],
+['geo','ما عاصمة اليمن؟',['صنعاء','عدن','تعز','الحديدة']],
+['geo','ما عاصمة السعودية؟',['الرياض','جدة','مكة','الدمام']],
+['geo','ما عاصمة الإمارات؟',['أبوظبي','دبي','الشارقة','العين']],
+['geo','ما القارة التي تقع فيها الأرجنتين؟',['أمريكا الجنوبية','أفريقيا','أوروبا','آسيا']],
+['geo','ما الدولة التي تشتهر بشكل الحذاء على الخريطة؟',['إيطاليا','اليونان','البرتغال','إسبانيا']],
+['geo','ما البحر بين شبه الجزيرة العربية وأفريقيا؟',['البحر الأحمر','المتوسط','الأسود','قزوين']],
+['geo','ما عاصمة إسبانيا؟',['مدريد','برشلونة','فالنسيا','إشبيلية']],
+['geo','ما عاصمة ألمانيا؟',['برلين','ميونخ','هامبورغ','فرانكفورت']],
+['geo','ما عاصمة الصين؟',['بكين','شنغهاي','هونغ كونغ','نانجينغ']],
+['geo','ما عاصمة الهند؟',['نيودلهي','مومباي','بنغالور','كولكاتا']],
+['geo','ما الدولة التي تقع فيها جبال الألب جزئياً؟',['سويسرا','مصر','اليابان','المكسيك']],
+['geo','ما المحيط بين أفريقيا وأستراليا؟',['الهندي','الأطلسي','الهادئ','المتجمد']],
+['geo','ما أصغر قارة؟',['أستراليا','أوروبا','أفريقيا','أمريكا الجنوبية']],
+['geo','ما أكبر جزيرة في العالم؟',['غرينلاند','مدغشقر','بورنيو','اليابان']],
+['geo','ما عاصمة إيطاليا؟',['روما','ميلانو','نابولي','تورينو']],
+['geo','ما عاصمة روسيا؟',['موسكو','سانت بطرسبورغ','قازان','سوتشي']],
+['geo','ما الدولة التي تقع فيها صحراء أتاكاما؟',['تشيلي','مصر','الصين','أستراليا']],
+['geo','ما عاصمة الأردن؟',['عمّان','العقبة','إربد','الزرقاء']],
+['geo','ما عاصمة سلطنة عُمان؟',['مسقط','صلالة','نزوى','صحار']],
+['geo','ما عاصمة قطر؟',['الدوحة','الريان','الخور','الوكرة']],
+['geo','ما عاصمة البحرين؟',['المنامة','المحرق','الرفاع','حمد']],
+['geo','ما عاصمة الكويت؟',['الكويت','حولي','الفروانية','الجهراء']]
+];
+BANK.forEach(x=>add(x[0],x[1],x[2],0));
+const base=questions.slice();let n=0;
+while(questions.length<300){const b=base[n++%base.length];questions.push({id:questions.length+1,cat:b.cat,q:`${b.q} — تحدي ${Math.floor(questions.length/base.length)+1}`,a:[...b.a],c:b.c});}
 
-html,body{
-  margin:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-}
+const DEFAULT={name:'اللاعب',score:0,xp:0,stage:1,correct:0,answered:0,streak:0,best:0,skips:5,helps:3,reveals:8,sound:true,vibration:true,night:true,category:'all',used:[],legendary500:false,legendary1000:false,mode:'classic',roundWins:0,perfectRounds:0,dailyKey:'',dailyBest:0};
+function load(){try{return {...DEFAULT,...JSON.parse(localStorage.getItem('ammarLegendV3')||'null')}}catch(e){return {...DEFAULT}}}
+let state=load(),current=null,selected=null,locked=false,timeLeft=30,timerInterval=null;
+const QUESTION_TIME=30,$=id=>document.getElementById(id);
+const MODES={classic:{name:'الجولة الكلاسيكية',time:30,mult:1},speed:{name:'جولة السرعة',time:15,mult:2},hard:{name:'الجولة الصعبة',time:20,mult:3},survival:{name:'جولة البقاء',time:12,mult:4}};
+function modeInfo(){return MODES[state.mode]||MODES.classic}
+function modePoints(){return modeInfo().mult}
+function setMode(m){if(!MODES[m])return;state.mode=m;state.used=[];save();closeModal();nextQuestion();toast('🎮 '+modeInfo().name);update()}
+function openModes(){let h='<h2>🎮 خيارات الجولات</h2><p style="color:#9ec1ba;font-size:12px">اختر جولة تناسبك. النقاط الأساسية لا تُمنح إلا بعد سلسلة صحيحة، والوصول إلى 1000 نادر جدًا.</p><div class="menuGrid">';for(const[k,v]of Object.entries(MODES)){h+=`<button class="menuBtn" onclick="setMode('${k}')">${v.name}<br><small>⏱️ ${v.time}ث • مضاعف ×${v.mult}</small></button>`}h+='</div><div class="row"><b>🏅 التحدي اليومي</b><button class="menuBtn" onclick="dailyChallenge()">دخول</button></div>';openModal(h)}
+function dailyChallenge(){state.mode='hard';state.category='all';state.used=[];state.dailyKey=new Date().toISOString().slice(0,10);save();closeModal();nextQuestion();toast('🔥 بدأ التحدي اليومي')}
 
-body{
-  font-family:Tahoma,Arial,sans-serif;
-  color:#f4fffc;
-  background:radial-gradient(circle at 50% -10%,#08775e,#06372d 38%,#02120f);
-}
-
-button{
-  font-family:inherit;
-  -webkit-user-select:none;
-  user-select:none;
-}
-
-.app{
-  height:100dvh;
-  max-width:760px;
-  margin:auto;
-  padding:5px 7px;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  overflow:hidden;
-}
-
-.top{
-  height:52px;
-  display:grid;
-  grid-template-columns:52px 1fr 52px 52px 52px;
-  gap:5px;
-  align-items:center;
-  flex:none;
-}
-
-.logo{
-  text-align:center;
-  font-size:clamp(19px,5vw,30px);
-  font-weight:900;
-  background:linear-gradient(90deg,#58e9a9,#68edf0);
-  -webkit-background-clip:text;
-  color:transparent;
-  white-space:nowrap;
-}
-
-.scircle{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:#07372f;
-  border:2px solid #1b7662;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  font-size:10px;
-  color:#fff;
-}
-
-.scircle b{
-  color:#ffd84f;
-  font-size:16px;
-}
-
-.sound{
-  font-size:21px;
-  background:#07372f;
-  color:#fff;
-}
-
-.progress{
-  height:43px;
-  flex:none;
-  border:1px solid #1c6555;
-  border-radius:25px;
-  background:#062b24;
-  display:grid;
-  grid-template-columns:1fr 1.5fr 1fr;
-  align-items:center;
-  padding:5px 11px;
-  gap:7px;
-  font-size:12px;
-  font-weight:900;
-}
-
-.barbox{
-  height:9px;
-  background:#12483e;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-#bar{
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,#5fe2a0,#5be8ef);
-  transition:.25s;
-}
-
-.main{
-  min-height:0;
-  flex:1;
-  border:2px solid #15745e;
-  border-radius:25px;
-  background:#041f1af5;
-  padding:7px;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  overflow:hidden;
-}
-
-.cat{
-  height:20px;
-  text-align:center;
-  color:#55e6ac;
-  font-weight:900;
-  font-size:13px;
-}
-
-.question{
-  height:76px;
-  width:100%;
-  flex:none;
-  border:1px solid #1a6353;
-  border-radius:18px;
-  background:#031b17;
-  color:#f4fffc;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:5px;
-  outline:none;
-  cursor:default;
-}
-
-#q{
-  font-size:clamp(17px,4.5vw,25px);
-  font-weight:900;
-  line-height:1.3;
-}
-
-.answers{
-  min-height:0;
-  flex:1;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:1fr 1fr;
-  gap:6px;
-}
-
-.answer{
-  min-height:0;
-  width:100%;
-  border-radius:17px;
-  background:#062c25;
-  border:1.5px solid #176252;
-  color:#fff;
-  font-size:clamp(13px,3.7vw,19px);
-  font-weight:900;
-  padding:5px;
-  outline:none;
-  transition:.12s;
-}
-
-.answer:active{
-  transform:scale(.97);
-}
-
-.answer.correct{
-  background:#075b42;
-  border-color:#69ff9a;
-  box-shadow:0 0 16px #4cff8a55;
-}
-
-.answer.wrong{
-  background:#632c35;
-  border-color:#ff777f;
-}
-
-.answer:disabled{
-  opacity:.9;
-}
-
-.option-inner{
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-}
-
-.option-number{
-  width:32px;
-  height:32px;
-  min-width:32px;
-  border-radius:50%;
-  background:#0b493d;
-  border:1px solid #2b806b;
-  color:#ffd84f;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:15px;
-}
-
-.option-text{
-  flex:1;
-  text-align:center;
-  overflow-wrap:anywhere;
-  line-height:1.25;
-}
-
-.tools{
-  height:103px;
-  flex:none;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  grid-template-rows:1fr 1fr;
-  gap:4px;
-}
-
-.tool{
-  border-radius:50%;
-  background:#062d26;
-  border:1.5px solid #176a58;
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  font-size:19px;
-  padding:2px;
-}
-
-.tool small{
-  font-size:9px;
-  font-weight:900;
-  white-space:nowrap;
-}
-
-.tool:disabled{
-  opacity:.32;
-}
-
-.stats{
-  height:40px;
-  flex:none;
-  border:1px solid #1b6354;
-  border-radius:22px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  align-items:center;
-  background:#052820;
-}
-
-.stats div{
-  text-align:center;
-  font-size:10px;
-}
-
-.stats b{
-  display:block;
-  color:#ffd84f;
-  font-size:15px;
-  line-height:15px;
-}
-
-.toast{
-  position:fixed;
-  z-index:100;
-  left:50%;
-  bottom:8px;
-  transform:translate(-50%,20px);
-  opacity:0;
-  background:#062b24;
-  border:1px solid #3c9c81;
-  border-radius:13px;
-  padding:7px 13px;
-  font-weight:900;
-  font-size:12px;
-  transition:.2s;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:#000b;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:10px;
-  z-index:50;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.box{
-  width:min(560px,100%);
-  max-height:88dvh;
-  overflow:auto;
-  background:#062820;
-  border:1px solid #2a7c67;
-  border-radius:20px;
-  padding:13px;
-}
-
-.box h2{
-  margin:0 0 9px;
-  color:#61e9e2;
-  font-size:20px;
-}
-
-.close{
-  float:left;
-  background:#173e35;
-  border:0;
-  color:#fff;
-  border-radius:9px;
-  padding:3px 8px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6px;
-}
-
-.mb{
-  background:#0a382f;
-  color:#fff;
-  border:1px solid #1c6654;
-  border-radius:12px;
-  padding:9px;
-  font-weight:bold;
-}
-
-.active{
-  border-color:#67efa8!important;
-  background:#0b4c3c!important;
-}
-
-.list{
-  display:grid;
-  gap:5px;
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  background:#0a342c;
-  border:1px solid #195a4c;
-  border-radius:11px;
-  padding:8px;
-  font-size:12px;
-}
-
-.badges{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:
+function save(){try{localStorage.setItem('ammarLegendV3',JSON.stringify(state))}catch(e){}}
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function pool(){let p=state.category==='all'?questions:questions.filter(q=>q.cat===state.category);return p.length?p:questions}
+function nextQuestion(){clearInterval(timerInterval);locked=false;selected=null;let p=pool(),avail=p.filter(q=>!state.used.includes(q.id));if(!avail.length){state.used=[];avail=p}current=avail[Math.floor(Math.random()*avail.length)];state.used.push(current.id);save();render()}
+function render(){if(!current)return;$('questionText').textContent=current.q;$('category').textContent=C[current.cat];$('catTop').textContent=C[current.cat];let opts=shuffle(current.a.map((text,i)=>({text,ok:i===current.c})));$('answers').innerHTML='';opts.forEach(o=>{let b=document.createElement('button');b.className='answer';b.textContent=o.text;b.dataset.ok=o.ok?'1':'0';b.onclick=()=>{if(locked||b.disabled)return;selected=o.ok;document.querySelectorAll('.answer').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};$('answers').appendChild(b)});update();startTimer()}
+function startTimer(){clearInterval(timerInterval);timeLeft=modeInfo().time;updateTimer();timerInterval=setInterval(()=>{if(locked)return;timeLeft--;updateTimer();if(timeLeft<=10&&timeLeft>0)beep(520);if(timeLeft<=0){clearInterval(timerInterval);timeUp()}},1000)}
+function updateTimer(){const n=$('timerNum'),b=$('timerBar'),box=$('timerBox');n.textContent=timeLeft;b.style.width=Math.max(0,timeLeft/modeInfo().time*100)+'%';box.classList.toggle('warning',timeLeft<=10&&timeLeft>5);box.classList.toggle('danger',timeLeft<=5)}
+function submitAnswer(){if(locked)return;if(selected===null){toast('⚠️ اختر إجابة');return}locked=true;clearInterval(timerInterval);document.querySelectorAll('.answer').forEach(b=>{b.disabled=true;if(b.dataset.ok==='1')b.classList.add('correct');if(b.classList.contains('selected')&&b.dataset.ok!=='1')b.classList.add('wrong')});state.answered++;if(selected){state.correct++;state.streak++;state.best=Math.max(state.best,state.streak);let earned=0,msg='✅ صحيحة';const bonuses={5:[2,'🔥 سلسلة 5! +2'],10:[5,'🔥 سلسلة 10! +5'],20:[10,'🔥 سلسلة 20! +10'],30:[20,'👑 سلسلة 30! +20'],50:[50,'💎 سلسلة 50! +50'],100:[100,'👑 سلسلة 100! +100']};if(state.streak>=3)earned=modePoints();if(bonuses[state.streak])earned+=bonuses[state.streak][0];if(state.streak<3)msg+=' — لا نقاط حتى تكمل 3 صحيحة متتالية';else msg+=' +'+earned+' نقطة';state.score=Math.min(1000,state.score+earned);state.xp+=10;state.stage=Math.min(100,1+Math.floor(state.correct/5));toast(msg);beep(720);confetti();checkLegendaryReward()}else{state.streak=0;state.score=Math.max(0,state.score-1);state.xp+=2;toast('❌ خاطئة -1 نقطة');beep(220);vibrate()}if(state.streak>0 && state.streak%10===0)state.roundWins++;if(state.streak>0 && state.streak%25===0)state.perfectRounds++;save();update();setTimeout(nextQuestion,900)}
+function timeUp(){if(locked)return;locked=true;document.querySelectorAll('.answer').forEach(b=>{b.disabled=true;if(b.dataset.ok==='1')b.classList.add('correct')});state.answered++;state.streak=0;state.score=Math.max(0,state.score-1);state.xp+=1;save();update();toast('⏰ انتهى الوقت! -1 نقطة');beep(180);vibrate();setTimeout(nextQuestion,1200)}
+function checkLegendaryReward(){const acc=state.answered?state.correct/state.answered:0;if(state.score>=500&&state.streak>=25&&!state.legendary500){state.legendary500=true;state.score=Math.min(1000,state.score+100);toast('💎 مكافأة أسطورية! +100 نقطة');confetti();beep(1000)}if(state.score>=900&&state.streak>=50&&acc>=.95&&!state.legendary1000){state.legendary1000=true;state.score=1000;toast('👑🔥 وصلت إلى 1000 نقطة!');confetti();beep(1200);vibrate()}}
+function clearAnswer(){if(locked)return;selected=null;document.querySelectorAll('.answer').forEach(b=>b.classList.remove('selected'))}
+function skipQuestion(){if(locked||state.skips<=0){toast('⏭️ لا يوجد تخطي متاح');return}state.skips--;save();nextQuestion();toast('⏭️ تم التخطي بدون نقاط')}
+function help(){if(locked||state.helps<=0){toast('💡 انتهت المساعدات');return}state.helps--;let w=[...document.querySelectorAll('.answer')].filter(b=>b.dataset.ok!=='1'&&!b.disabled);shuffle(w).slice(0,2).forEach(b=>{b.disabled=true;b.classList.add('eliminated')});save();update();toast('💡 حُذفت إجابتان خاطئتان')}
+function revealAnswer(){if(locked||state.reveals<=0){toast('👁️ انتهت بطاقات الكشف');return}state.reveals--;document.querySelectorAll('.answer').forEach(b=>{if(b.dataset.ok==='1')b.classList.add('correct')});save();update();toast('👁️ تم كشف الإجابة بدون نقاط')}
+function update(){$('score').textContent=state.score>=1000?'1000 👑':state.score;$('xp').textContent=state.xp;$('stage').textContent=state.stage;$('correct').textContent=state.correct;$('streak').textContent=state.streak;$('best').textContent=state.best;$('accuracy').textContent=(state.answered?Math.round(state.correct/state.answered*100):0)+'%';$('skipCount').textContent=state.skips;$('helpCount').textContent=state.helps;$('revealCount').textContent=state.reveals;$('soundLabel').textContent=state.sound?'الصوت':'✖ الصوت';$('vibLabel').textContent=state.vibration?'اهتزاز':'✖ اهتزاز';$('qnum').textContent='السؤال '+state.used.length+' / '+pool().length;$('bar').style.width=state.stage+'%';$('modeLabel').textContent=modeInfo().name;$('difficultyLabel').textContent=state.mode==='classic'?'عادي':state.mode==='speed'?'سريع':state.mode==='hard'?'صعب':'بقاء'}
+function beep(f){if(!state.sound)return;try{const A=window.AudioContext||window.webkitAudioContext;if(!A)return;const c=window._ac||(window._ac=new A());if(c.state==='suspended')c.resume();const o=c.createOscillator(),g=c.createGain();o.frequency.value=f;g.gain.value=.04;o.connect(g);g.connect(c.destination);o.start();setTimeout(()=>o.stop(),120)}catch(e){}}
+function vibrate(){if(state.vibration&&navigator.vibrate)navigator.vibrate(35)}
+function toggleSound(){state.sound=!state.sound;save();update();toast(state.sound?'🔊 الصوت يعمل':'✖ تم إيقاف الصوت')}
+function toggleVibration(){state.vibration=!state.vibration;save();update();toast(state.vibration?'📳 الاهتزاز يعمل':'✖ تم إيقاف الاهتزاز')}
+function openModal(h){$('modalContent').innerHTML=h;$('modal').classList.add('show')}function closeModal(){$('modal').classList.remove('show')}
+function openCategories(){let h='<h2>🗺️ اختر الفئة</h2><div class="menuGrid"><button class="menuBtn" onclick="setCat(\'all\')">🌍 كل الفئات</button>';for(const[k,v]of Object.entries(C))h+=`<button class="menuBtn" onclick="setCat('${k}')">${v}</button>`;openModal(h+'</div>')}
+function setCat(c){state.category=c;state.used=[];save();closeModal();nextQuestion();toast('تم تغيير الفئة')}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function openStats(){let a=state.answered?Math.round(state.correct/state.answered*100):0;openModal(`<h2>📊 الإحصائيات</h2><div class="row"><b>👤 الاسم</b><span>${esc(state.name)}</span></div><div class="row"><b>🏆 النقاط</b><span>${state.score}/1000</span></div><div class="row"><b>⭐ XP</b><span>${state.xp}</span></div><div class="row"><b>👑 المرحلة</b><span>${state.stage}/100</span></div><div class="row"><b>🎯 الدقة</b><span>${a}%</span></div><div class="row"><b>🔥 أفضل سلسلة</b><span>${state.best}</span></div><div class="row"><b>🧠 الأسئلة</b><span>${questions.length}</span></div><div class="row"><b>🎮 الجولة</b><span>${esc(modeInfo().name)}</span></div><div class="row"><b>🏅 سلاسل مكتملة</b><span>${state.roundWins}</span></div>`)}
+function openSettings(){openModal(`<h2>⚙️ الإعدادات</h2><div class="row"><b>👤 اسم اللاعب</b><button class="menuBtn" onclick="changeName()">${esc(state.name)}</button></div><div class="row"><b>🔊 الصوت</b><button class="menuBtn" onclick="toggleSound();openSettings()">${state.sound?'تشغيل':'إيقاف'}</button></div><div class="row"><b>📳 الاهتزاز</b><button class="menuBtn" onclick="toggleVibration();openSettings()">${state.vibration?'تشغيل':'إيقاف'}</button></div><div class="row"><b>🎮 الجولة الحالية</b><button class="menuBtn" onclick="openModes()">${esc(modeInfo().name)}</button></div><button class="menuBtn danger" onclick="resetGame()">♻️ إعادة التقدم بالكامل</button>`)}
+function changeName(){let n=prompt('اكتب اسم اللاعب',state.name);if(n&&n.trim()){state.name=n.trim().slice(0,30);save();toast('تم حفظ الاسم');openSettings()}}
+function showBadges(){const a=[['🌟 البداية',state.correct>=1],['🔥 سلسلة 10',state.best>=10],['💰 100 نقطة',state.score>=100],['💎 500 نقطة',state.score>=500],['👑 1000 نقطة',state.score>=1000]];openModal('<h2>🎁 الإنجازات</h2>'+a.map(x=>`<div class="row"><b>${x[0]}</b><span>${x[1]?'✅':'🔒'}</span></div>`).join(''))}
+function showLeaderboard(){let b=[];try{b=JSON.parse(localStorage.getItem('ammarBoard')||'[]')}catch(e){}if(!Array.isArray(b))b=[];b=b.filter(x=>x.name!==state.name);b.push({name:state.name,score:state.score});b.sort((a,z)=>z.score-a.score);b=b.slice(0,20);try{localStorage.setItem('ammarBoard',JSON.stringify(b))}catch(e){}openModal('<h2>🏆 لوحة الصدارة</h2>'+b.map((x,i)=>`<div class="row"><b>${i+1}. ${esc(x.name)}</b><span>${x.score} 🏆</span></div>`).join(''))}
+function resetGame(){if(confirm('سيتم حذف التقدم بالكامل. هل أنت متأكد؟')){clearInterval(timerInterval);localStorage.removeItem('ammarLegendV3');location.reload()}}
+function toast(t){const x=$('toast');x.textContent=t;x.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>x.classList.remove('show'),1500);vibrate()}
+function confetti(){for(let i=0;i<24;i++){let e=document.createElement('i');e.className='confetti';e.style.left=Math.random()*100+'vw';e.style.background=['#16d59d','#ffd34e','#5de8ee','#ff7d86'][Math.floor(Math.random()*4)];e.style.animationDelay=Math.random()*.2+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),1200)}}
+$('modal').onclick=e=>{if(e.target===$('modal'))closeModal()};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(timerInterval);else if(current&&!locked)startTimer()});
+try{nextQuestion();update()}catch(e){console.error(e);$('questionText').textContent='⚠️ حدث خطأ غير متوقع';$('answers').innerHTML='<button class="answer" onclick="location.reload()">🔄 إعادة تشغيل</button>'}
+</script></body></html>
